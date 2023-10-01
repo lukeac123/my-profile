@@ -1,5 +1,3 @@
-# Mantine Next Template
+# Portfolio of Luke Atkinson-Coyle
 
-Get started with the template by clicking `Use this template` button on the top of the page.
-
-[Documentation](https://mantine.dev/guides/next/)
+Please run yarn dev to launch the site locally or naviagte to [my profile](https://)
