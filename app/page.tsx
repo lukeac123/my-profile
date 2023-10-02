@@ -1,7 +1,7 @@
 "use client";
-import { AppShell, Flex, Text, Card, Stack, Image } from "@mantine/core";
+import { Flex, Text, Stack, Image } from "@mantine/core";
 import Link from "next/link";
-import App from "next/app";
+import Card from "../components/Card/Card";
 
 const links = [
   { id: "Projects", link: "./projects" },
@@ -41,59 +41,49 @@ const cards = [
 
 export default function HomePage() {
   return (
-    <AppShell header={{ height: 100 }} padding="md">
-      <AppShell.Header>
-        <Flex
-          justify="center"
-          align="center"
-          direction="column"
-          style={{ height: 40, paddingTop: 50 }}
-        >
-          <Text size="xl" fw={900}>
-            Luke Atkinson-Coyle
-          </Text>
-          <Flex gap={"lg"}>
-            {links.map((link) => {
-              return (
-                <Link href={link.link}>
-                  <Text size="l" fw={300}>
-                    {link.id}
-                  </Text>
-                </Link>
-              );
-            })}
-          </Flex>
-        </Flex>
-      </AppShell.Header>
-
-      <AppShell.Main>
-        <Stack align="center">
-          {cards.map((card) => {
+    <Stack gap="xl" align="center">
+      <Flex
+        justify="center"
+        align="center"
+        direction="column"
+        gap="md"
+        style={{ paddingTop: 50, paddingBottom: 20 }}
+      >
+        <Text size="xl" fw={900}>
+          Luke Atkinson-Coyle
+        </Text>
+        <Flex gap={"lg"}>
+          {links.map((link) => {
             return (
-              <Card
-                shadow="sm"
-                padding="xl"
-                component="a"
-                href={card.link}
-                target="_blank"
-              >
-                <Card.Section>
-                  <Image src={card.image} h={160} alt={card.id} />
-                </Card.Section>
-
-                <Text fw={500} size="lg" mt="md">
-                  {card.title}
+              <Link href={link.link}>
+                <Text size="l" fw={300}>
+                  {link.id}
                 </Text>
-
-                <Text mt="xs" c="dimmed" size="sm">
-                  {card.caption}
-                </Text>
-              </Card>
+              </Link>
             );
           })}
-        </Stack>
-      </AppShell.Main>
-      <AppShell.Footer> Home Page </AppShell.Footer>
-    </AppShell>
+        </Flex>
+      </Flex>
+
+      <Stack align="center">
+        {cards.map((card) => {
+          return (
+            <Card />
+            //   <Card.Section>
+            //     <Image src={card.image} h={160} alt={card.id} />
+            //   </Card.Section>
+
+            //   <Text fw={500} size="lg" mt="md">
+            //     {card.title}
+            //   </Text>
+
+            //   <Text mt="xs" c="dimmed" size="sm">
+            //     {card.caption}
+            //   </Text>
+            // </Card>
+          );
+        })}
+      </Stack>
+    </Stack>
   );
 }
