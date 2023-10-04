@@ -12,8 +12,10 @@ const links = [
 ];
 
 export const AppHeader = () => {
-  const mode = useColorScheme();
-  console.log(mode);
+  const mode = "light";
+  // There are issues calling useColorScheme on the sever, so stopping ssr on layout component
+  // const mode = useColorScheme();
+  // console.log(mode);
 
   return (
     <Flex className={"root"}>
