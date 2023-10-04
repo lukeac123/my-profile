@@ -1,14 +1,22 @@
 "use client";
 import "@mantine/core/styles.css";
 import React from "react";
-import { MantineProvider, ColorSchemeScript } from "@mantine/core";
-import { theme } from "../theme";
+import { Providers } from "./providers";
+import { ColorSchemeScript } from "@mantine/core";
+import "@mantine/core/styles.css";
+import { AppShell } from "@mantine/core";
+import { AppHeader } from "../components/AppHeader";
+import { useColorScheme } from "@mantine/hooks";
 
 // export const metadata = {
 //   title: "Luke Atkinson-Coyle",
 // };
 
+// const mode = useColorScheme();
+// console.log(mode);
+
 export default function RootLayout({ children }: { children: any }) {
+  console.log(children);
   return (
     <html lang="en">
       <head>
@@ -20,7 +28,15 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <Providers>
+          <AppShell>
+            {/* <AppShell.Header p="sm"> */}
+            <AppHeader />
+            {/* </AppShell.Header> */}
+            {/* <AppShell.Main>{children}</AppShell.Main> */}
+            {children}
+          </AppShell>
+        </Providers>
       </body>
     </html>
   );

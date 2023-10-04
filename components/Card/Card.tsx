@@ -1,9 +1,9 @@
-import { Flex, Text } from "@mantine/core";
-import Image from "next/image";
+import { Flex, Text, Image } from "@mantine/core";
+// import Image from "next/image";
 
 const Card = () => {
   return (
-    <Flex direction={"row"} style={{ width: "50%" }}>
+    <Flex direction={"row"} style={{ width: "30%" }}>
       <Flex direction={"column"}>
         <Image
           src={

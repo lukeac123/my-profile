@@ -1,0 +1,7 @@
+.root{
+    padding: 10px
+}
+
+.nav{
+    flex-grow: 1
+}
