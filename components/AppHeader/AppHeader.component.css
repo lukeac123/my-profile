@@ -1,5 +1,11 @@
 .appHeader-container{
-    padding: 10px
+    padding: 10px;
+    z-index: 999;
+    position: relative;
+    border-bottom: solid;
+    border-width: 0.1px;
+    background-color: white;
+    /* opacity: 0.5; */
 }
 
 .appHeader-nav{
