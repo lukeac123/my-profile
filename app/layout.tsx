@@ -1,12 +1,13 @@
-"use client";
-import "@mantine/core/styles.css";
 import React from "react";
-import { MantineProvider, ColorSchemeScript } from "@mantine/core";
-import { theme } from "../theme";
+import { Providers } from "./providers";
+import { ColorSchemeScript } from "@mantine/core";
+import { AppHeader } from "../components/AppHeader";
+import { AppBody } from "../components/AppBody";
+import "@mantine/core/styles.css";
 
-// export const metadata = {
-//   title: "Luke Atkinson-Coyle",
-// };
+export const metadata = {
+  title: "Luke Atkinson-Coyle",
+};
 
 export default function RootLayout({ children }: { children: any }) {
   return (
@@ -20,7 +21,10 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <Providers>
+          <AppHeader />
+          <AppBody> {children} </AppBody>
+        </Providers>
       </body>
     </html>
   );
