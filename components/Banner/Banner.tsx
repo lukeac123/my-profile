@@ -44,7 +44,7 @@ export const Banner = () => {
           width: "100%",
         }}
       >
-        <Stack align="flex-end" justify="end" style={{ width: "30%" }}>
+        <Stack align="flex-end" justify="end" style={{ width: "40%" }}>
           <Text ta="right"> A World in Colour </Text>
           <Text ta="right">
             Snippets of audio from around the world, condensed into a single
