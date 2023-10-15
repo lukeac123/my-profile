@@ -1,17 +1,15 @@
-import "@mantine/core/styles.css";
 import React from "react";
 import { Providers } from "./providers";
 import { ColorSchemeScript } from "@mantine/core";
-import "@mantine/core/styles.css";
-import { AppShell } from "@mantine/core";
 import { AppHeader } from "../components/AppHeader";
+import { AppBody } from "../components/AppBody";
+import "@mantine/core/styles.css";
 
 export const metadata = {
   title: "Luke Atkinson-Coyle",
 };
 
 export default function RootLayout({ children }: { children: any }) {
-  console.log(children);
   return (
     <html lang="en">
       <head>
@@ -25,7 +23,7 @@ export default function RootLayout({ children }: { children: any }) {
       <body>
         <Providers>
           <AppHeader />
-          {children}
+          <AppBody> {children} </AppBody>
         </Providers>
       </body>
     </html>

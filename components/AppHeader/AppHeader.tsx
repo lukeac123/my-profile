@@ -1,7 +1,6 @@
 import { Flex, Text, Button } from "@mantine/core";
 import { IconSun, IconMoon } from "@tabler/icons-react";
 import Link from "next/link";
-import { useColorScheme } from "@mantine/hooks";
 import "./AppHeader.component.css";
 
 const links = [
@@ -13,13 +12,9 @@ const links = [
 
 export const AppHeader = () => {
   const mode = "light";
-  // There are issues calling useColorScheme on the sever, so stopping ssr on layout component
-  // const mode = useColorScheme();
-  // console.log(mode);
-
   return (
-    <Flex className={"root"}>
-      <Flex align="center" direction="row" gap="lg" className={"nav"}>
+    <Flex className={"appHeader-container"}>
+      <Flex align="center" direction="row" gap="lg" className={"appHeader-nav"}>
         {links.map((link) => {
           return (
             <Link

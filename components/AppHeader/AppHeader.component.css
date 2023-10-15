@@ -1,7 +1,7 @@
-.root{
+.appHeader-container{
     padding: 10px
 }
 
-.nav{
+.appHeader-nav{
     flex-grow: 1
 }
