@@ -1,7 +1,7 @@
-import { Flex, Text, Button, useComputedColorScheme } from "@mantine/core";
-import { IconSun, IconMoon } from "@tabler/icons-react";
+import { Flex, Text } from "@mantine/core";
 import Link from "next/link";
 import "./AppHeader.component.css";
+import ToggleColorScheme from "./colorSchemeToggle";
 
 const links = [
   { id: "Home", link: "./" },
@@ -11,8 +11,6 @@ const links = [
 ];
 
 export const AppHeader = () => {
-  // const mode = useComputedColorScheme()
-  const mode = "light";
   return (
     <Flex id="header" className={"appHeader-container"}>
       <Flex align="center" direction="row" gap="lg" className={"appHeader-nav"}>
@@ -30,7 +28,7 @@ export const AppHeader = () => {
         })}
       </Flex>
       <Flex justify="end" direction="row">
-        <Button>{mode === "dark" ? <IconSun /> : <IconMoon />}</Button>
+        <ToggleColorScheme />
       </Flex>
     </Flex>
   );
