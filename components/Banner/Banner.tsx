@@ -24,35 +24,46 @@ function getData(pageId: string) {
   return { title, caption, imageSrc, buttonLink };
 }
 
+//TDOD: On hover increase the foucs on the image
+
 export const Banner = () => {
   //   const { title, caption, imageSrc, buttonLink } = getData();
 
+  const clickHandler = () => {
+    console.log("hi");
+  };
+
+  const imageHeight = "70%";
+  const imageWidth = "90%";
+
   return (
-    <div className={"banner-container"}>
+    <Flex className={"banner-container"} align={"center"} justify={"center"}>
       <Image
+        onClick={() => clickHandler()}
+        className={"banner-image"}
+        alt={"image alt"}
         src="/banner-image.jpg"
-        h={"100%"}
+        h={imageHeight}
+        w={imageWidth}
         style={{ position: "absolute" }}
       />
       <Flex
+        align={"flex-end"}
         justify={"flex-end"}
-        align={"end"}
         style={{
-          position: "relative",
-          padding: "50px",
-          height: "100%",
-          width: "100%",
+          zIndex: 1,
+          width: imageWidth,
+          height: imageHeight,
         }}
       >
-        <Stack align="flex-end" justify="end" style={{ width: "40%" }}>
-          <Text ta="right"> A World in Colour </Text>
-          <Text ta="right">
+        <Stack className={"banner-text"} align="center">
+          <Text ta="center"> A World in Colour </Text>
+          <Text ta="center">
             Snippets of audio from around the world, condensed into a single
             visilisation
           </Text>
-          <Button>Explore</Button>
         </Stack>
       </Flex>
-    </div>
+    </Flex>
   );
 };

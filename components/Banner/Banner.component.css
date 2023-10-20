@@ -3,6 +3,25 @@
     left: 0;
     width: 100vw;
     height: 80vh;
-    border-bottom: solid;
+}
+
+.banner-image{
+    box-shadow: 0 4px 8px 0;
+    border: solid;
     border-width: 0.1px;
+}
+
+.banner-image:hover {
+    box-shadow: 0 10px 20px 0;
+}
+
+.banner-text {
+    background: var(--mantine-color-body);
+    width: 30%;
+    margin-right: 5%
+
+}
+
+.banner-text:hover.banner-image {
+    box-shadow: 0 10px 20px 0;
 }
