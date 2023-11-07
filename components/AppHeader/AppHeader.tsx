@@ -17,6 +17,7 @@ export const AppHeader = () => {
         {links.map((link) => {
           return (
             <Link
+              key={link.id}
               href={link.link}
               style={{ color: "black", textDecoration: "none" }}
             >
@@ -27,9 +28,7 @@ export const AppHeader = () => {
           );
         })}
       </Flex>
-      <Flex justify="end" direction="row">
-        <ToggleColorScheme />
-      </Flex>
+      <ToggleColorScheme />
     </Flex>
   );
 };

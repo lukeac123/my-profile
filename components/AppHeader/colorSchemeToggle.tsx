@@ -20,7 +20,8 @@ export default function ToggleColorScheme() {
         toggle(colorScheme);
       }}
     >
-      {colorScheme === "dark" ? <IconSun /> : <IconMoon />}
+      {colorScheme === "dark" ? "Light" : "Dark"}
+      {/* {colorScheme === "dark" ? <IconSun /> : <IconMoon />} */}
     </Button>
   );
 }

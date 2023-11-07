@@ -1,32 +1,72 @@
-import { Flex, Text, Image } from "@mantine/core";
-// import Image from "next/image";
+import {
+  Card as MantineCard,
+  Group,
+  Text,
+  Menu,
+  ActionIcon,
+  Image,
+  SimpleGrid,
+  rem,
+} from "@mantine/core";
+// import { IconDots, IconEye, IconFileZip, IconTrash } from "@tabler/icons-react";
+import { banners } from "../../utils/db";
+import "./Card.component.css";
 
-export const Card = () => {
+export type CardProps = {
+  id: string;
+  title: string;
+  caption: string;
+  headerImage: string;
+  gridImages: Array<string>;
+};
+
+function getData(pageId: string) {
+  const data = Object.values(banners).reduce(
+    (results: any, card: CardProps) => {
+      if (pageId === card.id) {
+        return card;
+      }
+      return results;
+    }
+  );
+  const title = data.title;
+  const caption = data.caption;
+  const imageSrc = data.imageSrc;
+  const buttonLink = data.buttonLink;
+  return { title, caption, imageSrc, buttonLink };
+}
+
+export const Card = ({
+  headerImage,
+  gridImages,
+  title,
+  caption,
+}: CardProps) => {
   return (
-    <Flex direction={"row"} justify={"center"} align={"center"}>
-      <Image
-        src={
-          "https://images.unsplash.com/photo-1579227114347-15d08fc37cae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
-        }
-        height={300}
-        alt="Picture of the author"
-      />
-      <div
-        style={{
-          width: "30%",
-          right: 0,
-          bottom: 0,
-          position: "relative",
-          display: "flex",
-          zIndex: 1,
-        }}
-      >
-        <Text>
-          This is a really long description of the Image describing what i have
-          done in the project. It should entice people in so that they click on
-          it.
+    <MantineCard withBorder shadow="sm" radius="md" className="card">
+      <MantineCard.Section mt="sm">
+        <Image alt={"cardHeader-Image"} src={`${headerImage}`} />
+      </MantineCard.Section>
+
+      <MantineCard.Section inheritPadding mt="sm" pb="md">
+        <SimpleGrid cols={3}>
+          {gridImages.map((image) => (
+            <Image alt={image} src={image} key={image} radius="sm" />
+          ))}
+        </SimpleGrid>
+      </MantineCard.Section>
+
+      <Text mt="sm" size="m">
+        {title}
+        <br />
+        <Text span size="sm" c="dimmed">
+          {caption}
         </Text>
-      </div>
-    </Flex>
+      </Text>
+    </MantineCard>
   );
 };
+
+{
+  /* <Text span inherit c="var(--mantine-color-anchor)"> */
+}
