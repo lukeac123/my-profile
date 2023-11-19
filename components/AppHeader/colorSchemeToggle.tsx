@@ -7,20 +7,22 @@ import {
 import { IconSun, IconMoon } from "@tabler/icons-react";
 
 export default function ToggleColorScheme() {
-  const { colorScheme, setColorScheme } = useMantineColorScheme();
+  // const { colorScheme, setColorScheme } = useMantineColorScheme();
 
-  function toggle(colorScheme: MantineColorScheme) {
-    if (colorScheme === "dark") {
-      setColorScheme("light");
-    } else setColorScheme("dark");
-  }
+  // function toggle(colorScheme: MantineColorScheme) {
+  //   if (colorScheme === "dark") {
+  //     setColorScheme("light");
+  //   } else setColorScheme("dark");
+  // }
   return (
     <Button
-      onClick={() => {
-        toggle(colorScheme);
-      }}
+    // onClick={() => {
+    //   toggle(colorScheme);
+    // }}
     >
-      {colorScheme === "dark" ? <IconSun /> : <IconMoon />}
+      <IconSun />
+      {/* {colorScheme === "dark" ? "Light" : "Dark"} */}
+      {/* {colorScheme === "dark" ? <IconSun /> : <IconMoon />} */}
     </Button>
   );
 }

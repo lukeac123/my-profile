@@ -1,4 +1,5 @@
 import { pages } from "../../utils/db";
+import { Stack, Text } from "@mantine/core";
 
 export type Page = {
   pageId: string;
@@ -17,6 +18,11 @@ function getData(pageId: string) {
 }
 
 export default function InsightsPage({ params }) {
-  const data = getData(params.pageId);
-  return <div> {data.title} </div>;
+  const pageData = getData(params.pageId);
+  return (
+    <Stack gap="0" align="center" style={{ width: "70%" }}>
+      <Text> {pageData.title}</Text>
+      <Text> {pageData.description}</Text>
+    </Stack>
+  );
 }

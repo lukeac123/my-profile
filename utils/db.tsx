@@ -1,18 +1,21 @@
 export const pages = [
   {
-    pageId: "projects",
-    title: "Projects",
+    pageId: "creative_coding",
+    title: "Creative Coding",
     description: "list of all the projetcts you are doing",
+    cards: [],
   },
   {
-    pageId: "about",
-    title: "About",
+    pageId: "photos",
+    title: "Photos",
     description: "picture of you and description of what you're trying to do",
+    cards: [],
   },
   {
     pageId: "cv",
     title: "CV",
     description: "Add you CV here with a download link",
+    cards: [],
   },
 ];
 
