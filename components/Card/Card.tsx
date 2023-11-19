@@ -1,13 +1,4 @@
-import {
-  Card as MantineCard,
-  Group,
-  Text,
-  Menu,
-  ActionIcon,
-  Image,
-  SimpleGrid,
-  rem,
-} from "@mantine/core";
+import { Card as MantineCard, Text, Image, SimpleGrid } from "@mantine/core";
 // import { IconDots, IconEye, IconFileZip, IconTrash } from "@tabler/icons-react";
 import { banners } from "../../utils/db";
 import "./Card.component.css";
@@ -19,6 +10,10 @@ export type CardProps = {
   headerImage: string;
   gridImages: Array<string>;
 };
+
+//Is it possible to fetch the data for the cards within the Card itself ?
+//The number of cards would  need to be called by the pages
+//But could do call to match what pages the cards are on and then render the ones that match
 
 function getData(pageId: string) {
   const data = Object.values(banners).reduce(
@@ -43,7 +38,14 @@ export const Card = ({
   caption,
 }: CardProps) => {
   return (
-    <MantineCard withBorder shadow="sm" radius="md" className="card">
+    <MantineCard withBorder shadow="sm" className="card">
+      <Text>
+        {title}
+        <br />
+        <Text span size="sm" c="dimmed">
+          {caption}
+        </Text>
+      </Text>
       <MantineCard.Section mt="sm">
         <Image alt={"cardHeader-Image"} src={`${headerImage}`} />
       </MantineCard.Section>
@@ -55,14 +57,6 @@ export const Card = ({
           ))}
         </SimpleGrid>
       </MantineCard.Section>
-
-      <Text mt="sm" size="m">
-        {title}
-        <br />
-        <Text span size="sm" c="dimmed">
-          {caption}
-        </Text>
-      </Text>
     </MantineCard>
   );
 };

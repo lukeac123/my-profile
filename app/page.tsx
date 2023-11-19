@@ -1,5 +1,5 @@
 "use client";
-import { Stack } from "@mantine/core";
+import { Stack, Text, Title } from "@mantine/core";
 import { Card } from "../components/Card";
 
 const cards = [
@@ -19,10 +19,28 @@ const cards = [
 
 export default function HomePage() {
   return (
-    <Stack gap="0" align="center">
+    <Stack gap="0" align="center" style={{ width: "70%" }}>
+      <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+        <Title order={1} ta="left">
+          Engineer. Developer. Artist.
+        </Title>
+        <Text size="lg" ta="left">
+          Mechanical Engineer by Learning, Front End Developer by profession,
+          Artists by desire. Within only a few years as software engineer,
+          starting in 2021 I'm still new to the space and enjoying the porcess
+          of learning new tools and finding methods of applying them creative an
+          intersting ways.
+        </Text>
+        <br />
+        <Text ta="left" td="underline" size="lg">
+          Highlights so Far:
+        </Text>
+      </div>
+
       {cards.map((card) => {
         return (
           <Card
+            id={card.title}
             key={card.title}
             gridImages={card.gridImages}
             headerImage={card.headerImage}
