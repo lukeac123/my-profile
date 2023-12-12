@@ -2,7 +2,7 @@
 import { Stack } from "@mantine/core";
 import { P5CanvasInstance, SketchProps } from "@p5-wrapper/react";
 import dynamic from "next/dynamic";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 
 export const NextReactP5Wrapper = dynamic(
   async () => (await import("@p5-wrapper/react")).ReactP5Wrapper,
@@ -45,16 +45,45 @@ function sketch(p5: P5CanvasInstance<MySketchProps>) {
 }
 
 export default function P5Sketch() {
-  const [data, setData] = useState("");
+  const [data, setData] = useState();
+
+  // "https://ssd-api.jpl.nasa.gov/fireball.api?date-min=2020-01-01&req-alt=true" - NASA Fireball Data
 
   useEffect(() => {
     const getData = async () => {
-      const resp = await fetch("https://api.sampleapis.com/switch/games");
+      const resp = await fetch(
+        "http://datapoint.metoffice.gov.uk/public/data/val/wxobs/all/json/3377?res=hourly&key=e03b31b3-0dcd-4b3f-8ddc-45c27609ba66"
+      );
       const json = await resp.json();
       setData(json);
     };
     getData();
   }, []);
+
+  const metOfficeData = () => {
+    const weatherDataPerHour = data?.SiteRep.DV.Location.Period[1].Rep;
+    weatherDataPerHour?.map((weatherData) => {
+      return { ...weatherData, testing: "testing" };
+      // console.log(weatherData);
+      // weatherData?.reduce((accumulator, currentValue) => {
+      //   console.log(currentValue);
+      // });
+    });
+    console.log(weatherDataPerHour);
+  };
+
+  // reduce((accumulator, currentValue) => {
+  //   console.log(currentValue[])
+  //   // console.log(Object.entries(currentValue));
+  //   // console.log(typeof currentValue);
+
+  //   console.log(currentValue);
+  // }, []);
+  // console.log(data?.SiteRep.Wx.Param);
+  // // data?.SiteRep.DV.Location.Period[1].Rep
+
+  metOfficeData();
+  // console.log(data);
 
   return (
     <Stack
@@ -63,7 +92,19 @@ export default function P5Sketch() {
       justify="center"
       style={{ width: "100vw", height: "100vh" }}
     >
-      {data && <NextReactP5Wrapper sketch={sketch} data={data} />}
+      {/* Why can i not see the fallback when the sketch is loading ? */}
+      <Suspense
+        fallback={
+          <div style={{ background: "pink", height: "100%", width: "100%" }}>
+            Loading
+          </div>
+        }
+      >
+        <NextReactP5Wrapper sketch={sketch} data={data} />
+      </Suspense>
     </Stack>
   );
 }
+
+// capabilities
+// locationId=352297
