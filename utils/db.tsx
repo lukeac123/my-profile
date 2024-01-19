@@ -48,3 +48,47 @@ export const banners = [
     buttonLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
 ];
+
+export const blogs = [
+  {
+    country: "Colombia",
+    location: "Green Acre Hostel",
+    link: "green-acre-hostel",
+    city: "Bogota",
+    date: "15/04/24",
+    caption:
+      "Time spent exporing the city and a vist to the largest gay club in the world",
+    mood: "",
+    weather: "",
+    imgSrc: "",
+    audioSrc: "",
+    description: "",
+  },
+  {
+    country: "Colombia",
+    location: "Sumudra",
+    link: "sumudra",
+    city: "Cali",
+    date: "15/04/24",
+    caption: "lkjlkjlkj",
+    mood: "",
+    weather: "",
+    imgSrc: "",
+    audioSrc: "",
+    descirption: "",
+  },
+  {
+    country: "Colombia",
+    location: "Yala National Park",
+    link: "yala",
+    city: "Medillin",
+    date: "15/04/24",
+    caption: "lkjlkjlkjl",
+    mood: "",
+    weather: "",
+    imgSrc: "yala-national-park.jpeg",
+    audioSrc: "",
+    description:
+      "Yala National Park located towards the South of the Island. I arrived in Yala by tuktuk after 5 hours accompanied by my fellow Ooplahs and the Spitfire team. We have an early start in the morinng with the Safari Jeep coming at 6am. The Park contains Elephants, Crocodiles, Peackcocks, Eagels",
+  },
+];
