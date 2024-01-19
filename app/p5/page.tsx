@@ -3,6 +3,7 @@ import { Stack } from "@mantine/core";
 import { P5CanvasInstance, SketchProps } from "@p5-wrapper/react";
 import dynamic from "next/dynamic";
 import { useState, useEffect, Suspense } from "react";
+import { dataNormalisation } from "../../utils/dataTransformation";
 
 export const NextReactP5Wrapper = dynamic(
   async () => (await import("@p5-wrapper/react")).ReactP5Wrapper,
@@ -13,54 +14,30 @@ type MySketchProps = SketchProps & {
   data: Array<string>;
 };
 
-function setup(p5: P5CanvasInstance) {
-  console.log("setup");
+function setup(p5: P5CanvasInstance, data: Array<Object>) {
+  const test = dataNormalisation(50, 0, 50);
+  console.log(test);
+
   return () => {
     p5.createCanvas(600, 400, p5.WEBGL);
     p5.background(250);
+    // p5.ambientLight(60, 60, 60);
+    // p5.pointLight(255, 150, 0, 255, 0, 0);
+    // p5.torus(80, 20, 4, 5);
     // p5.normalMaterial();
   };
 }
 
-function sketch(p5: P5CanvasInstance<MySketchProps>) {
-  let sketchData: any;
-
-  p5.setup = setup(p5);
-  // How are the props passed to updateWithChildren, is there a better way to pass this into the setUp / draw functions
-  p5.updateWithProps = (data) => {
-    if (data) {
-      sketchData = data;
-    }
-  };
-
-  //This draw loop works, but why doesn't the data pass down when using as a detached function ?
-  p5.draw = () => {
-    // p5.fill(255);
-    console.log(sketchData.data);
-    sketchData?.data?.map((dataPoint) => {
-      const x = Math.random() * 100;
-      p5.fill(x, 204, 0, 0.5);
-      console.log(dataPoint.vel);
-      p5.circle(dataPoint.lon, dataPoint.lat, dataPoint.vel * 11);
-    });
-
-    p5.circle(200, 10, 100);
-
-    // p5.background(250);
-    // p5.normalMaterial();
-    // p5.push();
-    // p5.rotateZ(p5.frameCount * 0.01);
-    // p5.rotateX(p5.frameCount * 0.01);
-    // p5.rotateY(p5.frameCount * 0.01);
-    // p5.plane(100);
-    // p5.pop();
-  };
+function drawDataPoints(p5, NasaDataObject) {
+  return NasaDataObject.map((element) => {
+    const { lon, lat, energy, vel } = element;
+    p5.circle(lon, lat, energy);
+    p5.torus(energy, vel, 24, 16);
+  });
 }
 
 export default function P5Sketch() {
   const [data, setData] = useState();
-
-  // "https://ssd-api.jpl.nasa.gov/fireball.api?date-min=2020-01-01&req-alt=true" - NASA Fireball Data
 
   useEffect(() => {
     const getData = async () => {
@@ -74,29 +51,26 @@ export default function P5Sketch() {
     getData();
   }, []);
 
-  // const metOfficeData = () => {
-  //   const weatherDataPerHour = data?.SiteRep.DV.Location.Period[1].Rep;
-  //   weatherDataPerHour?.map((weatherData) => {
-  //     return { ...weatherData, testing: "testing" };
-  //     // console.log(weatherData);
-  //     // weatherData?.reduce((accumulator, currentValue) => {
-  //     //   console.log(currentValue);
-  //     // });
-  //   });
-  //   console.log(weatherDataPerHour);
-  // };
-
   const NasaDataObject = data?.data.map((value) => {
     const object = data?.fields.reduce((acc, element, index) => {
       return {
         ...acc,
         [element]: value[index],
       };
-    }, {});
+    }, []);
     return object;
   });
 
-  // console.log(NasaDataObject);
+  function sketch(p5: P5CanvasInstance<MySketchProps>) {
+    p5.setup = setup(p5, NasaDataObject);
+
+    p5.draw = () => {
+      const OrderedData = NasaDataObject.sort((a, b) => {
+        return b.energy - a.energy;
+      });
+      drawDataPoints(p5, OrderedData);
+    };
+  }
 
   return (
     <Stack
@@ -109,15 +83,26 @@ export default function P5Sketch() {
       <Suspense
         fallback={
           <div style={{ background: "pink", height: "100%", width: "100%" }}>
-            Loading
+            Stop Being Impatient......
           </div>
         }
       >
-        <NextReactP5Wrapper sketch={sketch} data={NasaDataObject} />
+        {NasaDataObject && (
+          <NextReactP5Wrapper sketch={sketch} data={NasaDataObject} />
+        )}
       </Suspense>
     </Stack>
   );
 }
 
-// capabilities
-// locationId=352297
+// const metOfficeData = () => {
+//   const weatherDataPerHour = data?.SiteRep.DV.Location.Period[1].Rep;
+//   weatherDataPerHour?.map((weatherData) => {
+//     return { ...weatherData, testing: "testing" };
+//     // console.log(weatherData);
+//     // weatherData?.reduce((accumulator, currentValue) => {
+//     //   console.log(currentValue);
+//     // });
+//   });
+//   console.log(weatherDataPerHour);
+// };
