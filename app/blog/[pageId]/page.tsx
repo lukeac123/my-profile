@@ -1,5 +1,6 @@
 import { Stack, Text, Title, Image } from "@mantine/core";
 import { blogs } from "../../../utils/db";
+import { Suspense } from "react";
 
 export type Page = {
   pageId: string;
@@ -23,12 +24,19 @@ export default function InsightsPage({ params }) {
   return (
     <Stack gap="0" align="center" style={{ width: "70%" }}>
       <Title order={1}> {blogData.location} </Title>
-      <Image
-        width={100}
-        height={100}
-        src={`/blogs/${blogData.imgSrc}`}
-        style={{ width: "500px", height: "500px" }}
-      />
+      <Text> {blogData.description} </Text>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Image
+          width={100}
+          height={100}
+          src={`/blogs/${blogData.imgSrc}`}
+          style={{ width: "500px", height: "500px" }}
+        />
+      </Suspense>
     </Stack>
   );
+}
+
+function LoadingSpinner() {
+  return <> ...loading </>;
 }
