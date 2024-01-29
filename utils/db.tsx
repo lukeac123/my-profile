@@ -62,7 +62,8 @@ export const blogs = [
     weather: "",
     imgSrc: "",
     audioSrc: "",
-    description: "",
+    description:
+      "Yala National Park located towards the South of the Island. I arrived in Yala by tuktuk after 5 hours accompanied by my fellow Ooplahs and the Spitfire team. We have an early start in the morinng with the Safari Jeep coming at 6am. The Park contains Elephants, Crocodiles, Peackcocks, Eagels",
   },
   {
     country: "Colombia",

@@ -1,9 +1,5 @@
 .listCardContainer{
-    border: solid;
-    border-width: 0.1px;
     width: 700px;
-    border-radius: 10px;
-    padding: 20px;
     position: relative
 }
 
