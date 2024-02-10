@@ -1,21 +1,20 @@
-.listCardContainer{
-    width: 700px;
-    position: relative
+.listCardContainer {
+  width: 700px;
+  position: relative;
 }
 
-.listCardContent{
-    width: 70%;
-    height: 100%
+.listCardContent {
+  width: 70%;
+  height: 100%;
 }
 
-.listCardContentSecondary{
-    position: absolute;
-    right: 0;
-    padding-right: 20px
+.listCardContentSecondary {
+  position: absolute;
+  right: 0;
+  padding-right: 20px;
 }
-
 
 .listCardContainer:hover {
-    box-shadow: 0 1px 2px 0;
-    cursor: pointer;
+  box-shadow: 0 1px 2px 0;
+  cursor: pointer;
 }

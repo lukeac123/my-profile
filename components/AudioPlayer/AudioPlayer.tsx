@@ -30,7 +30,7 @@ function timeFormat(durationS: number): string {
 export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
   function AudioPlayer(
     { src, title, skipDuration = 15, className, ...rest },
-    ref
+    ref,
   ) {
     const [audioElem, setAudioElem] = useState<HTMLAudioElement | null>(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -72,7 +72,7 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
         if (audioElem) {
           audioElem.removeEventListener("timeupdate", timeUpdate);
           audioElem.addEventListener("canplaythrough", () =>
-            setPlayDisabled(false)
+            setPlayDisabled(false),
           );
         }
       };
@@ -183,5 +183,5 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
         </Stack>
       </Card>
     );
-  }
+  },
 );
