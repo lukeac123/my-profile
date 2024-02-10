@@ -1,5 +1,3 @@
-//TODO: make this responsive to the breakpoints using the responsive props
-//TODO: look into making the iframa an async call and using useSuspense to fall back
 import { Stack, Text, Title, Image, Card, Flex } from "@mantine/core";
 import { blogs } from "../../../utils/db";
 import { Suspense } from "react";
@@ -46,12 +44,7 @@ export default function InsightsPage({ params }) {
           <Card shadow="sm" padding="lg" radius="md" withBorder>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.191219097855!2d-0.10831542318198292!3d51.564727971826485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b9b2e08a38b%3A0xba5d26747ab58306!2sFinsbury%20Park!5e0!3m2!1sen!2suk!4v1705690477712!5m2!1sen!2suk"
-              // width="600"
-              // height="450"
-              // style="border:0;"
-              // allowfullscreen=""
               loading="lazy"
-              // referrerpolicy="no-referrer-when-downgrade"
             />
           </Card>
           <AudioPlayer

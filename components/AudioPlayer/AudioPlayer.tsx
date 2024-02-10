@@ -1,4 +1,3 @@
-// Page the Audio Player is in a client component, the audio meta data is preloaded the audio data is loaded after
 "use client";
 import { Stack, Button, Text, Flex, Slider, Card } from "@mantine/core";
 import { useEffect, useState, useCallback, forwardRef } from "react";
@@ -12,7 +11,6 @@ import {
   IconVolume,
   IconVolumeOff,
 } from "@tabler/icons-react";
-import { clsx } from "clsx";
 import "./AudioPlayer.component.css";
 
 export interface AudioPlayerProps {
