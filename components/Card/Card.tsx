@@ -22,7 +22,7 @@ function getData(pageId: string) {
         return card;
       }
       return results;
-    }
+    },
   );
   const title = data.title;
   const caption = data.caption;

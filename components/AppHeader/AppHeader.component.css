@@ -1,18 +1,18 @@
-.appHeader-container{
-    padding: 10px;
-    z-index: 999;
-    position: relative;
-    border-bottom: solid;
-    border-width: 0.1px;
-    background-color: var(--mantine-color-body);
+.appHeader-container {
+  padding: 10px;
+  z-index: 999;
+  position: relative;
+  border-bottom: solid;
+  border-width: 0.1px;
+  background-color: var(--mantine-color-body);
 }
 
-.appHeader-title{
-    flex-grow: 1;
-    color: var(--mantine-color-text);
-    --text-color: var(--mantine-color-text);
+.appHeader-title {
+  flex-grow: 1;
+  color: var(--mantine-color-text);
+  --text-color: var(--mantine-color-text);
 }
 
 .appHeader-nav {
-    color: var(--mantine-color-text)
+  color: var(--mantine-color-text);
 }

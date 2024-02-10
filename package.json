@@ -6,13 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "pretty-quick",
+    "prettier-all": "prettier . --write"
   },
   "dependencies": {
     "@mantine/core": "7.4.2",
     "@mantine/hooks": "7.4.1",
     "@tabler/icons-react": "^2.38.0",
     "next": "13.4.4",
+    "prettier": "^3.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -25,6 +28,7 @@
     "postcss": "^8.4.24",
     "postcss-preset-mantine": "1.6.0",
     "postcss-simple-vars": "^7.0.1",
+    "pretty-quick": "^4.0.0",
     "typescript": "5.0.4"
   }
 }

@@ -3,12 +3,11 @@ import Link from "next/link";
 import "./AppHeader.component.css";
 import ToggleColorScheme from "./colorSchemeToggle";
 
-//TODO: Create link component with color and text decoration overriden
-
 const links = [
   { id: "Coding Projects", link: "./coding" },
   { id: "Photos", link: "./photos" },
   { id: "CV", link: "./cv" },
+  { id: "Blog", link: "./blog" },
 ];
 
 export const AppHeader = () => {

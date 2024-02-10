@@ -1,6 +1,7 @@
-import { Stack, Text, Title, Image } from "@mantine/core";
+import { Stack, Text, Title, Image, Card, Flex } from "@mantine/core";
 import { blogs } from "../../../utils/db";
 import { Suspense } from "react";
+import { AudioPlayer } from "../../../components";
 
 export type Page = {
   pageId: string;
@@ -22,17 +23,36 @@ function getData(pageId: string) {
 export default function InsightsPage({ params }) {
   const blogData = getData(params.pageId);
   return (
-    <Stack gap="0" align="center" style={{ width: "70%" }}>
+    <Stack gap="lg" align="center" style={{ width: "80%" }}>
       <Title order={1}> {blogData.location} </Title>
-      <Text> {blogData.description} </Text>
-      <Suspense fallback={<LoadingSpinner />}>
-        <Image
-          width={100}
-          height={100}
-          src={`/blogs/${blogData.imgSrc}`}
-          style={{ width: "500px", height: "500px" }}
-        />
-      </Suspense>
+      <Flex direction={"row"} gap={"xl"}>
+        <Stack>
+          <Card shadow="sm" padding="lg" radius="md" withBorder>
+            <Text> {blogData.description} </Text>
+          </Card>
+          <Card shadow="sm" padding="lg" radius="md" withBorder>
+            <Suspense fallback={<LoadingSpinner />}>
+              Picture of the Day
+              <Image
+                src={`/blogs/${blogData.imgSrc}`}
+                style={{ width: "100%" }}
+              />
+            </Suspense>
+          </Card>
+        </Stack>
+        <Stack style={{ width: "30%", minWidth: "400px" }}>
+          <Card shadow="sm" padding="lg" radius="md" withBorder>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.191219097855!2d-0.10831542318198292!3d51.564727971826485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b9b2e08a38b%3A0xba5d26747ab58306!2sFinsbury%20Park!5e0!3m2!1sen!2suk!4v1705690477712!5m2!1sen!2suk"
+              loading="lazy"
+            />
+          </Card>
+          <AudioPlayer
+            title={blogData.audioTitle}
+            src={`/blogs/${blogData.audioSrc}`}
+          />
+        </Stack>
+      </Flex>
     </Stack>
   );
 }
