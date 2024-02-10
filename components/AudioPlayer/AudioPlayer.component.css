@@ -1,0 +1,12 @@
+.audioPlayer-container{
+    min-width: 100%;
+
+}
+.audioPlayer-sliderContainer{
+    width: 100%;
+}
+
+.audioPlayer-slider{
+    margin: auto;
+    flex-grow: 1;
+}
