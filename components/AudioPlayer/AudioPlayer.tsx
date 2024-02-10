@@ -118,7 +118,7 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
     };
 
     return (
-      <Card className={"audioPlayer-container"} ref={ref}>
+      <Card className={"audioPlayer-container"} ref={ref} aria-label={title}>
         <Stack align="center" gap={3}>
           <Text>{title}</Text>
           <audio
