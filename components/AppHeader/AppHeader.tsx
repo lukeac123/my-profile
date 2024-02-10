@@ -4,10 +4,8 @@ import "./AppHeader.component.css";
 import ToggleColorScheme from "./colorSchemeToggle";
 
 const links = [
-  { id: "Coding Projects", link: "./coding" },
-  { id: "Photos", link: "./photos" },
+  { id: "Blog", link: "./" },
   { id: "CV", link: "./cv" },
-  { id: "Blog", link: "./blog" },
 ];
 
 export const AppHeader = () => {
