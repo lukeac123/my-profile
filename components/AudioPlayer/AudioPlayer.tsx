@@ -4,7 +4,6 @@ import { useEffect, useState, useCallback, forwardRef } from "react";
 import {
   IconPlayerPlay,
   IconPlayerPause,
-  IconPlayerStopFilled,
   IconPlayerSkipForward,
   IconPlayerSkipBack,
   IconDownload,
@@ -23,14 +22,14 @@ export interface AudioPlayerProps {
 function timeFormat(durationS: number): string {
   const date = new Date(0);
   date.setSeconds(durationS);
-  const timeString = date.toISOString().substring(11, 19);
+  const timeString = date?.toISOString().substring(11, 19);
   return timeString;
 }
 
 export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
   function AudioPlayer(
     { src, title, skipDuration = 15, className, ...rest },
-    ref,
+    ref
   ) {
     const [audioElem, setAudioElem] = useState<HTMLAudioElement | null>(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -56,7 +55,6 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
     const formatMetaData = () => {
       if (audioElem) {
         const durationFormatted = timeFormat(audioElem.duration);
-        console.log(audioElem.duration);
         setDurationString(durationFormatted);
         setDurationSeconds(audioElem.duration);
         setPlayDisabled(false);
@@ -72,7 +70,7 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
         if (audioElem) {
           audioElem.removeEventListener("timeupdate", timeUpdate);
           audioElem.addEventListener("canplaythrough", () =>
-            setPlayDisabled(false),
+            setPlayDisabled(false)
           );
         }
       };
@@ -118,70 +116,69 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
     };
 
     return (
-      <Card className={"audioPlayer-container"} ref={ref} aria-label={title}>
-        <Stack align="center" gap={3}>
-          <Text>{title}</Text>
-          <audio
-            ref={audioRef}
-            aria-label="audio"
-            src={`${src}`}
-            preload={"metadata"} // preloads in the meta data so times can be loaded in
+      <Stack
+        className={"audioPlayer-container"}
+        ref={ref}
+        aria-label={title}
+        align="center"
+        gap={3}
+      >
+        <Text>{title}</Text>
+        <audio
+          ref={audioRef}
+          aria-label="audio"
+          src={`${src}`}
+          preload={"metadata"} // preloads in the meta data so times can be loaded in
+        />
+        <Flex
+          className={"audioPlayer-sliderContainer"}
+          direction={"row"}
+          gap={"md"}
+        >
+          <Text>{timeNowString}</Text>
+          <Slider
+            className={"audioPlayer-slider"}
+            min={0}
+            max={durationSeconds}
+            value={timeNowSeconds}
+            onChange={handleSliderInput}
+            label={null}
           />
-          <Flex
-            className={"audioPlayer-sliderContainer"}
-            direction={"row"}
-            gap={"md"}
+          <Text>{durationString}</Text>
+        </Flex>
+        <Flex direction={"row"} gap={"xs"}>
+          <a href={"www.google.com"} download target="_blank" rel="noreferrer">
+            <Button variant="default" aria-label="download audio">
+              <IconDownload />
+            </Button>
+          </a>
+          <Button
+            variant="default"
+            aria-label="skip audio backwards"
+            onClick={handleRewind}
           >
-            <Text>{timeNowString}</Text>
-            <Slider
-              className={"audioPlayer-slider"}
-              min={0}
-              max={durationSeconds}
-              value={timeNowSeconds}
-              onChange={handleSliderInput}
-              label={null}
-            />
-            <Text>{durationString}</Text>
-          </Flex>
-          <Flex direction={"row"} gap={"xs"}>
-            <a
-              href={"www.google.com"}
-              download
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Button variant="default" aria-label="download audio">
-                <IconDownload />
-              </Button>
-            </a>
-            <Button
-              variant="default"
-              aria-label="skip audio backwards"
-              onClick={handleRewind}
-            >
-              <IconPlayerSkipBack />
-            </Button>
-            <Button
-              variant="default"
-              onClick={handlePlay}
-              disabled={playDisabled}
-              aria-label={isPlaying ? "pause audio" : "play audio"}
-            >
-              {isPlaying ? <IconPlayerPause /> : <IconPlayerPlay />}
-            </Button>
-            <Button
-              variant="default"
-              aria-label="skip audio forward"
-              onClick={handleFastforward}
-            >
-              <IconPlayerSkipForward />
-            </Button>
-            <Button variant="default" onClick={handleMute}>
-              {mute ? <IconVolumeOff /> : <IconVolume />}
-            </Button>
-          </Flex>
-        </Stack>
-      </Card>
+            <IconPlayerSkipBack />
+          </Button>
+          <Button
+            variant="default"
+            onClick={handlePlay}
+            disabled={playDisabled}
+            aria-label={isPlaying ? "pause audio" : "play audio"}
+          >
+            {isPlaying ? <IconPlayerPause /> : <IconPlayerPlay />}
+          </Button>
+          <Button
+            variant="default"
+            aria-label="skip audio forward"
+            onClick={handleFastforward}
+          >
+            <IconPlayerSkipForward />
+          </Button>
+          <Button variant="default" onClick={handleMute}>
+            {mute ? <IconVolumeOff /> : <IconVolume />}
+          </Button>
+        </Flex>
+      </Stack>
     );
-  },
+  }
 );
