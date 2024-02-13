@@ -1,6 +1,5 @@
-"use client";
 import { Stack, Text, Title, Flex } from "@mantine/core";
-import { ListCard } from "../components";
+import { SelectableCard } from "../components";
 import { blogs } from "../utils/db";
 
 export default function BlogPage() {
@@ -20,7 +19,7 @@ export default function BlogPage() {
         {blogs.map((blog) => {
           const { location, city, country, date, caption, link } = blog;
           return (
-            <ListCard
+            <SelectableCard
               location={location}
               city={city}
               country={country}

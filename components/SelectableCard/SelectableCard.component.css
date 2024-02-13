@@ -1,17 +1,16 @@
 .listCardContainer {
-  width: 700px;
-  position: relative;
+  width: 100%;
+  /* position: relative; */
 }
 
 .listCardContent {
   width: 70%;
-  height: 100%;
 }
 
 .listCardContentSecondary {
-  position: absolute;
+  /* position: absolute;
   right: 0;
-  padding-right: 20px;
+  padding-right: 20px; */
 }
 
 .listCardContainer:hover {

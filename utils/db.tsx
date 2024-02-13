@@ -53,7 +53,7 @@ export const blogs = [
   {
     country: "Colombia",
     location: "Green Acre Hostel",
-    link: "green-acre-hostel",
+    link: "/blog/green-acre-hostel",
     city: "Bogota",
     date: "15/04/24",
     caption:
@@ -70,7 +70,7 @@ export const blogs = [
   {
     country: "Colombia",
     location: "Sumudra",
-    link: "sumudra",
+    link: "/blog/sumudra",
     city: "Cali",
     date: "15/04/24",
     caption: "lkjlkjlkj",
@@ -86,7 +86,7 @@ export const blogs = [
   {
     country: "Colombia",
     location: "Yala National Park",
-    link: "yala",
+    link: "/blog/yala",
     city: "Medillin",
     date: "15/04/24",
     caption: "lkjlkjlkjl",
