@@ -1,8 +1,9 @@
 import React from "react";
-import { Providers } from "./providers";
 import { ColorSchemeScript } from "@mantine/core";
 import { AppHeader } from "../components/AppHeader";
 import { AppBody } from "../components/AppBody";
+import { MantineProvider } from "@mantine/core";
+import { theme } from "../theme";
 import "@mantine/core/styles.css";
 
 export const metadata = {
@@ -21,10 +22,10 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <Providers>
+        <MantineProvider theme={theme} defaultColorScheme="dark">
           <AppHeader />
           <AppBody> {children} </AppBody>
-        </Providers>
+        </MantineProvider>
       </body>
     </html>
   );
