@@ -1,6 +1,7 @@
 import { Flex, Text } from "@mantine/core";
 import Link from "next/link";
 import "./AppHeader.component.css";
+import ColorSchemeToggle from "./ColorSchemeToggle";
 
 const links = [
   { id: "Blog", link: "./" },
@@ -30,7 +31,7 @@ export const AppHeader = () => {
             </Link>
           );
         })}
-        {/* <ColorSchemeToggle /> */}
+        <ColorSchemeToggle />
       </Flex>
     </Flex>
   );
