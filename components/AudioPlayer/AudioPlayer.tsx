@@ -19,11 +19,13 @@ export interface AudioPlayerProps {
   className?: string;
 }
 
-function timeFormat(durationS: number): string {
-  const date = new Date(0);
-  date.setSeconds(durationS);
-  const timeString = date?.toISOString().substring(11, 19);
-  return timeString;
+function timeFormat(durationS: number) {
+  if (durationS) {
+    const date = new Date(0);
+    date.setSeconds(durationS);
+    const timeString = date.toISOString().substring(11, 19);
+    return timeString;
+  } else return "00:00:00";
 }
 
 export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
@@ -49,29 +51,37 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
         const currentTimeFormatted = timeFormat(audioElem.currentTime);
         setTimeNowString(currentTimeFormatted);
         setTimeNowSeconds(audioElem.currentTime);
+        const durationFormatted = timeFormat(audioElem.duration);
+        setDurationString(durationFormatted);
+        setDurationSeconds(audioElem.duration);
       }
     }, [audioElem]);
 
-    const formatMetaData = () => {
+    const onLoad = useCallback(() => {
+      console.log("onLoad1");
       if (audioElem) {
         const durationFormatted = timeFormat(audioElem.duration);
         setDurationString(durationFormatted);
         setDurationSeconds(audioElem.duration);
         setPlayDisabled(false);
+        timeUpdate;
       }
-    };
+    }, []);
 
     useEffect(() => {
       if (audioElem) {
         audioElem.addEventListener("timeupdate", timeUpdate);
-        formatMetaData();
+        audioElem.addEventListener("loadeddata", onLoad);
+        const durationFormatted = timeFormat(audioElem.duration);
+        setDurationString(durationFormatted);
+        setDurationSeconds(audioElem.duration);
+        setPlayDisabled(false);
+        timeUpdate;
       }
       return () => {
         if (audioElem) {
           audioElem.removeEventListener("timeupdate", timeUpdate);
-          audioElem.addEventListener("canplaythrough", () =>
-            setPlayDisabled(false)
-          );
+          audioElem.removeEventListener("loadeddata", onLoad);
         }
       };
     }, [audioElem, timeUpdate]);
@@ -128,7 +138,7 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
           ref={audioRef}
           aria-label="audio"
           src={`${src}`}
-          preload={"metadata"} // preloads in the meta data so times can be loaded in
+          preload="auto"
         />
         <Flex
           className={"audioPlayer-sliderContainer"}

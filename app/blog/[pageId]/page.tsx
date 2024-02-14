@@ -1,3 +1,4 @@
+"use client";
 import { Stack, Text, Title, Image, Card, Flex } from "@mantine/core";
 import { blogs } from "../../../utils/db";
 import { Suspense } from "react";

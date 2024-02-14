@@ -2,7 +2,8 @@
 import { Flex, Text } from "@mantine/core";
 import Link from "next/link";
 import "./AppHeader.component.css";
-import ToggleColorScheme from "./colorSchemeToggle";
+import ModeToggle from "./ModeToggle";
+import ColorSchemeToggle from "./ColorSchemeToggle";
 
 const links = [
   { id: "Blog", link: "./" },
@@ -24,7 +25,7 @@ export const AppHeader = () => {
             <Link
               key={link.id}
               href={link.link}
-              style={{ color: "black", textDecoration: "none" }}
+              style={{ color: "pink", textDecoration: "none" }}
             >
               <Text className={"appHeader-nav"} size="l" fw={500}>
                 {link.id}
@@ -32,7 +33,8 @@ export const AppHeader = () => {
             </Link>
           );
         })}
-        <ToggleColorScheme />
+        {/* <ModeToggle /> */}
+        <ColorSchemeToggle />
       </Flex>
     </Flex>
   );

@@ -1,4 +1,4 @@
-import { Stack, Text, Title } from "@mantine/core";
+import { Stack, Text, Title, Card } from "@mantine/core";
 import { SelectableCard } from "../components";
 import { blogs } from "../utils/db";
 
