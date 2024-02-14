@@ -63,15 +63,13 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
 
     useEffect(() => {
       if (audioElem) {
-        audioElem.addEventListener("timeupdate", timeUpdate);
         formatMetaData();
+        audioElem.addEventListener("timeupdate", timeUpdate);
       }
       return () => {
         if (audioElem) {
           audioElem.removeEventListener("timeupdate", timeUpdate);
-          audioElem.addEventListener("canplaythrough", () =>
-            setPlayDisabled(false)
-          );
+          audioElem.addEventListener("loadeddata", formatMetaData);
         }
       };
     }, [audioElem, timeUpdate]);
