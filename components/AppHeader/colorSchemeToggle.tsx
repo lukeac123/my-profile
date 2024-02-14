@@ -2,6 +2,9 @@
 import { DEFAULT_THEME, ColorPicker, Popover, Button } from "@mantine/core";
 import { useColorSchemeContext } from "../../app/Providers";
 
+//TODO: Create a Wrapper Card for the Mantine Card component, so don't have to duplicate the color context hook loads of times
+//TODO: Add useColorScheme hook to other components to chnage the background colours
+
 export default function ColorSchemeToggle() {
   const { colorScheme, setColorScheme } = useColorSchemeContext();
 
