@@ -1,12 +1,5 @@
 "use client";
-import { useState, useContext } from "react";
-import {
-  DEFAULT_THEME,
-  ColorPicker,
-  Text,
-  Popover,
-  Button,
-} from "@mantine/core";
+import { DEFAULT_THEME, ColorPicker, Popover, Button } from "@mantine/core";
 import { useColorSchemeContext } from "../../app/Providers";
 
 export default function ColorSchemeToggle() {
