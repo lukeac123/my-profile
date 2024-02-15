@@ -4,7 +4,7 @@ import "./AppHeader.component.css";
 import ColorSchemeToggle from "./ColorSchemeToggle";
 
 const links = [
-  { id: "Blog", link: "./" },
+  { id: "Blog", link: "/" },
   { id: "CV", link: "./cv" },
 ];
 
@@ -20,15 +20,15 @@ export const AppHeader = () => {
       <Flex align="center" direction="row" gap="lg">
         {links.map((link) => {
           return (
-            <Link
-              key={link.id}
+            <Text
+              className={"appHeader-nav"}
+              size="l"
+              fw={500}
               href={link.link}
-              style={{ color: "pink", textDecoration: "none" }}
+              component={Link}
             >
-              <Text className={"appHeader-nav"} size="l" fw={500}>
-                {link.id}
-              </Text>
-            </Link>
+              {link.id}
+            </Text>
           );
         })}
         <ColorSchemeToggle />

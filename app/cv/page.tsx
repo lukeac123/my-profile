@@ -1,4 +1,5 @@
-import { Stack, Text, Title, Flex } from "@mantine/core";
+import { Stack } from "@mantine/core";
+import { Card, CardTitle } from "../../components/Card";
 
 export default function BlogPage() {
   return (
