@@ -1,11 +1,10 @@
-"use client";
 import { Flex, Text } from "@mantine/core";
 import Link from "next/link";
 import "./AppHeader.component.css";
-import ToggleColorScheme from "./colorSchemeToggle";
+import ColorSchemeToggle from "./ColorSchemeToggle";
 
 const links = [
-  { id: "Blog", link: "./" },
+  { id: "Blog", link: "/" },
   { id: "CV", link: "./cv" },
 ];
 
@@ -21,18 +20,18 @@ export const AppHeader = () => {
       <Flex align="center" direction="row" gap="lg">
         {links.map((link) => {
           return (
-            <Link
-              key={link.id}
+            <Text
+              className={"appHeader-nav"}
+              size="l"
+              fw={500}
               href={link.link}
-              style={{ color: "black", textDecoration: "none" }}
+              component={Link}
             >
-              <Text className={"appHeader-nav"} size="l" fw={500}>
-                {link.id}
-              </Text>
-            </Link>
+              {link.id}
+            </Text>
           );
         })}
-        <ToggleColorScheme />
+        <ColorSchemeToggle />
       </Flex>
     </Flex>
   );

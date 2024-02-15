@@ -1,5 +1,5 @@
 "use client";
-import { Stack, Button, Text, Flex, Slider, Card } from "@mantine/core";
+import { Stack, Button, Text, Flex, Slider } from "@mantine/core";
 import { useEffect, useState, useCallback, forwardRef } from "react";
 import {
   IconPlayerPlay,
@@ -11,6 +11,9 @@ import {
   IconVolumeOff,
 } from "@tabler/icons-react";
 import "./AudioPlayer.component.css";
+import { useColorSchemeContext } from "../../app/Providers";
+
+//TODO: Fix issues with loading - guards added on line 26 + 125 to prevent null errors
 
 export interface AudioPlayerProps {
   src: string;
@@ -19,11 +22,13 @@ export interface AudioPlayerProps {
   className?: string;
 }
 
-function timeFormat(durationS: number): string {
-  const date = new Date(0);
-  date.setSeconds(durationS);
-  const timeString = date?.toISOString().substring(11, 19);
-  return timeString;
+function timeFormat(durationS: number) {
+  if (durationS) {
+    const date = new Date(0);
+    date.setSeconds(durationS);
+    const timeString = date.toISOString().substring(11, 19);
+    return timeString;
+  } else return "00:00:00";
 }
 
 export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
@@ -39,6 +44,7 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
     const [timeNowString, setTimeNowString] = useState("00:00:00");
     const [durationSeconds, setDurationSeconds] = useState(0);
     const [timeNowSeconds, setTimeNowSeconds] = useState(0);
+    const { colorScheme } = useColorSchemeContext();
 
     const audioRef = useCallback((audioNode) => {
       setAudioElem(audioNode);
@@ -49,29 +55,36 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
         const currentTimeFormatted = timeFormat(audioElem.currentTime);
         setTimeNowString(currentTimeFormatted);
         setTimeNowSeconds(audioElem.currentTime);
+        const durationFormatted = timeFormat(audioElem.duration);
+        setDurationString(durationFormatted);
+        setDurationSeconds(audioElem.duration);
       }
     }, [audioElem]);
 
-    const formatMetaData = () => {
+    const onLoad = useCallback(() => {
       if (audioElem) {
         const durationFormatted = timeFormat(audioElem.duration);
         setDurationString(durationFormatted);
         setDurationSeconds(audioElem.duration);
         setPlayDisabled(false);
+        timeUpdate;
       }
-    };
+    }, []);
 
     useEffect(() => {
       if (audioElem) {
         audioElem.addEventListener("timeupdate", timeUpdate);
-        formatMetaData();
+        audioElem.addEventListener("loadeddata", onLoad);
+        const durationFormatted = timeFormat(audioElem.duration);
+        setDurationString(durationFormatted);
+        setDurationSeconds(audioElem.duration);
+        setPlayDisabled(false);
+        timeUpdate;
       }
       return () => {
         if (audioElem) {
           audioElem.removeEventListener("timeupdate", timeUpdate);
-          audioElem.addEventListener("canplaythrough", () =>
-            setPlayDisabled(false)
-          );
+          audioElem.removeEventListener("loadeddata", onLoad);
         }
       };
     }, [audioElem, timeUpdate]);
@@ -109,7 +122,7 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
     };
 
     const handleSliderInput = (event) => {
-      if (audioElem) {
+      if (audioElem && event) {
         audioElem.currentTime = event;
         timeUpdate();
       }
@@ -128,7 +141,7 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
           ref={audioRef}
           aria-label="audio"
           src={`${src}`}
-          preload={"metadata"} // preloads in the meta data so times can be loaded in
+          preload="auto"
         />
         <Flex
           className={"audioPlayer-sliderContainer"}
@@ -143,13 +156,14 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
             value={timeNowSeconds}
             onChange={handleSliderInput}
             label={null}
+            color={colorScheme}
           />
           <Text>{durationString}</Text>
         </Flex>
         <Flex direction={"row"} gap={"xs"}>
           <a href={"www.google.com"} download target="_blank" rel="noreferrer">
             <Button variant="default" aria-label="download audio">
-              <IconDownload />
+              <IconDownload color={colorScheme} />
             </Button>
           </a>
           <Button
@@ -157,7 +171,7 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
             aria-label="skip audio backwards"
             onClick={handleRewind}
           >
-            <IconPlayerSkipBack />
+            <IconPlayerSkipBack color={colorScheme} />
           </Button>
           <Button
             variant="default"
@@ -165,17 +179,25 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
             disabled={playDisabled}
             aria-label={isPlaying ? "pause audio" : "play audio"}
           >
-            {isPlaying ? <IconPlayerPause /> : <IconPlayerPlay />}
+            {isPlaying ? (
+              <IconPlayerPause color={colorScheme} />
+            ) : (
+              <IconPlayerPlay color={colorScheme} />
+            )}
           </Button>
           <Button
             variant="default"
             aria-label="skip audio forward"
             onClick={handleFastforward}
           >
-            <IconPlayerSkipForward />
+            <IconPlayerSkipForward color={colorScheme} />
           </Button>
           <Button variant="default" onClick={handleMute}>
-            {mute ? <IconVolumeOff /> : <IconVolume />}
+            {mute ? (
+              <IconVolumeOff color={colorScheme} />
+            ) : (
+              <IconVolume color={colorScheme} />
+            )}
           </Button>
         </Flex>
       </Stack>

@@ -1,7 +1,8 @@
-import { Stack, Text, Title, Image, Card, Flex } from "@mantine/core";
+"use client";
+import { Stack, Text, Title, Image, Flex } from "@mantine/core";
 import { blogs } from "../../../utils/db";
 import { Suspense } from "react";
-import { AudioPlayer } from "../../../components";
+import { AudioPlayer, Card } from "../../../components";
 
 export type Page = {
   pageId: string;
@@ -37,10 +38,10 @@ export default function BlogPage({ params }) {
         gap={"xl"}
       >
         <Stack>
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
+          <Card>
             <Text> {blogData.description} </Text>
           </Card>
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
+          <Card>
             {/* <Suspense fallback={<LoadingSpinner />}> */}
             Picture of the Day
             <Image
@@ -52,10 +53,10 @@ export default function BlogPage({ params }) {
         </Stack>
         {/* Copy the same implementation for the breakpoints using the hook to define the % widths in css - alretatively could use media queries */}
         <Stack>
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
+          <Card>
             <iframe src={blogData.googleMapsIframeUrl} loading="lazy" />
           </Card>
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
+          <Card>
             <AudioPlayer
               title={blogData.audioTitle}
               src={`/blogs/${blogData.audioSrc}`}
