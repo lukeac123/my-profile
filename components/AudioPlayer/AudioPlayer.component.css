@@ -9,3 +9,7 @@
   margin: auto;
   flex-grow: 1;
 }
+
+.audioPlayer-button {
+  border: solid 1px var(--mantine-color-text)
+}

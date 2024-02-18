@@ -57,7 +57,7 @@ export const blogs = [
     city: "Bogota",
     date: "15/04/24",
     caption:
-      "Time spent exporing the city and a vist to the largest gay club in the world",
+      "Time spent exporing the city and a vist to the largest gay club in the world Time spent exporing the city and a vist to the largest gay club in the world Time spent exporing the city and a vist to the largest gay club in the world Time spent exporing the city and a vist to the largest gay club in the world Time spent exporing the city and a vist to the largest gay club in the world Time spent exporing the city and a vist to the largest gay club in the world",
     mood: "",
     weather: "",
     imgSrc: "",
