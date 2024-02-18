@@ -1,10 +1,7 @@
 import React from "react";
-import { ColorSchemeScript } from "@mantine/core";
+import { ColorSchemeScript, Flex } from "@mantine/core";
 import { AppHeader } from "../components/AppHeader";
-import { AppBody } from "../components/AppBody";
 import { Providers } from "./Providers";
-import { MantineProvider } from "@mantine/core";
-import { theme } from "../theme";
 import "@mantine/core/styles.css";
 
 export const metadata = {
@@ -25,7 +22,9 @@ export default function RootLayout({ children }: { children: any }) {
       <body>
         <Providers>
           <AppHeader />
-          <AppBody> {children} </AppBody>
+          <Flex align={"center"} justify={"center"}>
+            {children}
+          </Flex>
         </Providers>
       </body>
     </html>

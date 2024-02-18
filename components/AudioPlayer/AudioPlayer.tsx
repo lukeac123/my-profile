@@ -12,6 +12,7 @@ import {
 } from "@tabler/icons-react";
 import "./AudioPlayer.component.css";
 import { useColorSchemeContext } from "../../app/Providers";
+import { makePrefixer } from "../../utils/makePrefixer";
 
 //TODO: Fix issues with loading - guards added on line 26 + 125 to prevent null errors
 
@@ -45,6 +46,7 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
     const [durationSeconds, setDurationSeconds] = useState(0);
     const [timeNowSeconds, setTimeNowSeconds] = useState(0);
     const { colorScheme } = useColorSchemeContext();
+    const withBaseName = makePrefixer("audioPlayer");
 
     const audioRef = useCallback((audioNode) => {
       setAudioElem(audioNode);
@@ -162,11 +164,16 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
         </Flex>
         <Flex direction={"row"} gap={"xs"}>
           <a href={"www.google.com"} download target="_blank" rel="noreferrer">
-            <Button variant="default" aria-label="download audio">
+            <Button
+              className={withBaseName("button")}
+              variant="default"
+              aria-label="download audio"
+            >
               <IconDownload color={colorScheme} />
             </Button>
           </a>
           <Button
+            className={withBaseName("button")}
             variant="default"
             aria-label="skip audio backwards"
             onClick={handleRewind}
@@ -174,6 +181,7 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
             <IconPlayerSkipBack color={colorScheme} />
           </Button>
           <Button
+            className={withBaseName("button")}
             variant="default"
             onClick={handlePlay}
             disabled={playDisabled}
@@ -186,13 +194,18 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
             )}
           </Button>
           <Button
+            className={withBaseName("button")}
             variant="default"
             aria-label="skip audio forward"
             onClick={handleFastforward}
           >
             <IconPlayerSkipForward color={colorScheme} />
           </Button>
-          <Button variant="default" onClick={handleMute}>
+          <Button
+            className={withBaseName("button")}
+            variant="default"
+            onClick={handleMute}
+          >
             {mute ? (
               <IconVolumeOff color={colorScheme} />
             ) : (

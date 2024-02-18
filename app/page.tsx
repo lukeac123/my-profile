@@ -1,5 +1,5 @@
 import { Stack, Text, Title, Flex } from "@mantine/core";
-import { Card, CardTitle, CardFooter } from "../components";
+import { Card, CardTitle, CardFooter, CardContent } from "../components";
 import { blogs } from "../utils/db";
 import "./page.css";
 
@@ -30,35 +30,15 @@ export default function BlogPage() {
           const { location, city, country, date, caption, link } = blog;
           return (
             <Card link={link} className="listCard">
-              <Flex className={"listCardContent"}>
-                <Stack>
-                  <CardTitle>
-                    <Title order={3}> {location} </Title>
-                  </CardTitle>
-                  <Text size="md"> {caption}</Text>
-
-                  <CardFooter>
-                    <Flex
-                      className={"listCardContentSecondary"}
-                      justify="flex-start"
-                      align="flex-end"
-                    >
-                      {/* This should be looping through an array not being done manually */}
-                      <Stack gap={0}>
-                        <Text size="md">
-                          City: <strong> {city} </strong>
-                        </Text>
-                        <Text size="md">
-                          Country: <strong> {country} </strong>
-                        </Text>
-                        <Text size="md">
-                          Date: <strong> {date} </strong>
-                        </Text>
-                      </Stack>
-                    </Flex>
-                  </CardFooter>
-                </Stack>
-              </Flex>
+              <CardTitle>{location}</CardTitle>
+              <CardContent>
+                <Text size="md"> {caption}</Text>
+              </CardContent>
+              <CardFooter className="listCard-footer">
+                <Text size="sm" style={{ marginRight: "10px" }}>
+                  {city} - {country} - {date}
+                </Text>
+              </CardFooter>
             </Card>
           );
         })}

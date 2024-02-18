@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { makePrefixer } from "../../utils/makePrefixer";
+import { Title } from "@mantine/core";
 import { clsx } from "clsx";
 
 export type CardTitleProps = {
@@ -10,5 +11,9 @@ export type CardTitleProps = {
 const withBaseName = makePrefixer("cardTitle");
 
 export const CardTitle = ({ children, className }: CardTitleProps) => {
-  return <div className={clsx(withBaseName(), className)}>{children}</div>;
+  return (
+    <Title order={3} className={clsx(withBaseName(), className)}>
+      {children}
+    </Title>
+  );
 };

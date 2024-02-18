@@ -2,7 +2,8 @@
 import { Stack, Text, Title, Image, Flex } from "@mantine/core";
 import { blogs } from "../../../utils/db";
 import { Suspense } from "react";
-import { AudioPlayer, Card } from "../../../components";
+import { AudioPlayer, Card, Moodcheck } from "../../../components";
+import "./page.css";
 
 export type Page = {
   pageId: string;
@@ -42,16 +43,12 @@ export default function BlogPage({ params }) {
             <Text> {blogData.description} </Text>
           </Card>
           <Card>
-            {/* <Suspense fallback={<LoadingSpinner />}> */}
-            Picture of the Day
-            <Image
-              src={`/blogs/${blogData.imgSrc}`}
-              // style={{ width: "100%" }}
-            />
-            {/* </Suspense> */}
+            <Suspense fallback={<LoadingSpinner />}>
+              Picture of the Day
+              <Image src={`/blogs/${blogData.imgSrc}`} />
+            </Suspense>
           </Card>
         </Stack>
-        {/* Copy the same implementation for the breakpoints using the hook to define the % widths in css - alretatively could use media queries */}
         <Stack>
           <Card>
             <iframe src={blogData.googleMapsIframeUrl} loading="lazy" />
@@ -62,6 +59,7 @@ export default function BlogPage({ params }) {
               src={`/blogs/${blogData.audioSrc}`}
             />
           </Card>
+          <Moodcheck emotion="happy" />
         </Stack>
       </Flex>
     </Stack>
