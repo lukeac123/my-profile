@@ -1,7 +1,8 @@
-import { Flex, Text } from "@mantine/core";
+import { Flex, Text, Divider } from "@mantine/core";
 import Link from "next/link";
 import "./AppHeader.component.css";
 import ColorSchemeToggle from "./ColorSchemeToggle";
+import ModeToggle from "./ModeToggle";
 
 const links = [
   { id: "Blog", link: "/" },
@@ -21,6 +22,7 @@ export const AppHeader = () => {
         {links.map((link) => {
           return (
             <Text
+              key={link.id}
               className={"appHeader-nav"}
               size="l"
               fw={500}
@@ -31,7 +33,9 @@ export const AppHeader = () => {
             </Text>
           );
         })}
+        <Divider orientation="vertical" />
         <ColorSchemeToggle />
+        <ModeToggle />
       </Flex>
     </Flex>
   );

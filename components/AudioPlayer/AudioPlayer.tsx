@@ -45,7 +45,6 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
     const [timeNowString, setTimeNowString] = useState("00:00:00");
     const [durationSeconds, setDurationSeconds] = useState(0);
     const [timeNowSeconds, setTimeNowSeconds] = useState(0);
-    const { colorScheme } = useColorSchemeContext();
     const withBaseName = makePrefixer("audioPlayer");
 
     const audioRef = useCallback((audioNode) => {
@@ -158,7 +157,6 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
             value={timeNowSeconds}
             onChange={handleSliderInput}
             label={null}
-            color={colorScheme}
           />
           <Text>{durationString}</Text>
         </Flex>
@@ -169,7 +167,7 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
               variant="default"
               aria-label="download audio"
             >
-              <IconDownload color={colorScheme} />
+              <IconDownload className={withBaseName("icon")} />
             </Button>
           </a>
           <Button
@@ -178,7 +176,7 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
             aria-label="skip audio backwards"
             onClick={handleRewind}
           >
-            <IconPlayerSkipBack color={colorScheme} />
+            <IconPlayerSkipBack className={withBaseName("icon")} />
           </Button>
           <Button
             className={withBaseName("button")}
@@ -188,9 +186,9 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
             aria-label={isPlaying ? "pause audio" : "play audio"}
           >
             {isPlaying ? (
-              <IconPlayerPause color={colorScheme} />
+              <IconPlayerPause className={withBaseName("icon")} />
             ) : (
-              <IconPlayerPlay color={colorScheme} />
+              <IconPlayerPlay className={withBaseName("icon")} />
             )}
           </Button>
           <Button
@@ -199,7 +197,7 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
             aria-label="skip audio forward"
             onClick={handleFastforward}
           >
-            <IconPlayerSkipForward color={colorScheme} />
+            <IconPlayerSkipForward className={withBaseName("icon")} />
           </Button>
           <Button
             className={withBaseName("button")}
@@ -207,9 +205,9 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
             onClick={handleMute}
           >
             {mute ? (
-              <IconVolumeOff color={colorScheme} />
+              <IconVolumeOff className={withBaseName("icon")} />
             ) : (
-              <IconVolume color={colorScheme} />
+              <IconVolume className={withBaseName("icon")} />
             )}
           </Button>
         </Flex>

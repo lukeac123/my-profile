@@ -1,40 +1,52 @@
 "use client";
-import { DEFAULT_THEME, ColorPicker, Popover, Button } from "@mantine/core";
-import { useColorSchemeContext } from "../../app/Providers";
+import { useState, useLayoutEffect, useCallback } from "react";
+import {
+  DEFAULT_THEME,
+  ColorPicker,
+  Popover,
+  Button,
+  Flex,
+} from "@mantine/core";
+import "./ColorSchemeToggle.component.css";
 
-//TODO: Create a Wrapper Card for the Mantine Card component, so don't have to duplicate the color context hook loads of times
-//TODO: Add useColorScheme hook to other components to chnage the background colours
+console.log(DEFAULT_THEME.colors);
+
+//TODO: store the value color value ina ref, on refresh the colour defaults back to the original
 
 export default function ColorSchemeToggle() {
-  const { colorScheme, setColorScheme } = useColorSchemeContext();
+  const [colorScheme, setColorScheme] = useState("#b197fc");
+
+  useLayoutEffect(() => {
+    document.documentElement.dataset.colorScheme = colorScheme;
+  }, [colorScheme]);
 
   return (
     <Popover width={400} position="bottom" withArrow shadow="md">
       <Popover.Target>
         <Button
-          style={{
-            background: `${colorScheme}`,
-            width: "50px",
-            border: "solid 1px black",
-          }}
-        ></Button>
+          className="colorSchemeToggle"
+          style={{ background: "var(--colorScheme-color)" }}
+        />
       </Popover.Target>
       <Popover.Dropdown>
         <ColorPicker
-          format="hsl"
           value={colorScheme}
           onChange={setColorScheme}
           withPicker={false}
           fullWidth
           swatches={[
-            "#5169DB",
-            "#9351DB",
-            "#5194DB",
-            "#6650DB",
-            "#C051DB",
-            // ...DEFAULT_THEME.colors.red.slice(0, 7),
-            // ...DEFAULT_THEME.colors.green.slice(0, 7),
-            // ...DEFAULT_THEME.colors.blue.slice(0, 7),
+            "#ffa8a8", // --mantine-color-red-3,
+            "#faa2c1", // --mantine-color-pink-3,
+            "#e599f7", // --mantine-color-grape-3,
+            "#b197fc", // --mantine-color-violet-3,
+            "#91a7ff", // --mantine-color-indigo-3,
+            "#8ce99a", // --mantine-color-green-3,
+            "#74c0fc", // --mantine-color-blue-3,
+            "#66d9e8", // --mantine-color-cyan-3,
+            "#63e6be", // --mantine-color-teal-3,
+            "#c0eb75", // --mantine-color-lime-3,
+            "#ffe066", // --mantine-color-yellow-3,
+            "#ffc078", // --mantine-color-orange-3,
           ]}
         />
       </Popover.Dropdown>

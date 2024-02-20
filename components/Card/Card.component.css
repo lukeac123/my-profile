@@ -1,5 +1,6 @@
 .card {
     --card-Padding: 0px;
+    border-color: var(--colorScheme-color);
 }
 
 .card-link:hover {    

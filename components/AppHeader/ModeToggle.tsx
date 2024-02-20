@@ -2,26 +2,27 @@
 import {
   Button,
   useMantineColorScheme,
-  MantineColorScheme,
+  useComputedColorScheme,
 } from "@mantine/core";
 import { IconSun, IconMoon } from "@tabler/icons-react";
+import "./ModeToggle.component.css";
 
 export default function ModeToggle() {
-  const { colorScheme, setColorScheme } = useMantineColorScheme();
-
-  function toggleMode(colorScheme: MantineColorScheme) {
-    if (colorScheme === "dark") {
-      setColorScheme("light");
-    } else setColorScheme("dark");
-  }
+  const { setColorScheme } = useMantineColorScheme();
+  const computedColorScheme = useComputedColorScheme("dark", {
+    getInitialValueInEffect: true,
+  });
 
   return (
     <Button
-      onClick={() => {
-        toggleMode(colorScheme);
-      }}
+      className="modeToggle"
+      variant="default"
+      onClick={() =>
+        setColorScheme(computedColorScheme === "light" ? "dark" : "light")
+      }
     >
-      {colorScheme === "dark" ? <IconSun /> : <IconMoon />}
+      <IconSun style={{ display: "var(--lightModeToggle-display)" }} />
+      <IconMoon style={{ display: "var(--darkModeToggle-display)" }} />
     </Button>
   );
 }

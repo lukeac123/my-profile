@@ -1,0 +1,7 @@
+[data-mantine-color-scheme='light'] .modeToggle {
+    --darkModeToggle-display: none;
+}
+
+[data-mantine-color-scheme='dark'] .modeToggle {
+    --lightModeToggle-display: none;
+}

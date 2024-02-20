@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import { Card as MantineCard } from "@mantine/core";
 import { useColorSchemeContext } from "../../app/Providers";
 import Link from "next/link";
@@ -25,9 +25,6 @@ export const Card = ({ children, link, className, ...rest }: CardProps) => {
         { [withBaseName("link")]: link },
         className
       )}
-      style={{
-        borderColor: `${colorScheme}`,
-      }}
       withBorder
       shadow="sm"
       //TODO: Need to fix the typing
