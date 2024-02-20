@@ -11,7 +11,6 @@ import {
   IconVolumeOff,
 } from "@tabler/icons-react";
 import "./AudioPlayer.component.css";
-import { useColorSchemeContext } from "../../app/Providers";
 import { makePrefixer } from "../../utils/makePrefixer";
 
 //TODO: Fix issues with loading - guards added on line 26 + 125 to prevent null errors

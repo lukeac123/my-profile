@@ -9,9 +9,8 @@ import {
 } from "@mantine/core";
 import "./ColorSchemeToggle.component.css";
 
-console.log(DEFAULT_THEME.colors);
-
-//TODO: store the value color value ina ref, on refresh the colour defaults back to the original
+//TODO: store the value color value in a ref, on refresh the colour defaults back to the original
+//TODO: is there a better way to do color toggle
 
 export default function ColorSchemeToggle() {
   const [colorScheme, setColorScheme] = useState("#b197fc");

@@ -1,7 +1,5 @@
-"use client";
 import { ReactNode } from "react";
 import { Card as MantineCard } from "@mantine/core";
-import { useColorSchemeContext } from "../../app/Providers";
 import Link from "next/link";
 import { clsx } from "clsx";
 import { makePrefixer } from "../../utils/makePrefixer";
@@ -16,8 +14,6 @@ export type CardProps = {
 const withBaseName = makePrefixer("card");
 
 export const Card = ({ children, link, className, ...rest }: CardProps) => {
-  const { colorScheme } = useColorSchemeContext();
-
   return (
     <MantineCard
       className={clsx(
