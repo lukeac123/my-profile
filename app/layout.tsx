@@ -12,9 +12,7 @@ export default function RootLayout({ children }: { children: any }) {
   return (
     <html lang="en">
       <head>
-        <ColorSchemeScript
-        // defaultColorScheme="dark"
-        />
+        <ColorSchemeScript defaultColorScheme="dark" />
         <link rel="shortcut icon" href="/favicon.svg" />
         <meta
           name="viewport"
