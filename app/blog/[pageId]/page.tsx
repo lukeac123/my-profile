@@ -25,7 +25,14 @@ function getData(pageId: string) {
 export default function BlogPage({ params }) {
   const blogData = getData(params.pageId);
   return (
-    <Stack gap="lg" align="center" style={{ width: "80%" }}>
+    <Stack
+      gap="lg"
+      align="center"
+      style={{
+        width: "80%",
+        paddingTop: "20px",
+      }}
+    >
       <Title order={1}> {blogData.location} </Title>
       <Flex
         direction={{

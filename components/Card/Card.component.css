@@ -1,9 +1,10 @@
 .card {
     --card-Padding: 0px;
+    border-color: var(--colorMode-color);
 }
 
 .card-link:hover {    
-    /* border-width: 2px; */
+    box-shadow: 0px 0px 5px 1px varvar(--colorMode-color);
 }
 
 .cardContent {
@@ -24,6 +25,6 @@
     display: flex;
     flex-direction: row;
     background: var(--mantine-color-body);
-    border-top: solid 1px;
+    border-top: solid 1px var(--colorMode-color);
     height: 30px;
 }

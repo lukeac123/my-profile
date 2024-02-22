@@ -8,8 +8,14 @@
 .audioPlayer-slider {
   margin: auto;
   flex-grow: 1;
+  --slider-color: var(--colorMode-color);
 }
 
 .audioPlayer-button {
-  border: solid 1px var(--mantine-color-text)
+  border: solid 1px var(--colorMode-color);
+}
+
+.audioPlayer-icon {
+  stroke: var(--colorMode-color);
+
 }
