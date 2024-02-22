@@ -1,36 +1,33 @@
 "use client";
-import { useState, useLayoutEffect, useCallback } from "react";
-import {
-  DEFAULT_THEME,
-  ColorPicker,
-  Popover,
-  Button,
-  Flex,
-} from "@mantine/core";
-import "./ColorSchemeToggle.component.css";
+import { useState, useLayoutEffect } from "react";
+import { ColorPicker, Popover, Button } from "@mantine/core";
+import "./ColorModeToggle.component.css";
 
-//TODO: store the value color value in a ref, on refresh the colour defaults back to the original
-//TODO: is there a better way to do color toggle
+// TODO: is there a way to map over the colors of default theme
+// so the user can pick any of the default colours without having to write out all the css by hand
 
-export default function ColorSchemeToggle() {
-  const [colorScheme, setColorScheme] = useState("#b197fc");
+export function ColorModeToggle() {
+  const [colorMode, setColorMode] = useState(
+    localStorage.getItem("colorMode") ?? "#ffa8a8"
+  );
 
   useLayoutEffect(() => {
-    document.documentElement.dataset.colorScheme = colorScheme;
-  }, [colorScheme]);
+    document.documentElement.dataset.colorMode = colorMode;
+    localStorage.setItem("colorMode", colorMode); // save into local storage so colorMode isn't lost on refresh
+  }, [colorMode]);
 
   return (
     <Popover width={400} position="bottom" withArrow shadow="md">
       <Popover.Target>
         <Button
           className="colorSchemeToggle"
-          style={{ background: "var(--colorScheme-color)" }}
+          style={{ background: "var(--colorMode-color)" }}
         />
       </Popover.Target>
       <Popover.Dropdown>
         <ColorPicker
-          value={colorScheme}
-          onChange={setColorScheme}
+          value={colorMode}
+          onChange={setColorMode}
           withPicker={false}
           fullWidth
           swatches={[

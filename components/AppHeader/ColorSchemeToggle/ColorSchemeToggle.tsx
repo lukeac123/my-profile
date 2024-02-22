@@ -5,9 +5,9 @@ import {
   useComputedColorScheme,
 } from "@mantine/core";
 import { IconSun, IconMoon } from "@tabler/icons-react";
-import "./ModeToggle.component.css";
+import "./ColorSchemeToggle.component.css";
 
-export default function ModeToggle() {
+export function ColorSchemeToggle() {
   const { setColorScheme } = useMantineColorScheme();
   const computedColorScheme = useComputedColorScheme("dark", {
     getInitialValueInEffect: true,
