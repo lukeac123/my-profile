@@ -1,9 +1,9 @@
 .listCard {
-    width: 300px;
-    height: 300px;
+  width: 300px;
+  height: 300px;
 }
 
 .listCard-footer {
-    display: flex;
-    padding: var(--card-Padding)
+  display: flex;
+  padding: var(--card-Padding);
 }

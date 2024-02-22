@@ -1,17 +1,17 @@
 "use client";
-import { useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect, useEffect, useCallback } from "react";
 import { ColorPicker, Popover, Button } from "@mantine/core";
 import "./ColorModeToggle.component.css";
+import { useCallbackRef } from "@mantine/hooks";
 
 // TODO: is there a way to map over the colors of default theme
 // so the user can pick any of the default colours without having to write out all the css by hand
 
 export function ColorModeToggle() {
-  const [colorMode, setColorMode] = useState(
-    localStorage.getItem("colorMode") ?? "#ffa8a8"
-  );
+  const [colorMode, setColorMode] = useState("#ffa8a8");
 
   useLayoutEffect(() => {
+    // setColorMode(localStorage.getItem("colorMode") ?? "#ffa8a8");
     document.documentElement.dataset.colorMode = colorMode;
     localStorage.setItem("colorMode", colorMode); // save into local storage so colorMode isn't lost on refresh
   }, [colorMode]);

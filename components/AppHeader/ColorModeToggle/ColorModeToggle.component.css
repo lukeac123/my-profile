@@ -4,56 +4,54 @@ TODO: Make a decision on what you want to be changed by the color scheme and mak
 */
 
 .colorSchemeToggle {
-    width: 50px;
-    background: var(--colorMode-color),
+  width: 50px;
+  background: var(--colorMode-color);
 }
 
-:root[data-color-mode='#ffa8a8']{
-    --colorMode-color: var(--mantine-color-red-3)
+:root[data-color-mode="#ffa8a8"] {
+  --colorMode-color: var(--mantine-color-red-3);
 }
 
-:root[data-color-mode='#faa2c1'] {
-    --colorMode-color: var(--mantine-color-pink-3)
+:root[data-color-mode="#faa2c1"] {
+  --colorMode-color: var(--mantine-color-pink-3);
 }
 
-:root[data-color-mode='#e599f7'] {
-    --colorMode-color: var(--mantine-color-grape-3)
+:root[data-color-mode="#e599f7"] {
+  --colorMode-color: var(--mantine-color-grape-3);
 }
 
-:root[data-color-mode='#b197fc'] {
-    --colorMode-color: var(--mantine-color-violet-3)
+:root[data-color-mode="#b197fc"] {
+  --colorMode-color: var(--mantine-color-violet-3);
 }
 
-:root[data-color-mode='#91a7ff'] {
-    --colorMode-color: var(--mantine-color-indigo-3)
+:root[data-color-mode="#91a7ff"] {
+  --colorMode-color: var(--mantine-color-indigo-3);
 }
 
-:root[data-color-mode='#74c0fc'] {
-    --colorMode-color: var(--mantine-color-blue-3)
+:root[data-color-mode="#74c0fc"] {
+  --colorMode-color: var(--mantine-color-blue-3);
 }
 
-:root[data-color-mode='#66d9e8'] {
-    --colorMode-color: var(--mantine-color-cyan-3)
+:root[data-color-mode="#66d9e8"] {
+  --colorMode-color: var(--mantine-color-cyan-3);
 }
 
-:root[data-color-mode='#63e6be'] {
-    --colorMode-color: var(--mantine-color-teal-3)
+:root[data-color-mode="#63e6be"] {
+  --colorMode-color: var(--mantine-color-teal-3);
 }
 
-:root[data-color-mode='#8ce99a'] {
-    --colorMode-color: var(--mantine-color-green-3)
+:root[data-color-mode="#8ce99a"] {
+  --colorMode-color: var(--mantine-color-green-3);
 }
 
-:root[data-color-mode='#c0eb75'] {
-    --colorMode-color: var(--mantine-color-lime-3)
+:root[data-color-mode="#c0eb75"] {
+  --colorMode-color: var(--mantine-color-lime-3);
 }
 
-:root[data-color-mode='#ffe066'] {
-    --colorMode-color: var(--mantine-color-yellow-3)
+:root[data-color-mode="#ffe066"] {
+  --colorMode-color: var(--mantine-color-yellow-3);
 }
 
-:root[data-color-mode='#ffc078'] {
-    --colorMode-color: var(--mantine-color-orange-3)
+:root[data-color-mode="#ffc078"] {
+  --colorMode-color: var(--mantine-color-orange-3);
 }
-
-

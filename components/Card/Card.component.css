@@ -1,30 +1,30 @@
 .card {
-    --card-Padding: 0px;
-    border-color: var(--colorMode-color);
+  --card-Padding: 0px;
+  border-color: var(--colorMode-color);
 }
 
-.card-link:hover {    
-    box-shadow: 0px 0px 5px 1px varvar(--colorMode-color);
+.card-link:hover {
+  box-shadow: 0px 0px 5px 1px var(--colorMode-color);
 }
 
 .cardContent {
-    position: relative;
-    overflow: scroll;
-    text-overflow: ellipsis;
-    flex-direction: column;
-    margin-bottom: 30px;
+  position: relative;
+  overflow: scroll;
+  text-overflow: ellipsis;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .cardFooter {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    background: var(--mantine-color-body);
-    border-top: solid 1px var(--colorMode-color);
-    height: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  background: var(--mantine-color-body);
+  border-top: solid 1px var(--colorMode-color);
+  height: 30px;
 }
