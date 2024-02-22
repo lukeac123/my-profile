@@ -13,9 +13,9 @@ export const AppHeader = () => {
   return (
     <Flex id="header" className="appHeader-container">
       <Flex align="center" className="appHeader-title">
-        <Link href="./" style={{ textDecoration: "none" }}>
-          <Text> Luke Atkinson-Coyle </Text>
-        </Link>
+        <Text href={"./"} component={Link}>
+          Luke Atkinson-Coyle
+        </Text>
       </Flex>
 
       <Flex align="center" direction="row" gap="lg">
