@@ -19,7 +19,7 @@ export const Card = ({ children, link, className, ...rest }: CardProps) => {
       className={clsx(
         withBaseName(),
         { [withBaseName("link")]: link },
-        className
+        className,
       )}
       withBorder
       shadow="sm"

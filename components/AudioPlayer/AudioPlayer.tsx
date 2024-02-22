@@ -34,7 +34,7 @@ function timeFormat(durationS: number) {
 export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
   function AudioPlayer(
     { src, title, skipDuration = 15, className, ...rest },
-    ref
+    ref,
   ) {
     const [audioElem, setAudioElem] = useState<HTMLAudioElement | null>(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -212,5 +212,5 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
         </Flex>
       </Stack>
     );
-  }
+  },
 );

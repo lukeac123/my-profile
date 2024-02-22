@@ -29,7 +29,7 @@ export default function BlogPage() {
         {blogs.map((blog) => {
           const { location, city, country, date, caption, link } = blog;
           return (
-            <Card link={link} className="listCard">
+            <Card link={link} key={location} className="listCard">
               <CardTitle>{location}</CardTitle>
               <CardContent>
                 <Text size="md"> {caption}</Text>
