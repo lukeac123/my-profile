@@ -1,7 +1,7 @@
 "use client";
 import { Stack, Text, Flex, Button } from "@mantine/core";
 import { Card, Canvas } from "../../components";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
 export default function FullHeart() {
   const [heartSize, setHeartSize] = useState(10);
@@ -9,7 +9,7 @@ export default function FullHeart() {
     heartSize > 200 ? "My Heart is Full!" : "Click to show me some love!";
 
   function handleClick(heartSize: number) {
-    if (heartSize > 200) return;
+    if (heartSize > 500) return;
     setHeartSize(heartSize + 10);
   }
 
@@ -19,10 +19,11 @@ export default function FullHeart() {
 
   const animate = (ctx: CanvasRenderingContext2D, frameCount: number) => {
     if (ctx.canvas) {
-      const x = ctx?.canvas.width / 2;
+      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+      const x = ctx.canvas.width / 2;
       const y = 1;
-      const width = ctx?.canvas.width;
-      const height = ctx?.canvas.height;
+      const width = ctx.canvas.width;
+      const height = heartSize;
       ctx.beginPath();
       var topCurveHeight = height * 0.3;
       ctx.moveTo(x, y + topCurveHeight);
@@ -68,11 +69,18 @@ export default function FullHeart() {
 
   return (
     <Flex direction={"column"}>
-      <Button onClick={() => handleClick(heartSize)}>Click Me!</Button>
-      <Button onClick={() => setHeartSize(10)}> reset </Button>
       <Card>
-        {text}
-        <Canvas height={500} width={500} animate={animate} init={init} />
+        <Text>{text}</Text>
+        <Canvas
+          height={500}
+          width={500}
+          animate={animate}
+          init={init}
+          onClick={() => handleClick(heartSize)}
+        />
+        <Button variant="default" onClick={() => setHeartSize(10)}>
+          reset
+        </Button>
       </Card>
     </Flex>
   );
