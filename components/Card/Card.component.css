@@ -1,5 +1,5 @@
 .card {
-  --card-Padding: 0px;
+  --card-padding: 0px;
   border-color: var(--colorMode-color);
 }
 
@@ -8,6 +8,7 @@
 }
 
 .cardContent {
+  padding: var(--mantine-spacing-md);
   position: relative;
   overflow: scroll;
   text-overflow: ellipsis;

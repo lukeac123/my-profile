@@ -1,9 +1,9 @@
 "use client";
 import { Stack, Text, Title, Image, Flex } from "@mantine/core";
-import { blogs } from "../../../utils/db";
+import { blogs } from "../../utils/db";
 import { Suspense } from "react";
-import { AudioPlayer, Card, Moodcheck } from "../../../components";
-import "./page.css";
+import { AudioPlayer, Card, Moodcheck } from "../../components";
+// import "./page.css";
 
 export type Page = {
   pageId: string;

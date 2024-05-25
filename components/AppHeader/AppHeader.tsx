@@ -1,24 +1,23 @@
-import { Flex, Text, Divider } from "@mantine/core";
+import { Text, Divider, Paper, Stack } from "@mantine/core";
 import Link from "next/link";
 import "./AppHeader.component.css";
 import { ColorSchemeToggle } from "./ColorSchemeToggle";
 import { ColorModeToggle } from "./ColorModeToggle";
 
 const links = [
-  { id: "Blog", link: "/" },
-  { id: "CV", link: "./cv" },
+  { id: "Home", link: "./" },
+  { id: "People", link: "./people" },
+  { id: "Places", link: "./places" },
+  { id: "Insights", link: "./insights" },
 ];
 
 export const AppHeader = () => {
   return (
-    <Flex id="header" className="appHeader-container">
-      <Flex align="center" className="appHeader-title">
-        <Text href={"./"} component={Link}>
-          Luke Atkinson-Coyle
-        </Text>
-      </Flex>
-
-      <Flex align="center" direction="row" gap="lg">
+    <Paper className="appHeader-container">
+      <Stack align="center">
+        <ColorSchemeToggle />
+        <ColorModeToggle />
+        <Divider orientation="horizontal">Hi</Divider>
         {links.map((link) => {
           return (
             <Text
@@ -33,10 +32,7 @@ export const AppHeader = () => {
             </Text>
           );
         })}
-        <Divider orientation="vertical" />
-        <ColorModeToggle />
-        <ColorSchemeToggle />
-      </Flex>
-    </Flex>
+      </Stack>
+    </Paper>
   );
 };

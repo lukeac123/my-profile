@@ -1,10 +1,12 @@
 .appHeader-container {
-  padding: 10px;
-  z-index: 999;
-  position: relative;
-  border-bottom: solid var(--colorMode-color);
+  position: fixed;
+  height: 100%;
+  right: 0px;
+  border-left: solid var(--colorMode-color);
   border-width: 0.1px;
   background-color: var(--mantine-color-body);
+  padding: 10px;
+  width: 100px
 }
 
 .appHeader-title {

@@ -19,11 +19,10 @@ export const Card = ({ children, link, className, ...rest }: CardProps) => {
       className={clsx(
         withBaseName(),
         { [withBaseName("link")]: link },
-        className,
+        className
       )}
       withBorder
       shadow="sm"
-      //TODO: Need to fix the typing
       component={link ? Link : undefined}
       href={link}
       {...rest}
