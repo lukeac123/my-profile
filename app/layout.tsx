@@ -23,7 +23,15 @@ export default function RootLayout({ children }: { children: any }) {
         <Providers>
           <AppHeader />
           {/* //TODO: fix the padding below, can this not be margin ?  */}
-          <div style={{ paddingRight: "100px", width: "100%" }}>{children}</div>
+          <div
+            style={{
+              paddingRight: "100px",
+              width: "100%",
+              paddingLeft: "20px",
+            }}
+          >
+            {children}
+          </div>
         </Providers>
       </body>
     </html>

@@ -1,15 +1,13 @@
-import { ReactNode } from "react";
+import { ReactNode, HTMLAttributes } from "react";
 import { Card as MantineCard } from "@mantine/core";
 import Link from "next/link";
 import { clsx } from "clsx";
 import { makePrefixer } from "../../utils/makePrefixer";
 import "./Card.component.css";
 
-export type CardProps = {
-  children: ReactNode;
+export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   link?: string;
-  className?: string;
-};
+}
 
 const withBaseName = makePrefixer("card");
 
@@ -19,7 +17,7 @@ export const Card = ({ children, link, className, ...rest }: CardProps) => {
       className={clsx(
         withBaseName(),
         { [withBaseName("link")]: link },
-        className
+        className,
       )}
       withBorder
       shadow="sm"

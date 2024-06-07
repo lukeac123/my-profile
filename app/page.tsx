@@ -1,4 +1,3 @@
-"use client";
 import { Stack, Text, Title, Flex, Image } from "@mantine/core";
 import { Card, CardTitle, CardContent } from "../components";
 import { cards } from "../utils/db";
@@ -10,8 +9,8 @@ export default function BlogPage() {
   return (
     <Stack style={{ paddingLeft: "50px" }}>
       <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-        <Title order={1} ta="left">
-          A Documentation of my Journey across South America
+        <Title order={1} ta="left" hiddenFrom="sm">
+          Queer Abroad
         </Title>
         <br></br>
         <Text size="lg" ta="left" style={{ overflow: "wrap" }}>

@@ -1,7 +1,0 @@
-.banner {
-  width: 100%;
-  display: flex;
-  border-color: var(--colorMode-color);
-  border-bottom: solid var(--colorMode-color);
-  border-width: 0.1px;
-}

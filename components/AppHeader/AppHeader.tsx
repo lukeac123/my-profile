@@ -1,38 +1,78 @@
-import { Text, Divider, Paper, Stack } from "@mantine/core";
-import Link from "next/link";
-import "./AppHeader.component.css";
+"use client";
+import { useState } from "react";
+import {
+  Text,
+  Title,
+  Container,
+  Group,
+  Burger,
+  Drawer,
+  Stack,
+} from "@mantine/core";
 import { ColorSchemeToggle } from "./ColorSchemeToggle";
 import { ColorModeToggle } from "./ColorModeToggle";
+import { makePrefixer } from "../../utils/makePrefixer";
+import Link from "next/link";
+import "./AppHeader.component.css";
 
 const links = [
-  { id: "Home", link: "./" },
-  { id: "People", link: "./people" },
-  { id: "Places", link: "./places" },
-  { id: "Insights", link: "./insights" },
+  { label: "Home", link: "./" },
+  { label: "People", link: "./people" },
+  { label: "Places", link: "./places" },
+  { label: "Insights", link: "./insights" },
+  { label: "Audio", link: "./audio" },
 ];
 
+const withBaseName = makePrefixer("appHeader");
+
 export const AppHeader = () => {
+  const [open, setOpen] = useState(false);
+
+  const toggleDrawer = () => (open ? setOpen(false) : setOpen(true));
+
   return (
-    <Paper className="appHeader-container">
-      <Stack align="center">
-        <ColorSchemeToggle />
-        <ColorModeToggle />
-        <Divider orientation="horizontal">Hi</Divider>
-        {links.map((link) => {
-          return (
+    <header className={withBaseName()}>
+      <Burger opened={open} onClick={toggleDrawer} hiddenFrom="sm" size="sm" />
+      <Container className={withBaseName("title")}>
+        <Title visibleFrom="sm">Queer Abroad</Title>
+        <Group visibleFrom="sm" gap={"sm"} justify="center">
+          {links.map((link) => (
             <Text
-              key={link.id}
-              className={"appHeader-nav"}
-              size="l"
-              fw={500}
+              className={withBaseName("link")}
+              key={link.label}
               href={link.link}
               component={Link}
             >
-              {link.id}
+              {link.label}
             </Text>
-          );
-        })}
-      </Stack>
-    </Paper>
+          ))}
+        </Group>
+
+        <Drawer
+          opened={open}
+          onClose={() => setOpen(false)}
+          title="Queer Abroad"
+        >
+          <Stack gap={"sm"}>
+            {links.map((link) => (
+              <Text
+                className={withBaseName("link")}
+                key={link.label}
+                href={link.link}
+                component={Link}
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </Text>
+            ))}
+          </Stack>
+        </Drawer>
+
+        <div className={withBaseName("buttonbar")}>
+          <ColorSchemeToggle />
+          <ColorModeToggle />
+        </div>
+      </Container>
+    </header>
   );
 };
