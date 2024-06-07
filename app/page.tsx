@@ -1,19 +1,25 @@
-import { Stack, Text, Title, Flex } from "@mantine/core";
-import { Card, CardTitle, CardFooter, CardContent } from "../components";
-import { blogs } from "../utils/db";
+import { Stack, Text, Title, Flex, Image } from "@mantine/core";
+import { Card, CardTitle, CardContent } from "../components";
+import { cards } from "../utils/db";
 import "./page.css";
+
+const iconStyle = { width: "10px", height: "10px" };
 
 export default function BlogPage() {
   return (
-    <Stack style={{ width: "90%" }}>
+    <Stack style={{ paddingLeft: "50px" }}>
       <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-        <Title order={1} ta="center">
-          Personal Blog
+        <Title order={1} ta="left" hiddenFrom="sm">
+          Queer Abroad
         </Title>
-        <Title order={2} ta="center">
-          A documentation of my travels across South America
-        </Title>
-        <Text size="lg" ta="left"></Text>
+        <br></br>
+        <Text size="lg" ta="left" style={{ overflow: "wrap" }}>
+          My name is Luke Atkinson-Coyle, I'm 25 and born an raised in North
+          London. I have decided to quit my job and leave the corporate world
+          behind to chance my arm travelling across the South American
+          continent. Follow this page for updates on the places I visit, the
+          people I meet as well as plenty of phoots and audio clips.
+        </Text>
       </div>
 
       <Flex
@@ -23,22 +29,17 @@ export default function BlogPage() {
           flexWrap: "wrap",
           overflowY: "visible",
           display: "flex",
-          justifyContent: "center",
         }}
       >
-        {blogs.map((blog) => {
-          const { location, city, country, date, caption, link } = blog;
+        {cards.map((card) => {
+          const { title, description, link } = card;
           return (
-            <Card link={link} key={location} className="listCard">
-              <CardTitle>{location}</CardTitle>
+            <Card link={link} key={title} className="listCard">
+              <Image src="/banner-image.jpg" height={200} />
               <CardContent>
-                <Text size="md"> {caption}</Text>
+                <CardTitle>{title}</CardTitle>
+                <Text size="md"> {description}</Text>
               </CardContent>
-              <CardFooter className="listCard-footer">
-                <Text size="sm" style={{ marginRight: "10px" }}>
-                  {city} - {country} - {date}
-                </Text>
-              </CardFooter>
             </Card>
           );
         })}

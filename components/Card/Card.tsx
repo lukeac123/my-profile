@@ -1,15 +1,13 @@
-import { ReactNode } from "react";
+import { ReactNode, HTMLAttributes } from "react";
 import { Card as MantineCard } from "@mantine/core";
 import Link from "next/link";
 import { clsx } from "clsx";
 import { makePrefixer } from "../../utils/makePrefixer";
 import "./Card.component.css";
 
-export type CardProps = {
-  children: ReactNode;
+export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   link?: string;
-  className?: string;
-};
+}
 
 const withBaseName = makePrefixer("card");
 
@@ -23,7 +21,6 @@ export const Card = ({ children, link, className, ...rest }: CardProps) => {
       )}
       withBorder
       shadow="sm"
-      //TODO: Need to fix the typing
       component={link ? Link : undefined}
       href={link}
       {...rest}

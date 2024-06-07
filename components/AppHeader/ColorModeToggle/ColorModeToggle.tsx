@@ -2,7 +2,7 @@
 import { useState, useLayoutEffect, useEffect, useCallback } from "react";
 import { ColorPicker, Popover, Button } from "@mantine/core";
 import "./ColorModeToggle.component.css";
-import { useCallbackRef } from "@mantine/hooks";
+import { IconColorPicker } from "@tabler/icons-react";
 
 // TODO: is there a way to map over the colors of default theme
 // so the user can pick any of the default colours without having to write out all the css by hand
@@ -17,12 +17,11 @@ export function ColorModeToggle() {
   }, [colorMode]);
 
   return (
-    <Popover width={400} position="bottom" withArrow shadow="md">
+    <Popover width={500} position="bottom" withArrow shadow="md">
       <Popover.Target>
-        <Button
-          className="colorSchemeToggle"
-          style={{ background: "var(--colorMode-color)" }}
-        />
+        <Button style={{ background: "var(--colorMode-color)" }}>
+          <IconColorPicker />
+        </Button>
       </Popover.Target>
       <Popover.Dropdown>
         <ColorPicker

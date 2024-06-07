@@ -22,9 +22,16 @@ export default function RootLayout({ children }: { children: any }) {
       <body>
         <Providers>
           <AppHeader />
-          <Flex align={"center"} justify={"center"}>
+          {/* //TODO: fix the padding below, can this not be margin ?  */}
+          <div
+            style={{
+              paddingRight: "100px",
+              width: "100%",
+              paddingLeft: "20px",
+            }}
+          >
             {children}
-          </Flex>
+          </div>
         </Providers>
       </body>
     </html>

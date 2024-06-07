@@ -19,6 +19,40 @@ export const pages = [
   },
 ];
 
+export const cards = [
+  {
+    title: "Places",
+    description:
+      "Highights of the locations I've travelled to inlcuding google maps locations and descriptions of my expereinces there",
+    link: "./places",
+  },
+  {
+    title: "People",
+    description: "Some of the people i've met of my travels",
+    link: "./people",
+  },
+  {
+    title: "Audio",
+    description: "Hello Wolrd",
+    link: "./audio",
+  },
+  {
+    title: "Photos",
+    description: "Hello Wolrd",
+    link: "./photos",
+  },
+  {
+    title: "Insights",
+    description: "Hello Wolrd",
+    link: "./insights",
+  },
+  {
+    title: "Runs",
+    description: "Hello Wolrd",
+    link: "./runs",
+  },
+];
+
 export const blogs = [
   {
     country: "Colombia",
