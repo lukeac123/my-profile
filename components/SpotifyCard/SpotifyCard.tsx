@@ -33,6 +33,8 @@ const getTrackData = async () => {
   }
 };
 
+const handlePromise = async () => {};
+
 export const SpotifyCard = ({
   children,
   className,
@@ -54,20 +56,11 @@ export const SpotifyCard = ({
 
       window.location.hash = "";
       window.localStorage.setItem("token", token);
-
-      // const profile = fetchProfile(token);
-      // console.log({ profile });
     }
 
     if (token) {
-      const profile = fetchProfile(token);
-      console.log(profile);
-
-      // const profileData = () => {
-      //   new Promise(resolve, reject);
-      // };
-      // console.log({ profile });
-      // setData(profile);
+      fetchProfile(token, setData);
+      console.log(data);
     }
   }, []);
 
@@ -88,6 +81,8 @@ export const SpotifyCard = ({
       ) : (
         <button onClick={logout}>Logout</button>
       )}
+
+      {data && data.id}
     </Card>
   );
 };
