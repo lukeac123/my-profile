@@ -10,9 +10,9 @@ export type CardTitleProps = {
 
 const withBaseName = makePrefixer("cardTitle");
 
-export const CardTitle = ({ children, className }: CardTitleProps) => {
+export const CardTitle = ({ children, className, ...rest }: CardTitleProps) => {
   return (
-    <Title order={3} className={clsx(withBaseName(), className)}>
+    <Title order={3} className={clsx(withBaseName(), className)} {...rest}>
       {children}
     </Title>
   );
