@@ -1,3 +1,12 @@
+.columnOne {
+
+
+  @media (min-width: em(750px)) {
+    background-color: var(--mantine-color-red-filled);
+}
+}
+
+
 .listCard {
   width: 400px;
   height: 400px;

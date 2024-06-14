@@ -1,12 +1,20 @@
+"use client";
 import { Stack, Text, Title, Flex, Image } from "@mantine/core";
-import { Card, CardTitle, CardContent, SpotifyCard } from "../components";
+import { useViewportSize } from "@mantine/hooks";
+import { Card, CardTitle, CardContent } from "../components";
 import "./page.css";
 
 export default function BlogPage() {
+  const { width } = useViewportSize();
   return (
-    <Stack style={{ paddingLeft: "50px" }}>
-      <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-        <Title order={1} ta="left" hiddenFrom="sm">
+    <Stack>
+      <div style={{ margin: "20px" }}>
+        <Title
+          order={1}
+          ta="left"
+          hiddenFrom="sm"
+          style={{ paddingBottom: "10px" }}
+        >
           Queer Abroad
         </Title>
         <Flex
@@ -20,7 +28,7 @@ export default function BlogPage() {
           }}
           gap={"lg"}
         >
-          <div style={{ width: "60%" }}>
+          <div style={{ width: width > 992 ? "60%" : "100%" }}>
             <Card style={{ width: "100%" }}>
               <Image src="/me.jpg" />
               <CardContent>
@@ -36,36 +44,29 @@ export default function BlogPage() {
               </CardContent>
             </Card>
           </div>
-          <div style={{ width: "40%" }}>
-            <SpotifyCard style={{ width: "100%" }}> Spotify </SpotifyCard>
-          </div>
+          <Stack style={{ width: width > 992 ? "60%" : "100%" }} gap={"lg"}>
+            <Card>
+              <iframe
+                src="https://open.spotify.com/embed/track/3tZm76otWH20xzJC7icHCk?utm_source=generator"
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allowFullScreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              />
+            </Card>
+            <Card>
+              <iframe
+                height="454"
+                width="100%"
+                frameBorder="0"
+                src="https://www.strava.com/athletes/50370447/latest-rides/1a80f93342d7917f32afd94cd2946476e5d80b2c"
+              />
+            </Card>
+          </Stack>
         </Flex>
       </div>
     </Stack>
   );
-}
-
-{
-  /* <Flex
-gap={"lg"}
-style={{
-  width: "100%",
-  flexWrap: "wrap",
-  overflowY: "visible",
-  display: "flex",
-}}
->
-{cards.map((card) => {
-  const { title, description, link } = card;
-  return (
-    <Card link={link} key={title} className="listCard">
-      <Image src="/banner-image.jpg" height={200} />
-      <CardContent>
-        <CardTitle>{title}</CardTitle>
-        <Text size="md"> {description}</Text>
-      </CardContent>
-    </Card>
-  );
-})}
-</Flex> */
 }
