@@ -61,13 +61,15 @@ export async function getAccessToken(clientId: string, code: string) {
 }
 
 export async function fetchProfile(token: string): Promise<any> {
+  // Is the token that is being got here the same as before
+  // why is this returning unauthorised ?
+  // looks like adding the scope to the url is working ??
   console.log({ token });
-  const result = await fetch(
-    "https://api.spotify.com/v1/me/player/recently-played",
-    {
-      headers: { Authorization: `Bearer ${token}` },
-    }
-  );
+  const result = await fetch("https://api.spotify.com/v1/me", {
+    headers: { Authorization: `Bearer ${token}` },
+  });
 
-  return await result.json();
+  let data = result.json().then((response) => console.log(response));
+
+  return data;
 }

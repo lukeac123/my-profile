@@ -12,8 +12,9 @@ import { Button } from "@mantine/core";
 
 const clientId = "e029ab772d6c4d2b9c5466be7d31ab61";
 const redirectUrl = "http://localhost:3000";
-const authorisationEndpoint = "https://accounts.spotify.com/authorize";
+const authEndpoint = "https://accounts.spotify.com/authorize";
 const scope = "user-read-private user-read-email user-top-read";
+const responseType = "token";
 
 export interface SpotifyCardProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -24,12 +25,7 @@ const getTrackData = async () => {
   const code = params.get("code");
 
   if (!code) {
-    redirectToSpotifyAuthorise(
-      clientId,
-      scope,
-      authorisationEndpoint,
-      redirectUrl
-    );
+    redirectToSpotifyAuthorise(clientId, scope, authEndpoint, redirectUrl);
   } else {
     console.log({ code });
     const accessToken = await getAccessToken(clientId, code);
@@ -42,13 +38,56 @@ export const SpotifyCard = ({
   className,
   ...rest
 }: SpotifyCardProps) => {
+  const [token, setToken] = useState("");
+  const [data, setData] = useState();
+
   useEffect(() => {
-    getTrackData();
+    const hash = window.location.hash;
+    let token = window.localStorage.getItem("token");
+
+    if (!token && hash) {
+      token = hash
+        .substring(1)
+        .split("&")
+        .find((elem) => elem.startsWith("access_token"))
+        .split("=")[1];
+
+      window.location.hash = "";
+      window.localStorage.setItem("token", token);
+
+      // const profile = fetchProfile(token);
+      // console.log({ profile });
+    }
+
+    if (token) {
+      const profile = fetchProfile(token);
+      console.log(profile);
+
+      // const profileData = () => {
+      //   new Promise(resolve, reject);
+      // };
+      // console.log({ profile });
+      // setData(profile);
+    }
   }, []);
+
+  const logout = () => {
+    setToken("");
+    window.localStorage.removeItem("token");
+  };
 
   return (
     <Card className={withBaseName()} {...rest}>
       <CardContent>Spotify Card</CardContent>
+      {token ? (
+        <a
+          href={`${authEndpoint}?client_id=${clientId}&scope=${scope}&redirect_uri=${redirectUrl}&response_type=${responseType}`}
+        >
+          Login to Spotify
+        </a>
+      ) : (
+        <button onClick={logout}>Logout</button>
+      )}
     </Card>
   );
 };
