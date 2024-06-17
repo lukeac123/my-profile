@@ -31,11 +31,12 @@ export const Audio = ({
       setIsPlaying(false);
     } else {
       if (!audioContext) {
+        // If there is already an audio context, don't create a new one - could maybe also be in a useEffect ?
         audioContext = new AudioContext();
 
         if (audioRef.current) {
           source.current = audioContext.createMediaElementSource(
-            audioRef.current,
+            audioRef.current
           );
           analyser.current = audioContext.createAnalyser();
           source.current.connect(analyser.current);
