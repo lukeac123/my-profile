@@ -162,7 +162,7 @@ export const Player = ({
           className={withBaseName("button")}
           variant="default"
           onClick={togglePlay}
-          // disabled={playDisabled}
+          disabled={playDisabled}
           aria-label={isPlaying ? "pause audio" : "play audio"}
         >
           {isPlaying ? (

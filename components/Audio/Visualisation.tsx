@@ -31,7 +31,7 @@ export const Visualisation = ({ isPlaying, analyser }: VisualisationProps) => {
         0,
         0,
         canvasRef.current.width,
-        canvasRef.current.height
+        canvasRef.current.height,
       );
       gradient.addColorStop(0.2, "#2392f5");
       gradient.addColorStop(0.5, "#fe0095");
