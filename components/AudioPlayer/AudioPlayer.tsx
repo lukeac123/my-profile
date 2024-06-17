@@ -1,6 +1,12 @@
 "use client";
 import { Stack, Button, Text, Flex, Slider } from "@mantine/core";
-import { useEffect, useState, useCallback, forwardRef } from "react";
+import {
+  useEffect,
+  useState,
+  useCallback,
+  forwardRef,
+  HTMLAttributes,
+} from "react";
 import {
   IconPlayerPlay,
   IconPlayerPause,
@@ -12,10 +18,11 @@ import {
 } from "@tabler/icons-react";
 import "./AudioPlayer.component.css";
 import { makePrefixer } from "../../utils/makePrefixer";
+import { Card } from "../Card";
 
 //TODO: Fix issues with loading - guards added on line 26 + 125 to prevent null errors
 
-export interface AudioPlayerProps {
+export interface AudioPlayerProps extends HTMLAttributes<HTMLDivElement> {
   src: string;
   skipDuration?: 5 | 10 | 15;
   title?: string;
@@ -34,7 +41,7 @@ function timeFormat(durationS: number) {
 export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
   function AudioPlayer(
     { src, title, skipDuration = 15, className, ...rest },
-    ref,
+    ref
   ) {
     const [audioElem, setAudioElem] = useState<HTMLAudioElement | null>(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -129,88 +136,90 @@ export const AudioPlayer = forwardRef<HTMLDivElement, AudioPlayerProps>(
     };
 
     return (
-      <Stack
-        className={"audioPlayer-container"}
-        ref={ref}
-        aria-label={title}
-        align="center"
-        gap={3}
-      >
-        <Text>{title}</Text>
-        <audio
-          ref={audioRef}
-          aria-label="audio"
-          src={`${src}`}
-          preload="auto"
-        />
-        <Flex
-          className={"audioPlayer-sliderContainer"}
-          direction={"row"}
-          gap={"md"}
+      <Card {...rest}>
+        <Stack
+          className={"audioPlayer-container"}
+          ref={ref}
+          aria-label={title}
+          align="center"
+          gap={3}
         >
-          <Text>{timeNowString}</Text>
-          <Slider
-            className={"audioPlayer-slider"}
-            min={0}
-            max={durationSeconds}
-            value={timeNowSeconds}
-            onChange={handleSliderInput}
-            label={null}
+          {/* <Text>{title}</Text> */}
+          <audio
+            ref={audioRef}
+            aria-label="audio"
+            src={`${src}`}
+            preload="auto"
           />
-          <Text>{durationString}</Text>
-        </Flex>
-        <Flex direction={"row"} gap={"xs"}>
-          <a href={"www.google.com"} download target="_blank" rel="noreferrer">
+          <Flex direction={"row"} gap={"xs"}>
+            <a href={src} download target="_blank" rel="noreferrer">
+              <Button
+                className={withBaseName("button")}
+                variant="default"
+                aria-label="download audio"
+              >
+                <IconDownload className={withBaseName("icon")} />
+              </Button>
+            </a>
             <Button
               className={withBaseName("button")}
               variant="default"
-              aria-label="download audio"
+              aria-label="skip audio backwards"
+              onClick={handleRewind}
             >
-              <IconDownload className={withBaseName("icon")} />
+              <IconPlayerSkipBack className={withBaseName("icon")} />
             </Button>
-          </a>
-          <Button
-            className={withBaseName("button")}
-            variant="default"
-            aria-label="skip audio backwards"
-            onClick={handleRewind}
+            <Button
+              className={withBaseName("button")}
+              variant="default"
+              onClick={handlePlay}
+              disabled={playDisabled}
+              aria-label={isPlaying ? "pause audio" : "play audio"}
+            >
+              {isPlaying ? (
+                <IconPlayerPause className={withBaseName("icon")} />
+              ) : (
+                <IconPlayerPlay className={withBaseName("icon")} />
+              )}
+            </Button>
+            <Button
+              className={withBaseName("button")}
+              variant="default"
+              aria-label="skip audio forward"
+              onClick={handleFastforward}
+            >
+              <IconPlayerSkipForward className={withBaseName("icon")} />
+            </Button>
+            <Button
+              className={withBaseName("button")}
+              variant="default"
+              onClick={handleMute}
+            >
+              {mute ? (
+                <IconVolumeOff className={withBaseName("icon")} />
+              ) : (
+                <IconVolume className={withBaseName("icon")} />
+              )}
+            </Button>
+          </Flex>
+          <Flex
+            className={"audioPlayer-sliderContainer"}
+            direction={"row"}
+            gap={"md"}
           >
-            <IconPlayerSkipBack className={withBaseName("icon")} />
-          </Button>
-          <Button
-            className={withBaseName("button")}
-            variant="default"
-            onClick={handlePlay}
-            disabled={playDisabled}
-            aria-label={isPlaying ? "pause audio" : "play audio"}
-          >
-            {isPlaying ? (
-              <IconPlayerPause className={withBaseName("icon")} />
-            ) : (
-              <IconPlayerPlay className={withBaseName("icon")} />
-            )}
-          </Button>
-          <Button
-            className={withBaseName("button")}
-            variant="default"
-            aria-label="skip audio forward"
-            onClick={handleFastforward}
-          >
-            <IconPlayerSkipForward className={withBaseName("icon")} />
-          </Button>
-          <Button
-            className={withBaseName("button")}
-            variant="default"
-            onClick={handleMute}
-          >
-            {mute ? (
-              <IconVolumeOff className={withBaseName("icon")} />
-            ) : (
-              <IconVolume className={withBaseName("icon")} />
-            )}
-          </Button>
-        </Flex>
-      </Stack>
+            <Text>{timeNowString}</Text>
+            <Slider
+              className={"audioPlayer-slider"}
+              min={0}
+              max={durationSeconds}
+              value={timeNowSeconds}
+              onChange={handleSliderInput}
+              label={null}
+            />
+            <Text>{durationString}</Text>
+          </Flex>
+        </Stack>
+      </Card>
     );
-  },
+  }
 );
