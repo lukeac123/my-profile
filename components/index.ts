@@ -1,4 +1,4 @@
 export * from "./AppHeader";
-export * from "./AudioPlayer";
+export * from "./Audio";
 export * from "./Card";
 export * from "./Moodcheck";

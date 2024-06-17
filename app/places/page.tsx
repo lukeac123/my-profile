@@ -2,7 +2,7 @@
 import { Stack, Text, Title, Image, Flex } from "@mantine/core";
 import { blogs } from "../../utils/db";
 import { Suspense } from "react";
-import { AudioPlayer, Card, Moodcheck } from "../../components";
+import { Audio, Card, Moodcheck } from "../../components";
 // import "./page.css";
 
 export type Page = {
@@ -61,7 +61,7 @@ export default function BlogPage({ params }) {
             <iframe src={blogData.googleMapsIframeUrl} loading="lazy" />
           </Card>
           <Card>
-            <AudioPlayer
+            <Audio
               title={blogData.audioTitle}
               src={`/blogs/${blogData.audioSrc}`}
             />
