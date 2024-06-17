@@ -1,16 +1,20 @@
 "use client";
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, HTMLAttributes } from "react";
 import { makePrefixer } from "../../utils/makePrefixer";
 import { clsx } from "clsx";
 
-export type CardContentProps = {
+export interface CardContentProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   className?: string;
-};
+}
 
 const withBaseName = makePrefixer("cardContent");
 
-export const CardContent = ({ children, className }: CardContentProps) => {
+export const CardContent = ({
+  children,
+  className,
+  ...rest
+}: CardContentProps) => {
   const [scrollTop, setScrollTop] = useState(0);
 
   function useScrollTop(event: React.UIEvent<HTMLElement>) {
@@ -23,6 +27,7 @@ export const CardContent = ({ children, className }: CardContentProps) => {
       style={{ borderTop: scrollTop > 0 ? "solid 1px" : "" }}
       onScroll={useScrollTop}
       className={clsx(withBaseName(), className)}
+      {...rest}
     >
       {children}
     </div>

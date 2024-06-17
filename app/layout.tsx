@@ -24,9 +24,8 @@ export default function RootLayout({ children }: { children: any }) {
           <AppHeader />
           <div
             style={{
-              paddingRight: "20px",
               width: "100%",
-              paddingLeft: "20px",
+              padding: "20px",
             }}
           >
             {children}
