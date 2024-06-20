@@ -19,9 +19,7 @@ import {
 } from "@tabler/icons-react";
 import "./AudioPlayer.component.css";
 import { makePrefixer } from "../../utils/makePrefixer";
-
-//TODO: Fix issues with loading - guards added on line 26 + 125 to prevent null errors
-
+import { useViewportSize } from "@mantine/hooks";
 export interface PlayerProps extends HTMLAttributes<HTMLDivElement> {
   skipDuration?: 5 | 10 | 15;
   title?: string;
@@ -50,7 +48,6 @@ export const Player = ({
   className,
   toggleAudioPlay,
   isPlaying,
-
   ...rest
 }: PlayerProps) => {
   const [mute, setMute] = useState(false);
@@ -60,6 +57,7 @@ export const Player = ({
   const [durationSeconds, setDurationSeconds] = useState(0);
   const [timeNowSeconds, setTimeNowSeconds] = useState(0);
   const withBaseName = makePrefixer("audioPlayer");
+  const { width } = useViewportSize();
 
   const timeUpdate = useCallback(() => {
     if (audioRef.current) {
@@ -139,8 +137,9 @@ export const Player = ({
       aria-label={title}
       align="center"
       gap={3}
+      {...rest}
     >
-      <Flex direction={"row"} gap={"xs"}>
+      <Flex direction={"row"} gap={width > 576 ? "xs" : "0"}>
         <a href={src} download target="_blank" rel="noreferrer">
           <Button
             className={withBaseName("button")}
@@ -203,6 +202,8 @@ export const Player = ({
           max={durationSeconds}
           value={timeNowSeconds}
           onChange={handleSliderInput}
+          step={1}
+          labelAlwaysOn
         />
         <Text>{durationString}</Text>
       </Flex>
