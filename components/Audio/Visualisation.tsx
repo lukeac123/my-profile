@@ -1,5 +1,5 @@
 "use client";
-import { RefObject, useRef, ReactNode, HTMLAttributes } from "react";
+import { RefObject, useRef, ReactNode, HTMLAttributes, useEffect } from "react";
 export interface VisualisationProps extends HTMLAttributes<HTMLDivElement> {
   isPlaying: boolean;
   analyser: RefObject<ReactNode>;
@@ -14,34 +14,41 @@ export const Visualisation = ({
 }: VisualisationProps) => {
   const canvasRef = useRef();
 
-  const visualizeData = () => {
-    isPlaying
-      ? (animationController = requestAnimationFrame(visualizeData))
-      : cancelAnimationFrame(animationController);
+  useEffect(() => {
+    const visualizeData = () => {
+      isPlaying
+        ? (animationController = window.requestAnimationFrame(visualizeData))
+        : cancelAnimationFrame(animationController);
 
-    const songData = new Uint8Array(150);
-    if (analyser.current) {
-      analyser.current.getByteFrequencyData(songData);
-    }
-
-    const bar_width = 3;
-    let start = 0;
-
-    if (canvasRef.current) {
-      const ctx = canvasRef.current.getContext("2d");
-      ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-      for (let i = 0; i < songData.length; i++) {
-        start = i * 4;
-        ctx.fillStyle = getComputedStyle(canvasRef.current).getPropertyValue(
-          "--colorMode-color"
-        );
-        const ypos = canvasRef.current.height / 2 + songData[i] / 2;
-        ctx.fillRect(start, ypos, bar_width, -songData[i]);
+      const songData = new Uint8Array(150);
+      if (analyser.current) {
+        analyser.current.getByteFrequencyData(songData);
       }
-    }
-  };
 
-  visualizeData();
+      const bar_width = 3;
+      let start = 0;
+
+      if (canvasRef.current) {
+        const ctx = canvasRef.current.getContext("2d");
+        ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+        for (let i = 0; i < songData.length; i++) {
+          start = i * 4;
+          ctx.fillStyle = getComputedStyle(canvasRef.current).getPropertyValue(
+            "--colorMode-color"
+          );
+          const ypos = canvasRef.current.height / 2 + songData[i] / 2;
+          // ctx.fillRect(start, ypos, bar_width, -songData[i]);
+          ctx.beginPath();
+          ctx.arc(start, ypos, songData[i], 0, 2 * Math.PI, false);
+          // ctx.fillStyle = "green";
+          ctx.fill();
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    };
+    visualizeData();
+  });
 
   return <canvas {...rest} ref={canvasRef} />;
 };

@@ -24,13 +24,8 @@
   stroke: var(--colorMode-color);
 }
 
-.visualisation{
-    display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 40px;
-    width: 50px;
-    margin: 2px
-}
+.audioPlayer-visualisation{
 
+  height: 400px;
+
+}
