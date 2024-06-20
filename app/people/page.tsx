@@ -9,10 +9,8 @@ const people = [
       age: "24",
       nationality: "Dutch",
       location: "Bogota",
-      duration:
-        "2 weeks kjhfkjshkfjhsdkjfhkjashfkhsadkfjsahdkfjhaskhfkajshfdkjhakjh",
-      description:
-        "Hello my name is sophie, I'm 25 and from denmark kjaehfkjashfrkjsahfkjsahfkjhsdakjfhksajdhfksdjahfkjashdkfjhsakjfhksdjafhksadjhfksajdhfksajdhfkjsadhfksajhfk",
+      duration: "2 weeks",
+      description: "Hello my name is sophie, I'm 25 and from denmark",
     },
   },
   {
@@ -55,7 +53,6 @@ export default function BlogPage() {
           flexWrap: "wrap",
           overflowY: "visible",
           display: "flex",
-          background: "red",
         }}
       >
         {people.map((people) => {
@@ -65,16 +62,20 @@ export default function BlogPage() {
               <Image src={imgSrc} style={{ height: "50%" }} />
               <CardContent>
                 <CardTitle>{name}</CardTitle>
-                {Object.entries(content).map((content) => {
-                  return (
-                    <Flex gap={"lg"} key={content[1]}>
-                      <Text size="lg" fw={700}>
-                        {content[0]}:
-                      </Text>
-                      <Text size="lg">{content[1]}</Text>
-                    </Flex>
-                  );
-                })}
+                <div style={{ width: "100%", overflowWrap: "break-word" }}>
+                  {Object.entries(content).map((content) => {
+                    return (
+                      <Flex gap={"lg"} key={content[1]}>
+                        <Text size="lg" fw={700} style={{ width: "110px" }}>
+                          {content[0]}:
+                        </Text>
+                        <Text size="lg" style={{ overflow: "wrap" }}>
+                          {content[1]}
+                        </Text>
+                      </Flex>
+                    );
+                  })}
+                </div>
               </CardContent>
             </Card>
           );
