@@ -19,7 +19,7 @@ const links = [
   { label: "Home", link: "./" },
   { label: "People", link: "./people" },
   { label: "Places", link: "./places" },
-  { label: "Insights", link: "./insights" },
+  // { label: "Insights", link: "./insights" },
   { label: "Audio", link: "./audio" },
 ];
 

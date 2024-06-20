@@ -1,5 +1,5 @@
 import React from "react";
-import { ColorSchemeScript, Flex } from "@mantine/core";
+import { ColorSchemeScript } from "@mantine/core";
 import { AppHeader } from "../components/AppHeader";
 import { Providers } from "./Providers";
 import "@mantine/core/styles.css";
@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: any }) {
           <div
             style={{
               width: "100%",
-              padding: "20px",
+              padding: "10px",
             }}
           >
             {children}
