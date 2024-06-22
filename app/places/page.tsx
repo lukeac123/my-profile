@@ -1,6 +1,6 @@
 "use client";
 import { Stack, Text, Title, Image, Flex } from "@mantine/core";
-import { blogs } from "../../utils/db";
+import { places } from "../../utils/db";
 import { Suspense } from "react";
 import { Audio, Card, Moodcheck } from "../../components";
 // import "./page.css";
@@ -13,7 +13,7 @@ export type Page = {
 };
 
 function getData(pageId: string) {
-  const data = Object.values(blogs).reduce((results: any, page: Page) => {
+  const data = Object.values(places).reduce((results: any, page: Page) => {
     if (pageId === page.link) {
       return page;
     }
