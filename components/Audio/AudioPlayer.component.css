@@ -24,8 +24,6 @@
   stroke: var(--colorMode-color);
 }
 
-.audioPlayer-visualisation{
-
+.audioPlayer-visualisation {
   height: 400px;
-
 }

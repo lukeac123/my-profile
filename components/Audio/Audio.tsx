@@ -41,7 +41,7 @@ export const Audio = ({
       if (audioRef.current && !source.current) {
         audioContext = new AudioContext();
         source.current = audioContext.createMediaElementSource(
-          audioRef.current
+          audioRef.current,
         );
         analyser.current = audioContext.createAnalyser();
         source.current.connect(analyser.current);
