@@ -6,30 +6,9 @@ export const people = [
       Nationality: "Dutch",
       Age: "24",
       Location: "Bogota",
-      TravelDuration: "2 weeks",
-      Description: "Hello my name is sophie",
-    },
-  },
-  {
-    name: "Sophie",
-    imgSrc: "/people/luke.jpg",
-    content: {
-      Age: "24",
-      Nationality: "Dutch",
-      Location: "Bogota",
-      Duration: "2 weeks",
-      Description: "Hello my name is sophie, I'm 25 and from denmark",
-    },
-  },
-  {
-    name: "Sophie",
-    imgSrc: "/people/luke.jpg",
-    content: {
-      Age: "24",
-      Nationality: "Dutch",
-      Location: "Bogota",
-      Duration: "2 weeks",
-      Description: "Hello my name is sophie, I'm 25 and from denmark",
+      TravelDuration: "4 weeks from Medillin to Cartagena",
+      Description:
+        "We travelled together from Cartagena to Bogota for 2 weeks, going diving in the Carrabiean, doing the lost city trek and partying in Bogota",
     },
   },
 ];

@@ -23,7 +23,7 @@ export default function PeoplePage() {
             <Card
               key={name}
               style={{
-                width: width > 768 ? "400px" : "100%",
+                width: width > 768 ? "600px" : "100%",
               }}
               className={withBaseName("card")}
             >
