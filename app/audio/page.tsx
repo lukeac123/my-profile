@@ -2,24 +2,7 @@
 import { Stack, Text, Title, Flex, Image } from "@mantine/core";
 import { Audio, Card, CardContent, CardTitle } from "../../components";
 import { useViewportSize } from "@mantine/hooks";
-
-const AudioClips = [
-  {
-    title: "Medillin",
-    description:
-      "Audio taken sitting in the center of the medina in Medillin. Walking through the local markets selling things ranging from fresh fruit ang veg, fake sliders and gucci belts, you can hear tourists bartering with the local venders. The sounds of mopeds and carts over the cobblestone streets ",
-    audioSrc: "audio/yala-national-park.mp3",
-    imageSrc: "me.jpg",
-    audioVisulisation: false,
-  },
-  {
-    title: "Bogota",
-    description: "",
-    audioSrc: "audio/yala-national-park.mp3",
-    imageSrc: "",
-    audioVisulisation: false,
-  },
-];
+import { audioClips } from "../../utils";
 
 export default function AudioPage() {
   const { width } = useViewportSize();
@@ -28,7 +11,7 @@ export default function AudioPage() {
       <Title order={1} ta="center" className={"title"}>
         Audio Clips
       </Title>
-      {AudioClips.map((audio) => {
+      {audioClips.map((audio) => {
         const { title, description, audioSrc, imageSrc } = audio;
         return (
           <Card key={title}>

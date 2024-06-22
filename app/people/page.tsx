@@ -1,77 +1,51 @@
+"use client";
 import { Stack, Text, Title, Flex, Image } from "@mantine/core";
 import { Card, CardTitle, CardContent } from "../../components";
+import { useViewportSize } from "@mantine/hooks";
+import { insertSpaces, makePrefixer } from "../../utils";
+import "./page.css";
+import { people } from "../../utils";
 
-const people = [
-  {
-    name: "Sophie",
-    imgSrc: "/people/luke.jpg",
-    content: {
-      age: "24",
-      nationality: "Dutch",
-      location: "Bogota",
-      duration: "2 weeks",
-      description: "Hello my name is sophie, I'm 25 and from denmark",
-    },
-  },
-  {
-    name: "Sophie",
-    imgSrc: "/people/luke.jpg",
-    content: {
-      age: "24",
-      nationality: "",
-      location: "",
-      duration: "",
-      description: "Hello my name is sophie, I'm 25 and from denmark",
-    },
-  },
-];
+const withBaseName = makePrefixer("peoplePage");
 
-type Person = {
-  name: string;
-  age: string;
-  description: string;
-  imgSrc: string;
-  nationality: string;
-  location: string;
-  duration: string;
-};
-
-export default function BlogPage() {
+export default function PeoplePage() {
+  const { width } = useViewportSize();
   return (
     <Stack>
-      <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-        <Title order={1} ta="left">
-          Travel Buddies
-        </Title>
-      </div>
+      <Title order={1} ta="center">
+        Travel Buddies
+      </Title>
 
-      <Flex
-        gap={"lg"}
-        justify={"center"}
-        style={{
-          width: "100%",
-          flexWrap: "wrap",
-          overflowY: "visible",
-          display: "flex",
-        }}
-      >
+      <div className={withBaseName("container")}>
         {people.map((people) => {
           const { name, imgSrc, content } = people;
           return (
-            <Card key={name} style={{ width: "600px" }}>
-              <Image src={imgSrc} style={{ height: "50%" }} />
+            <Card
+              key={name}
+              style={{
+                width: width > 768 ? "400px" : "100%",
+              }}
+              className={withBaseName("card")}
+            >
+              <Image src={imgSrc} className={withBaseName("cardImage")} />
               <CardContent>
                 <CardTitle>{name}</CardTitle>
-                <div style={{ width: "100%", overflowWrap: "break-word" }}>
+                <div className={withBaseName("cardDescription")}>
                   {Object.entries(content).map((content) => {
                     return (
-                      <Flex gap={"lg"} key={content[1]}>
-                        <Text size="lg" fw={700} style={{ width: "110px" }}>
-                          {content[0]}:
+                      <Flex
+                        gap={"lg"}
+                        key={content[1]}
+                        style={{ flexShrink: 0 }}
+                      >
+                        <Text
+                          size="lg"
+                          fw={700}
+                          className={withBaseName("cardDescriptionColumn1")}
+                        >
+                          {insertSpaces(content[0])}:
                         </Text>
-                        <Text size="lg" style={{ overflow: "wrap" }}>
-                          {content[1]}
-                        </Text>
+                        <Text size="lg">{content[1]}</Text>
                       </Flex>
                     );
                   })}
@@ -80,7 +54,7 @@ export default function BlogPage() {
             </Card>
           );
         })}
-      </Flex>
+      </div>
     </Stack>
   );
 }

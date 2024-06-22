@@ -1,59 +1,58 @@
-export const pages = [
+export const people = [
   {
-    pageId: "creative_coding",
-    title: "Creative Coding",
-    description: "list of all the projetcts you are doing",
-    cards: [],
+    name: "Sophie",
+    imgSrc: "/people/luke.jpg",
+    content: {
+      Nationality: "Dutch",
+      Age: "24",
+      Location: "Bogota",
+      TravelDuration: "2 weeks",
+      Description: "Hello my name is sophie",
+    },
   },
   {
-    pageId: "photos",
-    title: "Photos",
-    description: "picture of you and description of what you're trying to do",
-    cards: [],
+    name: "Sophie",
+    imgSrc: "/people/luke.jpg",
+    content: {
+      Age: "24",
+      Nationality: "Dutch",
+      Location: "Bogota",
+      Duration: "2 weeks",
+      Description: "Hello my name is sophie, I'm 25 and from denmark",
+    },
   },
   {
-    pageId: "cv",
-    title: "CV",
-    description: "Add you CV here with a download link",
-    cards: [],
+    name: "Sophie",
+    imgSrc: "/people/luke.jpg",
+    content: {
+      Age: "24",
+      Nationality: "Dutch",
+      Location: "Bogota",
+      Duration: "2 weeks",
+      Description: "Hello my name is sophie, I'm 25 and from denmark",
+    },
   },
 ];
 
-export const cards = [
+export const audioClips = [
   {
-    title: "Places",
+    title: "Medillin",
     description:
-      "Highights of the locations I've travelled to inlcuding google maps locations and descriptions of my expereinces there",
-    link: "./places",
+      "Audio taken sitting in the center of the medina in Medillin. Walking through the local markets selling things ranging from fresh fruit ang veg, fake sliders and gucci belts, you can hear tourists bartering with the local venders. The sounds of mopeds and carts over the cobblestone streets ",
+    audioSrc: "audio/yala-national-park.mp3",
+    imageSrc: "me.jpg",
+    audioVisulisation: false,
   },
   {
-    title: "People",
-    description: "Some of the people i've met of my travels",
-    link: "./people",
-  },
-  {
-    title: "Audio",
-    description: "Hello Wolrd",
-    link: "./audio",
-  },
-  {
-    title: "Photos",
-    description: "Hello Wolrd",
-    link: "./photos",
-  },
-  {
-    title: "Insights",
-    description: "Hello Wolrd",
-    link: "./insights",
-  },
-  {
-    title: "Runs",
-    description: "Hello Wolrd",
-    link: "./runs",
+    title: "Bogota",
+    description: "",
+    audioSrc: "audio/yala-national-park.mp3",
+    imageSrc: "",
+    audioVisulisation: false,
   },
 ];
 
-export const blogs = [
+export const places = [
   {
     country: "Colombia",
     location: "Green Acre Hostel",

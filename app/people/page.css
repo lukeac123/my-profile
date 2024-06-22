@@ -1,3 +1,25 @@
-.peoplePage{
-    
+.peoplePage-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.peoplePage-card{
+    height: 700px
+}
+
+.peoplePage-cardImage{
+    height: 400px
+}
+
+.peoplePage-cardDescription{
+    width: auto;
+    overflow-wrap: break-word;
+}
+
+.peoplePage-cardDescriptionColumn1 {
+    width: 150px;
+    flex-shrink: 0;
+
 }
