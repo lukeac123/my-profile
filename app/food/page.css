@@ -1,28 +1,28 @@
-.peoplePage-container {
+.foodPage-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
 
-.peoplePage-card {
+.foodPage-card {
   height: 700px;
 }
 
-.peoplePage-cardTitle {
+.foodPage-cardTitle {
   text-decoration: underline;
 }
 
-.peoplePage-cardImage {
+.foodPage-cardImage {
   height: 400px;
 }
 
-.peoplePage-cardDescription {
+.foodPage-cardDescription {
   width: auto;
   overflow-wrap: break-word;
 }
 
-.peoplePage-cardDescriptionColumn1 {
+.foodPage-cardDescriptionColumn1 {
   width: 150px;
   flex-shrink: 0;
 }

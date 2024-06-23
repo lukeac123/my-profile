@@ -4,21 +4,21 @@ import { Card, CardTitle, CardContent } from "../../components";
 import { useViewportSize } from "@mantine/hooks";
 import { insertSpaces, makePrefixer } from "../../utils";
 import "./page.css";
-import { people } from "../../utils";
+import { meals } from "../../utils";
 
-const withBaseName = makePrefixer("peoplePage");
+const withBaseName = makePrefixer("foodPage");
 
-export default function PeoplePage() {
+export default function FoodPage() {
   const { width } = useViewportSize();
   return (
     <Stack>
       <Title order={1} ta="center">
-        Travel Buddies
+        Bordain Style
       </Title>
 
       <div className={withBaseName("container")}>
-        {people.map((people) => {
-          const { name, imgSrc, content } = people;
+        {meals.map((meal) => {
+          const { name, imgSrc, content } = meal;
           return (
             <Card
               key={name}

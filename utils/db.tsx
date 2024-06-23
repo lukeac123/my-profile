@@ -13,6 +13,22 @@ export const people = [
   },
 ];
 
+export const meals = [
+  {
+    name: "Cerviche",
+    imgSrc: "/people/luke.jpg",
+    content: {
+      Location: "Cartagena",
+      Ingredients: "SeaBass , Lime, Chilli",
+      FlavourRating: "",
+      Spiciness: "",
+      Cost: "£",
+      OverallRating: "10/10",
+      Description: "Yummy",
+    },
+  },
+];
+
 export const audioClips = [
   {
     title: "Medillin",

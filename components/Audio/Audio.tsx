@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState, HTMLAttributes, RefObject } from "react";
+import { useRef, useState, HTMLAttributes } from "react";
 import { Player } from "./Player";
 import { Visualisation } from "./Visualisation";
 import { Card } from "../Card";
@@ -40,7 +40,7 @@ export const Audio = ({
       if (audioRef.current && !source.current) {
         audioContext = new AudioContext();
         source.current = audioContext.createMediaElementSource(
-          audioRef.current,
+          audioRef.current
         );
         analyser.current = audioContext.createAnalyser();
         source.current.connect(analyser.current);
