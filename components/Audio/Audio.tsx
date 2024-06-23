@@ -41,12 +41,11 @@ export const Audio = ({
       if (audioRef.current && !source.current) {
         audioContext = new AudioContext();
         source.current = audioContext.createMediaElementSource(
-          audioRef.current,
+          audioRef.current
         );
         analyser.current = audioContext.createAnalyser();
         source.current.connect(analyser.current);
         analyser.current.connect(audioContext.destination);
-        // analyser.current.smoothingTimeConstant = 1;
       }
 
       audioRef.current.play();
@@ -55,18 +54,18 @@ export const Audio = ({
   };
 
   return (
-    <Card {...rest}>
+    <Card {...rest} className={"audioPlayer-container"}>
       <audio ref={audioRef} src={src} />
-      <Visualisation
-        className={withBaseName("visualisation")}
-        isPlaying={isPlaying}
-        analyser={analyser}
-      />
       <Player
         audioRef={audioRef}
         isPlaying={isPlaying}
         toggleAudioPlay={toggleAudioPlay}
         src={src}
+      />
+      <Visualisation
+        className={withBaseName("visualisation")}
+        isPlaying={isPlaying}
+        analyser={analyser}
       />
     </Card>
   );

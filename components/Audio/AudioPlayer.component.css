@@ -1,11 +1,16 @@
 .audioPlayer-container {
   min-width: 100%;
   padding: 10px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .mantine-Slider-thumb {
   display: none;
 }
+
 .audioPlayer-sliderContainer {
   width: 100%;
 }
@@ -25,5 +30,8 @@
 }
 
 .audioPlayer-visualisation {
-  height: 400px;
+  height: 100px;
+  width: 60%
+  /* position: relative; */
+
 }
