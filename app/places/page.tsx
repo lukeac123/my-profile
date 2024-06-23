@@ -1,74 +1,65 @@
 "use client";
-import { Stack, Text, Title, Image, Flex } from "@mantine/core";
-import { places } from "../../utils/db";
-import { Suspense } from "react";
-import { Audio, Card, Moodcheck } from "../../components";
-// import "./page.css";
+import { Stack, Text, Title, Flex, Image } from "@mantine/core";
+import { Card, CardTitle, CardContent } from "../../components";
+import { insertSpaces, makePrefixer } from "../../utils";
+import "./page.css";
+import { places } from "../../utils";
 
-export type Page = {
-  pageId: string;
-  title: string;
-  description: string;
-  link?: string;
-};
+const withBaseName = makePrefixer("placesPage");
 
-function getData(pageId: string) {
-  const data = Object.values(places).reduce((results: any, page: Page) => {
-    if (pageId === page.link) {
-      return page;
-    }
-    return results;
-  });
-  return data;
-}
-
-export default function BlogPage({ params }) {
-  const blogData = getData(params.pageId);
+export default function PlacesPage() {
   return (
-    <Stack
-      gap="lg"
-      align="center"
-      style={{
-        width: "80%",
-        paddingTop: "20px",
-      }}
-    >
-      <Title order={1}> {blogData.location} </Title>
-      <Flex
-        direction={{
-          base: "column",
-          xs: "column",
-          sm: "column",
-          md: "row",
-          lg: "row",
-          xl: "row",
-        }}
-        gap={"xl"}
-      >
-        <Stack>
-          <Card>
-            <Text> {blogData.description} </Text>
-          </Card>
-          <Card>
-            <Suspense fallback={<LoadingSpinner />}>
-              Picture of the Day
-              <Image src={`/blogs/${blogData.imgSrc}`} />
-            </Suspense>
-          </Card>
-        </Stack>
-        <Stack>
-          <Card>
-            <iframe src={blogData.googleMapsIframeUrl} loading="lazy" />
-          </Card>
-          <Card>
-            <Audio
-              title={blogData.audioTitle}
-              src={`/blogs/${blogData.audioSrc}`}
-            />
-          </Card>
-          <Moodcheck emotion="happy" />
-        </Stack>
-      </Flex>
+    <Stack>
+      <Title order={1} ta="center">
+        Places
+      </Title>
+
+      <div className={withBaseName("container")}>
+        {places.map((places) => {
+          const { location, content, imgSrc, googleMapsIframeUrl } = places;
+          return (
+            <Card key={location} className={withBaseName("card")}>
+              <CardTitle className={withBaseName("cardTitle")}>
+                {location}
+              </CardTitle>
+              <CardContent>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "10px",
+                    width: "100%",
+                  }}
+                >
+                  <div className={withBaseName("cardColumnn1")}>
+                    {Object.entries(content).map((content) => {
+                      return (
+                        <Flex
+                          gap={"lg"}
+                          key={content[1]}
+                          style={{ flexShrink: 0 }}
+                        >
+                          <Text
+                            size="lg"
+                            fw={700}
+                            className={withBaseName("cardDescriptionColumn1")}
+                          >
+                            {insertSpaces(content[0])}:
+                          </Text>
+                          <Text size="lg">{content[1]}</Text>
+                        </Flex>
+                      );
+                    })}
+                    <Card className={withBaseName("googleIframe")}>
+                      <iframe src={googleMapsIframeUrl} loading="lazy" />
+                    </Card>
+                  </div>
+                  <Image src={imgSrc} className={withBaseName("cardImage")} />{" "}
+                </div>
+              </CardContent>
+            </Card>
+          );
+        })}
+      </div>
     </Stack>
   );
 }
