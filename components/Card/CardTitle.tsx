@@ -1,12 +1,12 @@
-import { ReactNode } from "react";
+import { ReactNode, HTMLAttributes } from "react";
 import { makePrefixer } from "../../utils/makePrefixer";
 import { Title } from "@mantine/core";
 import { clsx } from "clsx";
 
-export type CardTitleProps = {
+export interface CardTitleProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   className?: string;
-};
+}
 
 const withBaseName = makePrefixer("cardTitle");
 
