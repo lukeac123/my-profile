@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState, HTMLAttributes, RefObject } from "react";
+import { useRef, useState, HTMLAttributes } from "react";
 import { Player } from "./Player";
 import { Visualisation } from "./Visualisation";
 import { Card } from "../Card";

@@ -132,13 +132,7 @@ export const Player = ({
   };
 
   return (
-    <Stack
-      className={"audioPlayer-container"}
-      aria-label={title}
-      align="center"
-      gap={4}
-      {...rest}
-    >
+    <Stack aria-label={title} align="center" gap={4} {...rest}>
       {children}
       <Flex direction={"row"} gap={width > 576 ? "xs" : "0"}>
         <a href={src} download target="_blank" rel="noreferrer">
