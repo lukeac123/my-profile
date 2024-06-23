@@ -1,41 +1,39 @@
 .placesPage-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .placesPage-card {
-    width: 100%;
-    align-content: center;
-    justify-content: center;
-    display: flex;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
 
-  .placesPage-cardTitle {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    text-decoration: underline;
-  }
+.placesPage-card {
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+}
 
-  .placesPage-cardColumnn1 {
-    width: 50%;
-    overflow-wrap: break-word;
-    padding: 5px;
-  }
-  
-  .placesPage-cardImage {
-    width: 50%;
-  }
+.placesPage-cardTitle {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  text-decoration: underline;
+}
 
-  .placesPage-googleIframe {
-    margin-top: 10px;
-  }
-  
+.placesPage-cardColumnn1 {
+  width: 50%;
+  overflow-wrap: break-word;
+  padding: 5px;
+}
 
-  .placesPage-cardDescriptionColumn1 {
-    width: 150px;
-    flex-shrink: 0;
-  }
-  
+.placesPage-cardImage {
+  width: 50%;
+}
+
+.placesPage-googleIframe {
+  margin-top: 10px;
+}
+
+.placesPage-cardDescriptionColumn1 {
+  width: 150px;
+  flex-shrink: 0;
+}
