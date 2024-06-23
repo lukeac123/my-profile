@@ -38,11 +38,6 @@ export const Visualisation = ({
           );
           const ypos = canvasRef.current.height / 2 + songData[i] / 2;
           ctx.fillRect(start, ypos, bar_width, -songData[i]);
-          // ctx.beginPath();
-          // ctx.arc(start, ypos, songData[i], 0, 2 * Math.PI, false);
-          // ctx.fill();
-          // ctx.lineWidth = 1;
-          // ctx.stroke();
         }
       }
     };

@@ -4,7 +4,6 @@ import {
   useEffect,
   useState,
   useCallback,
-  forwardRef,
   HTMLAttributes,
   RefObject,
 } from "react";
@@ -48,6 +47,7 @@ export const Player = ({
   className,
   toggleAudioPlay,
   isPlaying,
+  children,
   ...rest
 }: PlayerProps) => {
   const [mute, setMute] = useState(false);
@@ -136,9 +136,10 @@ export const Player = ({
       className={"audioPlayer-container"}
       aria-label={title}
       align="center"
-      gap={3}
+      gap={4}
       {...rest}
     >
+      {children}
       <Flex direction={"row"} gap={width > 576 ? "xs" : "0"}>
         <a href={src} download target="_blank" rel="noreferrer">
           <Button
