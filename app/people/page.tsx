@@ -36,9 +36,17 @@ export default function PeoplePage() {
                   {Object.entries(content).map((content) => {
                     return (
                       <Flex
-                        gap={"lg"}
+                        gap={0}
                         key={content[1]}
                         style={{ flexShrink: 0 }}
+                        direction={{
+                          base: "column",
+                          xl: "row",
+                          lg: "row",
+                          md: "row",
+                          sm: "column",
+                          xs: "column",
+                        }}
                       >
                         <Text
                           size="lg"

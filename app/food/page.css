@@ -7,6 +7,9 @@
 
 .foodPage-card {
   height: 700px;
+  align-content: center;
+  justify-content: center;
+  display: flex;
 }
 
 .foodPage-cardTitle {
@@ -20,6 +23,7 @@
 .foodPage-cardDescription {
   width: auto;
   overflow-wrap: break-word;
+  gap: 5px;
 }
 
 .foodPage-cardDescriptionColumn1 {
