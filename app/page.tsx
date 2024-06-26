@@ -3,17 +3,15 @@ import { Stack, Text, Title, Flex, Image } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
 import { Card, CardTitle, CardContent } from "../components";
 import "./page.css";
+import { makePrefixer } from "../utils";
+
+const withBaseName = makePrefixer("HomePage");
 
 export default function BlogPage() {
   const { width } = useViewportSize();
   return (
     <Stack>
-      <Title
-        order={1}
-        ta="center"
-        hiddenFrom="sm"
-        style={{ paddingBottom: "10px" }}
-      >
+      <Title order={1} ta="center" hiddenFrom="sm">
         Queer Abroad
       </Title>
       <Flex
@@ -28,7 +26,7 @@ export default function BlogPage() {
         gap={"lg"}
       >
         <div style={{ width: width > 992 ? "60%" : "100%" }}>
-          <Card style={{ width: "100%" }}>
+          <Card>
             <Image src="/me.jpg" />
             <CardContent>
               <CardTitle>Looks Its Me!</CardTitle>

@@ -44,7 +44,7 @@ export default function FoodPage() {
                           xl: "row",
                           lg: "row",
                           md: "row",
-                          sm: "column",
+                          sm: "row",
                           xs: "column",
                         }}
                       >
