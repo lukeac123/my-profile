@@ -13,20 +13,18 @@
 }
 
 .placesPage-cardTitle {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
+  padding-left: 20px;
+  padding-top: 10px;
   text-decoration: underline;
 }
 
 .placesPage-cardColumnn1 {
-  width: 50%;
   overflow-wrap: break-word;
   padding: 5px;
-}
-
-.placesPage-cardImage {
-  width: 50%;
+  flex-shrink: 0;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .placesPage-googleIframe {

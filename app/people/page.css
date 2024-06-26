@@ -20,6 +20,9 @@
 .peoplePage-cardDescription {
   width: auto;
   overflow-wrap: break-word;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .peoplePage-cardDescriptionColumn1 {
