@@ -5,7 +5,7 @@ import { Providers } from "./Providers";
 import "@mantine/core/styles.css";
 
 export const metadata = {
-  title: "Luke Atkinson-Coyle",
+  title: "Queer Abroad",
 };
 
 export default function RootLayout({ children }: { children: any }) {
@@ -13,7 +13,24 @@ export default function RootLayout({ children }: { children: any }) {
     <html lang="en">
       <head>
         <ColorSchemeScript defaultColorScheme="dark" />
-        <link rel="shortcut icon" href="/favicon.svg" />
+        <link
+          rel="apple-touch-icon"
+          sizes="favicon/180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="favicon/site.webmanifest" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=10px, user-scalable=no"

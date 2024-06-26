@@ -39,14 +39,14 @@ export default function PlacesPage() {
                   <Image
                     src={imgSrc}
                     style={{
-                      width: width > 768 ? "50%" : "100%",
-                      height: width > 768 ? "" : "100px",
+                      width: width > 992 ? "50%" : "100%",
+                      height: width > 992 ? "" : "100px",
                     }}
                   />
                   <div
                     className={withBaseName("cardColumnn1")}
                     style={{
-                      width: width > 768 ? "50%" : "100%",
+                      width: width > 992 ? "50%" : "100%",
                     }}
                   >
                     {Object.entries(content).map((content) => {
@@ -86,8 +86,4 @@ export default function PlacesPage() {
       </div>
     </Stack>
   );
-}
-
-function LoadingSpinner() {
-  return <> ...loading </>;
 }
