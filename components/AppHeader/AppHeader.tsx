@@ -21,6 +21,7 @@ const links = [
   { label: "People", link: "./people" },
   { label: "Food", link: "./food" },
   { label: "Audio", link: "./audio" },
+  { label: "Gallery", link: "./gallery" },
 ];
 
 const withBaseName = makePrefixer("appHeader");

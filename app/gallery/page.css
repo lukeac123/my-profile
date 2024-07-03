@@ -1,0 +1,28 @@
+.photosPage {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (width <= 768px) {
+  .photosPage {
+    flex-direction: column;
+  }
+}
+
+.photosPage-card {
+  width: 60%;
+  height: 400px;
+}
+
+.photosPage-image {
+  width: 100%;
+  /* height: 400px; */
+}
+
+@media (width <= 768px) {
+  .photosPage-card {
+    width: 100%;
+  }
+}
