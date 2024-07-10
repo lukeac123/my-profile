@@ -22,7 +22,7 @@
 }
 
 .galleryPage-card:hover > .galleryPage-overlay {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .galleryPage-overlay {
@@ -35,7 +35,6 @@
   align-items: center;
   background: black;
 }
-
 
 .galleryPage-image {
   width: 100%;
