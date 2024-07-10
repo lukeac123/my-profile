@@ -5,50 +5,39 @@ import { Card, CardContent, CardTitle } from "../../components";
 import { makePrefixer } from "../../utils";
 import "./page.css";
 
-const withBaseName = makePrefixer("photosPage");
+const withBaseName = makePrefixer("galleryPage");
 
 export default async function GalleryPage() {
   const imageGalleryDirectory = path.join(process.cwd(), "/public/gallery");
   const imageLocationFolders = await fs.readdir(imageGalleryDirectory);
-  const galleryItem = await Promise.all(
-    imageLocationFolders.map(async (folder) => {
-      const imageFolderDirectory = path.join(
-        process.cwd(),
-        "/public/gallery",
-        `${folder}`,
-      );
-      const imageDirs = await fs.readdir(imageFolderDirectory);
-      const firstImageSrc = path.join(
-        "/gallery",
-        `/${folder}`,
-        imageDirs[0].toString(),
-      );
-      return { folder, firstImageSrc };
-    }),
-  );
-
+  const galleryItem = imageLocationFolders.map((folder) => {
+    const indexImageSrc = `/gallery/${folder}/index.jpeg`;
+    return { folder, indexImageSrc };
+  });
   return (
-    <div>
+    <Stack>
       <Title order={1} ta="center">
-        Photos
+        Gallery
       </Title>
       <div className={withBaseName()}>
         {galleryItem.map((item) => {
           return (
-            <Card className={withBaseName("card")}>
-              <CardContent>
-                <CardTitle>
-                  {item.folder.charAt(0).toUpperCase() + item.folder.slice(1)}
-                </CardTitle>
-              </CardContent>
+            <Card
+              className={withBaseName("card")}
+              link={`gallery/${item.folder}`}
+            >
+              <Title order={1} className={withBaseName("overlay")}>
+                {item.folder.charAt(0).toUpperCase() + item.folder.slice(1)}
+              </Title>
+
               <Image
                 className={withBaseName("image")}
-                src={item.firstImageSrc}
+                src={item.indexImageSrc}
               />
             </Card>
           );
         })}
       </div>
-    </div>
+    </Stack>
   );
 }
