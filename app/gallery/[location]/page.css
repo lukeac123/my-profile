@@ -1,0 +1,12 @@
+.photosPage {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.photosPage-image {
+  width: 60%;
+  height: 500px;
+}
