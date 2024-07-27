@@ -1,45 +1,30 @@
-export const people = [
+export const friends = [
   {
-    title: "Spanish Adventure",
-    link: "/people",
+    title: "Chispas",
+    link: "/friends",
     location: "",
-    imgSrc: "/people/luke.jpg",
-    date: "30 / 11 / 2024",
+    imgSrc: "/friends/luke.jpg",
+    date: "14 / 07 / 2024",
     content: {
-      Nationality: "Dutch",
-      Age: "24",
-      Location: "Bogota",
-      TravelDuration: "4 weeks from Medillin to Cartagena",
+      Nationality: "Colombia",
+      Age: "Unknown",
+      Location: "San Carlos, Colombia",
+      TravelDuration: "1 Week",
       Description:
         "We travelled together from Cartagena to Bogota for 2 weeks, going diving in the Carrabiean, doing the lost city trek and partying in Bogota",
     },
   },
   {
-    title: "James",
+    title: "Spanish Adventure - Shadow",
+    link: "/friends",
     location: "",
-    link: "/people",
-    imgSrc: "/people/luke.jpg",
-    date: "10 / 12 / 2024",
+    imgSrc: "/friends/luke.jpg",
+    date: "14 / 07 / 2024",
     content: {
-      Nationality: "Dutch",
-      Age: "24",
-      Location: "Bogota",
-      TravelDuration: "4 weeks from Medillin to Cartagena",
-      Description:
-        "We travelled together from Cartagena to Bogota for 2 weeks, going diving in the Carrabiean, doing the lost city trek and partying in Bogota",
-    },
-  },
-  {
-    title: "Ben",
-    location: "",
-    link: "/people",
-    imgSrc: "/people/luke.jpg",
-    date: "4 / 7 / 2024",
-    content: {
-      Nationality: "Dutch",
-      Age: "24",
-      Location: "Bogota",
-      TravelDuration: "4 weeks from Medillin to Cartagena",
+      Nationality: "Colombiabn",
+      Age: "Unknown",
+      Location: "San Carlos, Colombia",
+      TravelDuration: "1 Week",
       Description:
         "We travelled together from Cartagena to Bogota for 2 weeks, going diving in the Carrabiean, doing the lost city trek and partying in Bogota",
     },
@@ -51,7 +36,7 @@ export const food = [
     title: "Cerviche",
     location: "",
     link: "/food",
-    imgSrc: "/people/luke.jpg",
+    imgSrc: "/food/luke.jpg",
     date: "22 / 7 / 2024",
     content: {
       Location: "Cartagena",

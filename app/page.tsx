@@ -1,10 +1,10 @@
 import { Stack, Text, Image } from "@mantine/core";
 import { Card, Title, CardContent } from "../components";
 import { makePrefixer } from "../utils";
-import { people, food, audioClips, places } from "../utils/db";
+import { friends, food, audioClips, places } from "../utils/db";
 import "./page.css";
 
-const db = [people, food, audioClips, places];
+const db = [friends, food, audioClips, places];
 
 // const latestItems = db.map((item) => {
 //   const sortedItems = item.sort((a, b) => {
@@ -12,13 +12,19 @@ const db = [people, food, audioClips, places];
 //   });
 // });
 
-const latestItems = [people[0], food[0], audioClips[0], places[0]];
+const latestItems = [friends[0], food[0], audioClips[0], places[0]];
 
 const withBaseName = makePrefixer("homePage");
 
 export default function BlogPage() {
   return (
     <Stack>
+      <iframe
+        className={withBaseName("map")}
+        src="https://www.travellerspoint.com/embed/map.cfm/#/embed/1139683/"
+        width="100%"
+        height="500px"
+      />
       <Title order={1} ta="center" hiddenFrom="sm">
         Queer Abroad
       </Title>
@@ -26,14 +32,18 @@ export default function BlogPage() {
         <div className={withBaseName("aboutContainer")}>
           <Image src="/me.jpg" className={withBaseName("photo")} />
           <CardContent>
-            <Title>About Me</Title>
+            <Title underlined>About Me</Title>
             <Text size="lg" className={withBaseName("text")}>
-              My name is Luke, I'm 25 and born an raised in North London. After
-              leaving university 3 years ago and going starting a graduate
-              scheme at a bank, I've decided to leave the corporate world behind
-              and travel across the South American continent. Follow this page
-              for updates on the places I visit, the people I meet as well as
-              plenty of phoots and audio clips.
+              Hello and welcome to Queer Abroad, a website documenting my
+              experiences traveling across South America as a Queer Man. Living
+              the majority of my life in London and working in the corporate
+              world as a software engineer for the last 3 years, I've decided to
+              put the predictable pendulum of London life behind me and solo
+              backpack across the South American continent. Swapping high-rises
+              for sun-rises and the clicky clack of the tude for the passionate
+              and expressive beats of Latin America. Follow this page for
+              updates on the places I visit, the people I meet as well as plenty
+              of photos and audio clips.
             </Text>
           </CardContent>
         </div>

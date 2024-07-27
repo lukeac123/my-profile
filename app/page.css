@@ -5,6 +5,13 @@
   flex-direction: column;
 }
 
+.homePage-map {
+  padding: 10px;
+  border: none;
+  border-bottom: solid;
+  border-color: var(--colorMode-color);
+}
+
 .homePage-aboutContainer {
   display: flex;
   width: 100%;
@@ -12,12 +19,6 @@
   border-bottom: solid;
   border-color: var(--colorMode-color);
   padding: 10px;
-}
-
-@media (width > 992px) {
-  .homePage-aboutContainer {
-    height: 80vh;
-  }
 }
 
 @media (width <= 992px) {
@@ -62,7 +63,7 @@
 
 .homePage-latestCard {
   width: 400px;
-  height: 400px
+  height: 400px;
 }
 
 @media (width <= 	992px) {

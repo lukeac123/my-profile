@@ -4,7 +4,7 @@ import { Card, Title, CardContent } from "../../components";
 import { useViewportSize } from "@mantine/hooks";
 import { insertSpaces, makePrefixer } from "../../utils";
 import "./page.css";
-import { people } from "../../utils";
+import { friends } from "../../utils";
 
 const withBaseName = makePrefixer("peoplePage");
 
@@ -18,8 +18,8 @@ export default function PeoplePage() {
       </Title>
 
       <div className={withBaseName("container")}>
-        {people.map((people) => {
-          const { title, imgSrc, content } = people;
+        {friends.map((friend) => {
+          const { title, imgSrc, content } = friend;
           return (
             <Card
               key={title}
