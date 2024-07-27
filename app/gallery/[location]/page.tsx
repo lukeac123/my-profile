@@ -1,4 +1,5 @@
-import { Stack, Text, Image, Title } from "@mantine/core";
+import { Stack, Image, Title } from "@mantine/core";
+import NextImage from "next/image";
 import path from "path";
 import { promises as fs } from "fs";
 import "./page.css";
@@ -13,17 +14,20 @@ export default async function PhotoPage({ params }) {
   );
   const imageLocationFolders = await fs.readdir(imageGalleryDirectory);
   return (
-    <Stack>
+    <Stack className={withBaseName()}>
       <Title order={1} ta="center">
         {params.location.charAt(0).toUpperCase() + params.location.slice(1)}
       </Title>
-      <div className={withBaseName()}>
+      <div className={withBaseName("photoContainer")}>
         {imageLocationFolders.map((image) => {
-          console.log(image);
           return (
             <Image
+              component={NextImage}
+              alt={image}
               className={withBaseName("image")}
               src={`/gallery/${params.location}/${image}`}
+              width={600}
+              height={500}
             />
           );
         })}

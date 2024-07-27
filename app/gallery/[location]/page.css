@@ -1,12 +1,16 @@
 .photosPage {
-  width: 100%;
   display: flex;
   align-items: center;
+}
+
+.photosPage-photoContainer {
   gap: 20px;
+  display: flex;
   flex-direction: column;
 }
 
-.photosPage-image {
-  width: 60%;
-  height: 500px;
+@media (width <= 768px) {
+  .photosPage-photoContainer {
+    width: 100%;
+  }
 }

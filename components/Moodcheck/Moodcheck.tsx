@@ -5,7 +5,8 @@ import {
   IconMoodSick,
   IconMoodAnnoyed,
 } from "@tabler/icons-react";
-import { Card, CardTitle } from "../Card";
+import { Card } from "../Card";
+import { Title } from "../Title";
 import { Flex } from "@mantine/core";
 import { makePrefixer } from "../../utils/makePrefixer";
 import { clsx } from "clsx";
@@ -31,7 +32,7 @@ export const Moodcheck = ({ emotion, className }: MoodcheckProps) => {
   return (
     <Card className={clsx(withBaseName(), className)}>
       <Flex direction={"row"} gap="xl">
-        <CardTitle> Moodcheck: </CardTitle>
+        <Title> Moodcheck: </Title>
         <div style={{ width: "100px", flexGrow: 1 }}>
           {IconByEmotion[emotion]}
         </div>

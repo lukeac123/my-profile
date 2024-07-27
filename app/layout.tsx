@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: any }) {
           <div
             style={{
               width: "100%",
-              padding: "10px",
+              // padding: "10px",
             }}
           >
             {children}
