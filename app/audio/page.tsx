@@ -1,6 +1,6 @@
 "use client";
-import { Stack, Text, Title, Flex, Image } from "@mantine/core";
-import { Audio, Card, CardContent, CardTitle } from "../../components";
+import { Stack, Text, Flex, Image } from "@mantine/core";
+import { Audio, Card, CardContent, Title } from "../../components";
 import { useViewportSize } from "@mantine/hooks";
 import { audioClips } from "../../utils";
 
@@ -12,7 +12,7 @@ export default function AudioPage() {
         Audio Clips
       </Title>
       {audioClips.map((audio) => {
-        const { title, description, audioSrc, imageSrc } = audio;
+        const { title, description, audioSrc, imgSrc } = audio;
         return (
           <Card key={title}>
             <Flex
@@ -34,7 +34,7 @@ export default function AudioPage() {
                 }}
               >
                 <Stack gap={"md"}>
-                  <CardTitle>{title}</CardTitle>
+                  <Title>{title}</Title>
                   <Text size="lg" ta="left" style={{ overflow: "wrap" }}>
                     {description}
                   </Text>
@@ -42,7 +42,7 @@ export default function AudioPage() {
                 </Stack>
               </CardContent>
               <Image
-                src={imageSrc}
+                src={imgSrc}
                 style={{ width: width > 992 ? "50%" : "100%" }}
               />
             </Flex>

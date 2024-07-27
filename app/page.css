@@ -1,3 +1,81 @@
-.homePage-card {
+.homePage {
+  gap: 10px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.homePage-aboutContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  border-bottom: solid;
+  border-color: var(--colorMode-color);
+  padding: 10px;
+}
+
+@media (width > 992px) {
+  .homePage-aboutContainer {
+    height: 80vh;
+  }
+}
+
+@media (width <= 992px) {
+  .homePage-aboutContainer {
+    flex-direction: column;
+  }
+}
+
+.homePage-banner {
+  overflow: wrap;
+}
+
+.homePage-photo {
+  width: 50%;
+}
+
+@media (width <= 992px) {
+  .homePage-photo {
+    width: 100%;
+  }
+}
+
+.homePage-latestContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: solid;
+  border-color: var(--colorMode-color);
+  gap: 10px;
+  padding: 10px;
+}
+
+@media (width <= 	992px) {
+  .homePage-latestContainer {
+    flex-direction: column;
+  }
+}
+
+.homePage-latestTitle {
+  padding: 10px;
+}
+
+.homePage-latestCard {
+  width: 400px;
+  height: 400px
+}
+
+@media (width <= 	992px) {
+  .homePage-latestCard {
+    width: 100%;
+  }
+}
+
+.homePage-latestCard:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 1px var(--colorMode-color);
+}
+
+.homePage-latestCardImage {
+  height: 300px;
 }

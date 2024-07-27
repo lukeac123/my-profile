@@ -1,6 +1,6 @@
 "use client";
-import { Stack, Text, Title, Flex, Image } from "@mantine/core";
-import { Card, CardTitle, CardContent } from "../../components";
+import { Stack, Text, Flex, Image } from "@mantine/core";
+import { Card, Title, CardContent } from "../../components";
 import { insertSpaces, makePrefixer } from "../../utils";
 import { useViewportSize } from "@mantine/hooks";
 import "./page.css";
@@ -18,12 +18,10 @@ export default function PlacesPage() {
 
       <div className={withBaseName("container")}>
         {places.map((places) => {
-          const { location, content, imgSrc, googleMapsIframeUrl } = places;
+          const { title, content, imgSrc, googleMapsIframeUrl } = places;
           return (
-            <Card key={location} className={withBaseName("card")}>
-              <CardTitle className={withBaseName("cardTitle")}>
-                {location}
-              </CardTitle>
+            <Card key={title} className={withBaseName("card")}>
+              <Title className={withBaseName("cardTitle")}>{title}</Title>
               <CardContent>
                 <Flex
                   direction={{
