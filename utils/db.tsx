@@ -52,14 +52,25 @@ export const food = [
 
 export const audioClips = [
   {
-    title: "Medillin",
-    location: "Medellin",
+    title: "Guatape Biblical Rain",
+    location: "Guatape",
     link: "/audio",
-    date: "30 / 11 / 2024",
-    audioSrc: "audio/yala-national-park.mp3",
-    imgSrc: "me.jpg",
+    date: "12 / 07 / 2024",
+    audioSrc: "audio/guatape_lake_rain.m4a",
+    imgSrc: "audio/guatape_lake_rain.jpeg",
     description:
-      "Audio taken sitting in the center of the medina in Medillin. Walking through the local markets selling things ranging from fresh fruit ang veg, fake sliders and gucci belts, you can hear tourists bartering with the local venders. The sounds of mopeds and carts over the cobblestone streets ",
+      "Write the descriptions and the images should probably be cropped to square images",
+    audioVisulisation: false,
+  },
+  {
+    title: "Mamasita Restaurant",
+    location: "Guatape",
+    link: "/audio",
+    date: "12 / 07 / 2024",
+    audioSrc: "audio/mamasita.m4a",
+    imgSrc: "audio/mamasita.jpeg",
+
+    description: "TBC",
     audioVisulisation: false,
   },
 ];
