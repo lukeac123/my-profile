@@ -19,15 +19,15 @@ const withBaseName = makePrefixer("homePage");
 export default function BlogPage() {
   return (
     <Stack>
+      <Title order={1} ta="center" hiddenFrom="sm">
+        Queer Abroad
+      </Title>
       <iframe
         className={withBaseName("map")}
         src="https://www.travellerspoint.com/embed/map.cfm/#/embed/1139683/"
         width="100%"
         height="500px"
       />
-      <Title order={1} ta="center" hiddenFrom="sm">
-        Queer Abroad
-      </Title>
       <div className={withBaseName()}>
         <div className={withBaseName("aboutContainer")}>
           <Image src="/me.jpg" className={withBaseName("photo")} />
@@ -71,31 +71,28 @@ export default function BlogPage() {
             })}
           </div>
         </>
+        <Card className={withBaseName("spotifyPlaylistContainer")}>
+          <iframe
+            src="https://open.spotify.com/embed/playlist/2d3W35gRiH2pSfSNA0C5B5?utm_source=generator&theme=0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            width="100%"
+            height="352"
+            frameBorder="0"
+            loading="lazy"
+            style={{ borderRadius: "20px" }}
+          />
+          <CardContent>
+            <Title underlined>Travel Playlist</Title>
+            <Text size="lg">
+              While travelling I’ve been asking each person I meet to add their
+              favourite song to this playlist. This playlist is a reflection of
+              my experience and the interactions I’ve had with the people I’ve
+              met, but also their unique personalities and individuality. I've
+              also added in a few of my favourite songs along the way.
+            </Text>
+          </CardContent>
+        </Card>
       </div>
     </Stack>
   );
-}
-
-{
-  /* <Stack style={{ width: width > 992 ? "40%" : "100%" }} gap={"lg"}>
-          <Card>
-            <iframe
-              src="https://open.spotify.com/embed/track/3tZm76otWH20xzJC7icHCk?utm_source=generator"
-              width="100%"
-              height="352"
-              frameBorder="0"
-              allowFullScreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            />
-          </Card>
-          <Card>
-            <iframe
-              height="454"
-              width="100%"
-              frameBorder="0"
-              src="https://www.strava.com/athletes/50370447/latest-rides/1a80f93342d7917f32afd94cd2946476e5d80b2c"
-            />
-          </Card>
-        </Stack> */
 }
