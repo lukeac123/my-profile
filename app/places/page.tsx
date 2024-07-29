@@ -2,14 +2,14 @@
 import { Stack, Text, Flex, Image } from "@mantine/core";
 import { Card, Title, CardContent } from "../../components";
 import { insertSpaces, makePrefixer } from "../../utils";
-import { useViewportSize } from "@mantine/hooks";
-import "./page.css";
+// import { useViewportSize } from "@mantine/hooks";
 import { places } from "../../utils";
+import "./page.css";
 
 const withBaseName = makePrefixer("placesPage");
 
 export default function PlacesPage() {
-  const { width } = useViewportSize();
+  // const { width } = useViewportSize();
   return (
     <Stack>
       <Title order={1} ta="center">
@@ -21,9 +21,12 @@ export default function PlacesPage() {
           const { title, content, imgSrc, googleMapsIframeUrl } = places;
           return (
             <Card key={title} className={withBaseName("card")}>
-              <Title className={withBaseName("cardTitle")}>{title}</Title>
+              <Title underlined className={withBaseName("cardTitle")}>
+                {title}
+              </Title>
               <CardContent>
                 <Flex
+                  gap={"xs"}
                   direction={{
                     base: "column",
                     xl: "row",
@@ -32,35 +35,12 @@ export default function PlacesPage() {
                     sm: "column",
                     xs: "column",
                   }}
-                  gap={"xs"}
                 >
-                  <Image
-                    src={imgSrc}
-                    style={{
-                      width: width > 992 ? "50%" : "100%",
-                      height: width > 992 ? "" : "100px",
-                    }}
-                  />
-                  <div
-                    className={withBaseName("cardColumnn1")}
-                    style={{
-                      width: width > 992 ? "50%" : "100%",
-                    }}
-                  >
+                  <Image src={imgSrc} className={withBaseName("image")} />
+                  <div className={withBaseName("cardColumnn1")}>
                     {Object.entries(content).map((content) => {
                       return (
-                        <Flex
-                          gap={0}
-                          key={content[1]}
-                          direction={{
-                            base: "column",
-                            xl: "row",
-                            lg: "row",
-                            md: "row",
-                            sm: "column",
-                            xs: "column",
-                          }}
-                        >
+                        <Flex gap={0} key={content[1]}>
                           <Text
                             size="lg"
                             fw={700}

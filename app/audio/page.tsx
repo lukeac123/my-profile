@@ -16,17 +16,7 @@ export default function AudioPage() {
         const { title, description, audioSrc, imgSrc } = audio;
         return (
           <Card key={title}>
-            <Flex
-              direction={{
-                base: "column",
-                xs: "column",
-                sm: "column",
-                md: "row",
-                lg: "row",
-                xl: "row",
-              }}
-              gap={"lg"}
-            >
+            <Flex gap={"lg"}>
               <CardContent className={withBaseName("card")}>
                 <Stack gap={"md"}>
                   <Title>{title}</Title>

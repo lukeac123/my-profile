@@ -24,19 +24,7 @@ export default function PeoplePage() {
                 <div className={withBaseName("cardDescription")}>
                   {Object.entries(content).map((content) => {
                     return (
-                      <Flex
-                        gap={0}
-                        key={content[1]}
-                        style={{ flexShrink: 0 }}
-                        direction={{
-                          base: "column",
-                          xl: "row",
-                          lg: "row",
-                          md: "row",
-                          sm: "column",
-                          xs: "column",
-                        }}
-                      >
+                      <Flex gap={0} key={content[1]} style={{ flexShrink: 0 }}>
                         <Text
                           size="lg"
                           fw={700}

@@ -17,6 +17,17 @@
   padding-top: 10px;
 }
 
+.placesPage-image {
+  width: 50%;
+}
+
+@media (width <= 992px) {
+  .placesPage-image {
+    width: 100%;
+    height: 100px;
+  }
+}
+
 .placesPage-cardColumnn1 {
   overflow-wrap: break-word;
   padding: 5px;
@@ -24,6 +35,13 @@
   gap: 5px;
   display: flex;
   flex-direction: column;
+  width: 50%;
+}
+
+@media (width <= 992px) {
+  .placesPage-cardColumnn1 {
+    width: 100%;
+  }
 }
 
 .placesPage-googleIframe {
