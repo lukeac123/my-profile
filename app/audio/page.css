@@ -1,0 +1,27 @@
+.audioPage {
+  padding: 10px;
+}
+
+.audioPage-card {
+  display: flex;
+  align-content: center;
+  width: 50%;
+}
+
+@media (width <= 992px) {
+  .audioPage-card {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.audioPage-image {
+  width: 50%;
+}
+
+@media (width <= 992px) {
+  .audioPage-image {
+    flex-direction: column;
+    width: 100%;
+  }
+}

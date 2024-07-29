@@ -19,7 +19,7 @@ const withBaseName = makePrefixer("homePage");
 export default function BlogPage() {
   return (
     <Stack>
-      <Title order={1} ta="center" hiddenFrom="sm">
+      <Title order={1} ta="center" hiddenFrom="sm" underlined>
         Queer Abroad
       </Title>
       <iframe
@@ -71,27 +71,30 @@ export default function BlogPage() {
             })}
           </div>
         </>
-        <Card className={withBaseName("spotifyPlaylistContainer")}>
-          <iframe
-            src="https://open.spotify.com/embed/playlist/2d3W35gRiH2pSfSNA0C5B5?utm_source=generator&theme=0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            width="100%"
-            height="352"
-            frameBorder="0"
-            loading="lazy"
-            style={{ borderRadius: "20px" }}
-          />
-          <CardContent>
-            <Title underlined>Travel Playlist</Title>
-            <Text size="lg">
-              While travelling I’ve been asking each person I meet to add their
-              favourite song to this playlist. This playlist is a reflection of
-              my experience and the interactions I’ve had with the people I’ve
-              met, but also their unique personalities and individuality. I've
-              also added in a few of my favourite songs along the way.
-            </Text>
-          </CardContent>
-        </Card>
+        <div className={withBaseName("spotifyPlaylistContainer")}>
+          <Card>
+            <iframe
+              src="https://open.spotify.com/embed/playlist/2d3W35gRiH2pSfSNA0C5B5?utm_source=generator&theme=0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              width="100%"
+              height="352"
+              frameBorder="0"
+              loading="lazy"
+              style={{ borderRadius: "20px" }}
+            />
+            <CardContent>
+              <Title underlined>Travel Playlist</Title>
+              <Text size="lg">
+                While travelling I’ve been asking each person I meet to add
+                their favourite song to this playlist. This playlist is a
+                reflection of my experience and the interactions I’ve had with
+                the people I’ve met, but also their unique personalities and
+                individuality. I've also added in a few of my favourite songs
+                along the way.
+              </Text>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </Stack>
   );

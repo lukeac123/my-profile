@@ -1,7 +1,5 @@
-"use client";
 import { Stack, Text, Flex, Image } from "@mantine/core";
 import { Card, Title, CardContent } from "../../components";
-import { useViewportSize } from "@mantine/hooks";
 import { insertSpaces, makePrefixer } from "../../utils";
 import "./page.css";
 import { friends } from "../../utils";
@@ -9,8 +7,6 @@ import { friends } from "../../utils";
 const withBaseName = makePrefixer("peoplePage");
 
 export default function PeoplePage() {
-  // use media query - this should be a client component
-  const { width } = useViewportSize();
   return (
     <Stack>
       <Title order={1} ta="center">
@@ -21,13 +17,7 @@ export default function PeoplePage() {
         {friends.map((friend) => {
           const { title, imgSrc, content } = friend;
           return (
-            <Card
-              key={title}
-              style={{
-                width: width > 768 ? "600px" : "100%",
-              }}
-              className={withBaseName("card")}
-            >
+            <Card key={title} className={withBaseName("card")}>
               <Image src={imgSrc} className={withBaseName("cardImage")} />
               <CardContent>
                 <Title underlined>{title}</Title>

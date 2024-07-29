@@ -1,7 +1,5 @@
-"use client";
 import { Stack, Text, Flex, Image } from "@mantine/core";
 import { Card, Title, CardContent } from "../../components";
-import { useViewportSize } from "@mantine/hooks";
 import { insertSpaces, makePrefixer } from "../../utils";
 import "./page.css";
 import { food } from "../../utils";
@@ -9,8 +7,6 @@ import { food } from "../../utils";
 const withBaseName = makePrefixer("foodPage");
 
 export default function FoodPage() {
-  // Change to media query
-  const { width } = useViewportSize();
   return (
     <Stack>
       <Title order={1} ta="center">
@@ -21,13 +17,7 @@ export default function FoodPage() {
         {food.map((food) => {
           const { title, imgSrc, content } = food;
           return (
-            <Card
-              key={title}
-              style={{
-                width: width > 768 ? "600px" : "100%",
-              }}
-              className={withBaseName("card")}
-            >
+            <Card key={title} className={withBaseName("card")}>
               <Image src={imgSrc} className={withBaseName("cardImage")} />
               <CardContent>
                 <Title underlined>{title}</Title>
