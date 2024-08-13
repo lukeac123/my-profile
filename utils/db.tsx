@@ -10,7 +10,7 @@ export const friends = [
       Age: "Unknown",
       Location: "San Carlos, Colombia - Spanish Adventure",
       Description:
-        "Chispas is a staple of the Spanish Adventure experience. Originally bought by the family to eat but kept as they thought she was pregnant but now used as a garbage disposal. She’s been on a diet recently so her belly no longer touches the ground when she walks but she’s still living the easy life.",
+        "Chispas was a staple of the Spanish Adventure experience. Originally bought by the family to eat but kept as they thought she was pregnant but now used as a garbage disposal. She’s been on a diet recently so her belly no longer touches the ground when she walks but she’s still living the easy life.",
     },
   },
   {
@@ -123,7 +123,7 @@ export const places = [
     title: "Los Patios Hostel",
     location: "Medellin",
     link: "/places",
-    imgSrc: "me.jpg",
+    imgDir: "/medellin_los_patios",
     date: "8 / 7 / 24",
     content: {
       Country: "Colombia",

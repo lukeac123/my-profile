@@ -1,15 +1,29 @@
-"use client";
-import { Stack, Text, Flex, Image } from "@mantine/core";
-import { Card, Title, CardContent } from "../../components";
+import { Stack, Text, Flex } from "@mantine/core";
+import { Card, Title, CardContent, Carousel } from "../../components";
 import { insertSpaces, makePrefixer } from "../../utils";
-// import { useViewportSize } from "@mantine/hooks";
+import path from "path";
+import { promises as fs } from "fs";
 import { places } from "../../utils";
 import "./page.css";
 
 const withBaseName = makePrefixer("placesPage");
 
+async function getImageSrc(imgDir: string) {
+  const imagePlaceDirectory = path.join(
+    process.cwd(),
+    "/public/places",
+    imgDir
+  );
+  const imgSrcDir = await fs.readdir(imagePlaceDirectory).then((response) => {
+    const imageArray = response.map((response) => {
+      return path.join("/places", imgDir, response);
+    });
+    return imageArray;
+  });
+  return <Carousel images={imgSrcDir} />;
+}
+
 export default function PlacesPage() {
-  // const { width } = useViewportSize();
   return (
     <Stack>
       <Title order={1} ta="center">
@@ -18,7 +32,7 @@ export default function PlacesPage() {
 
       <div className={withBaseName("container")}>
         {places.map((places) => {
-          const { title, content, imgSrc, googleMapsIframeUrl } = places;
+          const { title, content, imgDir, googleMapsIframeUrl } = places;
           return (
             <Card key={title} className={withBaseName("card")}>
               <Title underlined className={withBaseName("cardTitle")}>
@@ -27,6 +41,7 @@ export default function PlacesPage() {
               <CardContent>
                 <Flex
                   gap={"xs"}
+                  //TODO: use media query for this ?
                   direction={{
                     base: "column",
                     xl: "row",
@@ -36,7 +51,7 @@ export default function PlacesPage() {
                     xs: "column",
                   }}
                 >
-                  <Image src={imgSrc} className={withBaseName("image")} />
+                  {getImageSrc(imgDir)}
                   <div className={withBaseName("cardColumnn1")}>
                     {Object.entries(content).map((content) => {
                       return (
