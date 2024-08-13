@@ -15,10 +15,10 @@ export default function FoodPage() {
 
       <div className={withBaseName("container")}>
         {food.map((food) => {
-          const { title, imgSrc, content } = food;
+          const { title, indexImgSrc, content } = food;
           return (
             <Card key={title} className={withBaseName("card")}>
-              <Image src={imgSrc} className={withBaseName("cardImage")} />
+              <Image src={indexImgSrc} className={withBaseName("cardImage")} />
               <CardContent>
                 <Title underlined>{title}</Title>
                 <div className={withBaseName("cardDescription")}>

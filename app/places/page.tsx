@@ -67,9 +67,9 @@ export default function PlacesPage() {
                         </Flex>
                       );
                     })}
-                    <Card className={withBaseName("googleIframe")}>
+                    {/* <Card className={withBaseName("googleIframe")}>
                       <iframe src={googleMapsIframeUrl} loading="lazy" />
-                    </Card>
+                    </Card> */}
                   </div>
                 </Flex>
               </CardContent>

@@ -3,7 +3,7 @@ export const friends = [
     title: "Chispas",
     link: "/friends",
     location: "",
-    imgSrc: "/friends/chispas.jpeg",
+    indexImgSrc: "/friends/chispas.jpeg",
     date: "14 / 07 / 2024",
     content: {
       Nationality: "Colombian",
@@ -17,7 +17,7 @@ export const friends = [
     title: "Shadow",
     link: "/friends",
     location: "",
-    imgSrc: "/friends/chispas.jpeg",
+    indexImgSrc: "/friends/chispas.jpeg",
     date: "14 / 07 / 2024",
     content: {
       Nationality: "Colombian",
@@ -47,7 +47,7 @@ export const food = [
     title: "Empanada",
     location: "",
     link: "/food",
-    imgSrc: "/food/empanada.jpeg",
+    indexImgSrc: "/food/empanada.jpeg",
     date: "22 / 7 / 2024",
     content: {
       Location: "Cartagena",
@@ -63,7 +63,7 @@ export const food = [
     title: "Empanada",
     location: "",
     link: "/food",
-    imgSrc: "/food/empanada.jpeg",
+    indexImgSrc: "/food/empanada.jpeg",
     date: "22 / 7 / 2024",
     content: {
       Location: "Cartagena",
@@ -79,7 +79,7 @@ export const food = [
     title: "Empanada",
     location: "",
     link: "/food",
-    imgSrc: "/food/empanada.jpeg",
+    indexImgSrc: "/food/empanada.jpeg",
     date: "22 / 7 / 2024",
     content: {
       Location: "Cartagena",
@@ -100,7 +100,7 @@ export const audioClips = [
     link: "/audio",
     date: "12 / 07 / 2024",
     audioSrc: "audio/guatape_lake_rain.m4a",
-    imgSrc: "audio/guatape_lake_rain.jpeg",
+    indexImgSrc: "audio/guatape_lake_rain.jpeg",
     description:
       "Write the descriptions and the images should probably be cropped to square images",
     audioVisulisation: false,
@@ -111,7 +111,7 @@ export const audioClips = [
     link: "/audio",
     date: "12 / 07 / 2024",
     audioSrc: "audio/mamasita.m4a",
-    imgSrc: "audio/mamasita.jpeg",
+    indexImgSrc: "audio/mamasita.jpeg",
 
     description: "TBC",
     audioVisulisation: false,
@@ -124,6 +124,7 @@ export const places = [
     location: "Medellin",
     link: "/places",
     imgDir: "/medellin_los_patios",
+    indexImgSrc: "places/medellin_los_patios/index.jpeg",
     date: "8 / 7 / 24",
     content: {
       Country: "Colombia",

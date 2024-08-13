@@ -13,7 +13,7 @@ export default function AudioPage() {
         Audio Clips
       </Title>
       {audioClips.map((audio) => {
-        const { title, description, audioSrc, imgSrc } = audio;
+        const { title, description, audioSrc, indexImgSrc } = audio;
         return (
           <Card key={title}>
             <Flex gap={"lg"}>
@@ -26,7 +26,7 @@ export default function AudioPage() {
                   </Text>
                 </Stack>
               </CardContent>
-              <Image src={imgSrc} className={withBaseName("image")} />
+              <Image src={indexImgSrc} className={withBaseName("image")} />
             </Flex>
           </Card>
         );
