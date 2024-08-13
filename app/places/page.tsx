@@ -1,15 +1,29 @@
-"use client";
-import { Stack, Text, Flex, Image } from "@mantine/core";
-import { Card, Title, CardContent } from "../../components";
+import { Stack, Text, Flex } from "@mantine/core";
+import { Card, Title, CardContent, Carousel } from "../../components";
 import { insertSpaces, makePrefixer } from "../../utils";
-import { useViewportSize } from "@mantine/hooks";
-import "./page.css";
+import path from "path";
+import { promises as fs } from "fs";
 import { places } from "../../utils";
+import "./page.css";
 
 const withBaseName = makePrefixer("placesPage");
 
+async function getImageSrc(imgDir: string) {
+  const imagePlaceDirectory = path.join(
+    process.cwd(),
+    "/public/places",
+    imgDir,
+  );
+  const imgSrcDir = await fs.readdir(imagePlaceDirectory).then((response) => {
+    const imageArray = response.map((response) => {
+      return path.join("/places", imgDir, response);
+    });
+    return imageArray;
+  });
+  return <Carousel images={imgSrcDir} />;
+}
+
 export default function PlacesPage() {
-  const { width } = useViewportSize();
   return (
     <Stack>
       <Title order={1} ta="center">
@@ -18,12 +32,16 @@ export default function PlacesPage() {
 
       <div className={withBaseName("container")}>
         {places.map((places) => {
-          const { title, content, imgSrc, googleMapsIframeUrl } = places;
+          const { title, content, imgDir, googleMapsIframeUrl } = places;
           return (
             <Card key={title} className={withBaseName("card")}>
-              <Title className={withBaseName("cardTitle")}>{title}</Title>
+              <Title underlined className={withBaseName("cardTitle")}>
+                {title}
+              </Title>
               <CardContent>
                 <Flex
+                  gap={"xs"}
+                  //TODO: use media query for this ?
                   direction={{
                     base: "column",
                     xl: "row",
@@ -32,35 +50,12 @@ export default function PlacesPage() {
                     sm: "column",
                     xs: "column",
                   }}
-                  gap={"xs"}
                 >
-                  <Image
-                    src={imgSrc}
-                    style={{
-                      width: width > 992 ? "50%" : "100%",
-                      height: width > 992 ? "" : "100px",
-                    }}
-                  />
-                  <div
-                    className={withBaseName("cardColumnn1")}
-                    style={{
-                      width: width > 992 ? "50%" : "100%",
-                    }}
-                  >
+                  {getImageSrc(imgDir)}
+                  <div className={withBaseName("cardColumnn1")}>
                     {Object.entries(content).map((content) => {
                       return (
-                        <Flex
-                          gap={0}
-                          key={content[1]}
-                          direction={{
-                            base: "column",
-                            xl: "row",
-                            lg: "row",
-                            md: "row",
-                            sm: "column",
-                            xs: "column",
-                          }}
-                        >
+                        <Flex gap={0} key={content[1]}>
                           <Text
                             size="lg"
                             fw={700}
@@ -72,9 +67,9 @@ export default function PlacesPage() {
                         </Flex>
                       );
                     })}
-                    <Card className={withBaseName("googleIframe")}>
+                    {/* <Card className={withBaseName("googleIframe")}>
                       <iframe src={googleMapsIframeUrl} loading="lazy" />
-                    </Card>
+                    </Card> */}
                   </div>
                 </Flex>
               </CardContent>

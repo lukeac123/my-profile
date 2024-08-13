@@ -25,7 +25,7 @@ export const Title = ({
       className={clsx(
         withBaseName(),
         { [withBaseName("underlined")]: underlined },
-        className
+        className,
       )}
       {...rest}
     >

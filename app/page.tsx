@@ -6,12 +6,6 @@ import "./page.css";
 
 const db = [friends, food, audioClips, places];
 
-// const latestItems = db.map((item) => {
-//   const sortedItems = item.sort((a, b) => {
-//     return new Date(b.date) - new Date(a.date);
-//   });
-// });
-
 const latestItems = [friends[0], food[0], audioClips[0], places[0]];
 
 const withBaseName = makePrefixer("homePage");
@@ -19,15 +13,16 @@ const withBaseName = makePrefixer("homePage");
 export default function BlogPage() {
   return (
     <Stack>
+      <Title order={1} ta="center" hiddenFrom="sm" underlined>
+        Queer Abroad
+      </Title>
+      {/* //TODO: create iframe loader component to show spinner or loading, use inbuilt on load, probs need to use a cloinet component as it will need to change the state  */}
       <iframe
         className={withBaseName("map")}
         src="https://www.travellerspoint.com/embed/map.cfm/#/embed/1139683/"
         width="100%"
         height="500px"
       />
-      <Title order={1} ta="center" hiddenFrom="sm">
-        Queer Abroad
-      </Title>
       <div className={withBaseName()}>
         <div className={withBaseName("aboutContainer")}>
           <Image src="/me.jpg" className={withBaseName("photo")} />
@@ -53,11 +48,11 @@ export default function BlogPage() {
           </Title>
           <div className={withBaseName("latestContainer")}>
             {latestItems.map((item) => {
-              const { title, imgSrc, date, link } = item;
+              const { title, indexImgSrc, date, link } = item;
               return (
                 <Card className={withBaseName("latestCard")} link={link}>
                   <Image
-                    src={imgSrc}
+                    src={indexImgSrc}
                     className={withBaseName("latestCardImage")}
                   />
                   <CardContent>
@@ -71,31 +66,31 @@ export default function BlogPage() {
             })}
           </div>
         </>
-      </div>
-    </Stack>
-  );
-}
-
-{
-  /* <Stack style={{ width: width > 992 ? "40%" : "100%" }} gap={"lg"}>
+        <div className={withBaseName("spotifyPlaylistContainer")}>
           <Card>
             <iframe
-              src="https://open.spotify.com/embed/track/3tZm76otWH20xzJC7icHCk?utm_source=generator"
+              src="https://open.spotify.com/embed/playlist/2d3W35gRiH2pSfSNA0C5B5?utm_source=generator&theme=0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               width="100%"
               height="352"
               frameBorder="0"
-              allowFullScreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
+              style={{ borderRadius: "20px" }}
             />
+            <CardContent>
+              <Title underlined>Travel Playlist</Title>
+              <Text size="lg">
+                While travelling I’ve been asking each person I meet to add
+                their favourite song to this playlist. This playlist is a
+                reflection of my experience and the interactions I’ve had with
+                the people I’ve met, but also their unique personalities and
+                individuality. I've also added in a few of my favourite songs
+                along the way.
+              </Text>
+            </CardContent>
           </Card>
-          <Card>
-            <iframe
-              height="454"
-              width="100%"
-              frameBorder="0"
-              src="https://www.strava.com/athletes/50370447/latest-rides/1a80f93342d7917f32afd94cd2946476e5d80b2c"
-            />
-          </Card>
-        </Stack> */
+        </div>
+      </div>
+    </Stack>
+  );
 }

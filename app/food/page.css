@@ -3,10 +3,18 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  padding: 10px;
 }
 
 .foodPage-card {
   height: 700px;
+  width: 600px;
+}
+
+@media (width <= 768px) {
+  .foodPage-card {
+    width: 100%;
+  }
 }
 
 .foodPage-cardImage {

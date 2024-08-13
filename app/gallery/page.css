@@ -1,19 +1,30 @@
 .galleryPage {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
   align-items: center;
   gap: 20px;
+  padding: 10px;
 }
 
-@media (width <= 992px) {
+@media (width <= 768px) {
   .galleryPage {
     flex-direction: column;
   }
 }
 
 .galleryPage-card {
-  width: 40%;
+  width: 400px;
+  background-color: red;
   height: min-content;
+}
+
+@media (width <= 768px) {
+  .galleryPage-card {
+    width: 100%;
+  }
 }
 
 .galleryPage-card:hover {
@@ -39,10 +50,4 @@
 .galleryPage-image {
   width: 100%;
   min-height: 640px;
-}
-
-@media (width <= 992px) {
-  .galleryPage-card {
-    width: 100%;
-  }
 }

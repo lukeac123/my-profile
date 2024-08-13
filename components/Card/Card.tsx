@@ -1,4 +1,4 @@
-import { ReactNode, HTMLAttributes } from "react";
+import { HTMLAttributes } from "react";
 import { Card as MantineCard } from "@mantine/core";
 import Link from "next/link";
 import { clsx } from "clsx";

@@ -14,7 +14,6 @@
   overflow: scroll;
   text-overflow: ellipsis;
   flex-direction: column;
-  /* margin-bottom: 30px; */
 }
 
 .cardFooter {

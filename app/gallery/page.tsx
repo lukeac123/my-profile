@@ -1,8 +1,8 @@
+import { Stack, Image } from "@mantine/core";
+import { Card, Title } from "../../components";
+import { makePrefixer } from "../../utils";
 import { promises as fs } from "fs";
 import path from "path";
-import { Stack, Image, Text } from "@mantine/core";
-import { Card, CardContent, Title } from "../../components";
-import { makePrefixer } from "../../utils";
 import "./page.css";
 
 const withBaseName = makePrefixer("galleryPage");
@@ -29,7 +29,6 @@ export default async function GalleryPage() {
               <Title order={1} className={withBaseName("overlay")}>
                 {item.folder.charAt(0).toUpperCase() + item.folder.slice(1)}
               </Title>
-
               <Image
                 className={withBaseName("image")}
                 src={item.indexImageSrc}

@@ -80,3 +80,19 @@
 .homePage-latestCardImage {
   height: 300px;
 }
+
+.homePage-spotifyPlaylistContainer {
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  border-bottom: solid;
+  border-color: var(--colorMode-color);
+  padding: 10px;
+}
+
+@media (width <= 992px) {
+  .homePage-spotifyPlaylistContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+}

@@ -1,50 +1,32 @@
-"use client";
 import { Stack, Text, Flex, Image } from "@mantine/core";
 import { Audio, Card, CardContent, Title } from "../../components";
-import { useViewportSize } from "@mantine/hooks";
 import { audioClips } from "../../utils";
+import { makePrefixer } from "../../utils";
+import "./page.css";
+
+const withBaseName = makePrefixer("audioPage");
 
 export default function AudioPage() {
-  const { width } = useViewportSize();
   return (
-    <Stack gap={"lg"}>
-      <Title order={1} ta="center" className={"title"}>
+    <Stack gap={"lg"} className={withBaseName()}>
+      <Title order={1} ta="center">
         Audio Clips
       </Title>
       {audioClips.map((audio) => {
-        const { title, description, audioSrc, imgSrc } = audio;
+        const { title, description, audioSrc, indexImgSrc } = audio;
         return (
           <Card key={title}>
-            <Flex
-              direction={{
-                base: "column",
-                xs: "column",
-                sm: "column",
-                md: "row",
-                lg: "row",
-                xl: "row",
-              }}
-              gap={"lg"}
-            >
-              <CardContent
-                style={{
-                  width: width > 992 ? "50%" : "100%",
-                  display: "flex",
-                  alignContent: "center",
-                }}
-              >
+            <Flex gap={"lg"}>
+              <CardContent className={withBaseName("card")}>
                 <Stack gap={"md"}>
                   <Title>{title}</Title>
+                  <Audio title={title} src={audioSrc} />
                   <Text size="lg" ta="left" style={{ overflow: "wrap" }}>
                     {description}
                   </Text>
-                  <Audio title={title} src={audioSrc} />
                 </Stack>
               </CardContent>
-              <Image
-                src={imgSrc}
-                style={{ width: width > 992 ? "50%" : "100%" }}
-              />
+              <Image src={indexImgSrc} className={withBaseName("image")} />
             </Flex>
           </Card>
         );
