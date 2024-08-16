@@ -1,12 +1,12 @@
 import { Stack, Text, Image } from "@mantine/core";
 import { Card, Title, CardContent } from "../components";
 import { makePrefixer } from "../utils";
-import { friends, food, audioClips, places } from "../utils/db";
+import { people, food, audioClips, places } from "../utils/db";
 import "./page.css";
 
-const db = [friends, food, audioClips, places];
+const db = [people, food, audioClips, places];
 
-const latestItems = [friends[0], food[0], audioClips[0], places[0]];
+const latestItems = [people[0], food[0], audioClips[0], places[0]];
 
 const withBaseName = makePrefixer("homePage");
 
@@ -16,7 +16,6 @@ export default function BlogPage() {
       <Title order={1} ta="center" hiddenFrom="sm" underlined>
         Queer Abroad
       </Title>
-      {/* //TODO: create iframe loader component to show spinner or loading, use inbuilt on load, probs need to use a cloinet component as it will need to change the state  */}
       <iframe
         className={withBaseName("map")}
         src="https://www.travellerspoint.com/embed/map.cfm/#/embed/1139683/"
@@ -25,7 +24,7 @@ export default function BlogPage() {
       />
       <div className={withBaseName()}>
         <div className={withBaseName("aboutContainer")}>
-          <Image src="/me.jpg" className={withBaseName("photo")} />
+          <Image src="/me.jpeg" className={withBaseName("photo")} />
           <CardContent>
             <Title underlined>About Me</Title>
             <Text size="lg" className={withBaseName("text")}>
@@ -48,7 +47,7 @@ export default function BlogPage() {
           </Title>
           <div className={withBaseName("latestContainer")}>
             {latestItems.map((item) => {
-              const { title, indexImgSrc, date, link } = item;
+              const { title, indexImgSrc, link } = item;
               return (
                 <Card className={withBaseName("latestCard")} link={link}>
                   <Image
@@ -57,9 +56,6 @@ export default function BlogPage() {
                   />
                   <CardContent>
                     <Title> {title} </Title>
-                    <Text size="lg" className={withBaseName("text")}>
-                      {date}
-                    </Text>
                   </CardContent>
                 </Card>
               );

@@ -16,9 +16,10 @@ export const Carousel = ({ className, images }: CarouselProps) => {
     <MantineCarousel
       className={clsx(withBaseName(), className)}
       align="center"
-      // slideSize="100%"
       slideGap="md"
+      slideSize="100%"
       withIndicators
+      controlSize={40}
     >
       {images.map((imageSrc) => {
         return (
