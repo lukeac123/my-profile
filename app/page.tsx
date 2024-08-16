@@ -1,5 +1,5 @@
 import { Stack, Text, Image } from "@mantine/core";
-import { Card, Title, CardContent } from "../components";
+import { Card, Title, CardContent, Iframe } from "../components";
 import { makePrefixer } from "../utils";
 import { friends, food, audioClips, places } from "../utils/db";
 import "./page.css";
@@ -16,16 +16,13 @@ export default function BlogPage() {
       <Title order={1} ta="center" hiddenFrom="sm" underlined>
         Queer Abroad
       </Title>
-      {/* //TODO: create iframe loader component to show spinner or loading, use inbuilt on load, probs need to use a cloinet component as it will need to change the state  */}
-      <iframe
+      <Iframe
         className={withBaseName("map")}
         src="https://www.travellerspoint.com/embed/map.cfm/#/embed/1139683/"
-        width="100%"
-        height="500px"
       />
       <div className={withBaseName()}>
         <div className={withBaseName("aboutContainer")}>
-          <Image src="/me.jpg" className={withBaseName("photo")} />
+          <Image src="/me.jpeg" className={withBaseName("photo")} />
           <CardContent>
             <Title underlined>About Me</Title>
             <Text size="lg" className={withBaseName("text")}>
@@ -68,14 +65,10 @@ export default function BlogPage() {
         </>
         <div className={withBaseName("spotifyPlaylistContainer")}>
           <Card>
-            <iframe
+            <Iframe
+              className={withBaseName("spotifyIframe")}
               src="https://open.spotify.com/embed/playlist/2d3W35gRiH2pSfSNA0C5B5?utm_source=generator&theme=0"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              width="100%"
-              height="352"
-              frameBorder="0"
-              loading="lazy"
-              style={{ borderRadius: "20px" }}
             />
             <CardContent>
               <Title underlined>Travel Playlist</Title>

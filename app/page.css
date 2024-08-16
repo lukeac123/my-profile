@@ -10,6 +10,8 @@
   border: none;
   border-bottom: solid;
   border-color: var(--colorMode-color);
+  width: 100%;
+  height: 500px
 }
 
 .homePage-aboutContainer {
@@ -90,9 +92,20 @@
   padding: 10px;
 }
 
+.homePage-spotifyIframe {
+  height: 100%
+}
+
 @media (width <= 992px) {
   .homePage-spotifyPlaylistContainer {
     flex-direction: column;
     width: 100%;
   }
+}
+
+.homePage-spotifyIframe {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%
+
 }
