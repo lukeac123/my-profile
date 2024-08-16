@@ -18,7 +18,7 @@ import "./AppHeader.component.css";
 const links = [
   { label: "Home", link: "./" },
   { label: "Places", link: "./places" },
-  { label: "Friends", link: "./friends" },
+  { label: "People", link: "./people" },
   { label: "Food", link: "./food" },
   { label: "Audio", link: "./audio" },
   { label: "Gallery", link: "./gallery" },

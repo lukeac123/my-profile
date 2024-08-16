@@ -1,0 +1,35 @@
+.peoplePage-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.peoplePage-card {
+  height: 700px;
+  width: 600px;
+}
+
+@media (width <= 992px) {
+  .peoplePage-card {
+    width: 100%;
+  }
+}
+
+.peoplePage-cardImage {
+  height: 400px;
+}
+
+.peoplePage-cardDescription {
+  width: auto;
+  overflow-wrap: break-word;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.peoplePage-cardDescriptionColumn1 {
+  width: 150px;
+  flex-shrink: 0;
+}
