@@ -1,3 +1,5 @@
+import { StarRating } from "../components";
+
 export const friends = [
   {
     title: "Chispas",
@@ -130,6 +132,7 @@ export const places = [
       Country: "Colombia",
       City: "Medellin",
       Date: "15/04/24",
+      Stars: <StarRating stars={5} />,
       Description:
         "Yala National Park located towards the South of the Island. I arrived in Yala by tuktuk after 5 hours accompanied by my fellow Ooplahs and the Spitfire team. We have an early start in the morinng with the Safari Jeep coming at 6am. The Park contains Elephants, Crocodiles, Peackcocks, Eagels",
     },
