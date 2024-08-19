@@ -164,6 +164,7 @@ export const places = [
     content: {
       Country: "Colombia",
       City: "San Rafael",
+      Stars: <StarRating stars={5} />,
       Date: "14/07/24 - 04/08/24",
       Duration: "14 Days",
       Description:
@@ -180,6 +181,7 @@ export const places = [
     content: {
       Country: "Colombia",
       City: "San Carlos",
+      Stars: <StarRating stars={4} />,
       Date: "14/07/24 - 21/07/24",
       Duration: "7 Days",
       Description:
@@ -196,7 +198,7 @@ export const places = [
     content: {
       Country: "Colombia",
       City: "Medellin",
-      Stars: <StarRating stars={5} />,
+      Stars: <StarRating stars={3} />,
       Date: "09/07/24 - 14/07/24",
       Duration: "5 Days",
       Description:
