@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import { StarRating } from "../components";
 
-export const friends = [
-=======
 export const people = [
   {
     title: "Hector",
@@ -64,7 +61,6 @@ export const people = [
         "Shock another person from London travelling Colombia. 1/3 of the Ritmo Del Rio Trio. I'd say Issy and I got on from the start, me being new and Issy being there for a week already I remember her inviting me to join them at the river on the first day. Made me feel immediately welcome. Being a chaotic person like me we spent plenty of time giggling around the campfire, drinking beers after work and eating ice cream and cake.",
     },
   },
->>>>>>> 48d25d8 (content)
   {
     title: "Chispas",
     link: "/people",
