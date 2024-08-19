@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import { StarRating } from "../components";
 
+=======
+>>>>>>> origin/main
 export const people = [
   {
     title: "Hector",
@@ -165,6 +168,7 @@ export const places = [
       Country: "Colombia",
       City: "San Rafael",
       Stars: <StarRating stars={5} />,
+
       Date: "14/07/24 - 04/08/24",
       Duration: "14 Days",
       Description:
