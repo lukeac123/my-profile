@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import { StarRating } from "../components";
 
-=======
->>>>>>> origin/main
 export const people = [
   {
     title: "Hector",
