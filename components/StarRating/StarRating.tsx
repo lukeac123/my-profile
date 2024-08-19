@@ -7,7 +7,11 @@ export interface StarRating extends HTMLAttributes<HTMLDivElement> {
 
 export const StarRating = ({ className, stars = 5 }: StarRating) => {
   const noStars = Array.from(Array(stars).keys());
-  return noStars.map(() => {
-    return <IconStar />;
-  });
+  return (
+    <>
+      {noStars.map(() => {
+        return <IconStar />;
+      })}
+    </>
+  );
 };
