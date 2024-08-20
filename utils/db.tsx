@@ -80,10 +80,23 @@ export const people = [
 
 export const food = [
   {
+    title: "Falafel Salad",
+    link: "/food",
+    indexImgSrc: "/food/salad.jpeg",
+    date: "13 / 08 / 2024",
+    content: {
+      Location: "Ikaro Cafe - Santa Marta",
+      Cost: "££",
+      Rating: <StarRating stars={5} />,
+      Description:
+        "The first salad I had in Colombia, and it was delicious. This was the highlight of my time in Santa Marta, take from that what you will. The falafel was crispy on the outside and soft on the inside, well seasoned and served with bulgar wheat, cashews, lettuce, goats cheese and I think pickled apple. It was served with homemade bread. Might go back to Santa Marta just for this. ",
+    },
+  },
+  {
     title: "Juice Appreciation",
     link: "/food",
     indexImgSrc: "/food/juice.jpeg",
-    date: "21 / 7 / 2024",
+    date: "21 / 07 / 2024",
     content: {
       Location: "San Rafael - Ritmo Del Rio",
       Cost: "£",
@@ -96,7 +109,7 @@ export const food = [
     title: "Dragon Fruit",
     link: "/food",
     indexImgSrc: "/food/dragonFruit.jpeg",
-    date: "15 / 7 / 2024",
+    date: "15 / 07 / 2024",
     content: {
       Location: "San Carlos - Spanish Adventure",
       Cost: "£££",
@@ -106,12 +119,25 @@ export const food = [
     },
   },
   {
+    title: "Chicharrón",
+    link: "/food",
+    indexImgSrc: "/food/mamasita.jpeg",
+    date: "13 / 07 / 2024",
+    content: {
+      Location: "Mamasita - Medellin",
+      Cost: "£££",
+      Rating: <StarRating stars={1} />,
+      Description:
+        "Mamasita’s is a restaurant in El Poblado, just around the corner from the Los Patios Hostel. I had Chicharrón, fried plantin, a type of black pudding and potatoes. Chicharrón is essentially fried Pork belly and is pretty popular across Colombia. Considering I don’t like black pudding I’m not entirely sure why I ordered this and the Chicharron was too crunchy and a bit like a pork scratching. I would not recommend.",
+    },
+  },
+  {
     title: "Arepa",
     link: "/food",
     indexImgSrc: "/food/arepa.jpeg",
-    date: "11 / 7 / 2024",
+    date: "11 / 07 / 2024",
     content: {
-      Location: "Medellin",
+      Location: "Communa 13 - Medellin",
       Cost: "£",
       Rating: <StarRating stars={2} />,
       Description:
@@ -122,9 +148,9 @@ export const food = [
     title: "Empanada",
     link: "/food",
     indexImgSrc: "/food/empanada.jpeg",
-    date: "10 / 7 / 2024",
+    date: "10 / 07 / 2024",
     content: {
-      Location: "Medellin",
+      Location: "Central - Medellin",
       Cost: "£",
       Rating: <StarRating stars={2} />,
       Description:
