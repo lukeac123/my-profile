@@ -8,29 +8,34 @@ const withBaseName = makePrefixer("audioPage");
 
 export default function AudioPage() {
   return (
-    <Stack gap={"lg"} className={withBaseName()}>
+    <Stack gap={"lg"}>
       <Title order={1} ta="center">
         Audio Clips
       </Title>
-      {audioClips.map((audio) => {
-        const { title, description, audioSrc, indexImgSrc } = audio;
-        return (
-          <Card key={title}>
-            <Flex gap={"lg"}>
-              <CardContent className={withBaseName("card")}>
+      <div className={withBaseName()}>
+        {audioClips.map((audio) => {
+          const { title, description, audioSrc, indexImgSrc } = audio;
+          return (
+            <Card key={title} className={withBaseName("card")}>
+              <CardContent>
+                <Title underlined>{title}</Title>
                 <Stack gap={"md"}>
-                  <Title>{title}</Title>
                   <Audio title={title} src={audioSrc} />
-                  <Text size="lg" ta="left" style={{ overflow: "wrap" }}>
-                    {description}
-                  </Text>
                 </Stack>
               </CardContent>
               <Image src={indexImgSrc} className={withBaseName("image")} />
-            </Flex>
-          </Card>
-        );
-      })}
+              <Text
+                className={withBaseName("description")}
+                size="lg"
+                ta="left"
+                style={{ overflow: "wrap" }}
+              >
+                {description}
+              </Text>
+            </Card>
+          );
+        })}
+      </div>
     </Stack>
   );
 }
