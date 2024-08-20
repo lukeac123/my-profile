@@ -80,51 +80,81 @@ export const people = [
 
 export const food = [
   {
-    title: "Empanada",
-    location: "",
+    title: "Falafel Salad",
     link: "/food",
-    indexImgSrc: "/food/empanada.jpeg",
-    date: "22 / 7 / 2024",
+    indexImgSrc: "/food/salad.jpeg",
+    date: "13 / 08 / 2024",
     content: {
-      Location: "Cartagena",
-      Ingredients: "SeaBass , Lime, Chilli",
-      FlavourRating: "",
-      Spiciness: "",
+      Location: "Ikaro Cafe - Santa Marta",
+      Cost: "££",
+      Rating: <StarRating stars={5} />,
+      Description:
+        "The first salad I had in Colombia, and it was delicious. This was the highlight of my time in Santa Marta, take from that what you will. The falafel was crispy on the outside and soft on the inside, well seasoned and served with bulgar wheat, cashews, lettuce, goats cheese and I think pickled apple. It was served with homemade bread. Might go back to Santa Marta just for this. ",
+    },
+  },
+  {
+    title: "Juice Appreciation",
+    link: "/food",
+    indexImgSrc: "/food/juice.jpeg",
+    date: "21 / 07 / 2024",
+    content: {
+      Location: "San Rafael - Ritmo Del Rio",
       Cost: "£",
-      OverallRating: "10/10",
-      Description: "Yummy",
+      Rating: <StarRating stars={5} />,
+      Description:
+        "While working in the farm in the morning juice with lunch after a quick dip in the river was one of the things I looked forward to each day. Each day with a different juice, including Blackberry, Banana, Mango or something called Panela (Lemon mixed with Sugar Cane).",
+    },
+  },
+  {
+    title: "Dragon Fruit",
+    link: "/food",
+    indexImgSrc: "/food/dragonFruit.jpeg",
+    date: "15 / 07 / 2024",
+    content: {
+      Location: "San Carlos - Spanish Adventure",
+      Cost: "£££",
+      Rating: <StarRating stars={5} />,
+      Description:
+        "By far the best fruit I’ve ever had. Juicy sweet flesh contrasted with eh crunchy seeds. Slice it down the middle and scoop out the flesh with a spoon. I would liken it to a cross between a kiwi and a sweet melon. I was introduced to these by another student at Spanish Adventure called Issy and for the rest of the week had two a day. They’re one of the more expensive fruits but definitely worth.",
+    },
+  },
+  {
+    title: "Chicharrón",
+    link: "/food",
+    indexImgSrc: "/food/mamasita.jpeg",
+    date: "13 / 07 / 2024",
+    content: {
+      Location: "Mamasita - Medellin",
+      Cost: "£££",
+      Rating: <StarRating stars={1} />,
+      Description:
+        "Mamasita’s is a restaurant in El Poblado, just around the corner from the Los Patios Hostel. I had Chicharrón, fried plantin, a type of black pudding and potatoes. Chicharrón is essentially fried Pork belly and is pretty popular across Colombia. Considering I don’t like black pudding I’m not entirely sure why I ordered this and the Chicharron was too crunchy and a bit like a pork scratching. I would not recommend.",
+    },
+  },
+  {
+    title: "Arepa",
+    link: "/food",
+    indexImgSrc: "/food/arepa.jpeg",
+    date: "11 / 07 / 2024",
+    content: {
+      Location: "Communa 13 - Medellin",
+      Cost: "£",
+      Rating: <StarRating stars={2} />,
+      Description:
+        "A type of flatbread made form corn or maize. My first introduction to an Arepa was from one of the local street vendors in Communa 13, with spreadable cheese and then grated cheese on top.  It was a this point a realised Colombias love of cheese. Personally I found it a bit too much but Arepa is the most common bread throughout Colombia and is typically had for breakfast with eggs and avocado.",
     },
   },
   {
     title: "Empanada",
-    location: "",
     link: "/food",
     indexImgSrc: "/food/empanada.jpeg",
-    date: "22 / 7 / 2024",
+    date: "10 / 07 / 2024",
     content: {
-      Location: "Cartagena",
-      Ingredients: "SeaBass , Lime, Chilli",
-      FlavourRating: "",
-      Spiciness: "",
+      Location: "Central - Medellin",
       Cost: "£",
-      OverallRating: "10/10",
-      Description: "Yummy",
-    },
-  },
-  {
-    title: "Empanada",
-    location: "",
-    link: "/food",
-    indexImgSrc: "/food/empanada.jpeg",
-    date: "22 / 7 / 2024",
-    content: {
-      Location: "Cartagena",
-      Ingredients: "SeaBass , Lime, Chilli",
-      FlavourRating: "",
-      Spiciness: "",
-      Cost: "£",
-      OverallRating: "10/10",
-      Description: "Yummy",
+      Rating: <StarRating stars={2} />,
+      Description:
+        "Empanadas are a good representation of all Colombian street food. Fried, some sort of Carbohydrate and meat. They’re a fried pastry and normally contain meat chicken or vegetables but I’ve had then with rice and also plantin.",
     },
   },
 ];
@@ -164,7 +194,7 @@ export const places = [
     content: {
       Country: "Colombia",
       City: "San Rafael",
-      Stars: <StarRating stars={5} />,
+      Rating: <StarRating stars={5} />,
 
       Date: "14/07/24 - 04/08/24",
       Duration: "14 Days",
@@ -182,7 +212,7 @@ export const places = [
     content: {
       Country: "Colombia",
       City: "San Carlos",
-      Stars: <StarRating stars={4} />,
+      Rating: <StarRating stars={4} />,
       Date: "14/07/24 - 21/07/24",
       Duration: "7 Days",
       Description:
@@ -199,7 +229,7 @@ export const places = [
     content: {
       Country: "Colombia",
       City: "Medellin",
-      Stars: <StarRating stars={3} />,
+      Rating: <StarRating stars={3} />,
       Date: "09/07/24 - 14/07/24",
       Duration: "5 Days",
       Description:
