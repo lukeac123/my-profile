@@ -80,51 +80,55 @@ export const people = [
 
 export const food = [
   {
-    title: "Empanada",
-    location: "",
+    title: "Juice Appreciation",
     link: "/food",
-    indexImgSrc: "/food/empanada.jpeg",
-    date: "22 / 7 / 2024",
+    indexImgSrc: "/food/juice.jpeg",
+    date: "21 / 7 / 2024",
     content: {
-      Location: "Cartagena",
-      Ingredients: "SeaBass , Lime, Chilli",
-      FlavourRating: "",
-      Spiciness: "",
+      Location: "San Rafael - Ritmo Del Rio",
       Cost: "£",
-      OverallRating: "10/10",
-      Description: "Yummy",
+      Rating: <StarRating stars={5} />,
+      Description:
+        "While working in the farm in the morning juice with lunch after a quick dip in the river was one of the things I looked forward to each day. Each day with a different juice, including Blackberry, Banana, Mango or something called Panela (Lemon mixed with Sugar Cane).",
+    },
+  },
+  {
+    title: "Dragon Fruit",
+    link: "/food",
+    indexImgSrc: "/food/dragonFruit.jpeg",
+    date: "15 / 7 / 2024",
+    content: {
+      Location: "San Carlos - Spanish Adventure",
+      Cost: "£££",
+      Rating: <StarRating stars={5} />,
+      Description:
+        "By far the best fruit I’ve ever had. Juicy sweet flesh contrasted with eh crunchy seeds. Slice it down the middle and scoop out the flesh with a spoon. I would liken it to a cross between a kiwi and a sweet melon. I was introduced to these by another student at Spanish Adventure called Issy and for the rest of the week had two a day. They’re one of the more expensive fruits but definitely worth.",
+    },
+  },
+  {
+    title: "Arepa",
+    link: "/food",
+    indexImgSrc: "/food/arepa.jpeg",
+    date: "11 / 7 / 2024",
+    content: {
+      Location: "Medellin",
+      Cost: "£",
+      Rating: <StarRating stars={2} />,
+      Description:
+        "A type of flatbread made form corn or maize. My first introduction to an Arepa was from one of the local street vendors in Communa 13, with spreadable cheese and then grated cheese on top.  It was a this point a realised Colombias love of cheese. Personally I found it a bit too much but Arepa is the most common bread throughout Colombia and is typically had for breakfast with eggs and avocado.",
     },
   },
   {
     title: "Empanada",
-    location: "",
     link: "/food",
     indexImgSrc: "/food/empanada.jpeg",
-    date: "22 / 7 / 2024",
+    date: "10 / 7 / 2024",
     content: {
-      Location: "Cartagena",
-      Ingredients: "SeaBass , Lime, Chilli",
-      FlavourRating: "",
-      Spiciness: "",
+      Location: "Medellin",
       Cost: "£",
-      OverallRating: "10/10",
-      Description: "Yummy",
-    },
-  },
-  {
-    title: "Empanada",
-    location: "",
-    link: "/food",
-    indexImgSrc: "/food/empanada.jpeg",
-    date: "22 / 7 / 2024",
-    content: {
-      Location: "Cartagena",
-      Ingredients: "SeaBass , Lime, Chilli",
-      FlavourRating: "",
-      Spiciness: "",
-      Cost: "£",
-      OverallRating: "10/10",
-      Description: "Yummy",
+      Rating: <StarRating stars={2} />,
+      Description:
+        "Empanadas are a good representation of all Colombian street food. Fried, some sort of Carbohydrate and meat. They’re a fried pastry and normally contain meat chicken or vegetables but I’ve had then with rice and also plantin.",
     },
   },
 ];
@@ -164,7 +168,7 @@ export const places = [
     content: {
       Country: "Colombia",
       City: "San Rafael",
-      Stars: <StarRating stars={5} />,
+      Rating: <StarRating stars={5} />,
 
       Date: "14/07/24 - 04/08/24",
       Duration: "14 Days",
@@ -182,7 +186,7 @@ export const places = [
     content: {
       Country: "Colombia",
       City: "San Carlos",
-      Stars: <StarRating stars={4} />,
+      Rating: <StarRating stars={4} />,
       Date: "14/07/24 - 21/07/24",
       Duration: "7 Days",
       Description:
@@ -199,7 +203,7 @@ export const places = [
     content: {
       Country: "Colombia",
       City: "Medellin",
-      Stars: <StarRating stars={3} />,
+      Rating: <StarRating stars={3} />,
       Date: "09/07/24 - 14/07/24",
       Duration: "5 Days",
       Description:
