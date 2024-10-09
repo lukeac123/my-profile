@@ -102,7 +102,7 @@ export const food = [
       Cost: "£",
       Rating: <StarRating stars={5} />,
       Description:
-        "While working in the farm in the morning juice with lunch after a quick dip in the river was one of the things I looked forward to each day. Each day with a different juice, including Blackberry, Banana, Mango or something called Panela (Lemon mixed with Sugar Cane).",
+        "While working in the farm in the morning juice with lunch after a quick dip in the river was one of the things I looked forward to each day. Each day with a different juice, including Blackberry, Banana, Mango or something called Panela (Lemon mixed with Sugar Cane). The first salad I had in Colombia, and it was delicious. This was the highlight of my time in Santa Marta, take from that what you will. The falafel was crispy on the outside and soft on the inside, well seasoned and served with bulgar wheat, cashews, lettuce, goats cheese and I think pickled apple. It was served with homemade bread. Might go back to Santa Marta just for this",
     },
   },
   {
@@ -161,26 +161,76 @@ export const food = [
 
 export const audioClips = [
   {
-    title: "Guatape Biblical Rain",
-    location: "Guatape",
+    title: "Cocora Valley River",
+    location: "Cocora Valley - Salenta",
     link: "/audio",
-    date: "12 / 07 / 2024",
-    audioSrc: "audio/guatape_lake_rain.m4a",
-    indexImgSrc: "audio/guatape_lake_rain.jpeg",
+    audioSrc: "audio/cocora_valley_river.m4a",
+    indexImgSrc: "audio/cocora_valley_river.jpeg",
     description:
-      "Write the descriptions and the images should probably be cropped to square images",
-    audioVisulisation: false,
+      "After taking the wrong way because we didn’t want to pay the entrance fee for the Cocoa Valley, Hannah and I took a detour and hiked up a mountain for a few hours. On our way back we stopped at this river to cool down and have an Oreo snack break.",
+  },
+  {
+    title: "Cultivare Rain",
+    location: "Anapoima (3 Hours from Bogota)",
+    link: "/audio",
+    audioSrc: "audio/cultivare_rain.m4a",
+    indexImgSrc: "audio/cultivare_rain.jpeg",
+    description:
+      "…. another recording of rain, you can see a pattern here. This was by no means as intense as the other two, but at the time I was there, there was a water shortage due to lack of rain and river contamination. This was the first real down pour in over 3 months. I also like the sound of the rain bouncing off the bamboo structure.",
+  },
+  {
+    title: "Isla Grande Rain",
+    location: "Rosario Islands Isla Grande",
+    link: "/audio",
+    audioSrc: "audio/isla_grande_rain.m4a",
+    indexImgSrc: "audio/isla_grande_rain.jpeg",
+    description:
+      "This is some of the most intense thunder and lighting I witnessed so far on my trip, the audio from my iPhone doesn’t do it justice. But on a small island in the middle of the Caribbean Sea something that initially shocked me awake brought relief from the heat and helped me sleep.",
+  },
+  {
+    title: "Ritmo Del Rio River",
+    location: "San Rafael",
+    link: "/audio",
+    audioSrc: "audio/ritmo_del_rio_river.m4a",
+    indexImgSrc: "audio/ritmo_del_rio_river.jpeg",
+    description:
+      "The river played a major part in my experience at the farm. First thing after working in the morning, straight to the river to clean off the dirt and freshen up before lunch, looking forward to the fresh juice served with Lunch. “The morning sun energises you and the river heals you”.",
+  },
+  {
+    title: "Ritmo Del Rio",
+    location: "San Rafael",
+    link: "/audio",
+    audioSrc: "audio/ritmo_del_rio.m4a",
+    indexImgSrc: "audio/ritmo_del_rio.jpeg",
+    description:
+      "When the sun goes down at the farm in San Rafael, you have the songs of the crickets and the birds to serenade you to sleep.",
+  },
+  {
+    title: "Spanish Adventure Garden",
+    location: "San Carlos",
+    link: "/audio",
+    audioSrc: "audio/spanish_adventure_garden.m4a",
+    indexImgSrc: "audio/spanish_adventure_garden.jpeg",
+    description:
+      "In a small pueblo called San Carlos you’re never alone for the constant murmur of the Cicadas. I was shock when one of these first flew into the house, looking like a black golden snitch.",
   },
   {
     title: "Mamasita Restaurant",
     location: "Guatape",
     link: "/audio",
-    date: "12 / 07 / 2024",
     audioSrc: "audio/mamasita.m4a",
     indexImgSrc: "audio/mamasita.jpeg",
-
-    description: "TBC",
-    audioVisulisation: false,
+    description:
+      "My first time eating out solo in a restaurant, in my travels but potentially in my life as well. I had Chicharon, ( crispy pork belly) typical to the Paisa region. The pork was a bit too crispy for me but I enjoyed listening to the live band.",
+  },
+  {
+    title: "Guatape Biblical Rain",
+    location: "Guatape",
+    link: "/audio",
+    audioSrc: "audio/guatape_lake_rain.m4a",
+    indexImgSrc: "audio/guatape_lake_rain.jpeg",
+    description:
+      "While on a boat trip around Guatape Lake ( a man made reservoir), we got caught in torrential rain, my first experience of the torrential rain in Colombia. Needless to say I got completely drenched. Got a nice audio clip out of it so silver linings.",
   },
 ];
 

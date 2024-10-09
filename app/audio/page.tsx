@@ -1,4 +1,4 @@
-import { Stack, Text, Flex, Image } from "@mantine/core";
+import { Stack, Text, Image } from "@mantine/core";
 import { Audio, Card, CardContent, Title } from "../../components";
 import { audioClips } from "../../utils";
 import { makePrefixer } from "../../utils";
@@ -24,12 +24,7 @@ export default function AudioPage() {
                 </Stack>
               </CardContent>
               <Image src={indexImgSrc} className={withBaseName("image")} />
-              <Text
-                className={withBaseName("description")}
-                size="lg"
-                ta="left"
-                style={{ overflow: "wrap" }}
-              >
+              <Text className={withBaseName("description")} size="lg" ta="left">
                 {description}
               </Text>
             </Card>
