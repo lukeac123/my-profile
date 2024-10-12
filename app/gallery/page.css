@@ -17,7 +17,7 @@
 
 .galleryPage-card {
   width: 400px;
-  height: min-content;
+  height: 600px;
 }
 
 @media (width <= 768px) {
