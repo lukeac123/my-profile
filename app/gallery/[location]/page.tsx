@@ -1,4 +1,4 @@
-import { Stack, Title } from "@mantine/core";
+import { Stack, Title, Image } from "@mantine/core";
 import NextImage from "next/image";
 import path from "path";
 import { promises as fs } from "fs";
@@ -16,8 +16,8 @@ async function getImages(params) {
 
   return imageLocationFolders.map((image) => {
     return (
-      <NextImage
-        // component={NextImage}
+      <Image
+        component={NextImage}
         alt={image}
         className={withBaseName("image")}
         src={`/gallery/${params.location}/${image}`}
