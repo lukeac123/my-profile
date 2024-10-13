@@ -10,14 +10,14 @@ const withBaseName = makePrefixer("photosPage");
 async function getImages(params) {
   const imageGalleryDirectory = path.join(
     process.cwd(),
-    `/public/gallery/${params.location}`,
+    `/public/gallery/${params.location}`
   );
   const imageLocationFolders = await fs.readdir(imageGalleryDirectory);
 
   return imageLocationFolders.map((image) => {
     return (
-      <Image
-        component={NextImage}
+      <NextImage
+        // component={NextImage}
         alt={image}
         className={withBaseName("image")}
         src={`/gallery/${params.location}/${image}`}
