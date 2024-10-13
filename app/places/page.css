@@ -17,7 +17,19 @@
   padding-top: 10px;
 }
 
-.placesPage-cardColumnn1 {
+.placesPage-cardContent {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+@media (width <= 992px) {
+  .placesPage-cardContent {
+    flex-direction: column;
+  }
+}
+
+.placesPage-cardColumn1 {
   overflow-wrap: break-word;
   padding: 5px;
   flex-shrink: 0;
@@ -28,16 +40,20 @@
 }
 
 @media (width <= 992px) {
-  .placesPage-cardColumnn1 {
+  .placesPage-cardColumn1 {
     width: 100%;
   }
-}
-
-.placesPage-googleIframe {
-  margin-top: 10px;
 }
 
 .placesPage-cardDescriptionColumn1 {
   width: 150px;
   flex-shrink: 0;
+}
+
+.placesPage-carousel {
+  height: 100%;
+}
+
+.placesPage-googleIframe {
+  margin-top: 10px;
 }
