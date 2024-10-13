@@ -1,4 +1,4 @@
-import { Stack, Image, Title } from "@mantine/core";
+import { Stack, Title } from "@mantine/core";
 import NextImage from "next/image";
 import path from "path";
 import { promises as fs } from "fs";
