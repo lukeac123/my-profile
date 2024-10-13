@@ -1,4 +1,4 @@
-import { Stack, Image, Title } from "@mantine/core";
+import { Stack, Title, Image } from "@mantine/core";
 import NextImage from "next/image";
 import path from "path";
 import { promises as fs } from "fs";
@@ -10,7 +10,7 @@ const withBaseName = makePrefixer("photosPage");
 async function getImages(params) {
   const imageGalleryDirectory = path.join(
     process.cwd(),
-    `/public/gallery/${params.location}`,
+    `/public/gallery/${params.location}`
   );
   const imageLocationFolders = await fs.readdir(imageGalleryDirectory);
 

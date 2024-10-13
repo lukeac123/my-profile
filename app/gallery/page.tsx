@@ -25,6 +25,7 @@ export default async function GalleryPage() {
             <Card
               className={withBaseName("card")}
               link={`gallery/${item.folder}`}
+              key={item.indexImageSrc}
             >
               <Title order={1} className={withBaseName("overlay")}>
                 {item.folder.charAt(0).toUpperCase() + item.folder.slice(1)}

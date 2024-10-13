@@ -1871,9 +1871,9 @@ p-try@^1.0.0:
   integrity sha512-U1etNYuMJoIz3ZXSrrySFjsXQTWOx2/jdi86L+2pRvph/qMKL6sbcCYdH23fqsbm8TH2Gn0OybpT4eSFlCVHww==
 
 p5@^1.9.4:
-  version "1.9.4"
-  resolved "https://registry.yarnpkg.com/p5/-/p5-1.9.4.tgz#948ec06c123105f516b0ef63db01c44b93c93b72"
-  integrity sha512-dhiZ9mvXx5pm8eRwml34xbeUwce4uS9Q2za0YOHg2p97N9iNAb5hTIHAt77CHKHXAh6A16u/oalz5egRfTyFWw==
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/p5/-/p5-1.11.0.tgz#4f2ed80d25c8a000f8411745c43255332038e3c3"
+  integrity sha512-UgjQK88M+QUjsGpZgS5ZoyY8AH6Ilmjil/oxWXA7hroe1yXBG+nYKae+fpn8gga71kKyZHumL234BNZekaqAHg==
 
 parent-module@^1.0.0:
   version "1.0.1"
