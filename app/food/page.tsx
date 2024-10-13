@@ -24,7 +24,7 @@ export default function FoodPage() {
                 <div className={withBaseName("cardDescription")}>
                   {Object.entries(content).map((content) => {
                     return (
-                      <Flex gap={0} key={content[1]} style={{ flexShrink: 0 }}>
+                      <div key={content[1]} style={{ flexShrink: 0 }}>
                         <Text
                           size="lg"
                           fw={700}
@@ -33,7 +33,7 @@ export default function FoodPage() {
                           {insertSpaces(content[0])}:
                         </Text>
                         <Text size="lg">{content[1]}</Text>
-                      </Flex>
+                      </div>
                     );
                   })}
                 </div>
