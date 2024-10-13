@@ -23,6 +23,7 @@ async function getImages(params) {
         src={`/gallery/${params.location}/${image}`}
         width={600}
         height={500}
+        quality={10}
       />
     );
   });
