@@ -14,11 +14,7 @@ const withBaseName = makePrefixer("card");
 export const Card = ({ children, link, className, ...rest }: CardProps) => {
   return (
     <MantineCard
-      className={clsx(
-        withBaseName(),
-        { [withBaseName("link")]: link },
-        className,
-      )}
+      className={clsx(withBaseName(), className)}
       withBorder
       shadow="sm"
       component={link ? Link : undefined}

@@ -9,12 +9,14 @@ export interface TitleProps extends MantineTitleProps {
   children: ReactNode;
   className?: string;
   underlined?: boolean;
+  padding?: boolean;
 }
 
 const withBaseName = makePrefixer("title");
 
 export const Title = ({
   underlined,
+  padding,
   children,
   className,
   ...rest
@@ -25,6 +27,7 @@ export const Title = ({
       className={clsx(
         withBaseName(),
         { [withBaseName("underlined")]: underlined },
+        { [withBaseName("padding")]: padding },
         className,
       )}
       {...rest}
