@@ -12,7 +12,7 @@ async function getImageSrc(imgDir: string) {
   const imagePlaceDirectory = path.join(
     process.cwd(),
     "/public/places",
-    imgDir
+    imgDir,
   );
   const imgSrcDir = await fs.readdir(imagePlaceDirectory).then((response) => {
     const imageArray = response.map((response) => {
@@ -25,45 +25,38 @@ async function getImageSrc(imgDir: string) {
 
 export default function PlacesPage() {
   return (
-    <Stack>
+    <>
       <Title order={1} ta="center">
         Places
       </Title>
 
       <div className={withBaseName("container")}>
         {places.map((places) => {
-          const { title, content, imgDir, googleMapsIframeUrl } = places;
+          const { title, content, imgDir } = places;
           return (
             <Card key={title} className={withBaseName("card")}>
-              <Title underlined className={withBaseName("cardTitle")}>
+              <Title underlined padding>
                 {title}
               </Title>
               <CardContent className={withBaseName("cardContent")}>
                 {getImageSrc(imgDir)}
-                <div className={withBaseName("cardColumn1")}>
+                <div className={withBaseName("cardDescription")}>
                   {Object.entries(content).map((content) => {
                     return (
                       <div>
-                        <Text
-                          size="lg"
-                          fw={700}
-                          className={withBaseName("cardDescriptionColumn1")}
-                        >
+                        <Text size="lg" fw={700}>
                           {insertSpaces(content[0])}:
                         </Text>
                         <Text size="lg">{content[1]}</Text>
                       </div>
                     );
                   })}
-                  {/* <Card className={withBaseName("googleIframe")}>
-                      <iframe src={googleMapsIframeUrl} loading="lazy" />
-                    </Card> */}
                 </div>
               </CardContent>
             </Card>
           );
         })}
       </div>
-    </Stack>
+    </>
   );
 }

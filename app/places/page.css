@@ -1,26 +1,17 @@
 .placesPage-container {
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
+  flex-direction: column;
   justify-content: center;
 }
 
 .placesPage-card {
   width: 100%;
-  align-content: center;
-  justify-content: center;
-  display: flex;
-}
-
-.placesPage-cardTitle {
-  padding-left: 20px;
-  padding-top: 10px;
 }
 
 .placesPage-cardContent {
   display: flex;
   flex-direction: row;
-  gap: 5px;
 }
 
 @media (width <= 992px) {
@@ -29,31 +20,22 @@
   }
 }
 
-.placesPage-cardColumn1 {
-  overflow-wrap: break-word;
-  padding: 5px;
-  flex-shrink: 0;
-  gap: 5px;
-  display: flex;
-  flex-direction: column;
+.placesPage-carousel {
   width: 50%;
 }
 
 @media (width <= 992px) {
-  .placesPage-cardColumn1 {
+  .placesPage-carousel {
     width: 100%;
   }
 }
 
-.placesPage-cardDescriptionColumn1 {
-  width: 150px;
-  flex-shrink: 0;
+.placesPage-cardDescription {
+  width: 50%;
 }
 
-.placesPage-carousel {
-  height: 100%;
-}
-
-.placesPage-googleIframe {
-  margin-top: 10px;
+@media (width <= 992px) {
+  .placesPage-cardDescription {
+    width: 100%;
+  }
 }

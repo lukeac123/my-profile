@@ -10,9 +10,8 @@ export default function FoodPage() {
   return (
     <Stack>
       <Title order={1} ta="center">
-        Bordain Style
+        Food
       </Title>
-
       <div className={withBaseName("container")}>
         {food.map((food) => {
           const { title, indexImgSrc, content } = food;
