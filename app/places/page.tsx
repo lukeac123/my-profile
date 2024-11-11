@@ -38,7 +38,7 @@ export default function PlacesPage() {
               <Title underlined padding>
                 {title}
               </Title>
-              <CardContent className={withBaseName("cardContent")}>
+              <div className={withBaseName("cardContent")}>
                 {getImageSrc(imgDir)}
                 <div className={withBaseName("cardDescription")}>
                   {Object.entries(content).map((content) => {
@@ -52,7 +52,7 @@ export default function PlacesPage() {
                     );
                   })}
                 </div>
-              </CardContent>
+              </div>
             </Card>
           );
         })}
