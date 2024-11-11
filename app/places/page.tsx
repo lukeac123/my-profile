@@ -12,7 +12,7 @@ async function getImageSrc(imgDir: string) {
   const imagePlaceDirectory = path.join(
     process.cwd(),
     "/public/places",
-    imgDir,
+    imgDir
   );
   const imgSrcDir = await fs.readdir(imagePlaceDirectory).then((response) => {
     const imageArray = response.map((response) => {
@@ -38,7 +38,7 @@ export default function PlacesPage() {
               <Title underlined padding>
                 {title}
               </Title>
-              <CardContent className={withBaseName("cardContent")}>
+              <div className={withBaseName("cardContent")}>
                 {getImageSrc(imgDir)}
                 <div className={withBaseName("cardDescription")}>
                   {Object.entries(content).map((content) => {
@@ -52,7 +52,7 @@ export default function PlacesPage() {
                     );
                   })}
                 </div>
-              </CardContent>
+              </div>
             </Card>
           );
         })}

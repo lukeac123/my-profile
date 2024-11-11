@@ -3,6 +3,7 @@
   gap: 20px;
   flex-direction: column;
   justify-content: center;
+  margin: 10px;
 }
 
 .placesPage-card {
@@ -12,6 +13,8 @@
 .placesPage-cardContent {
   display: flex;
   flex-direction: row;
+  gap: 10px;
+  padding: var(--mantine-spacing-md);
 }
 
 @media (width <= 992px) {
