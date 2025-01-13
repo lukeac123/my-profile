@@ -12,7 +12,7 @@ async function getImageSrc(imgDir: string) {
   const imagePlaceDirectory = path.join(
     process.cwd(),
     "/public/places",
-    imgDir,
+    imgDir
   );
   const imgSrcDir = await fs.readdir(imagePlaceDirectory).then((response) => {
     const imageArray = response.map((response) => {
@@ -20,6 +20,7 @@ async function getImageSrc(imgDir: string) {
     });
     return imageArray;
   });
+
   return <Carousel images={imgSrcDir} className={withBaseName("carousel")} />;
 }
 

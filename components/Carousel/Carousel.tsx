@@ -1,5 +1,5 @@
 "use client"; // Cannot dot into Carousel component on the server side
-import { Image } from "@mantine/core";
+import { CroppedImage } from "../Image";
 import { HTMLAttributes } from "react";
 import { makePrefixer } from "../../utils/makePrefixer";
 import { Carousel as MantineCarousel } from "@mantine/carousel";
@@ -24,7 +24,7 @@ export const Carousel = ({ className, images }: CarouselProps) => {
       {images.map((imageSrc) => {
         return (
           <MantineCarousel.Slide key={imageSrc}>
-            <Image src={imageSrc} className={withBaseName("image")} />
+            <CroppedImage imageSrc={imageSrc} />
           </MantineCarousel.Slide>
         );
       })}
