@@ -285,7 +285,6 @@ export const places = [
       Country: "Peru",
       City: "Lima",
       Rating: <StarRating stars={3} />,
-
       ArrivalDate: "2024-10-17", // YYYY-MM-DD, Dates are in ISO format
       DepartureDate: "2024-10-19",
       Duration: "3 Days",
@@ -303,7 +302,6 @@ export const places = [
       Country: "Peru",
       City: "Lima",
       Rating: <StarRating stars={2} />,
-
       ArrivalDate: "2024-10-17",
       DepartureDate: "2024-10-17",
       Duration: "3 Days",
@@ -321,7 +319,6 @@ export const places = [
       Country: "Colombia",
       City: "Cali",
       Rating: <StarRating stars={5} />,
-
       ArrivalDate: "2024-10-05",
       DepartureDate: "2024-10-13",
       Duration: "9 Days",
