@@ -1,11 +1,10 @@
-import { Stack, Text } from "@mantine/core";
-import { Card, Title, CardContent, Carousel } from "../../components";
+import { Text } from "@mantine/core";
+import { Card, Title, Carousel } from "../../components";
 import { insertSpaces, makePrefixer } from "../../utils";
 import path from "path";
 import { promises as fs } from "fs";
-import { places } from "../../utils";
+import { places, type Place, dateToUKFormat } from "../../utils";
 import "./page.css";
-import { usePageLeave } from "@mantine/hooks";
 
 const withBaseName = makePrefixer("placesPage");
 
@@ -24,25 +23,36 @@ async function getImageSrc(imgDir: string) {
   return <Carousel images={imgSrcDir} className={withBaseName("carousel")} />;
 }
 
-function sortPlacesByDate(places: Array<Object>) {
-  const arrayOfKeys = Object.keys(places);
-  const keysSortedByDate = arrayOfKeys.sort((a, b) => {
+function sortPlacesByDate(places: Place[]) {
+  const arrayOfEntries = Object.values(places);
+  const entriesSortedByDate = arrayOfEntries.sort((a, b) => {
     return (
-      Math.floor(new Date(places[b].content.ArrivalDate)) -
-      Math.floor(new Date(places[a].content.ArrivalDate))
+      Math.floor(new Date(b.content.ArrivalDate)) -
+      Math.floor(new Date(a.content.ArrivalDate))
     );
   });
 
-  const newSortedByDate = keysSortedByDate.map((key: number) => {
-    return places[key];
-  });
-
-  return newSortedByDate;
+  return entriesSortedByDate;
 }
 
-export default function PlacesPage() {
-  const placesByDate = sortPlacesByDate(places);
+const updateContent = (content: {
+  Country: string;
+  City: string;
+  Rating: JSX.Element;
+  ArrivalDate: string;
+  DepartureDate: string;
+  Duration: string;
+  Description: string;
+}) => {
+  return {
+    ...content,
+    ArrivalDate: dateToUKFormat(content.ArrivalDate),
+    DepartureDate: dateToUKFormat(content.DepartureDate),
+  };
+};
 
+export default function PlacesPage() {
+  const placesByDate: Place[] = sortPlacesByDate(places);
   return (
     <>
       <Title order={1} ta="center">
@@ -50,8 +60,11 @@ export default function PlacesPage() {
       </Title>
 
       <div className={withBaseName("container")}>
-        {placesByDate.map((places) => {
-          const { title, content, imgDir } = places;
+        {placesByDate.map((place: Place) => {
+          const { title, content, imgDir } = place;
+
+          const updatedContent = updateContent(content);
+
           return (
             <Card key={title} className={withBaseName("card")}>
               <Title underlined padding>
@@ -60,7 +73,7 @@ export default function PlacesPage() {
               <div className={withBaseName("cardContent")}>
                 {getImageSrc(imgDir)}
                 <div className={withBaseName("cardDescription")}>
-                  {Object.entries(content).map((content) => {
+                  {Object.entries(updatedContent).map((content) => {
                     return (
                       <div>
                         <Text size="lg" fw={700}>

@@ -1,14 +1,12 @@
 import { StarRating } from "../components";
 
-// change the dates in people as well to the iso format
-
 export const people = [
   {
     title: "Cultivare Family",
     link: "/people",
     location: "",
     indexImgSrc: "/people/cultivare.jpeg",
-    date: "16 / 09 / 2024", // YYYY-MM-DD
+    date: "2024-09-16", // YYYY-MM-DD, Dates are in ISO format
     content: {
       Nationality: "Colombian, Chinese, Canadian",
       Age: "Mixed",
@@ -22,7 +20,7 @@ export const people = [
     link: "/people",
     location: "",
     indexImgSrc: "/people/alejandro.jpeg",
-    date: "27 / 08 / 2024",
+    date: "2024-08-27",
     content: {
       Nationality: "Colombian",
       Age: "21",
@@ -36,7 +34,7 @@ export const people = [
     link: "/people",
     location: "",
     indexImgSrc: "/people/hector.jpeg",
-    date: "21 / 07 / 2024",
+    date: "2024-07-21",
     content: {
       Nationality: "Venezuelan",
       Age: "25",
@@ -50,7 +48,7 @@ export const people = [
     link: "/people",
     location: "",
     indexImgSrc: "/people/sophie.jpeg",
-    date: "21 / 07 / 2024",
+    date: "2024-07-21",
     content: {
       Nationality: "Australian",
       Age: "23",
@@ -64,7 +62,7 @@ export const people = [
     link: "/people",
     location: "",
     indexImgSrc: "/people/carlos.jpeg",
-    date: "21 / 07 / 2024",
+    date: "2024-07-21",
     content: {
       Nationality: "Spanish - Madrid",
       Age: "31",
@@ -78,7 +76,7 @@ export const people = [
     link: "/people",
     location: "",
     indexImgSrc: "/people/issy.jpeg",
-    date: "21 / 07 / 2024",
+    date: "2024-07-21",
     content: {
       Nationality: "English",
       Age: "23",
@@ -92,7 +90,7 @@ export const people = [
     link: "/people",
     location: "",
     indexImgSrc: "/people/chispas.jpeg",
-    date: "14 / 07 / 2024",
+    date: "2024-07-14",
     content: {
       Nationality: "Colombian",
       Age: "Appox 4",
@@ -108,7 +106,7 @@ export const food = [
     title: "Falafel Salad",
     link: "/food",
     indexImgSrc: "/food/salad.jpeg",
-    date: "13 / 08 / 2024",
+    date: "2024-08-13", // YYYY-MM-DD, Dates are in ISO format
     content: {
       Location: "Ikaro Cafe - Santa Marta",
       Cost: "££",
@@ -121,7 +119,7 @@ export const food = [
     title: "Juice Appreciation",
     link: "/food",
     indexImgSrc: "/food/juice.jpeg",
-    date: "21 / 07 / 2024",
+    date: "2024-07-21",
     content: {
       Location: "San Rafael - Ritmo Del Rio",
       Cost: "£",
@@ -134,7 +132,7 @@ export const food = [
     title: "Dragon Fruit",
     link: "/food",
     indexImgSrc: "/food/dragonFruit.jpeg",
-    date: "15 / 07 / 2024",
+    date: "2024-07-15",
     content: {
       Location: "San Carlos - Spanish Adventure",
       Cost: "£££",
@@ -147,7 +145,7 @@ export const food = [
     title: "Chicharrón",
     link: "/food",
     indexImgSrc: "/food/mamasita.jpeg",
-    date: "13 / 07 / 2024",
+    date: "2024-07-13",
     content: {
       Location: "Mamasita - Medellin",
       Cost: "£££",
@@ -160,7 +158,7 @@ export const food = [
     title: "Arepa",
     link: "/food",
     indexImgSrc: "/food/arepa.jpeg",
-    date: "11 / 07 / 2024",
+    date: "2024-07-11",
     content: {
       Location: "Communa 13 - Medellin",
       Cost: "£",
@@ -173,7 +171,7 @@ export const food = [
     title: "Empanada",
     link: "/food",
     indexImgSrc: "/food/empanada.jpeg",
-    date: "10 / 07 / 2024",
+    date: "2024-07-10",
     content: {
       Location: "Central - Medellin",
       Cost: "£",
@@ -259,6 +257,23 @@ export const audioClips = [
   },
 ];
 
+export interface Place {
+  title: string;
+  location: string;
+  link: string;
+  imgDir: string;
+  indexImageSrc?: string;
+  content: {
+    Country: string;
+    City: string;
+    Rating: JSX.Element;
+    ArrivalDate: string;
+    DepartureDate: string;
+    Duration: string;
+    Description: string;
+  };
+}
+
 export const places = [
   {
     title: "Barranca",
@@ -271,7 +286,7 @@ export const places = [
       City: "Lima",
       Rating: <StarRating stars={3} />,
 
-      ArrivalDate: "2024-10-17",
+      ArrivalDate: "2024-10-17", // YYYY-MM-DD, Dates are in ISO format
       DepartureDate: "2024-10-19",
       Duration: "3 Days",
       Description:
@@ -289,8 +304,8 @@ export const places = [
       City: "Lima",
       Rating: <StarRating stars={2} />,
 
-      ArrivalDate: "15/10/24",
-      DepartureDate: "17/10/24",
+      ArrivalDate: "2024-10-17",
+      DepartureDate: "2024-10-17",
       Duration: "3 Days",
       Description:
         "At the airport, without data I was hustled in a black Taxi and we agreed on the price of 60, the same as shown on Uber. After a friendly chat we arrived at my hostel in Miraflores where he told me the price was 60 USD and that PEN stood for Pesos International not Soles. Surprisingly Pesos International isn’t a thing ( not sure how a currency could be international ), but in my sleep deprived state I caved under the pressure and paid it. Not my finest hour. Personally I didn’t enjoy Lima, the former most likely tainting my initial impression, but there also isn’t a while bunch to do, you can surf here but the beach isn’t great and it’s kind of cold. I didn’t go out partying here, which being the party place in Peru could have changed my perspective. I did however reconnect with Mike here and we went to see some of the archaeological site scattered throughout the city, with it supposedly being built on top of an ancient civilisation. I also enjoyed adjoining neighbourhood Barranco, very colourful with graffiti on most of the buildings and cool hipster bars. If I stayed in Lima again, I’d give Miraflores a miss and stay in Barraco instead.",
@@ -307,8 +322,8 @@ export const places = [
       City: "Cali",
       Rating: <StarRating stars={5} />,
 
-      ArrivalDate: "05/10/24",
-      DepartureDate: "13/10/24",
+      ArrivalDate: "2024-10-05",
+      DepartureDate: "2024-10-13",
       Duration: "9 Days",
       Description:
         "The only expectations I had of Cali were salsa dancing, and to be honest I prefer not knowing much about a place before arriving, it means I just accept it for what it is and not comparing it to the idea of it in my head. We arrived on Friday and after a few cocktails headed out to salsa street. It was wonderfully chaotic with bars pumping out salsa music and waves of people dancing in the street drinking aguardiente. With little to no salsa ability we were initially unsure, but were soon approached by strangers more than willing to teach the gringos some of the basics. This was one of the things I loved about Cali, the culture to dance purely for the enjoyment, friends, strangers, lovers, it’s not important. Hannah and I spent the week at Viajero hostel doing private sala clases and then heading off to the local Salsa bar, La Topa, to show off our new moves. The hostel had a laid back, comfortable atmosphere and was super social. We met some lovely people here and would recommend to anyone staying in Cali.",
