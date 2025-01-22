@@ -12,7 +12,7 @@ export const people = [
       Age: "Mixed",
       Location: "Anapoima",
       Description:
-        "The two weeks I spent here felt a bit like an exchange where I had been adopted by a Colombian family. The kids / other volunteers an eclectic mix, Mike, Sofia and I from China, Canada and England respectively and Natalia, Papa and Mama being the responsible adults, sitting down for 3 meals a day together, the kids doing their chores in the garden and then washing up the plates after dinner. After work in the evenings we’d walk along to the local tienda with Papa and have a few Club Colombia’s, on one occasion having a few too many and getting told off by Natalia for waking up too late. On weekends we’d go for walks with Papa, teaching us about the local landscape and the different types of plants and how they grow, or going into town for shopping trips with Mama. You can eat a new fruit in Colombia every day of the year and still have plenty left over. It was also Papa’s birthday while I was there so I also met the cousins, having dinner and sharing bottles of green wine from Portugal.",
+        "Both small towns on the cost of Peru, a few hours north of Lima, very removed from the Gringo trail locals definitely had a second look at a Gringo and a Chinese guy. For the amount of Chifas they have selling Chinese food, it seems they get very few actual Chinese people. From here we explored the Sacred City of Caral, a civilisation dating back to before the Egyptians. It was also my first experience of the dramatic Peruvian mountains. On the Beach in Barranca we ate Ceviche and I had the privilege of playing football with the locals on the beach. It was lovely to experience to openness of the locals to invite a random gringo to join their football team, simply for the enjoyment of the playing without prejudice. For me I think this was my highlight here.",
     },
   },
   {
@@ -259,6 +259,42 @@ export const audioClips = [
 
 export const places = [
   {
+    title: "Barranca",
+    location: "Barranca",
+    link: "/places",
+    imgDir: "/barranca",
+    indexImgSrc: "places/barranca/index.jpeg",
+    content: {
+      Country: "Peru",
+      City: "Lima",
+      Rating: <StarRating stars={3} />,
+
+      ArrivalDate: "17/10/24",
+      DepartureDate: "19/10/24",
+      Duration: "3 Days",
+      Description:
+        "At the airport, without data I was hustled in a black Taxi and we agreed on the price of 60, the same as shown on Uber. After a friendly chat we arrived at my hostel in Miraflores where he told me the price was 60 USD and that PEN stood for Pesos International not Soles. Surprisingly Pesos International isn’t a thing ( not sure how a currency could be international ), but in my sleep deprived state I caved under the pressure and paid it. Not my finest hour. Personally I didn’t enjoy Lima, the former most likely tainting my initial impression, but there also isn’t a while bunch to do, you can surf here but the beach isn’t great and it’s kind of cold. I didn’t go out partying here, which being the party place in Peru could have changed my perspective. I did however reconnect with Mike here and we went to see some of the archaeological site scattered throughout the city, with it supposedly being built on top of an ancient civilisation. I also enjoyed adjoining neighbourhood Barranco, very colourful with graffiti on most of the buildings and cool hipster bars. If I stayed in Lima again, I’d give Miraflores a miss and stay in Barraco instead.",
+    },
+  },
+  {
+    title: "Lima",
+    location: "Lima",
+    link: "/places",
+    imgDir: "/lima",
+    indexImgSrc: "places/lima/index.jpeg",
+    content: {
+      Country: "Peru",
+      City: "Lima",
+      Rating: <StarRating stars={2} />,
+
+      ArrivalDate: "15/10/24",
+      DepartureDate: "17/10/24",
+      Duration: "3 Days",
+      Description:
+        "At the airport, without data I was hustled in a black Taxi and we agreed on the price of 60, the same as shown on Uber. After a friendly chat we arrived at my hostel in Miraflores where he told me the price was 60 USD and that PEN stood for Pesos International not Soles. Surprisingly Pesos International isn’t a thing ( not sure how a currency could be international ), but in my sleep deprived state I caved under the pressure and paid it. Not my finest hour. Personally I didn’t enjoy Lima, the former most likely tainting my initial impression, but there also isn’t a while bunch to do, you can surf here but the beach isn’t great and it’s kind of cold. I didn’t go out partying here, which being the party place in Peru could have changed my perspective. I did however reconnect with Mike here and we went to see some of the archaeological site scattered throughout the city, with it supposedly being built on top of an ancient civilisation. I also enjoyed adjoining neighbourhood Barranco, very colourful with graffiti on most of the buildings and cool hipster bars. If I stayed in Lima again, I’d give Miraflores a miss and stay in Barraco instead.",
+    },
+  },
+  {
     title: "Cali",
     location: "Cali",
     link: "/places",
@@ -270,7 +306,7 @@ export const places = [
       Rating: <StarRating stars={5} />,
 
       ArrivalDate: "05/10/24",
-      DepartureDate: "13/09/24",
+      DepartureDate: "13/10/24",
       Duration: "9 Days",
       Description:
         "The only expectations I had of Cali were salsa dancing, and to be honest I prefer not knowing much about a place before arriving, it means I just accept it for what it is and not comparing it to the idea of it in my head. We arrived on Friday and after a few cocktails headed out to salsa street. It was wonderfully chaotic with bars pumping out salsa music and waves of people dancing in the street drinking aguardiente. With little to no salsa ability we were initially unsure, but were soon approached by strangers more than willing to teach the gringos some of the basics. This was one of the things I loved about Cali, the culture to dance purely for the enjoyment, friends, strangers, lovers, it’s not important. Hannah and I spent the week at Viajero hostel doing private sala clases and then heading off to the local Salsa bar, La Topa, to show off our new moves. The hostel had a laid back, comfortable atmosphere and was super social. We met some lovely people here and would recommend to anyone staying in Cali.",
@@ -288,7 +324,7 @@ export const places = [
       Rating: <StarRating stars={4} />,
 
       ArrivalDate: "02/10/24",
-      DepartureDate: "05/09/24",
+      DepartureDate: "05/10/24",
       Duration: "3 Days",
       Description:
         "Taking a bus from Pereira Hannah and I arrived to the heart of the coffee region. It was raining when we arrived, but it soon cleared to reveal a cute town with shops selling typical tourist items like jewelry, bags but there was also a shop selling embroidered denim. The flared jeans I bought here soon became a staple of my travel attire. The main attraction in Salento Cocora Valley with rolling hills and intimidatingly tall palm trees, a landscape that wouldn’t be out of place in a Jurassic Park movie. In the mornings we had the typical arepa, cheese, eggs and coffee, followed by riding in the back of the jeep to the valley and menu del día to recover from the days walk. We went twice in total, the first time taking a gamble because we didn’t want to pay entry to the valley getting lost and the second conceding and paying the entry. We only stayed here for 3 days, but it’s a lovely place to hike, be in nature and relax. ",
