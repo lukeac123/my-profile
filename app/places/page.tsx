@@ -5,6 +5,7 @@ import path from "path";
 import { promises as fs } from "fs";
 import { places, type Place, dateToUKFormat } from "../../utils";
 import "./page.css";
+import { usePageLeave } from "@mantine/hooks";
 
 const withBaseName = makePrefixer("placesPage");
 
@@ -53,6 +54,7 @@ const updateContent = (content: {
 
 export default function PlacesPage() {
   const placesByDate: Place[] = sortPlacesByDate(places);
+
   return (
     <>
       <Title order={1} ta="center">
@@ -64,7 +66,6 @@ export default function PlacesPage() {
           const { title, content, imgDir } = place;
 
           const updatedContent = updateContent(content);
-
           return (
             <Card key={title} className={withBaseName("card")}>
               <Title underlined padding>

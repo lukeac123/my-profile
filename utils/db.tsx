@@ -302,7 +302,7 @@ export const places = [
       Country: "Peru",
       City: "Lima",
       Rating: <StarRating stars={2} />,
-      ArrivalDate: "2024-10-17",
+      ArrivalDate: "2024-10-15",
       DepartureDate: "2024-10-17",
       Duration: "3 Days",
       Description:
