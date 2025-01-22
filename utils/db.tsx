@@ -271,8 +271,8 @@ export const places = [
       City: "Lima",
       Rating: <StarRating stars={3} />,
 
-      ArrivalDate: "17/10/24",
-      DepartureDate: "19/10/24",
+      ArrivalDate: "2024-10-17",
+      DepartureDate: "2024-10-19",
       Duration: "3 Days",
       Description:
         "At the airport, without data I was hustled in a black Taxi and we agreed on the price of 60, the same as shown on Uber. After a friendly chat we arrived at my hostel in Miraflores where he told me the price was 60 USD and that PEN stood for Pesos International not Soles. Surprisingly Pesos International isn’t a thing ( not sure how a currency could be international ), but in my sleep deprived state I caved under the pressure and paid it. Not my finest hour. Personally I didn’t enjoy Lima, the former most likely tainting my initial impression, but there also isn’t a while bunch to do, you can surf here but the beach isn’t great and it’s kind of cold. I didn’t go out partying here, which being the party place in Peru could have changed my perspective. I did however reconnect with Mike here and we went to see some of the archaeological site scattered throughout the city, with it supposedly being built on top of an ancient civilisation. I also enjoyed adjoining neighbourhood Barranco, very colourful with graffiti on most of the buildings and cool hipster bars. If I stayed in Lima again, I’d give Miraflores a miss and stay in Barraco instead.",
