@@ -1,14 +1,6 @@
 "use client";
 import { useState } from "react";
-import {
-  Text,
-  Title,
-  Container,
-  Group,
-  Burger,
-  Drawer,
-  Stack,
-} from "@mantine/core";
+import { Text, Title, Group, Burger, Drawer, Stack } from "@mantine/core";
 import { ColorSchemeToggle } from "./ColorSchemeToggle";
 import { ColorModeToggle } from "./ColorModeToggle";
 import { makePrefixer } from "../../utils/makePrefixer";
@@ -17,11 +9,10 @@ import "./AppHeader.component.css";
 
 const links = [
   { label: "Home", link: "./" },
-  { label: "Places", link: "./places" },
-  { label: "People", link: "./people" },
-  { label: "Food", link: "./food" },
+  { label: "Photography", link: "./photography" },
   { label: "Audio", link: "./audio" },
-  { label: "Gallery", link: "./gallery" },
+  { label: "Travel", link: "./travel" },
+  // { label: "Recipies", link: "./recipies" },
 ];
 
 const withBaseName = makePrefixer("appHeader");
@@ -33,47 +24,51 @@ export const AppHeader = () => {
 
   return (
     <header className={withBaseName()}>
-      <Burger opened={open} onClick={toggleDrawer} hiddenFrom="sm" size="sm" />
-      <Container className={withBaseName("title")}>
-        <Title visibleFrom="sm">Queer Abroad</Title>
-        <Group visibleFrom="sm" gap={"sm"} justify="center">
+      <Group visibleFrom="sm" gap={"sm"} className={withBaseName("title")}>
+        {links.map((link) => (
+          <Text
+            className={withBaseName("link")}
+            key={link.label}
+            href={link.link}
+            component={Link}
+          >
+            {link.label}
+          </Text>
+        ))}
+      </Group>
+      <div className={withBaseName("burger")}>
+        <Burger
+          opened={open}
+          onClick={toggleDrawer}
+          // Would using css media queries be faster than using the below ?
+          hiddenFrom="sm"
+          size="sm"
+        />
+      </div>
+
+      <Drawer
+        opened={open}
+        onClose={() => setOpen(false)}
+        title="Luke Atkinson-Coyle"
+      >
+        <Stack gap={"sm"}>
           {links.map((link) => (
             <Text
               className={withBaseName("link")}
               key={link.label}
               href={link.link}
               component={Link}
+              onClick={() => setOpen(false)}
             >
               {link.label}
             </Text>
           ))}
-        </Group>
-
-        <Drawer
-          opened={open}
-          onClose={() => setOpen(false)}
-          title="Queer Abroad"
-        >
-          <Stack gap={"sm"}>
-            {links.map((link) => (
-              <Text
-                className={withBaseName("link")}
-                key={link.label}
-                href={link.link}
-                component={Link}
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Text>
-            ))}
-          </Stack>
-        </Drawer>
-
-        <div className={withBaseName("buttonbar")}>
-          <ColorSchemeToggle />
-          <ColorModeToggle />
-        </div>
-      </Container>
+        </Stack>
+      </Drawer>
+      <Group>
+        <ColorSchemeToggle />
+        <ColorModeToggle />
+      </Group>
     </header>
   );
 };

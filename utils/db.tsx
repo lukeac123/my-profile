@@ -1,184 +1,34 @@
-import { StarRating } from "../components";
+import { StarRating, Audio } from "../components";
+import { Image } from "@mantine/core";
 
-export const people = [
-  {
-    title: "Cultivare Family",
-    link: "/people",
-    location: "",
-    indexImgSrc: "/people/cultivare.jpeg",
-    date: "2024-09-16", // YYYY-MM-DD, Dates are in ISO format
-    content: {
-      Nationality: "Colombian, Chinese, Canadian",
-      Age: "Mixed",
-      Location: "Anapoima",
-      Description:
-        "Both small towns on the cost of Peru, a few hours north of Lima, very removed from the Gringo trail locals definitely had a second look at a Gringo and a Chinese guy. For the amount of Chifas they have selling Chinese food, it seems they get very few actual Chinese people. From here we explored the Sacred City of Caral, a civilisation dating back to before the Egyptians. It was also my first experience of the dramatic Peruvian mountains. On the Beach in Barranca we ate Ceviche and I had the privilege of playing football with the locals on the beach. It was lovely to experience to openness of the locals to invite a random gringo to join their football team, simply for the enjoyment of the playing without prejudice. For me I think this was my highlight here.",
-    },
-  },
-  {
-    title: "Alejandro",
-    link: "/people",
-    location: "",
-    indexImgSrc: "/people/alejandro.jpeg",
-    date: "2024-08-27",
-    content: {
-      Nationality: "Colombian",
-      Age: "21",
-      Location: "Journey Hostel",
-      Description:
-        "I met Ale during my short stint at the Journey hostel. Initially we didn’t speak too much but after a shift together we came friends, me speaking speaking to him in Spanish and him back to me in English. On one morning before starting our shift together we walked along to a secluded beach about 30 mins from the hostel. It was the most beautiful beach I think I went to in Colombia and we practically had it all to ourselves, couldn’t see another soul along to the horizon each way. Golden sand, crystal blue waters, the typical description of when you described a beach in stories for homework as a kid. Having to leave the hostel after only a week was a shame, but not for working at the hostel but for the time I missed on this beach with Ale and other similar experiences. I reconnected with Ale in Bogota and after time exploring the city together he also introduced me to his very fashionable friend Dani. We partied together at Mad Radio ( techno club on a Wednesday ) and Video club ( reggaeton and techno on Friday ) before visiting a waterfall a few hours away on Sunday with their extended friendship group. Ale is going to finish off his studies as a Pastry Chef in France so I wish him all the best and hope to see him again, either in Europe or back in Colombia. ",
-    },
-  },
-  {
-    title: "Hector",
-    link: "/people",
-    location: "",
-    indexImgSrc: "/people/hector.jpeg",
-    date: "2024-07-21",
-    content: {
-      Nationality: "Venezuelan",
-      Age: "25",
-      Location: "San Rafel, Colombia - Ritmo Del Rio",
-      Description:
-        "Hector had been working on the Permaculture farm for about a year when I arrived, originally from Venezuela but migrated with his brother and sister to San Rafael. A pretty chaotic individual and always full of energy. He didn’t speak much English and my Spanish not being pretty minimal our relationship wasn’t full of conversation. We spent plenty of time together working the field, by the campfire, playing card games after dinner and drinking Aguardiente from a carton in el pueblo.",
-    },
-  },
-  {
-    title: "Sophie",
-    link: "/people",
-    location: "",
-    indexImgSrc: "/people/sophie.jpeg",
-    date: "2024-07-21",
-    content: {
-      Nationality: "Australian",
-      Age: "23",
-      Location: "San Rafel, Colombia - Ritmo Del Rio",
-      Description:
-        "What to say about Sophie, from down under but living in Rome. The other 1/3 of the Ritmo Del Rio trio. Someone that might be nearly as sarcastic as me. I’ll remember the times we went to the Ashram for our yoga sessions, learning Spanish together and laughing at my mispronunciation of the band Khraungbin.",
-    },
-  },
-  {
-    title: "Carlos",
-    link: "/people",
-    location: "",
-    indexImgSrc: "/people/carlos.jpeg",
-    date: "2024-07-21",
-    content: {
-      Nationality: "Spanish - Madrid",
-      Age: "31",
-      Location: "San Rafel, Colombia - Ritmo Del Rio",
-      Description:
-        "Carlos, Charlie, Charlos or simply the Spanish Stallion from Madrid. A lovely energetic person who told me the translation for Aguadiente is `Horny Water` (probably not wrong). Had a lovely time walking through the scenic Colombian country side mushroom hunting with Michel. No apoya no folla!",
-    },
-  },
-  {
-    title: "Issy",
-    link: "/people",
-    location: "",
-    indexImgSrc: "/people/issy.jpeg",
-    date: "2024-07-21",
-    content: {
-      Nationality: "English",
-      Age: "23",
-      Location: "San Rafel, Colombia - Ritmo Del Rio",
-      Description:
-        "Shock another person from London travelling Colombia. 1/3 of the Ritmo Del Rio Trio. I'd say Issy and I got on from the start, me being new and Issy being there for a week already I remember her inviting me to join them at the river on the first day. Made me feel immediately welcome. Being a chaotic person like me we spent plenty of time giggling around the campfire, drinking beers after work and eating ice cream and cake.",
-    },
-  },
-  {
-    title: "Chispas",
-    link: "/people",
-    location: "",
-    indexImgSrc: "/people/chispas.jpeg",
-    date: "2024-07-14",
-    content: {
-      Nationality: "Colombian",
-      Age: "Appox 4",
-      Location: "San Carlos, Colombia - Spanish Adventure",
-      Description:
-        "Chispas was a staple of the Spanish Adventure experience. Originally bought by the family to eat but kept as they thought she was pregnant but now used as a garbage disposal. She’s been on a diet recently so her belly no longer touches the ground when she walks but she’s still living the easy life.",
-    },
-  },
+export const heroImages = [
+  { caption: "Patagonia", imgSrc: "/heroImages/DSC05704.JPG" },
 ];
 
-export const food = [
+export type HeroImage = { caption: String; imgSrc: string };
+
+export const homePageData = [
   {
-    title: "Falafel Salad",
-    link: "/food",
-    indexImgSrc: "/food/salad.jpeg",
-    date: "2024-08-13", // YYYY-MM-DD, Dates are in ISO format
-    content: {
-      Location: "Ikaro Cafe - Santa Marta",
-      Cost: "££",
-      Rating: <StarRating stars={5} />,
-      Description:
-        "The first salad I had in Colombia, and it was delicious. This was the highlight of my time in Santa Marta, take from that what you will. The falafel was crispy on the outside and soft on the inside, well seasoned and served with bulgar wheat, cashews, lettuce, goats cheese and I think pickled apple. It was served with homemade bread. Might go back to Santa Marta just for this. ",
-    },
+    title: "About Me",
+    media: <Image src={"me.jpeg"} height="100%" />,
+    content: "Hello, my names Luke",
   },
   {
-    title: "Juice Appreciation",
-    link: "/food",
-    indexImgSrc: "/food/juice.jpeg",
-    date: "2024-07-21",
-    content: {
-      Location: "San Rafael - Ritmo Del Rio",
-      Cost: "£",
-      Rating: <StarRating stars={5} />,
-      Description:
-        "While working in the farm in the morning juice with lunch after a quick dip in the river was one of the things I looked forward to each day. Each day with a different juice, including Blackberry, Banana, Mango or something called Panela (Lemon mixed with Sugar Cane). The first salad I had in Colombia, and it was delicious. This was the highlight of my time in Santa Marta, take from that what you will. The falafel was crispy on the outside and soft on the inside, well seasoned and served with bulgar wheat, cashews, lettuce, goats cheese and I think pickled apple. It was served with homemade bread. Might go back to Santa Marta just for this",
-    },
+    title: "Travel",
+    caption:
+      "Traveling across South America as a Queer Man. Living the majority of my life in London and working in the corporate world as a software engineer for the last 3 years, I've decided to put the predictable pendulum of London life behind me and solo backpack across the South American continent. Swapping high-rises for sun-rises and the clicky clack of the tude for the passionate and expressive beats of Latin America. Follow this page for updates on the places I visit, the people I meet as well as plenty of photos and audio clips",
+    media: (
+      <iframe
+        src="https://www.travellerspoint.com/embed/map.cfm/#/embed/1139683/"
+        width="100%"
+        height="700px"
+      />
+    ),
   },
   {
-    title: "Dragon Fruit",
-    link: "/food",
-    indexImgSrc: "/food/dragonFruit.jpeg",
-    date: "2024-07-15",
-    content: {
-      Location: "San Carlos - Spanish Adventure",
-      Cost: "£££",
-      Rating: <StarRating stars={5} />,
-      Description:
-        "By far the best fruit I’ve ever had. Juicy sweet flesh contrasted with eh crunchy seeds. Slice it down the middle and scoop out the flesh with a spoon. I would liken it to a cross between a kiwi and a sweet melon. I was introduced to these by another student at Spanish Adventure called Issy and for the rest of the week had two a day. They’re one of the more expensive fruits but definitely worth.",
-    },
-  },
-  {
-    title: "Chicharrón",
-    link: "/food",
-    indexImgSrc: "/food/mamasita.jpeg",
-    date: "2024-07-13",
-    content: {
-      Location: "Mamasita - Medellin",
-      Cost: "£££",
-      Rating: <StarRating stars={1} />,
-      Description:
-        "Mamasita’s is a restaurant in El Poblado, just around the corner from the Los Patios Hostel. I had Chicharrón, fried plantin, a type of black pudding and potatoes. Chicharrón is essentially fried Pork belly and is pretty popular across Colombia. Considering I don’t like black pudding I’m not entirely sure why I ordered this and the Chicharron was too crunchy and a bit like a pork scratching. I would not recommend.",
-    },
-  },
-  {
-    title: "Arepa",
-    link: "/food",
-    indexImgSrc: "/food/arepa.jpeg",
-    date: "2024-07-11",
-    content: {
-      Location: "Communa 13 - Medellin",
-      Cost: "£",
-      Rating: <StarRating stars={2} />,
-      Description:
-        "A type of flatbread made form corn or maize. My first introduction to an Arepa was from one of the local street vendors in Communa 13, with spreadable cheese and then grated cheese on top.  It was a this point a realised Colombias love of cheese. Personally I found it a bit too much but Arepa is the most common bread throughout Colombia and is typically had for breakfast with eggs and avocado.",
-    },
-  },
-  {
-    title: "Empanada",
-    link: "/food",
-    indexImgSrc: "/food/empanada.jpeg",
-    date: "2024-07-10",
-    content: {
-      Location: "Central - Medellin",
-      Cost: "£",
-      Rating: <StarRating stars={2} />,
-      Description:
-        "Empanadas are a good representation of all Colombian street food. Fried, some sort of Carbohydrate and meat. They’re a fried pastry and normally contain meat chicken or vegetables but I’ve had then with rice and also plantin.",
-    },
+    title: "Audio",
+    caption: "",
+    media: <Audio src={"audio/cocora_valley_river.m4a"} />,
   },
 ];
 
@@ -565,3 +415,185 @@ export const places = [
     },
   },
 ];
+
+// export const people = [
+//   {
+//     title: "Cultivare Family",
+//     link: "/people",
+//     location: "",
+//     indexImgSrc: "/people/cultivare.jpeg",
+//     date: "2024-09-16", // YYYY-MM-DD, Dates are in ISO format
+//     content: {
+//       Nationality: "Colombian, Chinese, Canadian",
+//       Age: "Mixed",
+//       Location: "Anapoima",
+//       Description:
+//         "Both small towns on the cost of Peru, a few hours north of Lima, very removed from the Gringo trail locals definitely had a second look at a Gringo and a Chinese guy. For the amount of Chifas they have selling Chinese food, it seems they get very few actual Chinese people. From here we explored the Sacred City of Caral, a civilisation dating back to before the Egyptians. It was also my first experience of the dramatic Peruvian mountains. On the Beach in Barranca we ate Ceviche and I had the privilege of playing football with the locals on the beach. It was lovely to experience to openness of the locals to invite a random gringo to join their football team, simply for the enjoyment of the playing without prejudice. For me I think this was my highlight here.",
+//     },
+//   },
+//   {
+//     title: "Alejandro",
+//     link: "/people",
+//     location: "",
+//     indexImgSrc: "/people/alejandro.jpeg",
+//     date: "2024-08-27",
+//     content: {
+//       Nationality: "Colombian",
+//       Age: "21",
+//       Location: "Journey Hostel",
+//       Description:
+//         "I met Ale during my short stint at the Journey hostel. Initially we didn’t speak too much but after a shift together we came friends, me speaking speaking to him in Spanish and him back to me in English. On one morning before starting our shift together we walked along to a secluded beach about 30 mins from the hostel. It was the most beautiful beach I think I went to in Colombia and we practically had it all to ourselves, couldn’t see another soul along to the horizon each way. Golden sand, crystal blue waters, the typical description of when you described a beach in stories for homework as a kid. Having to leave the hostel after only a week was a shame, but not for working at the hostel but for the time I missed on this beach with Ale and other similar experiences. I reconnected with Ale in Bogota and after time exploring the city together he also introduced me to his very fashionable friend Dani. We partied together at Mad Radio ( techno club on a Wednesday ) and Video club ( reggaeton and techno on Friday ) before visiting a waterfall a few hours away on Sunday with their extended friendship group. Ale is going to finish off his studies as a Pastry Chef in France so I wish him all the best and hope to see him again, either in Europe or back in Colombia. ",
+//     },
+//   },
+//   {
+//     title: "Hector",
+//     link: "/people",
+//     location: "",
+//     indexImgSrc: "/people/hector.jpeg",
+//     date: "2024-07-21",
+//     content: {
+//       Nationality: "Venezuelan",
+//       Age: "25",
+//       Location: "San Rafel, Colombia - Ritmo Del Rio",
+//       Description:
+//         "Hector had been working on the Permaculture farm for about a year when I arrived, originally from Venezuela but migrated with his brother and sister to San Rafael. A pretty chaotic individual and always full of energy. He didn’t speak much English and my Spanish not being pretty minimal our relationship wasn’t full of conversation. We spent plenty of time together working the field, by the campfire, playing card games after dinner and drinking Aguardiente from a carton in el pueblo.",
+//     },
+//   },
+//   {
+//     title: "Sophie",
+//     link: "/people",
+//     location: "",
+//     indexImgSrc: "/people/sophie.jpeg",
+//     date: "2024-07-21",
+//     content: {
+//       Nationality: "Australian",
+//       Age: "23",
+//       Location: "San Rafel, Colombia - Ritmo Del Rio",
+//       Description:
+//         "What to say about Sophie, from down under but living in Rome. The other 1/3 of the Ritmo Del Rio trio. Someone that might be nearly as sarcastic as me. I’ll remember the times we went to the Ashram for our yoga sessions, learning Spanish together and laughing at my mispronunciation of the band Khraungbin.",
+//     },
+//   },
+//   {
+//     title: "Carlos",
+//     link: "/people",
+//     location: "",
+//     indexImgSrc: "/people/carlos.jpeg",
+//     date: "2024-07-21",
+//     content: {
+//       Nationality: "Spanish - Madrid",
+//       Age: "31",
+//       Location: "San Rafel, Colombia - Ritmo Del Rio",
+//       Description:
+//         "Carlos, Charlie, Charlos or simply the Spanish Stallion from Madrid. A lovely energetic person who told me the translation for Aguadiente is `Horny Water` (probably not wrong). Had a lovely time walking through the scenic Colombian country side mushroom hunting with Michel. No apoya no folla!",
+//     },
+//   },
+//   {
+//     title: "Issy",
+//     link: "/people",
+//     location: "",
+//     indexImgSrc: "/people/issy.jpeg",
+//     date: "2024-07-21",
+//     content: {
+//       Nationality: "English",
+//       Age: "23",
+//       Location: "San Rafel, Colombia - Ritmo Del Rio",
+//       Description:
+//         "Shock another person from London travelling Colombia. 1/3 of the Ritmo Del Rio Trio. I'd say Issy and I got on from the start, me being new and Issy being there for a week already I remember her inviting me to join them at the river on the first day. Made me feel immediately welcome. Being a chaotic person like me we spent plenty of time giggling around the campfire, drinking beers after work and eating ice cream and cake.",
+//     },
+//   },
+//   {
+//     title: "Chispas",
+//     link: "/people",
+//     location: "",
+//     indexImgSrc: "/people/chispas.jpeg",
+//     date: "2024-07-14",
+//     content: {
+//       Nationality: "Colombian",
+//       Age: "Appox 4",
+//       Location: "San Carlos, Colombia - Spanish Adventure",
+//       Description:
+//         "Chispas was a staple of the Spanish Adventure experience. Originally bought by the family to eat but kept as they thought she was pregnant but now used as a garbage disposal. She’s been on a diet recently so her belly no longer touches the ground when she walks but she’s still living the easy life.",
+//     },
+//   },
+// ];
+
+// export const food = [
+//   {
+//     title: "Falafel Salad",
+//     link: "/food",
+//     indexImgSrc: "/food/salad.jpeg",
+//     date: "2024-08-13", // YYYY-MM-DD, Dates are in ISO format
+//     content: {
+//       Location: "Ikaro Cafe - Santa Marta",
+//       Cost: "££",
+//       Rating: <StarRating stars={5} />,
+//       Description:
+//         "The first salad I had in Colombia, and it was delicious. This was the highlight of my time in Santa Marta, take from that what you will. The falafel was crispy on the outside and soft on the inside, well seasoned and served with bulgar wheat, cashews, lettuce, goats cheese and I think pickled apple. It was served with homemade bread. Might go back to Santa Marta just for this. ",
+//     },
+//   },
+//   {
+//     title: "Juice Appreciation",
+//     link: "/food",
+//     indexImgSrc: "/food/juice.jpeg",
+//     date: "2024-07-21",
+//     content: {
+//       Location: "San Rafael - Ritmo Del Rio",
+//       Cost: "£",
+//       Rating: <StarRating stars={5} />,
+//       Description:
+//         "While working in the farm in the morning juice with lunch after a quick dip in the river was one of the things I looked forward to each day. Each day with a different juice, including Blackberry, Banana, Mango or something called Panela (Lemon mixed with Sugar Cane). The first salad I had in Colombia, and it was delicious. This was the highlight of my time in Santa Marta, take from that what you will. The falafel was crispy on the outside and soft on the inside, well seasoned and served with bulgar wheat, cashews, lettuce, goats cheese and I think pickled apple. It was served with homemade bread. Might go back to Santa Marta just for this",
+//     },
+//   },
+//   {
+//     title: "Dragon Fruit",
+//     link: "/food",
+//     indexImgSrc: "/food/dragonFruit.jpeg",
+//     date: "2024-07-15",
+//     content: {
+//       Location: "San Carlos - Spanish Adventure",
+//       Cost: "£££",
+//       Rating: <StarRating stars={5} />,
+//       Description:
+//         "By far the best fruit I’ve ever had. Juicy sweet flesh contrasted with eh crunchy seeds. Slice it down the middle and scoop out the flesh with a spoon. I would liken it to a cross between a kiwi and a sweet melon. I was introduced to these by another student at Spanish Adventure called Issy and for the rest of the week had two a day. They’re one of the more expensive fruits but definitely worth.",
+//     },
+//   },
+//   {
+//     title: "Chicharrón",
+//     link: "/food",
+//     indexImgSrc: "/food/mamasita.jpeg",
+//     date: "2024-07-13",
+//     content: {
+//       Location: "Mamasita - Medellin",
+//       Cost: "£££",
+//       Rating: <StarRating stars={1} />,
+//       Description:
+//         "Mamasita’s is a restaurant in El Poblado, just around the corner from the Los Patios Hostel. I had Chicharrón, fried plantin, a type of black pudding and potatoes. Chicharrón is essentially fried Pork belly and is pretty popular across Colombia. Considering I don’t like black pudding I’m not entirely sure why I ordered this and the Chicharron was too crunchy and a bit like a pork scratching. I would not recommend.",
+//     },
+//   },
+//   {
+//     title: "Arepa",
+//     link: "/food",
+//     indexImgSrc: "/food/arepa.jpeg",
+//     date: "2024-07-11",
+//     content: {
+//       Location: "Communa 13 - Medellin",
+//       Cost: "£",
+//       Rating: <StarRating stars={2} />,
+//       Description:
+//         "A type of flatbread made form corn or maize. My first introduction to an Arepa was from one of the local street vendors in Communa 13, with spreadable cheese and then grated cheese on top.  It was a this point a realised Colombias love of cheese. Personally I found it a bit too much but Arepa is the most common bread throughout Colombia and is typically had for breakfast with eggs and avocado.",
+//     },
+//   },
+//   {
+//     title: "Empanada",
+//     link: "/food",
+//     indexImgSrc: "/food/empanada.jpeg",
+//     date: "2024-07-10",
+//     content: {
+//       Location: "Central - Medellin",
+//       Cost: "£",
+//       Rating: <StarRating stars={2} />,
+//       Description:
+//         "Empanadas are a good representation of all Colombian street food. Fried, some sort of Carbohydrate and meat. They’re a fried pastry and normally contain meat chicken or vegetables but I’ve had then with rice and also plantin.",
+//     },
+//   },
+// ];
