@@ -9,7 +9,7 @@ const withBaseName = makePrefixer("audioPage");
 export default function AudioPage() {
   return (
     <Stack gap={"lg"}>
-      <Text title ta="center">
+      <Text title ta="center" colorMode>
         Audio Clips
       </Text>
       <div className={withBaseName()}>

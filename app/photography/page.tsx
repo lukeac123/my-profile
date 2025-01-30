@@ -16,7 +16,7 @@ export default async function GalleryPage() {
   });
   return (
     <Stack>
-      <Text title ta="center">
+      <Text title ta="center" colorMode>
         Gallery
       </Text>
       <div className={withBaseName()}>
