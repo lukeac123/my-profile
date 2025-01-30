@@ -1,5 +1,5 @@
 import { Stack, Image } from "@mantine/core";
-import { Card, Title } from "../../components";
+import { Card, Text } from "../../components";
 import { makePrefixer } from "../../utils";
 import { promises as fs } from "fs";
 import path from "path";
@@ -16,9 +16,9 @@ export default async function GalleryPage() {
   });
   return (
     <Stack>
-      <Title order={1} ta="center">
+      <Text title ta="center">
         Gallery
-      </Title>
+      </Text>
       <div className={withBaseName()}>
         {galleryItem.map((item) => {
           return (
@@ -27,9 +27,9 @@ export default async function GalleryPage() {
               link={`gallery/${item.folder}`}
               key={item.indexImageSrc}
             >
-              <Title order={1} className={withBaseName("overlay")}>
+              <Text title className={withBaseName("overlay")}>
                 {item.folder.charAt(0).toUpperCase() + item.folder.slice(1)}
-              </Title>
+              </Text>
               <Image
                 className={withBaseName("image")}
                 src={item.indexImageSrc}

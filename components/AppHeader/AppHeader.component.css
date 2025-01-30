@@ -1,9 +1,10 @@
 .appHeader {
   display: flex;
   position: absolute;
-  padding: 10px;
   width: 100%;
-  color: black;
+  height: 60px;
+  padding: 10px;
+  color: var(--colorMode-color);
   border-bottom: solid var(--colorMode-color);
   border-width: 1px;
   z-index: 999;
@@ -14,6 +15,11 @@
   align-items: left;
 }
 
+.appHeader-fadedHeader {
+  background: black;
+  opacity: 0.4;
+}
+
 .appHeader-link:hover {
   text-decoration: underline;
 }
@@ -21,4 +27,3 @@
 .appHeader-burger {
   flex-grow: 2;
 }
-

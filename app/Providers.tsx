@@ -1,5 +1,4 @@
 "use client";
-import { useContext, createContext, useState } from "react";
 import { MantineProvider } from "@mantine/core";
 import { theme } from "../theme";
 

@@ -10,13 +10,14 @@ export type HeroImage = { caption: String; imgSrc: string };
 export const homePageData = [
   {
     title: "About Me",
+    caption:
+      "I’ve always found it difficult to define myself, in terms of identity, sexuality and also in terms of work. I also think that the process of defining also the process of limiting the ability of oneself to change and evolve. The person i am, the things I’m capable of and the things I like to today will be different in the next 5 years, or at least I hope they will. For this reason I think to think of myself as a creative, someone that needs to create and instigate change in order to feel a sense of fulfilment. In the 26 years of being on the planet this is a far as I’ve come to definition.",
     media: <Image src={"me.jpeg"} height="100%" />,
-    content: "Hello, my names Luke",
   },
   {
     title: "Travel",
     caption:
-      "Traveling across South America as a Queer Man. Living the majority of my life in London and working in the corporate world as a software engineer for the last 3 years, I've decided to put the predictable pendulum of London life behind me and solo backpack across the South American continent. Swapping high-rises for sun-rises and the clicky clack of the tude for the passionate and expressive beats of Latin America. Follow this page for updates on the places I visit, the people I meet as well as plenty of photos and audio clips",
+      "Traveling across South America as a Queer Man. Living the majority of my life in London and working in the corporate world as a software engineer for the last 3 years, I've decided to put the predictable pendulum of London life behind me and solo backpack across the South American continent. Swapping high-rises for sun-rises and the clicky clack of the tude for the passionate and expressive beats of Latin America. Follow this page for updates on the travel I visit, the people I meet as well as plenty of photos and audio clips",
     media: (
       <iframe
         src="https://www.travellerspoint.com/embed/map.cfm/#/embed/1139683/"
@@ -124,13 +125,13 @@ export interface Place {
   };
 }
 
-export const places = [
+export const travel = [
   {
     title: "Barranca",
     location: "Barranca",
-    link: "/places",
+    link: "/travel",
     imgDir: "/barranca",
-    indexImgSrc: "places/barranca/index.jpeg",
+    indexImgSrc: "travel/barranca/index.jpeg",
     content: {
       Country: "Peru",
       City: "Lima",
@@ -145,9 +146,9 @@ export const places = [
   {
     title: "Lima",
     location: "Lima",
-    link: "/places",
+    link: "/travel",
     imgDir: "/lima",
-    indexImgSrc: "places/lima/index.jpeg",
+    indexImgSrc: "travel/lima/index.jpeg",
     content: {
       Country: "Peru",
       City: "Lima",
@@ -162,9 +163,9 @@ export const places = [
   {
     title: "Cali",
     location: "Cali",
-    link: "/places",
+    link: "/travel",
     imgDir: "/cali",
-    indexImgSrc: "places/cali/index.jpeg",
+    indexImgSrc: "travel/cali/index.jpeg",
     content: {
       Country: "Colombia",
       City: "Cali",
@@ -179,9 +180,9 @@ export const places = [
   {
     title: "Salento",
     location: "Salento",
-    link: "/places",
+    link: "/travel",
     imgDir: "/salento",
-    indexImgSrc: "places/salento/index.jpeg",
+    indexImgSrc: "travel/salento/index.jpeg",
     content: {
       Country: "Colombia",
       City: "Salento",
@@ -196,9 +197,9 @@ export const places = [
   {
     title: "Cultivare",
     location: "Anapoima",
-    link: "/places",
+    link: "/travel",
     imgDir: "/cultivare",
-    indexImgSrc: "places/cultivare/index.jpeg",
+    indexImgSrc: "travel/cultivare/index.jpeg",
     content: {
       Country: "Colombia",
       City: "Anapoima",
@@ -207,15 +208,15 @@ export const places = [
       DepartureDate: "2024-09-28",
       Duration: "13 Days",
       Description:
-        "My third work away in a rural town called Anapoima about 3 hours bus from Bogota working at a sustainable retreat. After my two weeks in Bogota I was excited to escape the hustle, noise and pollution of the city and return to the small town life I’d become accustomed to in places like San Carlos and San Rafael, where the locals look at you with a sense of curiosity and bemusement about you’re presence so far from the Gringo Trail. Although a lot of the locals carry a machete strapped to their waist the small towns are some of the safest places in Colombia, are the initial confusion the locals are lovely and they don’t try and rip you off because you’re a gringo like in the cities. The owners of the retreat, Natalia and Eyal ( who was away while I was there) built all the majestic but delicate looking structures from scratch out of Guadua ( the larger brother of Bamboo). The work was largely cultivating and maintaining the land like raking leaves, picking and juicing Mandarins and landscaping to make space for new structures. I enjoyed the structure provided here, waking up with the sun, lunch and siesta at 12 and finishing off work with a beer at the tienda with Papa. During my stay in Anapoima it hadn’t rained for a few months and so the rivers were dry and there was a water shortage. The Bogota river being way too polluted to even consider drinking from and the water companies that normally pump water up to the more rural regions not doing much to help. It highlighted to me how reliant these towns are on the natural weather systems to sustain their livelihood and how vulnerable they are against changing climates. ",
+        "My third work away in a rural town called Anapoima about 3 hours bus from Bogota working at a sustainable retreat. After my two weeks in Bogota I was excited to escape the hustle, noise and pollution of the city and return to the small town life I’d become accustomed to in travel like San Carlos and San Rafael, where the locals look at you with a sense of curiosity and bemusement about you’re presence so far from the Gringo Trail. Although a lot of the locals carry a machete strapped to their waist the small towns are some of the safest travel in Colombia, are the initial confusion the locals are lovely and they don’t try and rip you off because you’re a gringo like in the cities. The owners of the retreat, Natalia and Eyal ( who was away while I was there) built all the majestic but delicate looking structures from scratch out of Guadua ( the larger brother of Bamboo). The work was largely cultivating and maintaining the land like raking leaves, picking and juicing Mandarins and landscaping to make space for new structures. I enjoyed the structure provided here, waking up with the sun, lunch and siesta at 12 and finishing off work with a beer at the tienda with Papa. During my stay in Anapoima it hadn’t rained for a few months and so the rivers were dry and there was a water shortage. The Bogota river being way too polluted to even consider drinking from and the water companies that normally pump water up to the more rural regions not doing much to help. It highlighted to me how reliant these towns are on the natural weather systems to sustain their livelihood and how vulnerable they are against changing climates. ",
     },
   },
   {
     title: "Bogota",
     location: "Bogota",
-    link: "/places",
+    link: "/travel",
     imgDir: "/bogota",
-    indexImgSrc: "places/bogota/index.jpeg",
+    indexImgSrc: "travel/bogota/index.jpeg",
     content: {
       Country: "Colombia",
       City: "Bogota",
@@ -230,9 +231,9 @@ export const places = [
   {
     title: "Palomino",
     location: "Palomino",
-    link: "/places",
+    link: "/tarvel",
     imgDir: "/palomino",
-    indexImgSrc: "places/palomino/index.jpeg",
+    indexImgSrc: "travel/palomino/index.jpeg",
     content: {
       Country: "Colombia",
       City: "Palomino",
@@ -247,9 +248,9 @@ export const places = [
   {
     title: "Cali",
     location: "Cali",
-    link: "/places",
+    link: "/travel",
     imgDir: "/cali",
-    indexImgSrc: "places/cali/index.jpeg",
+    indexImgSrc: "travel/cali/index.jpeg",
     content: {
       Country: "Colombia",
       City: "Cali",
@@ -264,9 +265,9 @@ export const places = [
   {
     title: "Journey Hostel",
     location: "Tatrona National Park",
-    link: "/places",
+    link: "/travel",
     imgDir: "/journey_hostel",
-    indexImgSrc: "places/journey_hostel/index.jpeg",
+    indexImgSrc: "travel/journey_hostel/index.jpeg",
     content: {
       Country: "Colombia",
       City: "Tayrona National Park",
@@ -281,9 +282,9 @@ export const places = [
   {
     title: "Rio Hostal",
     location: "Buritaca",
-    link: "/places",
+    link: "/travel",
     imgDir: "/buritaca",
-    indexImgSrc: "places/buritaca/index.jpeg",
+    indexImgSrc: "travel/buritaca/index.jpeg",
     content: {
       Country: "Colombia",
       City: "buritaca",
@@ -298,9 +299,9 @@ export const places = [
   {
     title: "Cerro Kennedy",
     location: "Minca",
-    link: "/places",
+    link: "/travel",
     imgDir: "/cerro_kennedy",
-    indexImgSrc: "places/cerro_kennedy/index.jpeg",
+    indexImgSrc: "tarvel/cerro_kennedy/index.jpeg",
     content: {
       Country: "Colombia",
       City: "Minca",
@@ -315,9 +316,9 @@ export const places = [
   {
     title: "Minca",
     location: "Minca",
-    link: "/places",
+    link: "/travel",
     imgDir: "/minca",
-    indexImgSrc: "places/minca/index.jpeg",
+    indexImgSrc: "travel/minca/index.jpeg",
     content: {
       Country: "Colombia",
       City: "Minca",
@@ -332,9 +333,9 @@ export const places = [
   {
     title: "Isla Grande",
     location: "Cartagena",
-    link: "/places",
+    link: "/travel",
     imgDir: "/isla_grande",
-    indexImgSrc: "places/isla_grande/index.jpeg",
+    indexImgSrc: "travel/isla_grande/index.jpeg",
     content: {
       Country: "Colombia",
       City: "Cartagena",
@@ -349,9 +350,9 @@ export const places = [
   {
     title: "Cartagena",
     location: "Cartagena",
-    link: "/places",
+    link: "/travel",
     imgDir: "/cartagena",
-    indexImgSrc: "places/cartagena/index.jpeg",
+    indexImgSrc: "travel/cartagena/index.jpeg",
     content: {
       Country: "Colombia",
       City: "Cartagena",
@@ -360,15 +361,15 @@ export const places = [
       DepartureDate: "2024-08-08",
       Duration: "5 Days",
       Description:
-        "The old town in Cartagena is pretty and quaint with cobblestone streets, designer shops, jewellery shops and houses with fancy door knocker painted brightly and decorated with ivy climbing up the front. It reminded me of walking around the fancy areas of some European cities like Barcelona or Rome. Cartagena has a history derived from Colonisation, being one of the only ports allowed to take slave shipments and therefore has a large afro influence. Although coming from Medellin, by no means cold, the humidity in Cartagena was a shock to system where you walk for 20 minutes and your top is drenched. I was also embraced with a tropical storm on my arrival where the channels that use to be roads turn into rivers. I got chatting to an Australian gay, of all places on Grindr and ended up going out to a Karaoke bar with him and his two friends, also Australian, singing Shakira and then dancing at a rooftop bar. I didn’t really like Cartagena, it’s cute for a day but otherwise full of American tourists and expensive and the sea isn’t very accessible to escape the heat from the old town. My favourite parts were sitting in cute a library learning Spanish, sipping Limonada de Coco and going out partying. I think that says enough. ",
+        "The old town in Cartagena is pretty and quaint with cobblestone streets, designer shops, jewellery shops and houses with fancy door knocker painted brightly and decorated with ivy climbing up the front. It reminded me of walking around the fancy areas of some European cities like Barcelona or Rome. Cartagena has a history derived from Colonisation, being one of the only ports allowed to take slave shipments and therefore has a large afro influence. Although coming from Medellin, by no means cold, the humidity in Cartagena was a shock to system where you walk for 20 minutes and your top is drenched. I was also embraced with a tropical storm on my arrival where the channels that use to be roads turn into rivers. I got chatting to an Australian gay, of all travel on Grindr and ended up going out to a Karaoke bar with him and his two friends, also Australian, singing Shakira and then dancing at a rooftop bar. I didn’t really like Cartagena, it’s cute for a day but otherwise full of American tourists and expensive and the sea isn’t very accessible to escape the heat from the old town. My favourite parts were sitting in cute a library learning Spanish, sipping Limonada de Coco and going out partying. I think that says enough. ",
     },
   },
   {
     title: "Ritmo Del Rio",
     location: "San Rafael",
-    link: "/places",
+    link: "/travel",
     imgDir: "/san_rafael",
-    indexImgSrc: "places/san_rafael/index.jpeg",
+    indexImgSrc: "travel/san_rafael/index.jpeg",
     content: {
       Country: "Colombia",
       City: "San Rafael",
@@ -383,9 +384,9 @@ export const places = [
   {
     title: "Spanish Adventure",
     location: "San Carlos",
-    link: "/places",
+    link: "/travel",
     imgDir: "/spanish_adventure",
-    indexImgSrc: "places/spanish_adventure/index.jpeg",
+    indexImgSrc: "travel/spanish_adventure/index.jpeg",
     content: {
       Country: "Colombia",
       City: "San Carlos",
@@ -400,9 +401,9 @@ export const places = [
   {
     title: "Los Patios Hostel",
     location: "Medellin",
-    link: "/places",
+    link: "/travel",
     imgDir: "/medellin_los_patios",
-    indexImgSrc: "places/medellin_los_patios/index.jpeg",
+    indexImgSrc: "travel/medellin_los_patios/index.jpeg",
     content: {
       Country: "Colombia",
       City: "Medellin",

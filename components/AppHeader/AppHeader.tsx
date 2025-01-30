@@ -1,11 +1,13 @@
 "use client";
 import { useState } from "react";
-import { Text, Title, Group, Burger, Drawer, Stack } from "@mantine/core";
+import { Group, Burger, Drawer, Stack } from "@mantine/core";
+import { Text } from "../Text";
 import { ColorSchemeToggle } from "./ColorSchemeToggle";
 import { ColorModeToggle } from "./ColorModeToggle";
 import { makePrefixer } from "../../utils/makePrefixer";
 import Link from "next/link";
 import "./AppHeader.component.css";
+import { clsx } from "clsx";
 
 const links = [
   { label: "Home", link: "./" },
@@ -17,13 +19,21 @@ const links = [
 
 const withBaseName = makePrefixer("appHeader");
 
-export const AppHeader = () => {
+type AppHeaderProps = {
+  fadedHeader?: boolean;
+};
+
+export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = () => (open ? setOpen(false) : setOpen(true));
 
   return (
-    <header className={withBaseName()}>
+    <header
+      className={clsx(withBaseName(), {
+        [withBaseName("fadedHeader")]: fadedHeader,
+      })}
+    >
       <Group visibleFrom="sm" gap={"sm"} className={withBaseName("title")}>
         {links.map((link) => (
           <Text
@@ -40,7 +50,6 @@ export const AppHeader = () => {
         <Burger
           opened={open}
           onClick={toggleDrawer}
-          // Would using css media queries be faster than using the below ?
           hiddenFrom="sm"
           size="sm"
         />

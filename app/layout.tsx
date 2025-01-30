@@ -1,9 +1,9 @@
 import React from "react";
 import { ColorSchemeScript } from "@mantine/core";
 import { Providers } from "./Providers";
+import { AppHeader } from "../components";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
-import "./layout.css";
 
 export const metadata = {
   title: "Luke Atkinson-Coyle",
@@ -38,7 +38,10 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <AppHeader />
+          {children}
+        </Providers>
       </body>
     </html>
   );

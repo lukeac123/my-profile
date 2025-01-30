@@ -1,22 +1,21 @@
-import { Text } from "@mantine/core";
-import { Card, Title, Carousel } from "../../components";
+import { Card, Text, Carousel } from "../../components";
 import { insertSpaces, makePrefixer } from "../../utils";
 import path from "path";
 import { promises as fs } from "fs";
-import { places, type Place, dateToUKFormat } from "../../utils";
+import { travel, type Place, dateToUKFormat } from "../../utils";
 import "./page.css";
 
-const withBaseName = makePrefixer("placesPage");
+const withBaseName = makePrefixer("travelPage");
 
 async function getImageSrc(imgDir: string) {
   const imagePlaceDirectory = path.join(
     process.cwd(),
-    "/public/places",
+    "/public/travel",
     imgDir
   );
   const imgSrcDir = await fs.readdir(imagePlaceDirectory).then((response) => {
     const imageArray = response.map((response) => {
-      return path.join("/places", imgDir, response);
+      return path.join("/travel", imgDir, response);
     });
     return imageArray;
   });
@@ -24,7 +23,7 @@ async function getImageSrc(imgDir: string) {
 }
 
 function sortPlacesByDate(places: Place[]) {
-  const arrayOfEntries = Object.values(places);
+  const arrayOfEntries = Object.values(travel);
   const entriesSortedByDate = arrayOfEntries.sort((a, b) => {
     return (
       Math.floor(new Date(b.content.ArrivalDate)) -
@@ -52,13 +51,12 @@ const updateContent = (content: {
 };
 
 export default function PlacesPage() {
-  const placesByDate: Place[] = sortPlacesByDate(places);
+  const placesByDate: Place[] = sortPlacesByDate(travel);
   return (
     <>
-      <Title order={1} ta="center">
+      <Text title ta="center">
         Places
-      </Title>
-
+      </Text>
       <div className={withBaseName("container")}>
         {placesByDate.map((place: Place) => {
           const { title, content, imgDir } = place;
@@ -66,9 +64,9 @@ export default function PlacesPage() {
           const updatedContent = updateContent(content);
           return (
             <Card key={title} className={withBaseName("card")}>
-              <Title underlined padding>
+              <Text underlined padding>
                 {title}
-              </Title>
+              </Text>
               <div className={withBaseName("cardContent")}>
                 {getImageSrc(imgDir)}
                 <div className={withBaseName("cardDescription")}>

@@ -1,8 +1,8 @@
 import React from "react";
-import { Image, Title } from "@mantine/core";
-import { AppHeader } from "../../components/AppHeader";
-import { makePrefixer } from "../../utils";
-import { heroImages, type HeroImage } from "../../utils/db";
+import { Image } from "@mantine/core";
+import { AppHeader, Text } from "../../../components";
+import { makePrefixer } from "../../../utils";
+import { heroImages, type HeroImage } from "../../../utils/db";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 import "./layout.css";
@@ -19,15 +19,17 @@ const withBaseName = makePrefixer("homePage");
 export default function RootLayout({ children }: { children: any }) {
   return (
     <div>
-      <AppHeader />
+      <AppHeader fadedHeader />
       <div className={withBaseName("heroImgContainer")}>
         <Image src={heroImage.imgSrc} className={withBaseName("heroImg")} />
         <div className={withBaseName("title")}>
-          <Title ta="right">Luke Atkinson-Coyle</Title>
-          <Title ta="right" order={6}>
+          <Text ta="right" size="xl" title fw="bold">
+            Luke Atkinson-Coyle
+          </Text>
+          <Text ta="right">
             Photo: El Glaciar Perito Moreno, El Calafate, Argentina, December
             2024
-          </Title>
+          </Text>
         </div>
       </div>
       {children}
