@@ -11,9 +11,22 @@
   height: 80vh;
 }
 
+@media (width <= 992px) {
+  .homePage-card  {
+    height: auto
+  }
+}
+
+
 .homePage-cardContent {
   display: flex;
   flex-direction: row;
+}
+
+@media (width <= 992px) {
+  .homePage-cardContent  {
+    flex-direction: column;
+  }
 }
 
 .homePage-cardColumn1 {
@@ -22,6 +35,12 @@
   width: 50%;
   height: 80%;
   padding: 10px;
+}
+
+@media (width <= 992px) {
+  .homePage-cardColumn1  {
+    width: 100%;
+  }
 }
 
 .homePage-media {
@@ -33,3 +52,10 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (width <= 992px) {
+  .homePage-media  {
+    width: 100%;
+  }
+}
+

@@ -54,11 +54,10 @@ export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
           size="sm"
         />
       </div>
-
       <Drawer
         opened={open}
         onClose={() => setOpen(false)}
-        title="Luke Atkinson-Coyle"
+        className={withBaseName("drawer")}
       >
         <Stack gap={"sm"}>
           {links.map((link) => (

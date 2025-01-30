@@ -1,4 +1,4 @@
-.galleryPage {
+.travelPage {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -10,32 +10,32 @@
 }
 
 @media (width <= 768px) {
-  .galleryPage {
+  .travelPage {
     flex-direction: column;
   }
 }
 
-.galleryPage-card {
+.travelPage-card {
   width: 400px;
   height: 600px;
 }
 
 @media (width <= 768px) {
-  .galleryPage-card {
+  .travelPage-card {
     width: 100%;
   }
 }
 
-.galleryPage-card:hover {
+.travelPage-card:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.galleryPage-card:hover > .galleryPage-overlay {
+.travelPage-card:hover > .travelPage-overlay {
   opacity: 0.5;
 }
 
-.galleryPage-overlay {
+.travelPage-overlay {
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -47,7 +47,7 @@
   color: var(--colorMode-color);
 }
 
-.galleryPage-image {
+.travelPage-image {
   width: 100%;
   min-height: 640px;
 }

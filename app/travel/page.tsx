@@ -54,11 +54,11 @@ export default function PlacesPage() {
   const placesByDate: Place[] = sortPlacesByDate(travel);
   return (
     <>
-      <Text title ta="center">
-        Places
+      <Text title ta="center" colorMode>
+        Travel
       </Text>
       <div className={withBaseName("container")}>
-        {placesByDate.map((place: Place) => {
+        {/* {placesByDate.map((place: Place) => {
           const { title, content, imgDir } = place;
 
           const updatedContent = updateContent(content);
@@ -84,7 +84,7 @@ export default function PlacesPage() {
               </div>
             </Card>
           );
-        })}
+        })} */}
       </div>
     </>
   );
