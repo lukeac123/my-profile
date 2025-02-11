@@ -47,35 +47,58 @@ export default function AudioPage() {
           Software Engineer, Cloud Deployment, JPMorgan — 2022-2022
         </Title>
         <Title order={3}>Skills: AWS CLI + Console - Terraform - Docker</Title>
-        <Text>
-          Migrated the Digital Platform NextJS website from private to public
-          cloud AWS ECS for dev, test and prod environments. Provisioned AWS ECS
-          cluster using Terraform and the AWS console. Establish continuous
-          integration and deployment pipelines for each of the infrastructure
-          terraform modules as well as the front and back end applications,
-          utilising the internal build tooling and Spinnaker for integration.
-          Containerised the NextJS front end and NodeJS backend in separate
-          stand alone containers using Docker. Established a local connection
-          within the cluster between the two containers. Implemented ACM
-          firewall requests to enable egress out of the cluster back to onPrem
-          IP addresses. Added secure passwords to AWS Secrets manager, making
-          fetch calls within the application to retrieve the passwords when
-          needed.
-        </Text>
+        <List>
+          <ListItem>
+            Migrated the Digital Platform NextJS website from private to public
+            cloud AWS ECS for dev, test and prod environments.
+          </ListItem>
+          <ListItem>
+            Provisioned AWS ECS cluster using Terraform and the AWS console.
+          </ListItem>
+          <ListItem>
+            Establish continuous integration and deployment pipelines for each
+            of the infrastructure terraform modules as well as the front and
+            back end applications, utilising the internal build tooling and
+            Spinnaker for integration.
+          </ListItem>
+          <ListItem>
+            Containerised the NextJS front end and NodeJS backend in separate
+            stand alone containers using Docker. Established a local connection
+            within the cluster between the two containers.
+          </ListItem>
+          <ListItem>
+            Implemented ACM firewall requests to enable egress out of the
+            cluster back to onPrem IP addresses.
+          </ListItem>
+          <ListItem>
+            Added secure passwords to AWS Secrets manager, making fetch calls
+            within the application to retrieve the passwords when needed.
+          </ListItem>
+        </List>
       </>
       <>
         <Title order={2}>
           Graduate Program, JPMorgan (Product Manager, Unity Platform / Product
           Manager, Digital Search) 2020-2022
         </Title>
-        <Text>
-          Detailed customer requirements and translated into technical
-          specifications to be executed by the developers. Managed and
-          reprioritised Jira stories according the customer requirements and
-          team capacity. Defined OKRS and assigned KPIs to align with the wider
-          team’s objectives Led daily stand ups. Coordinated feedback sessions
-          between the customers, design and dev teams.
-        </Text>
+        <List>
+          <ListItem>
+            Detailed customer requirements and translated into technical
+            specifications to be executed by the developers.
+          </ListItem>
+          <ListItem>
+            Managed and reprioritised Jira stories according the customer
+            requirements and team capacity.
+          </ListItem>
+          <ListItem>
+            Defined OKRS and assigned KPIs to align with the wider team’s
+            objectives Led daily stand ups.
+          </ListItem>
+          <ListItem>
+            Coordinated feedback sessions between the customers, design and dev
+            teams.
+          </ListItem>
+        </List>
       </>
     </div>
   );
