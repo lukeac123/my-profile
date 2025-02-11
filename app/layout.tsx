@@ -1,7 +1,7 @@
 import React from "react";
 import { ColorSchemeScript } from "@mantine/core";
 import { Providers } from "./Providers";
-import { AppHeader } from "../components";
+import { AppFooter } from "../components";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 
@@ -39,8 +39,8 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <Providers>
-          <AppHeader />
           {children}
+          <AppFooter />
         </Providers>
       </body>
     </html>

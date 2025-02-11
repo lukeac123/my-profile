@@ -161,23 +161,6 @@ export const travel = [
     },
   },
   {
-    title: "Cali",
-    location: "Cali",
-    link: "/travel",
-    imgDir: "/cali",
-    indexImgSrc: "travel/cali/index.jpeg",
-    content: {
-      Country: "Colombia",
-      City: "Cali",
-      Rating: <StarRating stars={5} />,
-      ArrivalDate: "2024-10-05",
-      DepartureDate: "2024-10-13",
-      Duration: "9 Days",
-      Description:
-        "The only expectations I had of Cali were salsa dancing, and to be honest I prefer not knowing much about a place before arriving, it means I just accept it for what it is and not comparing it to the idea of it in my head. We arrived on Friday and after a few cocktails headed out to salsa street. It was wonderfully chaotic with bars pumping out salsa music and waves of people dancing in the street drinking aguardiente. With little to no salsa ability we were initially unsure, but were soon approached by strangers more than willing to teach the gringos some of the basics. This was one of the things I loved about Cali, the culture to dance purely for the enjoyment, friends, strangers, lovers, it’s not important. Hannah and I spent the week at Viajero hostel doing private sala clases and then heading off to the local Salsa bar, La Topa, to show off our new moves. The hostel had a laid back, comfortable atmosphere and was super social. We met some lovely people here and would recommend to anyone staying in Cali.",
-    },
-  },
-  {
     title: "Salento",
     location: "Salento",
     link: "/travel",

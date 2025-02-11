@@ -12,11 +12,10 @@
 }
 
 @media (width <= 992px) {
-  .homePage-card  {
-    height: auto
+  .homePage-card {
+    height: auto;
   }
 }
-
 
 .homePage-cardContent {
   display: flex;
@@ -24,7 +23,7 @@
 }
 
 @media (width <= 992px) {
-  .homePage-cardContent  {
+  .homePage-cardContent {
     flex-direction: column;
   }
 }
@@ -38,7 +37,7 @@
 }
 
 @media (width <= 992px) {
-  .homePage-cardColumn1  {
+  .homePage-cardColumn1 {
     width: 100%;
   }
 }
@@ -54,8 +53,7 @@
 }
 
 @media (width <= 992px) {
-  .homePage-media  {
+  .homePage-media {
     width: 100%;
   }
 }
-

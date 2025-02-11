@@ -1,0 +1,10 @@
+.careerPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 20px;
+  padding: 50px;
+  padding-right: 20%;
+  padding-left: 20%;
+  flex-wrap: wrap;
+}

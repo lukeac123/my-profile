@@ -1,44 +1,43 @@
-.placesPage-container {
+.travelPage-container {
   display: flex;
   gap: 20px;
   flex-direction: column;
   justify-content: center;
-  margin: 10px;
 }
 
-.placesPage-card {
+.travelPage-card {
   width: 100%;
-}
-
-.placesPage-cardContent {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
   padding: var(--mantine-spacing-md);
 }
 
+.travelPage-cardContent {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 @media (width <= 992px) {
-  .placesPage-cardContent {
+  .travelPage-cardContent {
     flex-direction: column;
   }
 }
 
-.placesPage-carousel {
+.travelPage-carousel {
   width: 50%;
 }
 
 @media (width <= 992px) {
-  .placesPage-carousel {
+  .travelPage-carousel {
     width: 100%;
   }
 }
 
-.placesPage-cardDescription {
+.travelPage-cardDescription {
   width: 50%;
 }
 
 @media (width <= 992px) {
-  .placesPage-cardDescription {
+  .travelPage-cardDescription {
     width: 100%;
   }
 }

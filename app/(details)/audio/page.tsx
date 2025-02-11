@@ -1,24 +1,26 @@
 import { Stack, Image } from "@mantine/core";
-import { Audio, Card, CardContent, Text } from "../../components";
-import { audioClips } from "../../utils";
-import { makePrefixer } from "../../utils";
+import { Audio, Card, CardContent, Title, Text } from "../../../components";
+import { audioClips } from "../../../utils";
+import { makePrefixer } from "../../../utils";
 import "./page.css";
 
 const withBaseName = makePrefixer("audioPage");
 
 export default function AudioPage() {
   return (
-    <Stack gap={"lg"}>
-      <Text title ta="center" colorMode>
+    <div>
+      <Title ta="center" colorMode order={1}>
         Audio Clips
-      </Text>
+      </Title>
       <div className={withBaseName()}>
         {audioClips.map((audio) => {
           const { title, description, audioSrc, indexImgSrc } = audio;
           return (
             <Card key={title} className={withBaseName("card")}>
               <CardContent>
-                <Text colorMode>{title}</Text>
+                <Title colorMode order={2}>
+                  {title}
+                </Title>
                 <Stack gap={"md"}>
                   <Audio title={title} src={audioSrc} />
                 </Stack>
@@ -31,6 +33,6 @@ export default function AudioPage() {
           );
         })}
       </div>
-    </Stack>
+    </div>
   );
 }

@@ -1,0 +1,7 @@
+.title-colorMode {
+  color: var(--colorMode-color);
+}
+
+.title-padding {
+  padding-bottom: var(--mantine-spacing-md);
+}

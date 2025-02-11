@@ -1,18 +1,19 @@
-import { Stack, Text, Flex, Image } from "@mantine/core";
-import { Card, Title, CardContent } from "../../components";
-import { insertSpaces, makePrefixer } from "../../utils";
+import { Stack, Text, Image } from "@mantine/core";
+// import { Card, Title, CardContent } from "../../../components";
+import { insertSpaces, makePrefixer } from "../../../utils";
 import "./page.css";
-import { food } from "../../utils";
+// import { food } from "../../../utils";
 
 const withBaseName = makePrefixer("foodPage");
 
 export default function FoodPage() {
   return (
     <Stack>
-      <Title order={1} ta="center">
+      Food
+      {/* <Title order={1} ta="center">
         Food
-      </Title>
-      <div className={withBaseName("container")}>
+      </Title> */}
+      {/* <div className={withBaseName("container")}>
         {food.map((food) => {
           const { title, indexImgSrc, content } = food;
           return (
@@ -40,7 +41,7 @@ export default function FoodPage() {
             </Card>
           );
         })}
-      </div>
+      </div> */}
     </Stack>
   );
 }

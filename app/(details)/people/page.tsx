@@ -1,19 +1,19 @@
 import { Stack, Text, Flex, Image } from "@mantine/core";
-import { Card, Title, CardContent } from "../../components";
-import { insertSpaces, makePrefixer } from "../../utils";
+// import { Card, Title, CardContent } from "../../../components";
+import { insertSpaces, makePrefixer } from "../../../utils";
 import "./page.css";
-import { people } from "../../utils";
+// import { people } from "../../../utils";
 
 const withBaseName = makePrefixer("peoplePage");
 
 export default function PeoplePage() {
   return (
     <Stack>
-      <Title order={1} ta="center">
+      People
+      {/* <Title order={1} ta="center">
         Travel Buddies
-      </Title>
-
-      <div className={withBaseName("container")}>
+      </Title> */}
+      {/* <div className={withBaseName("container")}>
         {people.map((people) => {
           const { title, indexImgSrc, content } = people;
           return (
@@ -41,7 +41,7 @@ export default function PeoplePage() {
             </Card>
           );
         })}
-      </div>
+      </div> */}
     </Stack>
   );
 }

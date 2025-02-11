@@ -14,6 +14,7 @@ const links = [
   { label: "Photography", link: "./photography" },
   { label: "Audio", link: "./audio" },
   { label: "Travel", link: "./travel" },
+  { label: "Career", link: "./career" },
   // { label: "Recipies", link: "./recipies" },
 ];
 

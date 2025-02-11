@@ -1,8 +1,8 @@
 import React from "react";
 import { Image } from "@mantine/core";
-import { AppHeader, Text } from "../../../components";
-import { makePrefixer } from "../../../utils";
-import { heroImages, type HeroImage } from "../../../utils/db";
+import { AppHeader, Text } from "../../components";
+import { makePrefixer } from "../../utils";
+import { heroImages, type HeroImage } from "../../utils/db";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 import "./layout.css";
