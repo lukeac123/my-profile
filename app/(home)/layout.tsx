@@ -18,21 +18,9 @@ const withBaseName = makePrefixer("homePage");
 
 export default function RootLayout({ children }: { children: any }) {
   return (
-    <div>
-      <AppHeader fadedHeader />
-      <div className={withBaseName("heroImgContainer")}>
-        <Image src={heroImage.imgSrc} className={withBaseName("heroImg")} />
-        <div className={withBaseName("title")}>
-          <Text ta="right" size="xl" title fw="bold">
-            Luke Atkinson-Coyle
-          </Text>
-          <Text ta="right">
-            Photo: El Glaciar Perito Moreno, El Calafate, Argentina, December
-            2024
-          </Text>
-        </div>
-      </div>
-      {children}
-    </div>
+    <>
+      <AppHeader />
+      <div style={{ paddingTop: "60px" }}>{children}</div>
+    </>
   );
 }

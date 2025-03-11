@@ -9,10 +9,31 @@ export type HeroImage = { caption: String; imgSrc: string };
 
 export const homePageData = [
   {
-    title: "About Me",
-    caption:
-      "I’ve always found it difficult to define myself, in terms of identity, sexuality and also in terms of work. I also think that the process of defining also the process of limiting the ability of oneself to change and evolve. The person i am, the things I’m capable of and the things I like to today will be different in the next 5 years, or at least I hope they will. For this reason I think to think of myself as a creative, someone that needs to create and instigate change in order to feel a sense of fulfilment. In the 26 years of being on the planet this is a far as I’ve come to definition.",
+    title: "Luke Atkison-Coyle",
+    column1: (
+      <>
+        <ul>Software Engineer</ul>
+        <ul>Creative</ul>
+        <ul>
+          Trying to make cool, interesting stuff and make a difference in the
+          world
+        </ul>
+      </>
+    ),
     media: <Image src={"me.jpeg"} height="100%" />,
+    link: "/career",
+  },
+  {
+    title: "Audio",
+    column1: <>Hello World</>,
+    media: <Audio src={"audio/cocora_valley_river.m4a"} />,
+    link: "/audio",
+  },
+  {
+    title: "Textures",
+    column1: <>Hello World</>,
+    media: <Image src={"/photography/textures/index.jpeg"} height="100%" />,
+    link: "/photography/textures",
   },
   {
     title: "Travel",
@@ -21,15 +42,11 @@ export const homePageData = [
     media: (
       <iframe
         src="https://www.travellerspoint.com/embed/map.cfm/#/embed/1139683/"
-        width="100%"
-        height="700px"
+        height={"100%"}
+        width={"100%"}
       />
     ),
-  },
-  {
-    title: "Audio",
-    caption: "",
-    media: <Audio src={"audio/cocora_valley_river.m4a"} />,
+    link: "/travel",
   },
 ];
 

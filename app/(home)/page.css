@@ -2,28 +2,19 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 10px;
 }
 
 .homePage-card {
   display: flex;
-  flex-direction: column;
+  padding: 30px;
+  width: 100%;
+  flex-direction: row;
   height: 80vh;
 }
 
 @media (width <= 992px) {
   .homePage-card {
     height: auto;
-  }
-}
-
-.homePage-cardContent {
-  display: flex;
-  flex-direction: row;
-}
-
-@media (width <= 992px) {
-  .homePage-cardContent {
     flex-direction: column;
   }
 }
@@ -47,7 +38,6 @@
   height: 100%;
   display: flex;
   align-content: center;
-  margin-top: auto;
   justify-content: center;
   align-items: center;
 }
@@ -56,4 +46,8 @@
   .homePage-media {
     width: 100%;
   }
+}
+
+.homePage-link:hover {
+  text-decoration: underline;
 }

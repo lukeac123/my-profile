@@ -76,7 +76,7 @@ export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
       </Drawer>
       <Group>
         <ColorSchemeToggle />
-        <ColorModeToggle />
+        {/* <ColorModeToggle /> */}
       </Group>
     </header>
   );
