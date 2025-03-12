@@ -25,12 +25,35 @@
   width: 50%;
   height: 80%;
   padding: 10px;
+  gap: 20px;
 }
 
 @media (width <= 992px) {
   .homePage-cardColumn1 {
     width: 100%;
   }
+}
+
+.homePage-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.homePage-block {
+  display: flex;
+  flex-direction: row;
+}
+
+.homePage-headings {
+  display: block;
+  width: 200px;
+  /* background: red; */
+}
+
+.homePage-answers {
+  display: block;
+  text-wrap: wrap;
 }
 
 .homePage-media {

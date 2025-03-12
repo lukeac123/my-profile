@@ -9,7 +9,6 @@ import {
   IconClick,
 } from "@tabler/icons-react";
 import { Group } from "@mantine/core";
-import { it } from "node:test";
 
 const withBaseName = makePrefixer("homePage");
 
@@ -21,21 +20,30 @@ export default function BlogPage() {
           <Card key={"change"} className={withBaseName("card")}>
             <div className={withBaseName("cardColumn1")}>
               <Title colorMode>{item.title}</Title>
-              <div>{item.column1}</div>
+              <div className={withBaseName("content")}>
+                {Object.entries(item.column1).map((content) => {
+                  return (
+                    <div className={withBaseName("block")}>
+                      <Text className={withBaseName("headings")} fw={700}>
+                        {`${
+                          content[0].substring(0, 1).toUpperCase() +
+                          content[0].substring(1).toLowerCase()
+                        }:`}
+                      </Text>
+                      <Text className={withBaseName("answers")}>
+                        {content[1]}
+                      </Text>
+                    </div>
+                  );
+                })}
+              </div>
 
-              <ul>
-                <Group>
-                  <Text
-                    className={withBaseName("link")}
-                    underlined
-                    component={Link}
-                    href={item.link}
-                  >
-                    Click Here to Explore Here
-                  </Text>
-                  <IconClick />
-                </Group>
-              </ul>
+              <Group className={withBaseName("link")}>
+                <Text underlined component={Link} href={item.link}>
+                  Click Here to Explore Here
+                </Text>
+                <IconClick />
+              </Group>
             </div>
             <div className={withBaseName("media")}>{item.media}</div>
           </Card>

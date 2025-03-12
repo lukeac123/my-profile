@@ -1,44 +1,46 @@
 import { StarRating, Audio } from "../components";
 import { Image } from "@mantine/core";
 
-export const heroImages = [
-  { caption: "Patagonia", imgSrc: "/heroImages/DSC05704.JPG" },
-];
-
 export type HeroImage = { caption: String; imgSrc: string };
 
 export const homePageData = [
   {
     title: "Luke Atkison-Coyle",
-    column1: (
-      <>
-        <ul>Software Engineer</ul>
-        <ul>Creative</ul>
-        <ul>
-          Trying to make cool, interesting stuff and make a difference in the
-          world
-        </ul>
-      </>
-    ),
+    column1: {
+      job: "Frontend Software Engineer, Salt Design System, JPMorgan",
+      education: "Mechanical Engineering University of Warwick",
+      caption: "Test",
+    },
     media: <Image src={"me.jpeg"} height="100%" />,
     link: "/career",
   },
   {
     title: "Audio",
-    column1: <>Hello World</>,
+    column1: {
+      job: "",
+      education: "",
+      caption: "",
+    },
     media: <Audio src={"audio/cocora_valley_river.m4a"} />,
     link: "/audio",
   },
   {
     title: "Textures",
-    column1: <>Hello World</>,
+    column1: {
+      job: "",
+      education: "",
+      caption: "",
+    },
     media: <Image src={"/photography/textures/index.jpeg"} height="100%" />,
     link: "/photography/textures",
   },
   {
     title: "Travel",
-    caption:
-      "Traveling across South America as a Queer Man. Living the majority of my life in London and working in the corporate world as a software engineer for the last 3 years, I've decided to put the predictable pendulum of London life behind me and solo backpack across the South American continent. Swapping high-rises for sun-rises and the clicky clack of the tude for the passionate and expressive beats of Latin America. Follow this page for updates on the travel I visit, the people I meet as well as plenty of photos and audio clips",
+    column1: {
+      job: "",
+      education: "",
+      caption: "",
+    },
     media: (
       <iframe
         src="https://www.travellerspoint.com/embed/map.cfm/#/embed/1139683/"

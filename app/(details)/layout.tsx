@@ -1,5 +1,5 @@
 import React from "react";
-import { AppHeader } from "../../components";
+import { AppHeader, Card } from "../../components";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 
@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: any }) {
       <div style={{ paddingBottom: "60px" }}>
         <AppHeader />
       </div>
-      <div style={{ padding: "10px" }}>{children}</div>
+      <Card style={{ padding: "10px" }}>{children}</Card>
     </>
   );
 }
