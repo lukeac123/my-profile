@@ -13,7 +13,7 @@ export default function BlogPage() {
     <div className={withBaseName()}>
       {homePageData.map((item) => {
         return (
-          <Card key={"change"} className={withBaseName("card")}>
+          <Card key={item.title} className={withBaseName("card")}>
             <div className={withBaseName("cardColumn1")}>
               <Title colorMode>{item.title}</Title>
               <div className={withBaseName("content")}>

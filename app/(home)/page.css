@@ -48,7 +48,7 @@
 .homePage-headings {
   display: block;
   width: 200px;
-  flex-shrink: 0
+  flex-shrink: 0;
 }
 
 .homePage-media {
