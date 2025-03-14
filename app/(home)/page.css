@@ -25,7 +25,7 @@
   width: 50%;
   height: 80%;
   padding: 10px;
-  gap: 20px;
+  gap: 30px;
 }
 
 @media (width <= 992px) {
@@ -48,12 +48,7 @@
 .homePage-headings {
   display: block;
   width: 200px;
-  /* background: red; */
-}
-
-.homePage-answers {
-  display: block;
-  text-wrap: wrap;
+  flex-shrink: 0
 }
 
 .homePage-media {

@@ -1,4 +1,4 @@
-import { StarRating, Audio } from "../components";
+import { StarRating, Audio, Title } from "../components";
 import { Image } from "@mantine/core";
 
 export type HeroImage = { caption: String; imgSrc: string };
@@ -7,9 +7,9 @@ export const homePageData = [
   {
     title: "Luke Atkison-Coyle",
     column1: {
-      job: "Frontend Software Engineer, Salt Design System, JPMorgan",
-      education: "Mechanical Engineering University of Warwick",
-      caption: "Test",
+      education: "Education - Mechanical Engineering University of Warwick",
+      job: "Frontend Software Engineer, JPMorgan",
+      now: "Looking for a new challenge, something beyond the contrains of Corporate London. Someway to combine my technical skills and creativity either make a difference in peoples lives, or help with the transition to a sustaibale future",
     },
     media: <Image src={"me.jpeg"} height="100%" />,
     link: "/career",
@@ -17,19 +17,18 @@ export const homePageData = [
   {
     title: "Audio",
     column1: {
-      job: "",
-      education: "",
-      caption: "",
+      caption:
+        "I took these audio clips on my travels to provide an added sensory element to the traditional blog and create a more immersive experience.The hope was also that in the future these could also be used in Audio projects. ",
     },
     media: <Audio src={"audio/cocora_valley_river.m4a"} />,
+
     link: "/audio",
   },
   {
     title: "Textures",
     column1: {
-      job: "",
-      education: "",
-      caption: "",
+      caption:
+        "This project started by chance. Before starting my travels I bought an iPhone 14 Pro to take good pictures as memories of my experience. While at a work away in the rainforest in Colombia I decided to put the water resistance my phone to the test a take a picture in the river. This produced the image to the right. After this, I looked to document some of the the different textures and patterns naturally produced by Mother Nature.",
     },
     media: <Image src={"/photography/textures/index.jpeg"} height="100%" />,
     link: "/photography/textures",
@@ -37,9 +36,8 @@ export const homePageData = [
   {
     title: "Travel",
     column1: {
-      job: "",
-      education: "",
-      caption: "",
+      caption:
+        "Finishing University in the pandemic and going straight into a Graduate scheme and working a corporate job in London for 3 years it was my time for a quarter life crisis. Being stubborn I didn’t want to use polar steps and so this is my attempt at documenting my experience travelling. Unfortunately I wasn’t disciplined enough writing in my journal.",
     },
     media: (
       <iframe
