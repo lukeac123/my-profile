@@ -1,0 +1,13 @@
+.appFooter {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  padding: 10px;
+  color: var(--colorMode-color);
+  border-top: solid var(--colorMode-color);
+  border-width: 1px;
+  z-index: 999;
+  align-items: end;
+  justify-content: right;
+  background-color: var(--mantine-color-dark-8);
+}

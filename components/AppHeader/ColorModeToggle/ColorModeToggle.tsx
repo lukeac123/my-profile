@@ -1,20 +1,21 @@
 "use client";
-import { useState, useLayoutEffect, useEffect, useCallback } from "react";
+import { useLayoutEffect, useState } from "react";
 import { ColorPicker, Popover, Button } from "@mantine/core";
 import "./ColorModeToggle.component.css";
 import { IconColorPicker } from "@tabler/icons-react";
 
-// TODO: is there a way to map over the colors of default theme
-// so the user can pick any of the default colours without having to write out all the css by hand
-
 export function ColorModeToggle() {
-  const [colorMode, setColorMode] = useState("#ffa8a8");
+  const userSetColorMode = localStorage.getItem("colorMode");
 
-  useLayoutEffect(() => {
-    // setColorMode(localStorage.getItem("colorMode") ?? "#ffa8a8");
-    document.documentElement.dataset.colorMode = colorMode;
-    localStorage.setItem("colorMode", colorMode); // save into local storage so colorMode isn't lost on refresh
-  }, [colorMode]);
+  // this changes the state but when the state changes it donesn't refresh all the other components
+  // this is all done in the the css
+  const [colorMode, setColorMode] = useState(userSetColorMode ?? "#74c0fc");
+
+  const changeColorMode = (color: string) => {
+    document.documentElement.dataset.colorMode = color;
+    localStorage.setItem("colorMode", color);
+    setColorMode(color);
+  };
 
   return (
     <Popover width={500} position="bottom" withArrow shadow="md">
@@ -26,7 +27,7 @@ export function ColorModeToggle() {
       <Popover.Dropdown>
         <ColorPicker
           value={colorMode}
-          onChange={setColorMode}
+          onChange={changeColorMode}
           withPicker={false}
           fullWidth
           swatches={[

@@ -1,7 +1,7 @@
-.title-underlined {
-  text-decoration: underline;
+.title-colorMode {
+  color: var(--colorMode-color);
 }
 
 .title-padding {
-  padding: var(--mantine-spacing-md);
+  padding-bottom: var(--mantine-spacing-md);
 }

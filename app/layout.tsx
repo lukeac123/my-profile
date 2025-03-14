@@ -1,12 +1,12 @@
 import React from "react";
 import { ColorSchemeScript } from "@mantine/core";
-import { AppHeader } from "../components/AppHeader";
 import { Providers } from "./Providers";
+import { AppFooter } from "../components";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 
 export const metadata = {
-  title: "Queer Abroad",
+  title: "Luke Atkinson-Coyle",
 };
 
 export default function RootLayout({ children }: { children: any }) {
@@ -39,14 +39,8 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <Providers>
-          <AppHeader />
-          <div
-            style={{
-              width: "100%",
-            }}
-          >
-            {children}
-          </div>
+          {children}
+          <AppFooter />
         </Providers>
       </body>
     </html>

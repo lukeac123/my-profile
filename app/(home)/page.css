@@ -1,0 +1,71 @@
+.homePage {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.homePage-card {
+  display: flex;
+  padding: 30px;
+  width: 100%;
+  flex-direction: row;
+  height: 80vh;
+}
+
+@media (width <= 992px) {
+  .homePage-card {
+    height: auto;
+    flex-direction: column;
+  }
+}
+
+.homePage-cardColumn1 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 80%;
+  padding: 10px;
+  gap: 30px;
+}
+
+@media (width <= 992px) {
+  .homePage-cardColumn1 {
+    width: 100%;
+  }
+}
+
+.homePage-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.homePage-block {
+  display: flex;
+  flex-direction: row;
+}
+
+.homePage-headings {
+  display: block;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.homePage-media {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (width <= 992px) {
+  .homePage-media {
+    width: 100%;
+  }
+}
+
+.homePage-link:hover {
+  text-decoration: underline;
+}

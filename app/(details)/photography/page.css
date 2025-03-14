@@ -1,0 +1,53 @@
+.travelPage {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+@media (width <= 768px) {
+  .travelPage {
+    flex-direction: column;
+  }
+}
+
+.travelPage-card {
+  width: 400px;
+  height: 600px;
+}
+
+@media (width <= 768px) {
+  .travelPage-card {
+    width: 100%;
+  }
+}
+
+.travelPage-card:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.travelPage-card:hover > .travelPage-overlay {
+  opacity: 0.5;
+}
+
+.travelPage-overlay {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: var(--colorMode-color);
+}
+
+.travelPage-image {
+  width: 100%;
+  min-height: 640px;
+}

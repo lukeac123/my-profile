@@ -1,79 +1,83 @@
 "use client";
 import { useState } from "react";
-import {
-  Text,
-  Title,
-  Container,
-  Group,
-  Burger,
-  Drawer,
-  Stack,
-} from "@mantine/core";
+import { Group, Burger, Drawer, Stack } from "@mantine/core";
+import { Text } from "../Text";
 import { ColorSchemeToggle } from "./ColorSchemeToggle";
 import { ColorModeToggle } from "./ColorModeToggle";
 import { makePrefixer } from "../../utils/makePrefixer";
 import Link from "next/link";
 import "./AppHeader.component.css";
+import { clsx } from "clsx";
 
 const links = [
   { label: "Home", link: "./" },
-  { label: "Places", link: "./places" },
-  { label: "People", link: "./people" },
-  { label: "Food", link: "./food" },
+  { label: "Photography", link: "./photography" },
   { label: "Audio", link: "./audio" },
-  { label: "Gallery", link: "./gallery" },
+  { label: "Travel", link: "./travel" },
+  { label: "Career", link: "./career" },
+  // { label: "Recipies", link: "./recipies" },
 ];
 
 const withBaseName = makePrefixer("appHeader");
 
-export const AppHeader = () => {
+type AppHeaderProps = {
+  fadedHeader?: boolean;
+};
+
+export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = () => (open ? setOpen(false) : setOpen(true));
 
   return (
-    <header className={withBaseName()}>
-      <Burger opened={open} onClick={toggleDrawer} hiddenFrom="sm" size="sm" />
-      <Container className={withBaseName("title")}>
-        <Title visibleFrom="sm">Queer Abroad</Title>
-        <Group visibleFrom="sm" gap={"sm"} justify="center">
+    <header
+      className={clsx(withBaseName(), {
+        [withBaseName("fadedHeader")]: fadedHeader,
+      })}
+    >
+      <Group visibleFrom="sm" gap={"sm"} className={withBaseName("title")}>
+        {links.map((link) => (
+          <Text
+            className={withBaseName("link")}
+            key={link.label}
+            href={link.link}
+            component={Link}
+          >
+            {link.label}
+          </Text>
+        ))}
+      </Group>
+      <div className={withBaseName("burger")}>
+        <Burger
+          opened={open}
+          onClick={toggleDrawer}
+          hiddenFrom="sm"
+          size="sm"
+        />
+      </div>
+      <Drawer
+        opened={open}
+        onClose={() => setOpen(false)}
+        className={withBaseName("drawer")}
+      >
+        <Stack gap={"sm"}>
           {links.map((link) => (
             <Text
               className={withBaseName("link")}
               key={link.label}
               href={link.link}
               component={Link}
+              onClick={() => setOpen(false)}
             >
               {link.label}
             </Text>
           ))}
-        </Group>
-
-        <Drawer
-          opened={open}
-          onClose={() => setOpen(false)}
-          title="Queer Abroad"
-        >
-          <Stack gap={"sm"}>
-            {links.map((link) => (
-              <Text
-                className={withBaseName("link")}
-                key={link.label}
-                href={link.link}
-                component={Link}
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Text>
-            ))}
-          </Stack>
-        </Drawer>
-
-        <div className={withBaseName("buttonbar")}>
-          <ColorSchemeToggle />
-          <ColorModeToggle />
-        </div>
-      </Container>
+        </Stack>
+      </Drawer>
+      <Group>
+        <ColorSchemeToggle />
+        {/* <ColorModeToggle /> */}
+      </Group>
     </header>
   );
 };

@@ -1,0 +1,11 @@
+.text-colorMode {
+  color: var(--colorMode-color);
+}
+
+/* .text-title {
+  font-size: xx-large;
+}
+
+.text-underlined {
+  text-decoration: underline;
+} */
