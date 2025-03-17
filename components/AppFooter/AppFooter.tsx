@@ -1,6 +1,10 @@
 import { makePrefixer } from "../../utils/makePrefixer";
 import { Group, Text } from "@mantine/core";
-import { IconBrandInstagram, IconMail } from "@tabler/icons-react";
+import {
+  IconBrandInstagram,
+  IconMail,
+  IconBrandGithub,
+} from "@tabler/icons-react";
 import "./AppFooter.component.css";
 
 const withBaseName = makePrefixer("appFooter");
@@ -13,6 +17,10 @@ const links = [
   {
     icon: <IconMail />,
     label: "luke.atkinson-coyle@outlook.com",
+  },
+  {
+    icon: <IconBrandGithub />,
+    label: "https://github.com/lukeac123",
   },
 ];
 

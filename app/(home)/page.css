@@ -15,7 +15,7 @@
 @media (width <= 992px) {
   .homePage-card {
     height: auto;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 
