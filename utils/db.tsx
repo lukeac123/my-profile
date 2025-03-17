@@ -7,9 +7,9 @@ export const homePageData = [
   {
     title: "Luke Atkison-Coyle",
     column1: {
-      education: "Education - Mechanical Engineering University of Warwick",
+      education: "Mechanical Engineering University of Warwick",
       job: "Frontend Software Engineer, JPMorgan",
-      now: "Looking for a new challenge, something beyond the contrains of Corporate London. Someway to combine my technical skills and creativity either make a difference in peoples lives, or help with the transition to a sustaibale future",
+      now: "Looking for a new challenge, something beyond the contrains of Corporate London. Someway to combine my technical skills and creativity, either having a direct impact in peoples lives, or helping with the transition to a sustaibale future",
     },
     media: <Image src={"me.jpeg"} height="100%" />,
     link: "/career",
@@ -18,7 +18,7 @@ export const homePageData = [
     title: "Audio",
     column1: {
       caption:
-        "I took these audio clips on my travels to provide an added sensory element to the traditional blog and create a more immersive experience.The hope was also that in the future these could also be used in Audio projects. ",
+        "I took these audio clips on my travels to provide an added sensory element to the traditional blog and create a more immersive experience. The hope was also that in the future these could also be used in Audio projects. ",
     },
     media: <Audio src={"audio/cocora_valley_river.m4a"} />,
 
