@@ -5,7 +5,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import "./page.css";
 
-const withBaseName = makePrefixer("travelPage");
+const withBaseName = makePrefixer("photographyPage");
 
 export default async function GalleryPage() {
   const imageGalleryDirectory = path.join(process.cwd(), "/public/photography");
