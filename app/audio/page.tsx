@@ -1,7 +1,7 @@
 import { Stack, Image } from "@mantine/core";
-import { Audio, Card, CardContent, Title, Text } from "../../../components";
-import { audioClips } from "../../../utils";
-import { makePrefixer } from "../../../utils";
+import { Audio, Card, CardContent, Title, Text } from "../../components";
+import { audioClips } from "../../utils";
+import { makePrefixer } from "../../utils";
 import "./page.css";
 
 const withBaseName = makePrefixer("audioPage");

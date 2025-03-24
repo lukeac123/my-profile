@@ -1,7 +1,7 @@
 import { List, ListItem } from "@mantine/core";
-import { Title, Text } from "../../../components";
+import { Title, Text } from "../../components";
 
-import { makePrefixer } from "../../../utils";
+import { makePrefixer } from "../../utils";
 import "./page.css";
 
 const withBaseName = makePrefixer("careerPage");

@@ -15,7 +15,6 @@ const links = [
   { label: "Audio", link: "./audio" },
   { label: "Travel", link: "./travel" },
   { label: "Career", link: "./career" },
-  // { label: "Recipies", link: "./recipies" },
 ];
 
 const withBaseName = makePrefixer("appHeader");
@@ -76,7 +75,7 @@ export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
       </Drawer>
       <Group>
         <ColorSchemeToggle />
-        {/* <ColorModeToggle /> */}
+        <ColorModeToggle />
       </Group>
     </header>
   );

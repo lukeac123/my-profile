@@ -1,7 +1,7 @@
 import React from "react";
 import { ColorSchemeScript } from "@mantine/core";
 import { Providers } from "./Providers";
-import { AppFooter } from "../components";
+import { AppFooter, AppHeader, Card } from "../components";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 
@@ -11,9 +11,9 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: any }) {
   return (
-    <html lang="en">
+    <html lang="en" data-color-mode="#91a7ff" default-color-scheme="dark">
       <head>
-        <ColorSchemeScript defaultColorScheme="dark" />
+        <ColorSchemeScript />
         <link
           rel="apple-touch-icon"
           sizes="favicon/180x180"
@@ -39,7 +39,10 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <Providers>
-          {children}
+          <div style={{ paddingBottom: "60px" }}>
+            <AppHeader />
+          </div>
+          <Card>{children}</Card>
           <AppFooter />
         </Providers>
       </body>

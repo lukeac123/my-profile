@@ -1,8 +1,8 @@
-import { Card, Text, Carousel, Title } from "../../../components";
-import { insertSpaces, makePrefixer } from "../../../utils";
+import { Card, Text, Carousel, Title } from "../../components";
+import { insertSpaces, makePrefixer } from "../../utils";
 import path from "path";
 import { promises as fs } from "fs";
-import { travel, type Place, dateToUKFormat } from "../../../utils";
+import { travel, type Place, dateToUKFormat } from "../../utils";
 import "./page.css";
 
 const withBaseName = makePrefixer("travelPage");

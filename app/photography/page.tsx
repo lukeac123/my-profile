@@ -1,6 +1,6 @@
 import { Stack, Image } from "@mantine/core";
-import { Card, Text, Title } from "../../../components";
-import { makePrefixer } from "../../../utils";
+import { Card, Text, Title } from "../../components";
+import { makePrefixer } from "../../utils";
 import { promises as fs } from "fs";
 import path from "path";
 import "./page.css";

@@ -16,7 +16,6 @@ export function ColorModeToggle() {
       </Popover.Target>
       <Popover.Dropdown>
         <ColorPicker
-          // value={colorMode}
           onChange={changeColorMode}
           withPicker={false}
           fullWidth
