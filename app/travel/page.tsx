@@ -1,8 +1,8 @@
-import { Card, Text, Carousel, Title } from "../../../components";
-import { insertSpaces, makePrefixer } from "../../../utils";
+import { Card, Text, Carousel, Title } from "../../components";
+import { insertSpaces, makePrefixer } from "../../utils";
 import path from "path";
 import { promises as fs } from "fs";
-import { travel, type Place, dateToUKFormat } from "../../../utils";
+import { travel, type Place, dateToUKFormat } from "../../utils";
 import "./page.css";
 
 const withBaseName = makePrefixer("travelPage");
@@ -54,7 +54,7 @@ export default function PlacesPage() {
   const placesByDate: Place[] = sortPlacesByDate(travel);
   return (
     <div className={withBaseName("container")}>
-      <Title ta="center" colorMode order={1}>
+      <Title ta="center" order={1}>
         Travel
       </Title>
       {placesByDate.map((place: Place) => {
@@ -62,7 +62,7 @@ export default function PlacesPage() {
         const updatedContent = updateContent(content);
         return (
           <Card key={title} className={withBaseName("card")}>
-            <Title underlined order={2} colorMode padding>
+            <Title underlined order={2} padding>
               {title}
             </Title>
             <div className={withBaseName("cardContent")}>

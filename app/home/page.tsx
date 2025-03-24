@@ -15,15 +15,16 @@ export default function BlogPage() {
         return (
           <Card key={item.title} className={withBaseName("card")}>
             <div className={withBaseName("cardColumn1")}>
-              <Title colorMode>{item.title}</Title>
+              <Title>{item.title}</Title>
               <div className={withBaseName("content")}>
                 {Object.entries(item.column1).map((content) => {
                   return (
                     <div className={withBaseName("block")}>
                       <Text size="xl">
+                        {/* Take the below into a function outside the reaction component  */}
                         {content[0].substring(0, 1).toUpperCase() +
                           content[0].substring(1).toLowerCase()}{" "}
-                        : {content[1]}
+                        {content[0] != "" ? ":" : ""} {content[1]}
                       </Text>
                     </div>
                   );

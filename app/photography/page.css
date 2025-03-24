@@ -1,4 +1,4 @@
-.travelPage {
+.photographyPage {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -10,32 +10,32 @@
 }
 
 @media (width <= 768px) {
-  .travelPage {
+  .photographyPage {
     flex-direction: column;
   }
 }
 
-.travelPage-card {
+.photographyPage-card {
   width: 400px;
   height: 600px;
 }
 
 @media (width <= 768px) {
-  .travelPage-card {
+  .photographyPage-card {
     width: 100%;
   }
 }
 
-.travelPage-card:hover {
+.photographyPage-card:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.travelPage-card:hover > .travelPage-overlay {
+.photographyPage-card:hover > .photographyPage-overlay {
   opacity: 0.5;
 }
 
-.travelPage-overlay {
+.photographyPage-overlay {
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -47,7 +47,7 @@
   color: var(--colorMode-color);
 }
 
-.travelPage-image {
+.photographyPage-image {
   width: 100%;
   min-height: 640px;
 }

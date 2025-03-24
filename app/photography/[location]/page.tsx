@@ -3,7 +3,7 @@ import NextImage from "next/image";
 import path from "path";
 import { promises as fs } from "fs";
 import "./page.css";
-import { makePrefixer } from "../../../../utils";
+import { makePrefixer } from "../../../utils";
 
 const withBaseName = makePrefixer("photosPage");
 

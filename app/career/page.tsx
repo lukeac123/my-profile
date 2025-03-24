@@ -1,7 +1,7 @@
 import { List, ListItem } from "@mantine/core";
-import { Title, Text } from "../../../components";
+import { Title, Text } from "../../components";
 
-import { makePrefixer } from "../../../utils";
+import { makePrefixer } from "../../utils";
 import "./page.css";
 
 const withBaseName = makePrefixer("careerPage");
@@ -48,7 +48,7 @@ export default function AudioPage() {
       </>
       <>
         <Title order={2}>
-          Software Engineer, Cloud Deployment JPMorgaN - (6 months)
+          Software Engineer, Cloud Deployment JPMorgan - (6 months)
         </Title>
         <Title order={3}>Skills: AWS CLI + Console - Terraform - Docker</Title>
         <List>
@@ -81,7 +81,7 @@ export default function AudioPage() {
       </>
       <>
         <Title order={2}>
-          Graduate Program, JPMOrgan (Product Manager, Unity Platform / Product
+          Graduate Program, JPMorgan (Product Manager, Unity Platform / Product
           Manager, Digital Search) - (2 Years)
         </Title>
         <List>

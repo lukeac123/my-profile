@@ -1,11 +1,11 @@
 import { Stack, Image } from "@mantine/core";
-import { Card, Text, Title } from "../../../components";
-import { makePrefixer } from "../../../utils";
+import { Card, Text, Title } from "../../components";
+import { makePrefixer } from "../../utils";
 import { promises as fs } from "fs";
 import path from "path";
 import "./page.css";
 
-const withBaseName = makePrefixer("travelPage");
+const withBaseName = makePrefixer("photographyPage");
 
 export default async function GalleryPage() {
   const imageGalleryDirectory = path.join(process.cwd(), "/public/photography");
@@ -16,7 +16,7 @@ export default async function GalleryPage() {
   });
   return (
     <Stack>
-      <Title ta="center" colorMode order={1}>
+      <Title ta="center" order={1}>
         Photography
       </Title>
       <div className={withBaseName()}>

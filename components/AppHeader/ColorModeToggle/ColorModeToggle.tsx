@@ -1,20 +1,10 @@
-"use client";
-import { useLayoutEffect, useState } from "react";
 import { ColorPicker, Popover, Button } from "@mantine/core";
 import "./ColorModeToggle.component.css";
 import { IconColorPicker } from "@tabler/icons-react";
 
 export function ColorModeToggle() {
-  const userSetColorMode = localStorage.getItem("colorMode");
-
-  // this changes the state but when the state changes it donesn't refresh all the other components
-  // this is all done in the the css
-  const [colorMode, setColorMode] = useState(userSetColorMode ?? "#74c0fc");
-
   const changeColorMode = (color: string) => {
     document.documentElement.dataset.colorMode = color;
-    localStorage.setItem("colorMode", color);
-    setColorMode(color);
   };
 
   return (
@@ -26,7 +16,6 @@ export function ColorModeToggle() {
       </Popover.Target>
       <Popover.Dropdown>
         <ColorPicker
-          value={colorMode}
           onChange={changeColorMode}
           withPicker={false}
           fullWidth
