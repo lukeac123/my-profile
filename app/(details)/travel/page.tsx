@@ -11,7 +11,7 @@ async function getImageSrc(imgDir: string) {
   const imagePlaceDirectory = path.join(
     process.cwd(),
     "/public/travel",
-    imgDir,
+    imgDir
   );
   const imgSrcDir = await fs.readdir(imagePlaceDirectory).then((response) => {
     const imageArray = response.map((response) => {
@@ -54,7 +54,7 @@ export default function PlacesPage() {
   const placesByDate: Place[] = sortPlacesByDate(travel);
   return (
     <div className={withBaseName("container")}>
-      <Title ta="center" colorMode order={1}>
+      <Title ta="center" order={1}>
         Travel
       </Title>
       {placesByDate.map((place: Place) => {
@@ -62,7 +62,7 @@ export default function PlacesPage() {
         const updatedContent = updateContent(content);
         return (
           <Card key={title} className={withBaseName("card")}>
-            <Title underlined order={2} colorMode padding>
+            <Title underlined order={2} padding>
               {title}
             </Title>
             <div className={withBaseName("cardContent")}>

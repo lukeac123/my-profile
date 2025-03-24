@@ -34,7 +34,7 @@ export const Visualisation = ({
         for (let i = 0; i < songData.length; i++) {
           start = i * 4;
           ctx.fillStyle = getComputedStyle(canvasRef.current).getPropertyValue(
-            "--mantine-color-white",
+            "--colorMode-color"
           );
           const ypos = canvasRef.current.height / 2 + songData[i] / 2;
           ctx.fillRect(start, ypos, bar_width, -songData[i]);

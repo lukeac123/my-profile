@@ -16,7 +16,7 @@ export default async function GalleryPage() {
   });
   return (
     <Stack>
-      <Title ta="center" colorMode order={1}>
+      <Title ta="center" order={1}>
         Photography
       </Title>
       <div className={withBaseName()}>
