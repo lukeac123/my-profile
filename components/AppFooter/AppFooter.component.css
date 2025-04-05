@@ -9,5 +9,5 @@
   z-index: 999;
   align-items: end;
   justify-content: right;
-  background-color: var(--mantine-color-dark-8);
+  background-color: var(--mantine-color-body);
 }

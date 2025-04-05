@@ -18,18 +18,10 @@
 .audioPlayer-slider {
   margin: auto;
   flex-grow: 1;
-  /* --slider-color: var(--colorMode-color); */
-}
-
-.audioPlayer-button {
-  /* border: solid 1px var(--colorMode-color); */
-}
-
-.audioPlayer-icon {
-  /* stroke: var(--colorMode-color); */
+  --slider-color: var(--colorMode-color);
 }
 
 .audioPlayer-visualisation {
   height: 100px;
-  width: 60%;
+  width: 100%;
 }

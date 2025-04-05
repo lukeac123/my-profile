@@ -6,6 +6,7 @@ export interface VisualisationProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 let animationController;
+let particles: Particle[] = [];
 
 export const Visualisation = ({
   isPlaying,
@@ -14,35 +15,77 @@ export const Visualisation = ({
 }: VisualisationProps) => {
   const canvasRef = useRef();
 
-  useEffect(() => {
-    const visualizeData = () => {
-      isPlaying
-        ? (animationController = window.requestAnimationFrame(visualizeData))
-        : cancelAnimationFrame(animationController);
+  const songData = new Uint8Array(150);
 
-      const songData = new Uint8Array(150);
-      if (analyser.current) {
-        analyser.current.getByteFrequencyData(songData);
-      }
+  const ctx = canvasRef.current?.getContext("2d");
 
-      const bar_width = 3;
-      let start = 0;
+  const setUp = () => {
+    ctx.fillStyle = getComputedStyle(canvasRef.current).getPropertyValue(
+      "--colorMode-color"
+    );
+    ctx.strokeStyle = getComputedStyle(canvasRef.current).getPropertyValue(
+      "--colorMode-color"
+    );
+    for (let i = 0; i < 50; i++) {
+      const randX = Math.random() * 500;
+      const randY = Math.random() * 500;
+      particles[i] = new Particle(randX, randY, 0);
+    }
+  };
 
-      if (canvasRef.current) {
-        const ctx = canvasRef.current.getContext("2d");
-        ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-        for (let i = 0; i < songData.length; i++) {
-          start = i * 4;
-          ctx.fillStyle = getComputedStyle(canvasRef.current).getPropertyValue(
-            "--colorMode-color",
-          );
-          const ypos = canvasRef.current.height / 2 + songData[i] / 2;
-          ctx.fillRect(start, ypos, bar_width, -songData[i]);
-        }
-      }
-    };
-    visualizeData();
-  });
+  const draw = () => {
+    const canvasX = canvasRef.current?.width;
+    const canvasY = canvasRef.current?.height;
+    isPlaying
+      ? (animationController = window.requestAnimationFrame(draw))
+      : cancelAnimationFrame(animationController);
+
+    ctx.clearRect(0, 0, canvasX, canvasY);
+
+    analyser.current?.getByteFrequencyData(songData);
+
+    ctx.beginPath();
+
+    particles?.forEach((particle: Particle, i: number) => {
+      particle.move(songData[i]);
+      particle.show(ctx, canvasX, canvasY);
+    });
+
+    ctx.stroke();
+  };
+
+  if (canvasRef.current) {
+    setUp();
+    draw();
+  }
 
   return <canvas {...rest} ref={canvasRef} />;
 };
+
+class Particle {
+  x: number;
+  y: number;
+  r: number;
+  show: (
+    ctx: CanvasRenderingContext2D,
+    canvasX: number,
+    canvasY: number
+  ) => void;
+  move: (songData: number) => void;
+
+  constructor(x: number, y: number, r: number) {
+    this.x = x;
+    this.y = y;
+    this.r = r;
+
+    this.show = (ctx, canvasX, canvasY) => {
+      ctx.beginPath();
+      ctx.bezierCurveTo(0, 0, canvasX / 2, this.r, canvasX, canvasY / 2);
+      ctx.stroke();
+    };
+
+    this.move = (songData) => {
+      this.r = songData;
+    };
+  }
+}
