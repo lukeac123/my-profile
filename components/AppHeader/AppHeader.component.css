@@ -8,7 +8,7 @@
   border-bottom: solid var(--colorMode-color);
   border-width: 1px;
   z-index: 999;
-  background-color: var(--mantine-color-dark-8);
+  background-color: var(--mantine-color-body);
 }
 
 .appHeader-drawer {

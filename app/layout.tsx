@@ -1,5 +1,4 @@
 import React from "react";
-import { ColorSchemeScript } from "@mantine/core";
 import { Providers } from "./Providers";
 import { AppFooter, AppHeader, Card } from "../components";
 import "@mantine/core/styles.css";
@@ -11,9 +10,8 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: any }) {
   return (
-    <html lang="en" data-color-mode="#91a7ff" default-color-scheme="dark">
+    <html lang="en" data-color-mode="#91a7ff" data-mantine-color-scheme="dark">
       <head>
-        <ColorSchemeScript />
         <link
           rel="apple-touch-icon"
           sizes="favicon/180x180"

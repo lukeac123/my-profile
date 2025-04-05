@@ -27,7 +27,7 @@ const links = [
 export const AppFooter = () => {
   return (
     <footer className={withBaseName()}>
-      <Group visibleFrom="sm" gap={"sm"} className={withBaseName("title")}>
+      <Group className={withBaseName("title")}>
         {links.map((link) => (
           <>
             {link.icon}

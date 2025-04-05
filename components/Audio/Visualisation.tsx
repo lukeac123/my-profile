@@ -8,24 +8,6 @@ export interface VisualisationProps extends HTMLAttributes<HTMLDivElement> {
 let animationController;
 let particles: Particle[] = [];
 
-const setUp = (canvasRef: any) => {
-  const ctx = canvasRef.current?.getContext("2d");
-  const canvasX = canvasRef.current?.width;
-  const canvasY = canvasRef.current?.height;
-  ctx?.clearRect(0, 0, canvasX, canvasY);
-  ctx.fillStyle = getComputedStyle(canvasRef.current).getPropertyValue(
-    "--colorMode-color"
-  );
-  ctx.strokeStyle = getComputedStyle(canvasRef.current).getPropertyValue(
-    "--colorMode-color"
-  );
-
-  for (let i = 0; i < 5; i++) {
-    particles[i] = new Particle(100, 10, 50);
-  }
-  return { ctx, particles };
-};
-
 export const Visualisation = ({
   isPlaying,
   analyser,
@@ -35,24 +17,46 @@ export const Visualisation = ({
 
   const songData = new Uint8Array(150);
 
-  const draw = (ctx: CanvasRenderingContext2D, particles: Particle[]) => {
+  const ctx = canvasRef.current?.getContext("2d");
+
+  const setUp = () => {
+    ctx.fillStyle = getComputedStyle(canvasRef.current).getPropertyValue(
+      "--colorMode-color"
+    );
+    ctx.strokeStyle = getComputedStyle(canvasRef.current).getPropertyValue(
+      "--colorMode-color"
+    );
+    for (let i = 0; i < 50; i++) {
+      const randX = Math.random() * 500;
+      const randY = Math.random() * 500;
+      particles[i] = new Particle(randX, randY, 0);
+    }
+  };
+
+  const draw = () => {
+    const canvasX = canvasRef.current?.width;
+    const canvasY = canvasRef.current?.height;
     isPlaying
       ? (animationController = window.requestAnimationFrame(draw))
       : cancelAnimationFrame(animationController);
 
+    ctx.clearRect(0, 0, canvasX, canvasY);
+
     analyser.current?.getByteFrequencyData(songData);
 
-    console.log(particles);
+    ctx.beginPath();
 
     particles?.forEach((particle: Particle, i: number) => {
       particle.move(songData[i]);
-      particle.show(ctx);
+      particle.show(ctx, canvasX, canvasY);
     });
+
+    ctx.stroke();
   };
 
   if (canvasRef.current) {
-    const { ctx, particles } = setUp(canvasRef);
-    draw(ctx, particles);
+    setUp();
+    draw();
   }
 
   return <canvas {...rest} ref={canvasRef} />;
@@ -62,7 +66,11 @@ class Particle {
   x: number;
   y: number;
   r: number;
-  show: (ctx: CanvasRenderingContext2D) => void;
+  show: (
+    ctx: CanvasRenderingContext2D,
+    canvasX: number,
+    canvasY: number
+  ) => void;
   move: (songData: number) => void;
 
   constructor(x: number, y: number, r: number) {
@@ -70,9 +78,9 @@ class Particle {
     this.y = y;
     this.r = r;
 
-    this.show = (ctx) => {
+    this.show = (ctx, canvasX, canvasY) => {
       ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+      ctx.bezierCurveTo(0, 0, canvasX / 2, this.r, canvasX, canvasY / 2);
       ctx.stroke();
     };
 
