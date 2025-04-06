@@ -26,7 +26,7 @@ export const Visualisation = ({
     ctx.strokeStyle = getComputedStyle(canvasRef.current).getPropertyValue(
       "--colorMode-color"
     );
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 150; i++) {
       const randX = Math.random() * 500;
       const randY = Math.random() * 500;
       particles[i] = new Particle(randX, randY, 0);
@@ -43,6 +43,7 @@ export const Visualisation = ({
     ctx.clearRect(0, 0, canvasX, canvasY);
 
     analyser.current?.getByteFrequencyData(songData);
+    //TODO: song data can be split into different frequencies with different colors
 
     ctx.beginPath();
 
@@ -80,12 +81,21 @@ class Particle {
 
     this.show = (ctx, canvasX, canvasY) => {
       ctx.beginPath();
-      ctx.bezierCurveTo(0, 0, canvasX / 2, this.r, canvasX, canvasY / 2);
+      ctx.bezierCurveTo(
+        0,
+        canvasY / 2,
+        canvasX / 2,
+        this.r,
+        canvasX,
+        canvasY / 2
+      );
       ctx.stroke();
     };
 
     this.move = (songData) => {
-      this.r = songData;
+      const randNegative = Math.random() > 0.5 ? 1 : -1;
+      //TODO: normalise the sond data for the canvas size
+      this.r = (songData / 2) * randNegative;
     };
   }
 }
