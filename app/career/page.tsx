@@ -84,6 +84,9 @@ export default function AudioPage() {
           Graduate Program, JPMorgan (Product Manager, Unity Platform / Product
           Manager, Digital Search) - (2 Years)
         </Title>
+        <Title order={3}>
+          Skills: Jira - Requirements Gathering - Roadmapping - Prioritisation
+        </Title>
         <List>
           <ListItem>
             Digital Search - Led the development of a standardised schema for
