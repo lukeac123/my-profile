@@ -4,6 +4,19 @@
   flex-direction: column;
 }
 
+.homePage-pieChart {
+  display: flex;
+  justify-content: center;
+}
+
+.homePage-card {
+  display: flex;
+  padding: 30px;
+  width: 100%;
+  flex-direction: row;
+  height: 80vh;
+}
+
 .homePage-card {
   display: flex;
   padding: 30px;

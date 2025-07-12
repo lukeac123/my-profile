@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Card, Title, Text } from "../../components";
-import { makePrefixer } from "../../utils";
-import { homePageData } from "../../utils/db";
+import { Card, Title, Text, PieChart } from "../components";
+import { makePrefixer } from "../utils";
+import { homePageData } from "../utils/db";
 import "./page.css";
 import { IconClick } from "@tabler/icons-react";
 import { Group } from "@mantine/core";
@@ -11,6 +11,9 @@ const withBaseName = makePrefixer("homePage");
 export default function BlogPage() {
   return (
     <div className={withBaseName()}>
+      <div className={withBaseName("pieChart")}>
+        <PieChart />
+      </div>
       {homePageData.map((item) => {
         return (
           <Card key={item.title} className={withBaseName("card")}>
