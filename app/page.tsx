@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Card, Title, Text, PieChart } from "../components";
+import { Card, Title, Text, LineChart } from "../components";
 import { makePrefixer } from "../utils";
 import { homePageData } from "../utils/db";
 import "./page.css";
@@ -8,12 +8,72 @@ import { Group } from "@mantine/core";
 
 const withBaseName = makePrefixer("homePage");
 
+const lineChartData = [
+  {
+    id: "frontEndDeveloper",
+    label: "Front End Developer",
+    values: [
+      { x: 2021, y: 0 },
+      { x: 2022, y: 25 },
+      { x: 2023, y: 80 },
+      { x: 2024, y: 100 },
+      { x: 2025, y: 100 },
+    ],
+  },
+  {
+    id: "awsCloudDeveloper",
+    label: "AWS Cloud Developer",
+    values: [
+      { x: 2021, y: 0 },
+      { x: 2022, y: 100 },
+      { x: 2023, y: 50 },
+      { x: 2024, y: 30 },
+      { x: 2025, y: 20 },
+    ],
+  },
+  {
+    id: "productManager",
+    label: "Product Manager",
+    values: [
+      { x: 2019, y: 0 },
+      { x: 2020, y: 100 },
+      { x: 2021, y: 100 },
+      { x: 2022, y: 30 },
+      { x: 2023, y: 0 },
+    ],
+  },
+  {
+    id: "worldTraveller",
+    label: "World Traveller",
+    values: [
+      { x: 2017, y: 20 },
+      { x: 2018, y: 30 },
+      { x: 2019, y: 40 },
+      { x: 2020, y: 40 },
+      { x: 2021, y: 40 },
+      { x: 2022, y: 60 },
+      { x: 2023, y: 70 },
+      { x: 2024, y: 100 },
+      { x: 2025, y: 100 },
+    ],
+  },
+  {
+    id: "mechanicalEngineer",
+    label: "Mechanical Engineer",
+    values: [
+      { x: 2017, y: 100 },
+      { x: 2018, y: 100 },
+      { x: 2019, y: 100 },
+      { x: 2020, y: 100 },
+      { x: 2021, y: 0 },
+    ],
+  },
+];
+
 export default function BlogPage() {
   return (
     <div className={withBaseName()}>
-      <div className={withBaseName("pieChart")}>
-        <PieChart />
-      </div>
+      <LineChart data={lineChartData} className={withBaseName("lineGraph")} />
       {homePageData.map((item) => {
         return (
           <Card key={item.title} className={withBaseName("card")}>

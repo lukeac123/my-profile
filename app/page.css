@@ -4,11 +4,6 @@
   flex-direction: column;
 }
 
-.homePage-pieChart {
-  display: flex;
-  justify-content: center;
-}
-
 .homePage-card {
   display: flex;
   padding: 30px;
