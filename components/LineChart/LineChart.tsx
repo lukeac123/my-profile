@@ -1,5 +1,6 @@
 "use client";
-import React, { HTMLAttributes, useEffect, useRef } from "react";
+import React, { HTMLAttributes, useEffect, useRef, useState } from "react";
+import { Radio, Group, CheckIcon } from "@mantine/core";
 import { Text } from "../Text";
 import * as d3 from "d3";
 import "./LineChart.component.css";
@@ -10,7 +11,8 @@ import "./LineChart.component.css";
 
 interface LineChartData {
   id: string;
-  name: string;
+  label: string;
+  color: string;
   values: Array<Object>;
 }
 
@@ -20,13 +22,26 @@ interface LineChart extends HTMLAttributes<HTMLDivElement> {
   data: LineChartData[];
 }
 
-export const LineChart = ({
-  className,
-  data,
-  width = 800,
-  height = 400,
-}: LineChart) => {
+export const LineChart = ({ data }: LineChart) => {
   const svgRef = useRef();
+  const [checked, setChecked] = useState(data[0].id ?? "");
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [dimensions, setDimensions] = useState({ width: 1000, height: 400 });
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const resizeObserver = new ResizeObserver((entries) => {
+      console.log(entries);
+      for (let entry of entries) {
+        const { width, height } = entry.contentRect;
+        setDimensions({ width, height: 400 }); // fallback height
+      }
+    });
+
+    resizeObserver.observe(containerRef.current);
+    return () => resizeObserver.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!data || data.length === 0) return;
@@ -35,14 +50,10 @@ export const LineChart = ({
     svg.selectAll("*").remove(); // Clear previous render
 
     const margin = { top: 30, right: 30, bottom: 30, left: 30 };
-    const innerWidth = width - margin.left - margin.right;
-    const innerHeight = height - margin.top - margin.bottom;
+    const innerWidth = dimensions.width - margin.left - margin.right;
+    const innerHeight = dimensions.height - margin.top - margin.bottom;
 
     const allValues = data.flatMap((series) => series.values);
-
-    const color = d3
-      .scaleOrdinal()
-      .range(["#ffa8a8", "#8ce99a", "#ffe066", "#ffc078"]);
 
     const x = d3
       .scaleLinear()
@@ -93,7 +104,7 @@ export const LineChart = ({
       .data(data)
       .enter()
       .append("path")
-      .attr("fill", (d) => color(d.id))
+      .attr("fill", (d) => `${d.color}`)
       .attr("opacity", 0.1)
       .attr("d", (d) => area(d.values));
 
@@ -104,46 +115,39 @@ export const LineChart = ({
       .append("path")
       .attr("class", (d) => `line-${d.id}`)
       .attr("fill", "none")
-      .attr("stroke", (d) => color(d.id)) // color by series
-      .attr("stroke-width", 1)
+      .attr("stroke", (d) => `${d.color}`) // color by series
+      .attr("stroke-width", (d) => (checked === d.id ? "10" : "1"))
       .attr("d", (d) => line(d.values));
-
-    // Legend
-    const legendDiv = d3.select("#legend");
-
-    const legendItems = legendDiv
-      .selectAll(".legend-item")
-      .data(data)
-      .enter()
-      .append("div")
-      .attr("class", `legend-item`)
-      .on("mouseover", (event, d) => {
-        d3.selectAll(`.line-${d.id}`).style("stroke-width", "10");
-      })
-      .on("mouseout", (event, d) => {
-        d3.selectAll(`.line-${d.id}`).style("stroke-width", "1");
-      });
-
-    legendItems
-      .append("span")
-      .attr("class", "legend-color")
-      .style("background", (d) => color(d.id));
-
-    legendItems
-      .append("div")
-      .attr("class", "legend-label")
-      .text((d) => d.label);
-  }, [data, width, height]);
+  }, [data, dimensions, checked]);
 
   return (
     <div className={"line-chart"}>
-      <svg
-        ref={svgRef}
-        width={width}
-        height={height}
-        className="line-chart-svg"
-      />
-      <div id={"legend"} className={"legend"} />
+      <div ref={containerRef} style={{ width: "900px" }}>
+        <svg
+          ref={svgRef}
+          className="line-chart-svg"
+          width="100%"
+          height="100%"
+          viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
+          preserveAspectRatio="xMidYMid meet"
+        />
+      </div>
+      <Group className={"legend"}>
+        {data.map((dataPoint) => {
+          return (
+            <Radio
+              key={dataPoint.id}
+              label={dataPoint.label}
+              color={dataPoint.color}
+              variant="outline"
+              icon={CheckIcon}
+              value={dataPoint.id}
+              onClick={() => setChecked(dataPoint.id)}
+              checked={checked === dataPoint.id ? true : false}
+            />
+          );
+        })}
+      </Group>
       <Text fw={700}>
         Figure 1: D3 line graph showing my experience so far.....
       </Text>

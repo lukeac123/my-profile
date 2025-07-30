@@ -12,6 +12,7 @@ const lineChartData = [
   {
     id: "frontEndDeveloper",
     label: "Front End Developer",
+    color: "#ffa8a8",
     values: [
       { x: 2021, y: 0 },
       { x: 2022, y: 25 },
@@ -23,6 +24,7 @@ const lineChartData = [
   {
     id: "awsCloudDeveloper",
     label: "AWS Cloud Developer",
+    color: "#8ce99a",
     values: [
       { x: 2021, y: 0 },
       { x: 2022, y: 100 },
@@ -34,6 +36,7 @@ const lineChartData = [
   {
     id: "productManager",
     label: "Product Manager",
+    color: "#ffe066",
     values: [
       { x: 2019, y: 0 },
       { x: 2020, y: 100 },
@@ -45,6 +48,7 @@ const lineChartData = [
   {
     id: "worldTraveller",
     label: "World Traveller",
+    color: "#ffc078",
     values: [
       { x: 2017, y: 20 },
       { x: 2018, y: 30 },
@@ -60,6 +64,7 @@ const lineChartData = [
   {
     id: "mechanicalEngineer",
     label: "Mechanical Engineer",
+    color: "#ffc078",
     values: [
       { x: 2017, y: 100 },
       { x: 2018, y: 100 },
