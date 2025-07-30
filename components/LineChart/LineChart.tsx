@@ -122,35 +122,37 @@ export const LineChart = ({ data }: LineChart) => {
 
   return (
     <div className={"line-chart"}>
-      <div ref={containerRef} style={{ width: "900px" }}>
+      <div ref={containerRef} className={"line-chart-container"}>
         <svg
           ref={svgRef}
           className="line-chart-svg"
           width="100%"
           height="100%"
           viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
-          preserveAspectRatio="xMidYMid meet"
+          preserveAspectRatio="xMidYMidmeet"
         />
       </div>
-      <Group className={"legend"}>
-        {data.map((dataPoint) => {
-          return (
-            <Radio
-              key={dataPoint.id}
-              label={dataPoint.label}
-              color={dataPoint.color}
-              variant="outline"
-              icon={CheckIcon}
-              value={dataPoint.id}
-              onClick={() => setChecked(dataPoint.id)}
-              checked={checked === dataPoint.id ? true : false}
-            />
-          );
-        })}
-      </Group>
-      <Text fw={700}>
-        Figure 1: D3 line graph showing my experience so far.....
-      </Text>
+      <div className="textContent">
+        <Group className="legend">
+          {data.map((dataPoint) => {
+            return (
+              <Radio
+                key={dataPoint.id}
+                label={dataPoint.label}
+                color={dataPoint.color}
+                variant="outline"
+                icon={CheckIcon}
+                value={dataPoint.id}
+                onClick={() => setChecked(dataPoint.id)}
+                checked={checked === dataPoint.id ? true : false}
+              />
+            );
+          })}
+        </Group>
+        <Text fw={700} ta="center">
+          Figure 1: D3 line graph showing my experience so far.....
+        </Text>
+      </div>
     </div>
   );
 };
