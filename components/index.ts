@@ -6,3 +6,4 @@ export * from "./Title";
 export * from "./Text";
 export * from "./Carousel";
 export * from "./StarRating";
+export * from "./LineChart";

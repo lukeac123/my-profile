@@ -12,6 +12,14 @@
   height: 80vh;
 }
 
+.homePage-card {
+  display: flex;
+  padding: 30px;
+  width: 100%;
+  flex-direction: row;
+  height: 80vh;
+}
+
 @media (width <= 992px) {
   .homePage-card {
     height: auto;

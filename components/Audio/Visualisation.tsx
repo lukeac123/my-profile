@@ -21,10 +21,10 @@ export const Visualisation = ({
 
   const setUp = () => {
     ctx.fillStyle = getComputedStyle(canvasRef.current).getPropertyValue(
-      "--colorMode-color"
+      "--colorMode-color",
     );
     ctx.strokeStyle = getComputedStyle(canvasRef.current).getPropertyValue(
-      "--colorMode-color"
+      "--colorMode-color",
     );
     for (let i = 0; i < 150; i++) {
       const randX = Math.random() * 500;
@@ -70,7 +70,7 @@ class Particle {
   show: (
     ctx: CanvasRenderingContext2D,
     canvasX: number,
-    canvasY: number
+    canvasY: number,
   ) => void;
   move: (songData: number) => void;
 
@@ -87,7 +87,7 @@ class Particle {
         canvasX / 2,
         this.r,
         canvasX,
-        canvasY / 2
+        canvasY / 2,
       );
       ctx.stroke();
     };
