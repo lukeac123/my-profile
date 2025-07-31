@@ -5,10 +5,6 @@ import { Text } from "../Text";
 import * as d3 from "d3";
 import "./LineChart.component.css";
 
-//TODO: Responsive styling for d3
-//TODO: Get computed styles, change the color of the graph according to light / dark mode
-//TODO: Look into just passing the SVG to <path>, looks at Tom's method
-
 interface LineChartData {
   id: string;
   label: string;
@@ -109,13 +105,13 @@ export const LineChart = ({ data }: LineChart) => {
       .attr("d", (d) => area(d.values));
 
     // Line Paint
-    g.selectAll(".line") // select placeholder (none exist yet)
-      .data(data) // each item is a series { id, values }
+    g.selectAll(".line")
+      .data(data)
       .enter()
       .append("path")
       .attr("class", (d) => `line-${d.id}`)
       .attr("fill", "none")
-      .attr("stroke", (d) => `${d.color}`) // color by series
+      .attr("stroke", (d) => `${d.color}`)
       .attr("stroke-width", (d) => (checked === d.id ? "10" : "1"))
       .attr("d", (d) => line(d.values));
   }, [data, dimensions, checked]);
