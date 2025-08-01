@@ -13,6 +13,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    font-weight: var(--my-font-weight);
 }
 
 .line-chart-container {
@@ -34,9 +35,3 @@
         width: 100vw
     }
   }
-
-/* @media (width <= 992px) {
-    .line-chart-conatiner{
-        width: 100vw
-    }
-  } */

@@ -6,7 +6,7 @@
   padding: 10px;
   color: var(--colorMode-color);
   border-bottom: solid var(--colorMode-color);
-  border-width: 1px;
+  border-width: var(--my-border-width);
   z-index: 999;
   background-color: var(--mantine-color-body);
 }
