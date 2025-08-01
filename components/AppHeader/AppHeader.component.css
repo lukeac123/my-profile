@@ -26,4 +26,7 @@
 
 .appHeader-burger {
   flex-grow: 2;
+  display: flex;
+  flex-direction: row;
+  gap: var(--mantine-spacing-md)
 }

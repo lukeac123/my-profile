@@ -29,10 +29,6 @@ export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
         [withBaseName("fadedHeader")]: fadedHeader,
       })}
     >
-      <Text size="xl" component={Link} href={"./"}>
-        Luke Atkinson-Coyle
-      </Text>
-
       <div className={withBaseName("burger")}>
         <Burger
           opened={open}
@@ -40,6 +36,9 @@ export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
           hiddenFrom="sm"
           size="sm"
         />
+        <Text size="xl" component={Link} href={"./"}>
+          Luke Atkinson-Coyle
+        </Text>
       </div>
       <Drawer
         opened={open}
@@ -73,7 +72,7 @@ export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
             </Text>
           ))}
         </Group>
-        <Divider orientation="vertical" />
+        <Divider orientation="vertical" visibleFrom="sm" />
         <ColorSchemeToggle />
         <ColorModeToggle />
       </Group>
