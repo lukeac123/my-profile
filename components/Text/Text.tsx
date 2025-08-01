@@ -3,7 +3,7 @@ import { makePrefixer } from "../../utils/makePrefixer";
 import { Text as MantineText } from "@mantine/core";
 import type { TextProps as MantineTextProps } from "@mantine/core";
 import { clsx } from "clsx";
-import "./Text.component.css";
+import "./Text.module.css";
 
 export interface TextProps extends MantineTextProps {
   children: ReactNode;
@@ -30,7 +30,7 @@ export const Text = ({
       className={clsx(
         withBaseName(),
         { [withBaseName("colorMode")]: colorMode },
-        className,
+        className
       )}
       {...rest}
     >

@@ -11,20 +11,20 @@
   background-color: var(--mantine-color-body);
 }
 
-.appHeader-drawer {
+.drawer {
   z-index: 9999;
 }
 
-.appHeader-title {
+.title {
   flex-grow: 2;
   align-items: left;
 }
 
-.appHeader-link:hover {
+.link:hover {
   text-decoration: underline;
 }
 
-.appHeader-burger {
+.burger {
   flex-grow: 2;
   display: flex;
   flex-direction: row;

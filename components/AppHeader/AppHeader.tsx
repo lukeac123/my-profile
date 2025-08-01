@@ -8,11 +8,9 @@ import { ColorModeToggle } from "./ColorModeToggle";
 import { makePrefixer } from "../../utils/makePrefixer";
 import Link from "next/link";
 import { clsx } from "clsx";
-import "./AppHeader.component.css";
+import styles from "./AppHeader.module.css";
 
 const links = [{ label: "Check Me Out!", link: "./cv" }];
-
-const withBaseName = makePrefixer("appHeader");
 
 type AppHeaderProps = {
   fadedHeader?: boolean;
@@ -25,11 +23,11 @@ export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
 
   return (
     <header
-      className={clsx(withBaseName(), {
-        [withBaseName("fadedHeader")]: fadedHeader,
+      className={clsx(styles.appHeader, {
+        [styles.fadedHeader]: fadedHeader,
       })}
     >
-      <div className={withBaseName("burger")}>
+      <div className={styles.burger}>
         <Burger
           opened={open}
           onClick={toggleDrawer}
@@ -43,12 +41,12 @@ export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
       <Drawer
         opened={open}
         onClose={() => setOpen(false)}
-        className={withBaseName("drawer")}
+        className={styles.drawer}
       >
         <Stack gap={"sm"}>
           {links.map((link) => (
             <Text
-              className={withBaseName("link")}
+              className={styles.link}
               key={link.label}
               href={link.link}
               component={Link}
@@ -60,10 +58,10 @@ export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
         </Stack>
       </Drawer>
       <Group>
-        <Group visibleFrom="sm" gap={"sm"} className={withBaseName("title")}>
+        <Group visibleFrom="sm" gap={"sm"} className={styles.title}>
           {links.map((link) => (
             <Text
-              className={withBaseName("link")}
+              className={styles.link}
               key={link.label}
               href={link.link}
               component={Link}

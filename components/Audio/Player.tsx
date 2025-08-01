@@ -16,9 +16,9 @@ import {
   IconVolume,
   IconVolumeOff,
 } from "@tabler/icons-react";
-import "./AudioPlayer.component.css";
 import { makePrefixer } from "../../utils/makePrefixer";
 import { useViewportSize } from "@mantine/hooks";
+import "./AudioPlayer.module.css";
 export interface PlayerProps extends HTMLAttributes<HTMLDivElement> {
   skipDuration?: 5 | 10 | 15;
   title?: string;

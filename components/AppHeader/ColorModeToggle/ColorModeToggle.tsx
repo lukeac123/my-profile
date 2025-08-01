@@ -1,5 +1,5 @@
 import { ColorPicker, Popover, Button } from "@mantine/core";
-import "./ColorModeToggle.component.css";
+import "./ColorModeToggle.module.css";
 import { IconColorPicker } from "@tabler/icons-react";
 
 export function ColorModeToggle() {

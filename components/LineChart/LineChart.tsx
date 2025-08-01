@@ -3,7 +3,7 @@ import React, { HTMLAttributes, useEffect, useRef, useState } from "react";
 import { Radio, Group, CheckIcon } from "@mantine/core";
 import { Text } from "../Text";
 import * as d3 from "d3";
-import "./LineChart.component.css";
+import "./LineChart.module.css";
 
 interface LineChartData {
   id: string;
@@ -85,8 +85,8 @@ export const LineChart = ({ data }: LineChart) => {
         d3.range(
           d3.min(allValues, (d) => d.x),
           d3.max(allValues, (d) => d.x + 1),
-          1,
-        ),
+          1
+        )
       )
 
       .tickFormat(d3.format("d")); // optional: number of ticks

@@ -5,7 +5,7 @@ import {
   IconMail,
   IconBrandGithub,
 } from "@tabler/icons-react";
-import "./AppFooter.component.css";
+import "./AppFooter.module.css";
 
 const withBaseName = makePrefixer("appFooter");
 

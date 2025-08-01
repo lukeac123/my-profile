@@ -3,7 +3,7 @@ import { Card as MantineCard } from "@mantine/core";
 import Link from "next/link";
 import { clsx } from "clsx";
 import { makePrefixer } from "../../utils/makePrefixer";
-import "./Card.component.css";
+import "./Card.module.css";
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   link?: string;
