@@ -30,7 +30,7 @@ export const Text = ({
       className={clsx(
         withBaseName(),
         { [withBaseName("colorMode")]: colorMode },
-        className
+        className,
       )}
       {...rest}
     >

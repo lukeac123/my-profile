@@ -1,69 +1,64 @@
-
-
 :root {
-    --my-border-width : 5px;
-    --my-font-weight: 800
+  --my-border-width: 5px;
+  --my-font-weight: 800;
 }
 
 /* Dark Mode Vars */
 
-:root [data-mantine-color-scheme='dark'] {
-
+:root [data-mantine-color-scheme="dark"] {
 }
 
 /* Light Mode Vars */
 
-:root [data-mantine-color-scheme='light'] {
-
+:root [data-mantine-color-scheme="light"] {
 }
 
 /* Color Mode Variables  */
 
 :root[data-color-mode="#ffa8a8"] {
-    --colorMode-color: var(--mantine-color-red-4);
-  }
-  
-  :root[data-color-mode="#faa2c1"] {
-    --colorMode-color: var(--mantine-color-pink-4);
-  }
-  
-  :root[data-color-mode="#e599f7"] {
-    --colorMode-color: var(--mantine-color-grape-4);
-  }
-  
-  :root[data-color-mode="#b197fc"] {
-    --colorMode-color: var(--mantine-color-violet-4);
-  }
-  
-  :root[data-color-mode="#91a7ff"] {
-    --colorMode-color: var(--mantine-color-indigo-4);
-  }
-  
-  :root[data-color-mode="#74c0fc"] {
-    --colorMode-color: var(--mantine-color-blue-4);
-  }
-  
-  :root[data-color-mode="#66d9e8"] {
-    --colorMode-color: var(--mantine-color-cyan-4);
-  }
-  
-  :root[data-color-mode="#63e6be"] {
-    --colorMode-color: var(--mantine-color-teal-4);
-  }
-  
-  :root[data-color-mode="#8ce99a"] {
-    --colorMode-color: var(--mantine-color-green-4);
-  }
-  
-  :root[data-color-mode="#c0eb75"] {
-    --colorMode-color: var(--mantine-color-lime-4);
-  }
-  
-  :root[data-color-mode="#ffe066"] {
-    --colorMode-color: var(--mantine-color-yellow-4);
-  }
-  
-  :root[data-color-mode="#ffc078"] {
-    --colorMode-color: var(--mantine-color-orange-4);
-  }
-  
+  --colorMode-color: var(--mantine-color-red-4);
+}
+
+:root[data-color-mode="#faa2c1"] {
+  --colorMode-color: var(--mantine-color-pink-4);
+}
+
+:root[data-color-mode="#e599f7"] {
+  --colorMode-color: var(--mantine-color-grape-4);
+}
+
+:root[data-color-mode="#b197fc"] {
+  --colorMode-color: var(--mantine-color-violet-4);
+}
+
+:root[data-color-mode="#91a7ff"] {
+  --colorMode-color: var(--mantine-color-indigo-4);
+}
+
+:root[data-color-mode="#74c0fc"] {
+  --colorMode-color: var(--mantine-color-blue-4);
+}
+
+:root[data-color-mode="#66d9e8"] {
+  --colorMode-color: var(--mantine-color-cyan-4);
+}
+
+:root[data-color-mode="#63e6be"] {
+  --colorMode-color: var(--mantine-color-teal-4);
+}
+
+:root[data-color-mode="#8ce99a"] {
+  --colorMode-color: var(--mantine-color-green-4);
+}
+
+:root[data-color-mode="#c0eb75"] {
+  --colorMode-color: var(--mantine-color-lime-4);
+}
+
+:root[data-color-mode="#ffe066"] {
+  --colorMode-color: var(--mantine-color-yellow-4);
+}
+
+:root[data-color-mode="#ffc078"] {
+  --colorMode-color: var(--mantine-color-orange-4);
+}

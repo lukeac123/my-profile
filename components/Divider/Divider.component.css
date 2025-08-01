@@ -1,4 +1,4 @@
-.divider{
+.divider {
   --mantine-color-dark-4: var(--colorMode-color);
-  --divider-size: var(--my-border-width)
+  --divider-size: var(--my-border-width);
 }
