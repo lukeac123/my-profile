@@ -2,20 +2,15 @@
 import { useState } from "react";
 import { Group, Burger, Drawer, Stack } from "@mantine/core";
 import { Text } from "../Text";
+import { Divider } from "../Divider";
 import { ColorSchemeToggle } from "./ColorSchemeToggle";
 import { ColorModeToggle } from "./ColorModeToggle";
 import { makePrefixer } from "../../utils/makePrefixer";
 import Link from "next/link";
-import "./AppHeader.component.css";
 import { clsx } from "clsx";
+import "./AppHeader.component.css";
 
-const links = [
-  { label: "Home", link: "./" },
-  { label: "Photography", link: "./photography" },
-  { label: "Audio", link: "./audio" },
-  { label: "Travel", link: "./travel" },
-  { label: "Career", link: "./career" },
-];
+const links = [{ label: "Check Me Out!", link: "./cv" }];
 
 const withBaseName = makePrefixer("appHeader");
 
@@ -34,18 +29,6 @@ export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
         [withBaseName("fadedHeader")]: fadedHeader,
       })}
     >
-      <Group visibleFrom="sm" gap={"sm"} className={withBaseName("title")}>
-        {links.map((link) => (
-          <Text
-            className={withBaseName("link")}
-            key={link.label}
-            href={link.link}
-            component={Link}
-          >
-            {link.label}
-          </Text>
-        ))}
-      </Group>
       <div className={withBaseName("burger")}>
         <Burger
           opened={open}
@@ -53,6 +36,9 @@ export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
           hiddenFrom="sm"
           size="sm"
         />
+        <Text size="xl" component={Link} href={"./"}>
+          Luke Atkinson-Coyle
+        </Text>
       </div>
       <Drawer
         opened={open}
@@ -74,6 +60,19 @@ export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
         </Stack>
       </Drawer>
       <Group>
+        <Group visibleFrom="sm" gap={"sm"} className={withBaseName("title")}>
+          {links.map((link) => (
+            <Text
+              className={withBaseName("link")}
+              key={link.label}
+              href={link.link}
+              component={Link}
+            >
+              {link.label}
+            </Text>
+          ))}
+        </Group>
+        <Divider orientation="vertical" visibleFrom="sm" />
         <ColorSchemeToggle />
         <ColorModeToggle />
       </Group>

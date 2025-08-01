@@ -3,6 +3,7 @@ import { Providers } from "./Providers";
 import { AppFooter, AppHeader, Card } from "../components";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
+import "./myLayout.css";
 
 export const metadata = {
   title: "Luke Atkinson-Coyle",
