@@ -3,11 +3,9 @@ import { useRef, useState, HTMLAttributes } from "react";
 import { Player } from "./Player";
 import { Visualisation } from "./Visualisation";
 import { Card } from "../Card";
-import { makePrefixer } from "../../utils/makePrefixer";
+import styles from "./AudioPlayer.module.css";
 
 let audioContext;
-
-const withBaseName = makePrefixer("audioPlayer");
 
 export interface AudioProps extends HTMLAttributes<HTMLDivElement> {
   skipDuration?: 5 | 10 | 15;
@@ -40,7 +38,7 @@ export const Audio = ({
       if (audioRef.current && !source.current) {
         audioContext = new AudioContext();
         source.current = audioContext.createMediaElementSource(
-          audioRef.current,
+          audioRef.current
         );
         analyser.current = audioContext.createAnalyser();
         source.current.connect(analyser.current);
@@ -53,7 +51,7 @@ export const Audio = ({
   };
 
   return (
-    <Card {...rest} className={"audioPlayer-container"}>
+    <Card {...rest} className={styles.conatiner}>
       <audio ref={audioRef} src={src} />
       <Player
         audioRef={audioRef}
@@ -62,7 +60,7 @@ export const Audio = ({
         src={src}
       />
       <Visualisation
-        className={withBaseName("visualisation")}
+        className={styles.Visualisation}
         isPlaying={isPlaying}
         analyser={analyser}
       />

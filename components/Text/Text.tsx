@@ -3,7 +3,7 @@ import { makePrefixer } from "../../utils/makePrefixer";
 import { Text as MantineText } from "@mantine/core";
 import type { TextProps as MantineTextProps } from "@mantine/core";
 import { clsx } from "clsx";
-import "./Text.module.css";
+import styles from "./Text.module.css";
 
 export interface TextProps extends MantineTextProps {
   children: ReactNode;
@@ -13,8 +13,6 @@ export interface TextProps extends MantineTextProps {
   title?: boolean;
   colorMode?: boolean;
 }
-
-const withBaseName = makePrefixer("text");
 
 export const Text = ({
   underlined,
@@ -28,8 +26,8 @@ export const Text = ({
   return (
     <MantineText
       className={clsx(
-        withBaseName(),
-        { [withBaseName("colorMode")]: colorMode },
+        styles.text,
+        { [styles.colorMode]: colorMode },
         className
       )}
       {...rest}

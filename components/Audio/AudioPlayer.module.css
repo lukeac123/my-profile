@@ -1,4 +1,4 @@
-.audioPlayer-container {
+.container {
   min-width: 100%;
   padding: 10px;
   justify-content: center;
@@ -7,21 +7,17 @@
   display: flex;
 }
 
-.mantine-Slider-thumb {
-  display: none;
-}
-
-.audioPlayer-sliderContainer {
+.sliderContainer {
   width: 100%;
 }
 
-.audioPlayer-slider {
+.slider {
   margin: auto;
   flex-grow: 1;
   --slider-color: var(--colorMode-color);
 }
 
-.audioPlayer-visualisation {
+.visualisation {
   height: 100px;
   width: 100%;
 }

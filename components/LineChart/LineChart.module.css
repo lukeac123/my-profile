@@ -1,12 +1,16 @@
-.line-chart {
+.lineChart {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-items: center;
   gap: 5px;
   width: 100vw;
   padding: 40px;
+}
+
+.chartContainer {
+  /* width: 100vw; */
+  max-width: 800px;
 }
 
 .legend {
@@ -14,11 +18,6 @@
   flex-wrap: wrap;
   justify-content: center;
   font-weight: var(--my-font-weight);
-}
-
-.line-chart-container {
-  width: 100vw;
-  max-width: 800px;
 }
 
 .textContent {
@@ -31,7 +30,7 @@
 }
 
 @media (width >= 992px) {
-  .line-chart-conatiner {
+  .chartConatiner {
     width: 100vw;
   }
 }

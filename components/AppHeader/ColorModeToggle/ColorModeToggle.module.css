@@ -1,8 +1,4 @@
 .colorSchemeToggle {
-  width: 50px;
   background: var(--colorMode-color);
 }
 
-.colorSchemeToggle-target {
-  width: 100%;
-}

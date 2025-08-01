@@ -3,7 +3,7 @@ import React, { HTMLAttributes, useEffect, useRef, useState } from "react";
 import { Radio, Group, CheckIcon } from "@mantine/core";
 import { Text } from "../Text";
 import * as d3 from "d3";
-import "./LineChart.module.css";
+import styles from "./LineChart.module.css";
 
 interface LineChartData {
   id: string;
@@ -117,19 +117,18 @@ export const LineChart = ({ data }: LineChart) => {
   }, [data, dimensions, checked]);
 
   return (
-    <div className={"line-chart"}>
-      <div ref={containerRef} className={"line-chart-container"}>
+    <div className={styles.LineChart}>
+      <div ref={containerRef} className={styles.chartContainer}>
         <svg
           ref={svgRef}
-          className="line-chart-svg"
           width="100%"
           height="100%"
           viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
           preserveAspectRatio="xMidYMidmeet"
         />
       </div>
-      <div className="textContent">
-        <Group className="legend">
+      <div className={styles.textContent}>
+        <Group className={styles.legend}>
           {data.map((dataPoint) => {
             return (
               <Radio

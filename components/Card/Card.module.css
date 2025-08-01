@@ -1,13 +1,9 @@
+/* TODO: Card padding affecting the audio player as well ?? I thought these modules scoped the styles ?  */
+
 .card {
   --card-padding: 0px;
-  /* border-color: var(--colorMode-color); */
-  /* border-radius: 20px; */
 }
 
-/* .card:hover {
-  cursor: pointer;
-  box-shadow: 0px 0px 5px 1px var(--colorMode-color);
-} */
 
 .cardContent {
   padding: var(--mantine-spacing-md);

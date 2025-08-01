@@ -5,7 +5,6 @@ import { Text } from "../Text";
 import { Divider } from "../Divider";
 import { ColorSchemeToggle } from "./ColorSchemeToggle";
 import { ColorModeToggle } from "./ColorModeToggle";
-import { makePrefixer } from "../../utils/makePrefixer";
 import Link from "next/link";
 import { clsx } from "clsx";
 import styles from "./AppHeader.module.css";

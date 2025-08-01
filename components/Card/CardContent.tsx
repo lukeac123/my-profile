@@ -1,14 +1,12 @@
 "use client";
 import { ReactNode, useState, HTMLAttributes } from "react";
-import { makePrefixer } from "../../utils/makePrefixer";
 import { clsx } from "clsx";
+import styles from "./Card.module.css";
 
 export interface CardContentProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   className?: string;
 }
-
-const withBaseName = makePrefixer("cardContent");
 
 export const CardContent = ({
   children,
@@ -26,7 +24,7 @@ export const CardContent = ({
     <div
       style={{ borderTop: scrollTop > 0 ? "solid 1px" : "" }}
       onScroll={useScrollTop}
-      className={clsx(withBaseName(), className)}
+      className={clsx(styles.cardContent, className)}
       {...rest}
     >
       {children}

@@ -18,7 +18,7 @@ import {
 } from "@tabler/icons-react";
 import { makePrefixer } from "../../utils/makePrefixer";
 import { useViewportSize } from "@mantine/hooks";
-import "./AudioPlayer.module.css";
+import styles from "./AudioPlayer.module.css";
 export interface PlayerProps extends HTMLAttributes<HTMLDivElement> {
   skipDuration?: 5 | 10 | 15;
   title?: string;
@@ -136,16 +136,11 @@ export const Player = ({
       {children}
       <Flex direction={"row"} gap={width > 576 ? "xs" : "0"}>
         <a href={src} download target="_blank" rel="noreferrer">
-          <Button
-            className={withBaseName("button")}
-            variant="default"
-            aria-label="download audio"
-          >
+          <Button variant="default" aria-label="download audio">
             <IconDownload className={withBaseName("icon")} />
           </Button>
         </a>
         <Button
-          className={withBaseName("button")}
           variant="default"
           aria-label="skip audio backwards"
           onClick={handleRewind}
@@ -153,7 +148,6 @@ export const Player = ({
           <IconPlayerSkipBack className={withBaseName("icon")} />
         </Button>
         <Button
-          className={withBaseName("button")}
           variant="default"
           onClick={togglePlay}
           disabled={playDisabled}
@@ -166,18 +160,13 @@ export const Player = ({
           )}
         </Button>
         <Button
-          className={withBaseName("button")}
           variant="default"
           aria-label="skip audio forward"
           onClick={handleFastforward}
         >
           <IconPlayerSkipForward className={withBaseName("icon")} />
         </Button>
-        <Button
-          className={withBaseName("button")}
-          variant="default"
-          onClick={handleMute}
-        >
+        <Button variant="default" onClick={handleMute}>
           {mute ? (
             <IconVolumeOff className={withBaseName("icon")} />
           ) : (
@@ -185,14 +174,10 @@ export const Player = ({
           )}
         </Button>
       </Flex>
-      <Flex
-        className={"audioPlayer-sliderContainer"}
-        direction={"row"}
-        gap={"md"}
-      >
+      <Flex className={styles.sliderContainer} direction={"row"} gap={"md"}>
         <Text>{timeNowString}</Text>
         <Slider
-          className={"audioPlayer-slider"}
+          className={styles.slider}
           min={0}
           max={durationSeconds}
           value={timeNowSeconds}

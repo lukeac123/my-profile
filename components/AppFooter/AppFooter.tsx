@@ -1,13 +1,11 @@
-import { makePrefixer } from "../../utils/makePrefixer";
-import { Group, Text } from "@mantine/core";
+import { Group } from "@mantine/core";
+import { Text } from "../Text";
 import {
   IconBrandInstagram,
   IconMail,
   IconBrandGithub,
 } from "@tabler/icons-react";
-import "./AppFooter.module.css";
-
-const withBaseName = makePrefixer("appFooter");
+import styles from "./AppFooter.module.css";
 
 const links = [
   {
@@ -26,14 +24,12 @@ const links = [
 
 export const AppFooter = () => {
   return (
-    <footer className={withBaseName()}>
-      <Group className={withBaseName("title")}>
+    <footer className={styles.appFooter}>
+      <Group>
         {links.map((link) => (
           <>
             {link.icon}
-            <Text className={withBaseName("link")} key={link.label}>
-              {link.label}
-            </Text>
+            <Text key={link.label}>{link.label}</Text>
           </>
         ))}
       </Group>

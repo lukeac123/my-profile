@@ -1,6 +1,6 @@
 import { ColorPicker, Popover, Button } from "@mantine/core";
-import "./ColorModeToggle.module.css";
 import { IconColorPicker } from "@tabler/icons-react";
+import styles from "./ColorModeToggle.module.css";
 
 export function ColorModeToggle() {
   const changeColorMode = (color: string) => {
@@ -10,7 +10,7 @@ export function ColorModeToggle() {
   return (
     <Popover width={500} position="bottom" withArrow shadow="md">
       <Popover.Target>
-        <Button style={{ background: "var(--colorMode-color)" }}>
+        <Button className={styles.colorSchemeToggle}>
           <IconColorPicker />
         </Button>
       </Popover.Target>
