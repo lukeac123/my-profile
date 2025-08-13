@@ -18,7 +18,9 @@ export default function AudioPage() {
           return (
             <Card key={title} className={withBaseName("card")}>
               <CardContent>
-                <Title order={2}>{title}</Title>
+                <Title order={2} ta="center">
+                  {title}
+                </Title>
                 <Stack gap={"md"}>
                   <Audio title={title} src={audioSrc} />
                 </Stack>

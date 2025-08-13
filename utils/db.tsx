@@ -1,48 +1,47 @@
-import { StarRating, Audio, Title } from "../components";
+//TODO: Could i make this work with a CMS ?
+
+import { StarRating } from "../components/StarRating";
+import { Audio } from "../components/Audio";
 import { Image } from "@mantine/core";
+import { IconMail, IconBrandGithub } from "@tabler/icons-react";
 
 export type HeroImage = { caption: String; imgSrc: string };
 
 export const homePageData = [
   {
-    title: "Luke Atkison-Coyle",
-    column1: {
-      "": "Looking for a new challenge, something beyond the contrains of Corporate London. Someway to combine my technical skills and creativity, either having a direct impact in peoples lives, or helping with the transition to a sustaibale future",
-      education: "Mechanical Engineering University of Warwick",
-      job: "Frontend Software Engineer, JPMorgan",
-    },
-    media: <Image src={"me.jpeg"} height="100%" />,
-    link: "/career",
+    title: "Developer. Engineer. Traveller.",
+    caption:
+      "I’m a self-taught software engineer specialising in UI for web apps, previously studying as a Mechanical Engineer. Having recently returned from a Career break travelling South America, I’m looking for a new challenge, to not only apply my existing skill set, learn new technologies and drive meaningful change.",
+
+    media: <Image src="me.jpeg" className="homePage-image" />,
+    link: "/cv",
   },
   {
     title: "Audio",
-    column1: {
-      "": "I took these audio clips on my travels to provide an added sensory element to the traditional blog and create a more immersive experience. The hope was also that in the future these could also be used in Audio projects. ",
-    },
-    media: <Audio src={"audio/cocora_valley_river.m4a"} />,
-
+    caption:
+      "Audio clips on my travels to provide an added sensory element to the traditional blog and create a more immersive experience. The hope was also that in the future these could also be used in Audio projects. ",
+    media: (
+      <Audio src="audio/cocora_valley_river.m4a" className="homePage-image" />
+    ),
     link: "/audio",
   },
   {
     title: "Textures",
-    column1: {
-      "": "This project started by chance. Before starting my travels I bought an iPhone 14 Pro to take good pictures as memories of my experience. While at a work away in the rainforest in Colombia I decided to put the water resistance my phone to the test a take a picture in the river. This produced the image to the right. After this, I looked to document some of the the different textures and patterns naturally produced by Mother Nature.",
-    },
-    media: <Image src={"/photography/textures/index.jpeg"} height="100%" />,
+    caption:
+      "This project started by chance. Before starting my travels I bought an iPhone 14 Pro to take good pictures as memories of my experience. While at a work away in the rainforest in Colombia I decided to put the water resistance my phone to the test a take a picture in the river. This produced the image to the right. After this, I looked to document some of the the different textures and patterns naturally produced by Mother Nature. Audio Player component is audio reactiv, using p5.js for the visulisation.",
+
+    media: (
+      <Image
+        src="/photography/textures/index.jpeg"
+        className="homePage-image"
+      />
+    ),
     link: "/photography/textures",
   },
   {
     title: "Travel",
-    column1: {
-      "": "Finishing University in the pandemic and going straight into a Graduate scheme and working a corporate job in London for 3 years it was my time for a quarter life crisis. Being stubborn I didn’t want to use polar steps and so this is my attempt at documenting my experience travelling. Unfortunately I wasn’t disciplined enough writing in my journal.",
-    },
-    media: (
-      <iframe
-        src="https://www.travellerspoint.com/embed/map.cfm/#/embed/1139683/"
-        height={"100%"}
-        width={"100%"}
-      />
-    ),
+    caption:
+      "Finishing University in the pandemic and going straight into a Graduate scheme and working a corporate job in London for 3 years it was my time for a quarter life crisis. Being stubborn I didn’t want to use polar steps and so this is my attempt at documenting my experience travelling.",
     link: "/travel",
   },
 ];
@@ -411,6 +410,84 @@ export const travel = [
       Description:
         "The first step on my voyage to freedom from the monotony of a corporate 9 to 5. I sept my time in Medellin exploring the city center on a walking tour, learning about the rejuvenation of areas like Communa 13 away from its violent past dominated by drug cartels to a more sustainable one based on tourism and textiles; largely due to the implementation of cable cars facilitating easier transportation from the suburbs. I was also there during the time semi-finals of the Copa America where Colombia beat Uruguay. On the day of the match  the city was littered in yellow shirts and watching the match in the streets of El Poblado there was chaos when the final whistle below. A street parade of drums seemed to materialise from thin air and the waiters from the bars poured Aquadiente into the open mouths of locals and tourists. On one of the nights I popped into one of the gay bars, Chiquitas ( little ones ). Unfortunately it was karaoke night and latin love love songs weren’t my vibe. Having said that I found Medellin to be a vibrant colourful city that was surprising queer friendly. The Area the hostel was located in, El Poblado, is super touristy and although there are lots of nice bars and cafes I would recommend Laureles for a more authentic experience. Lastly I also went out, evading the Bad Bunny and Karol G to listen to explore the Techno scene, firstly to a rooftop bar called CincuentaCincuenta and then on to a club called Sonorama. I’d recommend both.",
     },
+  },
+];
+
+export const links = [
+  {
+    icon: <IconMail />,
+    label: "luke.atkinson-coyle@outlook.com",
+  },
+  {
+    icon: <IconBrandGithub />,
+    label: "https://github.com/lukeac123",
+  },
+];
+
+export const lineChartData = [
+  {
+    id: "frontEndDeveloper",
+    label: "Front End Developer",
+    color: "#ffa8a8",
+    values: [
+      { x: 2021, y: 0 },
+      { x: 2022, y: 25 },
+      { x: 2023, y: 80 },
+      { x: 2024, y: 100 },
+      { x: 2025, y: 100 },
+    ],
+  },
+  {
+    id: "awsCloudDeveloper",
+    label: "AWS Cloud Developer",
+    color: "#8ce99a",
+    values: [
+      { x: 2021, y: 0 },
+      { x: 2022, y: 100 },
+      { x: 2023, y: 50 },
+      { x: 2024, y: 30 },
+      { x: 2025, y: 20 },
+    ],
+  },
+  {
+    id: "productManager",
+    label: "Product Manager",
+    color: "#ffe066",
+    values: [
+      { x: 2019, y: 0 },
+      { x: 2020, y: 100 },
+      { x: 2021, y: 100 },
+      { x: 2022, y: 30 },
+      { x: 2023, y: 0 },
+    ],
+  },
+  {
+    id: "worldTraveller",
+    label: "World Traveller",
+    color: "#ffc078",
+    values: [
+      { x: 2017, y: 20 },
+      { x: 2018, y: 30 },
+      { x: 2019, y: 40 },
+      { x: 2020, y: 40 },
+      { x: 2021, y: 40 },
+      { x: 2022, y: 60 },
+      { x: 2023, y: 70 },
+      { x: 2024, y: 100 },
+      { x: 2025, y: 100 },
+    ],
+  },
+  {
+    id: "mechanicalEngineer",
+    label: "Mechanical Engineer",
+    color: "#ffc078",
+    values: [
+      { x: 2017, y: 100 },
+      { x: 2018, y: 100 },
+      { x: 2019, y: 100 },
+      { x: 2020, y: 100 },
+      { x: 2021, y: 0 },
+    ],
   },
 ];
 

@@ -10,7 +10,11 @@ import Link from "next/link";
 import { clsx } from "clsx";
 import "./AppHeader.component.css";
 
-const links = [{ label: "Check Me Out!", link: "./cv" }];
+const links = [
+  { label: "CV", link: "./cv" },
+  { label: "Travel Blog", link: "./travel" },
+  { label: "Photos", link: "./photography" },
+];
 
 const withBaseName = makePrefixer("appHeader");
 
