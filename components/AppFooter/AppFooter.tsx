@@ -1,28 +1,9 @@
 import { makePrefixer } from "../../utils/makePrefixer";
 import { Group, Text } from "@mantine/core";
-import {
-  IconBrandInstagram,
-  IconMail,
-  IconBrandGithub,
-} from "@tabler/icons-react";
 import "./AppFooter.component.css";
+import { links } from "../../utils/db";
 
 const withBaseName = makePrefixer("appFooter");
-
-const links = [
-  {
-    icon: <IconBrandInstagram />,
-    label: "@ac_the_third",
-  },
-  {
-    icon: <IconMail />,
-    label: "luke.atkinson-coyle@outlook.com",
-  },
-  {
-    icon: <IconBrandGithub />,
-    label: "https://github.com/lukeac123",
-  },
-];
 
 export const AppFooter = () => {
   return (
