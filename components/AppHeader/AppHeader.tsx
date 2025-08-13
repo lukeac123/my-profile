@@ -41,7 +41,7 @@ export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
           size="sm"
         />
         <Text size="xl" component={Link} href={"./"}>
-          Luke Atkinson-Coyle
+          Luke Atkinson
         </Text>
       </div>
       <Drawer

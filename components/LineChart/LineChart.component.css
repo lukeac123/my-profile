@@ -3,10 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-items: center;
   gap: 5px;
   width: 100vw;
   padding: 40px;
+  line-height: 0; 
 }
 
 .legend {

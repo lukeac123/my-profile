@@ -22,16 +22,15 @@ export const LineChart = ({ data }: LineChart) => {
   const svgRef = useRef();
   const [checked, setChecked] = useState(data[0].id ?? "");
   const containerRef = useRef<HTMLDivElement>(null);
-  const [dimensions, setDimensions] = useState({ width: 1000, height: 400 });
+  const [dimensions, setDimensions] = useState({ width: 1000, height: 500 });
 
   useEffect(() => {
     if (!containerRef.current) return;
 
     const resizeObserver = new ResizeObserver((entries) => {
-      console.log(entries);
       for (let entry of entries) {
         const { width, height } = entry.contentRect;
-        setDimensions({ width, height: 400 }); // fallback height
+        setDimensions({ width, height: height });
       }
     });
 
@@ -85,8 +84,8 @@ export const LineChart = ({ data }: LineChart) => {
         d3.range(
           d3.min(allValues, (d) => d.x),
           d3.max(allValues, (d) => d.x + 1),
-          1,
-        ),
+          1
+        )
       )
 
       .tickFormat(d3.format("d")); // optional: number of ticks
@@ -122,8 +121,8 @@ export const LineChart = ({ data }: LineChart) => {
         <svg
           ref={svgRef}
           className="line-chart-svg"
-          width="100%"
-          height="100%"
+          // width="100%"
+          // height="100%"
           viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
           preserveAspectRatio="xMidYMidmeet"
         />

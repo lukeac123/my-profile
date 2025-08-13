@@ -21,7 +21,7 @@ export default function BlogPage() {
               <Text>{caption}</Text>
               <Group className={withBaseName("link")}>
                 <Text size="xl" underlined component={Link} href={link}>
-                  Click Here to Explore Here
+                  Click Here to Explore
                 </Text>
                 <IconClick />
               </Group>
