@@ -11,7 +11,7 @@ export const homePageData = [
   {
     title: "Developer. Engineer. Traveller.",
     caption:
-      "I’m a self-taught software engineer specialising in UI for web apps, previously studying as a Mechanical Engineer. Having recently returned from a Career break travelling South America, I’m looking for a new challenge, to not only apply my existing skill set, learn new technologies and drive meaningful change.",
+      "I’m a self-taught software engineer specialising in UI for web apps, previously studying as a Mechanical Engineer. Having recently returned from a Career break travelling South America, I’m looking for a new challenge, to not only apply my existing skill set but learn new technologies and drive meaningful change.",
 
     media: <Image src="me.jpeg" className="homePage-image" />,
     link: "/cv",
