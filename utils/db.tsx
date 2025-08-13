@@ -1,5 +1,3 @@
-//TODO: Could i make this work with a CMS ?
-
 import { StarRating } from "../components/StarRating";
 import { Audio } from "../components/Audio";
 import { Image } from "@mantine/core";
@@ -19,7 +17,7 @@ export const homePageData = [
   {
     title: "Audio",
     caption:
-      "Audio clips on my travels to provide an added sensory element to the traditional blog and create a more immersive experience. The hope was also that in the future these could also be used in Audio projects. ",
+      "Audio clips on my travels to provide an added sensory element to the traditional blog and create a more immersive experience. The hope was also that in the future these could also be used in Audio projects. The Audio Player component is audio reactive, using p5.js for the visulisation. ",
     media: (
       <Audio src="audio/cocora_valley_river.m4a" className="homePage-image" />
     ),
@@ -28,7 +26,7 @@ export const homePageData = [
   {
     title: "Textures",
     caption:
-      "This project started by chance. Before starting my travels I bought an iPhone 14 Pro to take good pictures as memories of my experience. While at a work away in the rainforest in Colombia I decided to put the water resistance my phone to the test a take a picture in the river. This produced the image to the right. After this, I looked to document some of the the different textures and patterns naturally produced by Mother Nature. Audio Player component is audio reactiv, using p5.js for the visulisation.",
+      "This project started by chance. Before starting my travels I bought an iPhone 14 Pro to take good pictures as memories of my experience. While at a work away in the rainforest in Colombia I decided to put the water resistance my phone to the test a take a picture in the river. This produced the image to the right. After this, I looked to document some of the the different textures and patterns naturally produced by Mother Nature.",
 
     media: (
       <Image
