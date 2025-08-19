@@ -41,7 +41,7 @@ db should just be the data (like for a data base), not the componnents */
 @media (width <= 992px) {
   .homePage-image {
     width: 100%;
-    height: 500px;
+    height: auto;
   }
 }
 

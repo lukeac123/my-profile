@@ -1,5 +1,5 @@
 import { List, ListItem } from "@mantine/core";
-import { Title, Text } from "../../components";
+import { Title, Text, Divider } from "../../components";
 
 import { makePrefixer } from "../../utils";
 import "./page.css";
@@ -9,143 +9,136 @@ const withBaseName = makePrefixer("careerPage");
 export default function AudioPage() {
   return (
     <div className={withBaseName()}>
-      <Title order={1}>Luke Atkinson-Coyle</Title>
-      <>
-        <Title order={2}>
-          Software Engineer, Salt Design System JPMorgan - (18 Months)
-        </Title>
-        <Title order={3}>
-          Skills: React - Typescript - Cypress - CSS - Figma
-        </Title>
-        <List>
-          <ListItem>
-            Developed reusable, themeable React Components, used by over 50
-            internal teams within the firm. Including Dialog, Overlay, Slider,
-            Parent Child Layout.
-          </ListItem>
-          <ListItem>
-            Facilitated design system adoption and achieved team objectives by
-            ensuring compatibility across Desktop, Mobile, and Web platforms.
-          </ListItem>
-          <ListItem>
-            Implemented Cypress testing per change or addition of a feature as
-            well as and Chromatic visual regression testing.
-          </ListItem>
-          <ListItem>
-            Collaborated with designers to ensure components were accessible
-            according to Web Content Accessibility Guidelines.
-          </ListItem>
-          <ListItem>
-            Enhanced NextJS Website requiring Dynamic Routing, Server Side
-            Components
-          </ListItem>
-          <ListItem>
-            Contracted for internal teams enabling a applying a custom theme to
-            match their unique design specs, including Tailwind, Vanilla Extract
-            and vanilla CSS Variables.
-          </ListItem>
-        </List>
-      </>
-      <>
-        <Title order={2}>
-          Software Engineer, Cloud Deployment JPMorgan - (6 months)
-        </Title>
-        <Title order={3}>Skills: AWS CLI + Console - Terraform - Docker</Title>
-        <List>
-          <ListItem>
-            Migrated the Digital Platform NextJS Website from onPrem to AWS ECS
-            for dev, test and prod environments in line with the company wide
-            cloud migration objectives.
-          </ListItem>
-          <ListItem>
-            Provisioned AWS ECS cluster using Terraform and the AWS console.
-          </ListItem>
-          <ListItem>
-            Establish continuous integration and deployment pipelines utilising
-            the internal build tooling and Spinnaker.
-          </ListItem>
-          <ListItem>
-            Containerised the NextJS front end and NodeJS backend in separate
-            stand alone containers using Docker. Established a local connection
-            within the cluster between the two containers.
-          </ListItem>
-          <ListItem>
-            Implemented firewall requests to enable egress out of the cluster
-            back to onPrem IP addresses and to the external internet.
-          </ListItem>
-          <ListItem>
-            Added secure passwords to AWS Secrets manager, making fetch calls
-            within the application to retrieve the passwords when needed.
-          </ListItem>
-        </List>
-      </>
-      <>
-        <Title order={2}>
-          Graduate Program, JPMorgan (Product Manager, Unity Platform / Product
-          Manager, Digital Search) - (2 Years)
-        </Title>
-        <Title order={3}>
-          Skills: Jira - Requirements Gathering - Roadmapping - Prioritisation
-        </Title>
-        <List>
-          <ListItem>
-            Digital Search - Led the development of a standardised schema for
-            global search across multiple applications, collaborating with
-            product and tech teams to ensure seamless integration.
-          </ListItem>
-          <ListItem>
-            Unity - managed the build out of a new platform that consolidated
-            work prioritisation and multiple applications into a single
-            interface. Including requirement gathering, prioritisation.
-          </ListItem>
-          <ListItem>
-            Defined OKRS and assigned KPIs to align with the wider team’s
-            objectives.
-          </ListItem>
-          <ListItem>
-            Led daily stand ups, scrums and coordinated feedback sessions
-            between customers, design and dev teams.
-          </ListItem>
-        </List>
-      </>
-      <>
-        <Title order={2}>
-          Mechanical And Manufacturing Engineering, Warwick University (BEng
-          Hons)
-        </Title>
-        <Title order={3}>
-          Skills: AutoDesk Fusion - Engineering Drawings - Simulations -
-          Rendering - LifeCycleAnalysis
-        </Title>
-        <List>
-          <ListItem>
-            Designed and Developed a Plywood go kart using AutoCAD and a laser
-            cutter, simulating the design for stress, strain, considering
-            manufacturing constraints like the radius and kerf and exporting the
-            designs as DFX files.
-          </ListItem>
-          <ListItem>
-            Created a mechanical toy from Aluminium using a CNC Milling machine,
-            exporting STEP files into CAM to create projections and define the
-            work volume, using AutoCAM on more intricate parts. Taking
-            considerations like machining tolerances, internal corners and
-            limiting the force on the drill bit.
-          </ListItem>
-          <ListItem>
-            Redesigned an electric handheld razor according to DFMA principles,
-            reducing manufacturing time and therefore costs.
-          </ListItem>
-          <ListItem>
-            Developed renderings to be used for Advertising Purposes
-          </ListItem>
-          <ListItem>
-            Dissertation: Life Cycle Analysis comparing the economic and
-            environmental feasibility of electric and diesel buses over a 10
-            year period, looking at the environmental impact of specific
-            manufacturing processes.
-          </ListItem>
-        </List>
-      </>
+      <Title order={1}>Education</Title>
+      <Title order={2}>University of Warwick</Title>
+      <List>
+        <ListItem>
+          BEng, Mechanical Engineering & Manufacturing 2.1 (Sep 2017 - May 2020)
+        </ListItem>
+        <ListItem>
+          Dissertation: “Life Cycle Analysis Comparing Electric and Diesel Buses
+          in Urban Environments” (Grade:1st)
+        </ListItem>
+      </List>
+      <Divider />
+      <Title order={1}>Technical Experience</Title>
+      <Title order={2}>
+        Software Engineer, Salt Design System JPMorgan (March 2023 - Sep 2024)
+      </Title>
+      <Title order={3}>
+        Skills: React - Typescript - Cypress - CSS - Figma - Storybook
+      </Title>
+      <List>
+        <ListItem>
+          Developed re-usable and extendable React / Typescript components, used
+          across internal applications within JPM, including Execute (the lead
+          trading platform for FX and Commodity Traders across JPM).
+        </ListItem>
+        <ListItem>
+          Collaborated with designers to ensure components aligned with Web
+          Content Accessibility Guidelines (WCAG) including, keyboard
+          navigation, appropriate labelling for screen readers and using
+          semantic html where possible.
+        </ListItem>
+        <ListItem>
+          Implemented Cypress End-to-End and Chromatic Visual Regression testing
+          to enhance bug detection and ensure design consistency across the
+          component library.
+        </ListItem>
+        <ListItem>
+          Authored comprehensive documentation for the website explaining new
+          component functionality for effective application integration, user
+          adoption and accessibility.
+        </ListItem>
+      </List>
+      <Title order={2}>
+        Software Engineer, Cloud Deployment JPMorgan (Sep 2022 - March 2023)
+      </Title>
+      <Title order={3}>
+        Skills: AWS CLI + Console - Terraform - Docker - Jenkins
+      </Title>
+      <List>
+        <ListItem>
+          Migrated Digital Platform NextJS Website to AWS ECS across dev, test,
+          and prod environments, resulting in scalable infrastructure and
+          monthly savings of approximately £2000.
+        </ListItem>
+        <ListItem>
+          Developed Docker and Terraform templates for containerising NextJS
+          apps, enhancing compatibility with Kubernetes, AWS, and internal
+          tools, reducing migration times by 40% for subsequent applications.
+        </ListItem>
+        <ListItem>
+          Implemented security measures following AWS Shared Responsibility
+          Model, like AWS Secrets Manager, to safeguard sensitive company and
+          personal data.
+        </ListItem>
+        <ListItem>
+          Established automated CI/CD pipelines with Jenkins for seamless
+          deployment across all environments.
+        </ListItem>
+        <ListItem>
+          Generated cost evaluations using AWS Cost Calculator, showcasing cost
+          reductions to senior management and offering future cost projections.
+        </ListItem>
+      </List>
+      <Title order={2}>Graduate Program, JPMorgan (Sep 2020 - Sep 2022)</Title>
+      <Title order={3}>
+        Skills: Jira - Requirements Gathering - Roadmapping - Defined OKR's
+      </Title>
+      <List>
+        <ListItem>
+          Selected for JPMorgan’s graduate program, rotating through product
+          roles to drive innovation and collaboration across technology
+          platforms.
+        </ListItem>
+        <ListItem>
+          Led the integration of the trade booking API into the work management
+          platform (Unity), reducing trade consolidation time by 20%.
+          Collaborated with UX on user journeys, MVP creation, and developers on
+          implementation and testing.
+        </ListItem>
+        <ListItem>
+          Increased adoption by 200 users in 3 months through onboarding
+          sessions, enhancing functionality, and organising feedback sessions
+          with users, design, and product teams to boost engagement and trust in
+          platform development.
+        </ListItem>
+        <ListItem>
+          Coordinated a multidisciplinary team (Developers, Designers, QA
+          Testing, Business Analysts) as Agile lead. Conducted Scrum meetings,
+          managed backlog prioritisation, defined OKRs, aligned with
+          stakeholders, and enhanced team efficiency.
+        </ListItem>
+      </List>
+      <Divider />
+      <Title order={1}>Diversity and Inclusion</Title>
+      <List>
+        <ListItem>
+          Launched an EMEA-wide PRIDE mentorship program, supporting new joiners
+          and aiding professional growth for LGBTQ+ employees.
+        </ListItem>
+        <ListItem>
+          Hosted weekly PRIDE coffee mornings to foster connection, culture and
+          a sense of community for LGBTQ+ people across the London offices
+        </ListItem>
+      </List>
+      <Divider />
+      <Title order={1}>Skills and Interests</Title>
+      <List>
+        <ListItem>Certifications: AWS Practitioner, Harvard CS50</ListItem>
+        <ListItem>
+          English (Native), Spanish (Conversational), Portuguese (Basic)
+        </ListItem>
+        <ListItem>
+          Music: Clarinet (Grade 8), Piano (Grade 5), Music Production
+          (Ableton),
+        </ListItem>
+        <ListItem>
+          Interests: Sustainable Fashion, Hiking, Touch Designer, LGBTQ+ Rights,
+          Salsa Dancing
+        </ListItem>
+      </List>
     </div>
   );
 }

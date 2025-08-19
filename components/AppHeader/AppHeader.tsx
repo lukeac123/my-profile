@@ -14,6 +14,7 @@ const links = [
   { label: "CV", link: "./cv" },
   { label: "Travel Blog", link: "./travel" },
   { label: "Photos", link: "./photography" },
+  { label: "Audio Clips", link: "./audio" },
 ];
 
 const withBaseName = makePrefixer("appHeader");
