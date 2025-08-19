@@ -84,8 +84,8 @@ export const LineChart = ({ data }: LineChart) => {
         d3.range(
           d3.min(allValues, (d) => d.x),
           d3.max(allValues, (d) => d.x + 1),
-          1
-        )
+          1,
+        ),
       )
 
       .tickFormat(d3.format("d")); // optional: number of ticks

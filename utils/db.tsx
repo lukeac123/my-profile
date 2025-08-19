@@ -15,32 +15,35 @@ export const homePageData = [
     link: "/cv",
   },
   {
+    title: "Travel",
+    caption:
+      "Finishing University in the pandemic and being in full time education or work since the ripe old age of 5, my first day of primary school, I decided it was time to broaden my horizons and set sail for South America. This ia a documentation of some of my thoughts, feelings and experiences on my journey.",
+    media: (
+      <Image
+        src="/photography/anapoima/anapoima.jpeg"
+        className="homePage-image"
+      />
+    ),
+    link: "/travel",
+  },
+  {
     title: "Audio",
     caption:
-      "Audio clips on my travels to provide an added sensory element to the traditional blog and create a more immersive experience. The hope was also that in the future these could also be used in Audio projects. The Audio Player component is audio reactive, using p5.js for the visulisation. ",
+      "Audio clips on my travels to provide an added sensory element to the traditional blog and create a more immersive experience. The hope was also that in the future these could also be used in Audio projects. The Audio Player component is audio reactive, using p5.js for the visualisation. ",
     media: (
       <Audio src="audio/cocora_valley_river.m4a" className="homePage-image" />
     ),
     link: "/audio",
   },
   {
-    title: "Textures",
+    title: "Gallery",
     caption:
-      "This project started by chance. Before starting my travels I bought an iPhone 14 Pro to take good pictures as memories of my experience. While at a work away in the rainforest in Colombia I decided to put the water resistance my phone to the test a take a picture in the river. This produced the image to the right. After this, I looked to document some of the the different textures and patterns naturally produced by Mother Nature.",
+      "A collection of moments from my travels — landscapes, streets, and cultures captured while on my travels.",
 
     media: (
-      <Image
-        src="/photography/textures/index.jpeg"
-        className="homePage-image"
-      />
+      <Image src="/photography/laPaz/index.jpeg" className="homePage-image" />
     ),
-    link: "/photography/textures",
-  },
-  {
-    title: "Travel",
-    caption:
-      "Finishing University in the pandemic and going straight into a Graduate scheme and working a corporate job in London for 3 years it was my time for a quarter life crisis. Being stubborn I didn’t want to use polar steps and so this is my attempt at documenting my experience travelling.",
-    link: "/travel",
+    link: "/photography",
   },
 ];
 
