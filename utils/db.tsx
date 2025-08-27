@@ -5,17 +5,21 @@ import { IconMail, IconBrandGithub } from "@tabler/icons-react";
 
 export type HeroImage = { caption: String; imgSrc: string };
 
-export const homePageData = [
-  {
-    title: "Developer. Engineer. Traveller.",
+export const homePageData = {
+  "Developer. Engineer. Traveller": {
     caption:
       "I’m a self-taught software engineer specialising in UI for web apps, previously studying as a Mechanical Engineer. Having recently returned from a Career break travelling South America, I’m looking for a new challenge, to not only apply my existing skill set but learn new technologies and drive meaningful change.",
-
     media: <Image src="me.jpeg" className="homePage-image" />,
-    link: "/cv",
+
+    cards: [
+      {
+        title: "CV",
+        description: "Check out my previous experience here!",
+        link: "/cv",
+      },
+    ],
   },
-  {
-    title: "Travel",
+  Travel: {
     caption:
       "Finishing University in the pandemic and being in full time education or work since the ripe old age of 5, my first day of primary school, I decided it was time to broaden my horizons and set sail for South America. This ia a documentation of some of my thoughts, feelings and experiences on my journey.",
     media: (
@@ -24,28 +28,45 @@ export const homePageData = [
         className="homePage-image"
       />
     ),
-    link: "/travel",
+    cards: [
+      {
+        title: "Travel Blog",
+        description: "",
+        link: "/travel",
+      },
+      {
+        title: "Audio",
+        description:
+          "Audio clips on my travels to provide an added sensory element to the traditional blog and create a more immersive experience. The hope was also that in the future these could also be used in Audio projects",
+        link: "./audio",
+      },
+      {
+        title: "Gallery",
+        description:
+          "A collection of moments from my travels — landscapes, streets, and cultures captured while on my travels.",
+        link: "./photography",
+      },
+    ],
   },
-  {
-    title: "Audio",
-    caption:
-      "Audio clips on my travels to provide an added sensory element to the traditional blog and create a more immersive experience. The hope was also that in the future these could also be used in Audio projects. The Audio Player component is audio reactive, using p5.js for the visualisation. ",
-    media: (
-      <Audio src="audio/cocora_valley_river.m4a" className="homePage-image" />
-    ),
-    link: "/audio",
+  Coding: {
+    caption: "Here at the projects I've been working on",
+    media: "",
+    cards: [
+      {
+        title: "Shopping Cart",
+        description:
+          "Eccomerce Shopping Cart, using Reducer and Context for state management and React Testing Library and Playwrite for testing",
+        link: "https://github.com/lukeac123/shopping-cart",
+      },
+      {
+        title: "Audio Player",
+        description:
+          "React Audio Player, utilsing the Audio Context API and providing an Audio Reactive visualisation using p5.js",
+        link: "https://github.com/lukeac123/audioPlayer",
+      },
+    ],
   },
-  {
-    title: "Gallery",
-    caption:
-      "A collection of moments from my travels — landscapes, streets, and cultures captured while on my travels.",
-
-    media: (
-      <Image src="/photography/laPaz/index.jpeg" className="homePage-image" />
-    ),
-    link: "/photography",
-  },
-];
+};
 
 export const audioClips = [
   {

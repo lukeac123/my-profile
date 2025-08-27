@@ -4,7 +4,6 @@ import { makePrefixer } from "../utils";
 import { homePageData, lineChartData } from "../utils/db";
 import "./page.css";
 import { IconClick } from "@tabler/icons-react";
-import { Group } from "@mantine/core";
 
 const withBaseName = makePrefixer("homePage");
 
@@ -12,21 +11,30 @@ export default function BlogPage() {
   return (
     <div className={withBaseName()}>
       <LineChart data={lineChartData} className={withBaseName("lineGraph")} />
-      {homePageData.map((item) => {
-        const { title, caption, media, link } = item;
+      {/* TODO: Type the below item  */}
+      {Object.entries(homePageData).map((item) => {
+        const { cards, caption, media } = item[1];
         return (
-          <Card key={item.title} className={withBaseName("card")}>
-            <div className={withBaseName("content")}>
-              <Title>{title}</Title>
-              <Text>{caption}</Text>
-              <Group className={withBaseName("link")}>
-                <Text size="xl" underlined component={Link} href={link}>
-                  Click Here to Explore
-                </Text>
-                <IconClick />
-              </Group>
-              <div>{media}</div>
-            </div>
+          <Card className={withBaseName("content")}>
+            <Title>{item[0]}</Title>
+            <Text>{caption}</Text>
+            {cards &&
+              cards.map((card) => {
+                const { title, description, link } = card;
+                return (
+                  <Card
+                    key={title}
+                    className={withBaseName("card")}
+                    component={Link}
+                    href={link}
+                  >
+                    <Text colorMode>{title}</Text>
+                    <Text>{description}</Text>
+                    <IconClick className={withBaseName("clickIcon")} />
+                  </Card>
+                );
+              })}
+            <div>{media && media}</div>
           </Card>
         );
       })}
