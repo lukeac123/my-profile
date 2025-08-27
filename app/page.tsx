@@ -4,6 +4,7 @@ import { makePrefixer } from "../utils";
 import { homePageData, lineChartData } from "../utils/db";
 import "./page.css";
 import { IconClick } from "@tabler/icons-react";
+import clsx from "clsx";
 
 const withBaseName = makePrefixer("homePage");
 
@@ -20,17 +21,27 @@ export default function BlogPage() {
             <Text>{caption}</Text>
             {cards &&
               cards.map((card) => {
-                const { title, description, link } = card;
+                const { title, description, link, disabled } = card;
                 return (
                   <Card
                     key={title}
-                    className={withBaseName("card")}
-                    component={Link}
+                    className={clsx(withBaseName("card"), {
+                      [withBaseName("cardDisabled")]: disabled,
+                    })}
+                    component={!disabled && Link}
                     href={link}
+                    disabled={disabled}
                   >
                     <Text colorMode>{title}</Text>
                     <Text>{description}</Text>
-                    <IconClick className={withBaseName("clickIcon")} />
+                    {!disabled && (
+                      <IconClick className={withBaseName("clickIcon")} />
+                    )}
+                    {disabled && (
+                      <Text className={withBaseName("clickIcon")}>
+                        .....Coming Soon
+                      </Text>
+                    )}
                   </Card>
                 );
               })}

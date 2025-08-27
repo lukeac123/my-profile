@@ -31,6 +31,10 @@
   gap: 10px;
 }
 
+.homePage-cardDisabled {
+  opacity: 0.5;
+}
+
 .homePage-clickIcon {
   position: absolute;
   right: 0px;

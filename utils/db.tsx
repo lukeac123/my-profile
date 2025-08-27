@@ -10,12 +10,30 @@ export const homePageData = {
     caption:
       "I’m a self-taught software engineer specialising in UI for web apps, previously studying as a Mechanical Engineer. Having recently returned from a Career break travelling South America, I’m looking for a new challenge, to not only apply my existing skill set but learn new technologies and drive meaningful change.",
     media: <Image src="me.jpeg" className="homePage-image" />,
-
     cards: [
       {
         title: "CV",
         description: "Check out my previous experience here!",
         link: "/cv",
+      },
+    ],
+  },
+  Coding: {
+    caption: "Here at the projects I've been working on",
+    media: "",
+    cards: [
+      {
+        title: "Shopping Cart",
+        description:
+          "Eccomerce Shopping Cart, using Reducer and Context for state management and React Testing Library and Playwrite for testing",
+        link: "https://github.com/lukeac123/shopping-cart",
+      },
+      {
+        title: "Audio Player",
+        description:
+          "React Audio Player, utilsing the Audio Context API and providing an Audio Reactive visualisation using p5.js",
+        link: "https://github.com/lukeac123/audioPlayer",
+        disabled: true,
       },
     ],
   },
@@ -45,24 +63,6 @@ export const homePageData = {
         description:
           "A collection of moments from my travels — landscapes, streets, and cultures captured while on my travels.",
         link: "./photography",
-      },
-    ],
-  },
-  Coding: {
-    caption: "Here at the projects I've been working on",
-    media: "",
-    cards: [
-      {
-        title: "Shopping Cart",
-        description:
-          "Eccomerce Shopping Cart, using Reducer and Context for state management and React Testing Library and Playwrite for testing",
-        link: "https://github.com/lukeac123/shopping-cart",
-      },
-      {
-        title: "Audio Player",
-        description:
-          "React Audio Player, utilsing the Audio Context API and providing an Audio Reactive visualisation using p5.js",
-        link: "https://github.com/lukeac123/audioPlayer",
       },
     ],
   },
