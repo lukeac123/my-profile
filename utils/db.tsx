@@ -9,7 +9,9 @@ export const homePageData = {
   "Developer. Engineer. Traveller": {
     caption:
       "I’m a self-taught software engineer specialising in UI for web apps, previously studying as a Mechanical Engineer. Having recently returned from a Career break travelling South America, I’m looking for a new challenge, to not only apply my existing skill set but learn new technologies and drive meaningful change.",
-    media: <Image src="me.jpeg" className="homePage-image" />,
+    media: (
+      <Image src="me.jpeg" className="homePage-image" alt="profile picture" />
+    ),
     cards: [
       {
         title: "CV",
@@ -25,7 +27,7 @@ export const homePageData = {
       {
         title: "Shopping Cart",
         description:
-          "Eccomerce Shopping Cart, using Reducer and Context for state management and React Testing Library and Playwrite for testing",
+          "Eccomerce Shopping Cart Pattern, using Reducer and Context for state management and Playwright for testing",
         link: "https://github.com/lukeac123/shopping-cart",
       },
       {
@@ -44,6 +46,7 @@ export const homePageData = {
       <Image
         src="/photography/anapoima/anapoima.jpeg"
         className="homePage-image"
+        alt="travel image"
       />
     ),
     cards: [
