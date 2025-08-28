@@ -121,8 +121,8 @@ export const LineChart = ({ data }: LineChart) => {
         <svg
           ref={svgRef}
           className="line-chart-svg"
-          // width="100%"
-          // height="100%"
+          width="100%"
+          height="100%"
           viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
           preserveAspectRatio="xMidYMidmeet"
         />
