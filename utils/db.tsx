@@ -25,10 +25,16 @@ export const homePageData = {
     media: "",
     cards: [
       {
-        title: "Shopping Cart",
+        title: "This Website",
         description:
-          "Eccomerce Shopping Cart Pattern, using Reducer and Context for state management and Playwright for testing",
-        link: "https://github.com/lukeac123/shopping-cart",
+          "Originally built as a travel blog for my time in South America, but has transitioned into a general portfolio page. Using Next.js App router and Mantine as the component library. Coming Soon.... Markdown to JSX for blog posts and implementation of Strapi as a headless CMS (Jamstack architecture).",
+        link: "https://github.com/lukeac123/my-profile",
+      },
+      {
+        title: "Eccomerce Site",
+        description:
+          "Eccomerce Shopping Cart Pattern, complete with shopping basket and pagination. Built with Next.js App router, jest for unit testing and Playwright for intergration testing. ",
+        link: "https://github.com/lukeac123/eccomerce-site",
       },
       {
         title: "Audio Player",
