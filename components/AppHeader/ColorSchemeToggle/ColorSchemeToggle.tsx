@@ -14,6 +14,7 @@ export function ColorSchemeToggle() {
 
   return (
     <Button
+      aria-label="colorSchemeToggle"
       className="modeToggle"
       variant="default"
       onClick={() =>

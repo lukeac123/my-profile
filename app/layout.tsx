@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: any }) {
         <link rel="manifest" href="favicon/site.webmanifest" />
         <meta
           name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=10px, user-scalable=no"
+          content="minimum-scale=1, initial-scale=1, width=10px"
         />
       </head>
       <body>

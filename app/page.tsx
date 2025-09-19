@@ -4,28 +4,55 @@ import { makePrefixer } from "../utils";
 import { homePageData, lineChartData } from "../utils/db";
 import "./page.css";
 import { IconClick } from "@tabler/icons-react";
-import { Group } from "@mantine/core";
+import clsx from "clsx";
 
 const withBaseName = makePrefixer("homePage");
+
+export interface HomePageCardType {
+  title: string;
+  description: string;
+  link: string;
+  disabled?: boolean;
+}
 
 export default function BlogPage() {
   return (
     <div className={withBaseName()}>
       <LineChart data={lineChartData} className={withBaseName("lineGraph")} />
-      {homePageData.map((item) => {
-        const { title, caption, media, link } = item;
+      {Object.entries(homePageData).map((item) => {
+        const { cards, caption, media } = item[1];
         return (
-          <Card key={item.title} className={withBaseName("card")}>
+          <Card className={withBaseName("outerCard")}>
             <div className={withBaseName("content")}>
-              <Title>{title}</Title>
+              <Title>{item[0]}</Title>
               <Text>{caption}</Text>
-              <Group className={withBaseName("link")}>
-                <Text size="xl" underlined component={Link} href={link}>
-                  Click Here to Explore
-                </Text>
-                <IconClick />
-              </Group>
-              <div>{media}</div>
+              {cards &&
+                cards.map((card: HomePageCardType) => {
+                  const { title, description, link, disabled } = card;
+                  return (
+                    <Card
+                      key={title}
+                      className={clsx(withBaseName("card"), {
+                        [withBaseName("cardDisabled")]: disabled,
+                      })}
+                      component={!disabled && Link}
+                      href={link}
+                      disabled={disabled}
+                    >
+                      <Text colorMode>{title}</Text>
+                      <Text>{description}</Text>
+                      {!disabled && (
+                        <IconClick className={withBaseName("clickIcon")} />
+                      )}
+                      {disabled && (
+                        <Text className={withBaseName("clickIcon")}>
+                          .....Coming Soon
+                        </Text>
+                      )}
+                    </Card>
+                  );
+                })}
+              <div>{media && media}</div>
             </div>
           </Card>
         );

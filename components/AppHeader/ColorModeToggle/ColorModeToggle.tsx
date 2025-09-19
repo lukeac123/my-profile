@@ -8,7 +8,13 @@ export function ColorModeToggle() {
   };
 
   return (
-    <Popover width={500} position="bottom" withArrow shadow="md">
+    <Popover
+      width={500}
+      position="bottom"
+      withArrow
+      shadow="md"
+      aria-label="colorMode popover"
+    >
       <Popover.Target>
         <Button style={{ background: "var(--colorMode-color)" }}>
           <IconColorPicker />

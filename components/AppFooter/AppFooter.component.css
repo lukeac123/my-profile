@@ -5,7 +5,7 @@
   padding: 10px;
   color: var(--colorMode-color);
   border-top: solid var(--colorMode-color);
-  border-width: 1px;
+  border-width: var(--my-border-width);
   z-index: 999;
   align-items: end;
   justify-content: right;
