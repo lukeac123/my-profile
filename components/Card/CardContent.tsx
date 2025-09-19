@@ -1,6 +1,7 @@
 "use client";
 import { ReactNode, useState, HTMLAttributes } from "react";
 import { makePrefixer } from "../../utils/makePrefixer";
+import "./CardContent.component.css";
 import { clsx } from "clsx";
 
 export interface CardContentProps extends HTMLAttributes<HTMLDivElement> {
@@ -19,7 +20,6 @@ export const CardContent = ({
 
   function useScrollTop(event: React.UIEvent<HTMLElement>) {
     setScrollTop(event.currentTarget.scrollTop);
-    return [scrollTop];
   }
 
   return (

@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "jest",
     "prettier": "pretty-quick",
     "prettier-all": "prettier . --write"
   },
@@ -17,6 +18,7 @@
     "@p5-wrapper/react": "^4.3.2",
     "@tabler/icons-react": "^2.38.0",
     "@types/d3": "^7.4.3",
+    "@types/jest-axe": "^3.5.9",
     "d3": "^7.9.0",
     "embla-carousel-react": "^7.1.0",
     "next": "13.4.4",
@@ -25,15 +27,23 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^30.0.0",
     "@types/node": "20.2.5",
-    "@types/react": "18.2.7",
-    "@types/react-dom": "18.2.4",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
+    "jest": "^30.1.3",
+    "jest-axe": "^10.0.0",
+    "jest-environment-jsdom": "^30.1.2",
     "postcss": "^8.4.24",
     "postcss-preset-mantine": "1.6.0",
     "postcss-simple-vars": "^7.0.1",
     "pretty-quick": "^4.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "5.0.4"
   }
 }
