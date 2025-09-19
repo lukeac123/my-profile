@@ -26,6 +26,7 @@ export const AppHeader = () => {
     <header className={clsx(withBaseName())}>
       <div className={withBaseName("burger")}>
         <Burger
+          aria-label="Toggle Navigation"
           opened={open}
           onClick={toggleDrawer}
           hiddenFrom="sm"

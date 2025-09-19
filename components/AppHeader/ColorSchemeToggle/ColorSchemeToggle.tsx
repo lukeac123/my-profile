@@ -4,7 +4,8 @@ import {
   useComputedColorScheme,
 } from "@mantine/core";
 import { IconSun, IconMoon } from "@tabler/icons-react";
-import "./ColorSchemeToggle.component.css";
+import styles from "./ColorSchemeToggle.module.css";
+import clsx from "clsx";
 
 export function ColorSchemeToggle() {
   const { setColorScheme } = useMantineColorScheme();
@@ -14,15 +15,29 @@ export function ColorSchemeToggle() {
 
   return (
     <Button
-      aria-label="colorSchemeToggle"
-      className="modeToggle"
+      aria-label={
+        computedColorScheme === "light"
+          ? "Toggle Dark Mode"
+          : "Toggle Light Mode"
+      }
+      className={styles.modeToggle}
       variant="default"
       onClick={() =>
         setColorScheme(computedColorScheme === "light" ? "dark" : "light")
       }
     >
-      <IconSun style={{ display: "var(--lightModeToggle-display)" }} />
-      <IconMoon style={{ display: "var(--darkModeToggle-display)" }} />
+      <IconSun
+        aria-hidden
+        className={clsx({
+          [`${styles.modeToggleHideIcon}`]: computedColorScheme === "light",
+        })}
+      />
+      <IconMoon
+        aria-hidden
+        className={clsx({
+          [`${styles.modeToggleHideIcon}`]: computedColorScheme === "dark",
+        })}
+      />
     </Button>
   );
 }

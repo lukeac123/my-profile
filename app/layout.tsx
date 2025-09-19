@@ -3,7 +3,7 @@ import { Providers } from "./Providers";
 import { AppFooter, AppHeader, Card } from "../components";
 import "@mantine/core/styles.layer.css";
 import "./global.css";
-import "./layout.css";
+import styles from "./layout.module.css";
 
 export const metadata = {
   title: "Luke Atkinson-Coyle",
@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: any }) {
       <body>
         <Providers>
           <AppHeader />
-          <Card className="layoutContent">{children}</Card>
+          <Card className={styles.layoutContent}>{children}</Card>
           <AppFooter />
         </Providers>
       </body>
