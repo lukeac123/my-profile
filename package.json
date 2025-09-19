@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "jest",
     "prettier": "pretty-quick",
     "prettier-all": "prettier . --write"
   },
@@ -17,6 +18,7 @@
     "@p5-wrapper/react": "^4.3.2",
     "@tabler/icons-react": "^2.38.0",
     "@types/d3": "^7.4.3",
+    "@types/jest-axe": "^3.5.9",
     "d3": "^7.9.0",
     "embla-carousel-react": "^7.1.0",
     "next": "13.4.4",
@@ -35,6 +37,7 @@
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "jest": "^30.1.3",
+    "jest-axe": "^10.0.0",
     "jest-environment-jsdom": "^30.1.2",
     "postcss": "^8.4.24",
     "postcss-preset-mantine": "1.6.0",

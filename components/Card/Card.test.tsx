@@ -1,14 +1,19 @@
 import { fireEvent, render, screen } from "../../tests/test-utils";
-import "@testing-library/jest-dom";
+import { axe, toHaveNoViolations } from "jest-axe";
 import { Card } from "./Card";
 
-test("loads and displays text", async () => {
+expect.extend(toHaveNoViolations);
+
+test("test render and accessibility", async () => {
   render(<Card>I am a card</Card>);
 
-  expect(screen.getAllByText("I am a card")).toBeTruthy();
+  const card = screen.getByText("I am a card");
+
+  expect(card).toBeVisible();
+  expect(await axe(card)).toHaveNoViolations();
 });
 
-test("loads and displays a component", async () => {
+test("displays child component", async () => {
   render(
     <Card>
       <h1>I am a card</h1>
@@ -29,4 +34,16 @@ test("test function call", async () => {
   fireEvent.click(screen.getByRole("article"));
 
   expect(spy).toHaveBeenCalledTimes(1);
+});
+
+test("accessibility", async () => {
+  const spy = jest.fn();
+  render(
+    <Card role="article" onClick={spy}>
+      Card
+    </Card>
+  );
+
+  const card = screen.getByRole("article");
+  expect(await axe(card)).toHaveNoViolations();
 });
