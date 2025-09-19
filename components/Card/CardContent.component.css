@@ -1,0 +1,9 @@
+.cardContent {
+    padding: var(--mantine-spacing-md);
+    position: relative;
+    overflow: scroll;
+    text-overflow: ellipsis;
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+  }

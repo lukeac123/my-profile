@@ -17,7 +17,7 @@ export const Card = ({ children, link, className, ...rest }: CardProps) => {
       className={clsx(withBaseName(), className)}
       withBorder
       shadow="sm"
-      component={link ? Link : undefined}
+      component={link && Link}
       href={link}
       {...rest}
     >

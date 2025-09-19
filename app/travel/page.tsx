@@ -1,4 +1,4 @@
-import { Card, Text, Carousel, Title } from "../../components";
+import { Card, Text, Carousel, Title, CardContent } from "../../components";
 import { insertSpaces, makePrefixer } from "../../utils";
 import path from "path";
 import { promises as fs } from "fs";
@@ -11,7 +11,7 @@ async function getImageSrc(imgDir: string) {
   const imagePlaceDirectory = path.join(
     process.cwd(),
     "/public/travel",
-    imgDir,
+    imgDir
   );
   const imgSrcDir = await fs.readdir(imagePlaceDirectory).then((response) => {
     const imageArray = response.map((response) => {
@@ -62,24 +62,26 @@ export default function PlacesPage() {
         const updatedContent = updateContent(content);
         return (
           <Card key={title} className={withBaseName("card")}>
-            <Title underlined order={2} padding>
-              {title}
-            </Title>
-            <div className={withBaseName("cardContent")}>
-              {getImageSrc(imgDir)}
-              <div className={withBaseName("cardDescription")}>
-                {Object.entries(updatedContent).map((content) => {
-                  return (
-                    <div>
-                      <Text size="lg" fw={700}>
-                        {insertSpaces(content[0])}:
-                      </Text>
-                      <Text size="lg">{content[1]}</Text>
-                    </div>
-                  );
-                })}
+            <CardContent>
+              <Title underlined order={2} padding>
+                {title}
+              </Title>
+              <div className={withBaseName("cardContent")}>
+                {getImageSrc(imgDir)}
+                <div className={withBaseName("cardDescription")}>
+                  {Object.entries(updatedContent).map((content) => {
+                    return (
+                      <div>
+                        <Text size="lg" fw={700}>
+                          {insertSpaces(content[0])}:
+                        </Text>
+                        <Text size="lg">{content[1]}</Text>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            </CardContent>
           </Card>
         );
       })}
