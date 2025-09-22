@@ -1,7 +1,6 @@
 /** @jest-config-loader ts-node */
 /** @jest-config-loader-options {"transpileOnly": true} */
 
-
 import nextJest from "next/jest.js";
 
 const createJestConfig = nextJest({

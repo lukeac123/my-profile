@@ -138,7 +138,7 @@ export const LineChart = ({ data }: LineChart) => {
                 variant="outline"
                 icon={CheckIcon}
                 value={dataPoint.id}
-                onClick={() => setChecked(dataPoint.id)}
+                onChange={() => setChecked(dataPoint.id)}
                 checked={checked === dataPoint.id ? true : false}
               />
             );
