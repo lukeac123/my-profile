@@ -55,20 +55,3 @@
   margin-right: 30px;
 }
 
-/* This is attached to the image in db
-don't really like this as not very readable
-db should just be the data (like for a data base), not the componnents */
-.homePage-image {
-  height: 500px;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-
-@media (width <= 992px) {
-  .homePage-image {
-    width: 100%;
-    height: auto;
-  }
-}
