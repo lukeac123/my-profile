@@ -17,7 +17,7 @@ test("displays child component", async () => {
   render(
     <Card>
       <h1>I am a card</h1>
-    </Card>
+    </Card>,
   );
 
   expect(screen.getAllByRole("heading", { name: "I am a card" }));
@@ -28,7 +28,7 @@ test("test function call", async () => {
   render(
     <Card role="article" onClick={spy}>
       Card
-    </Card>
+    </Card>,
   );
 
   fireEvent.click(screen.getByRole("article"));
@@ -41,7 +41,7 @@ test("accessibility", async () => {
   render(
     <Card role="article" onClick={spy}>
       Card
-    </Card>
+    </Card>,
   );
 
   const card = screen.getByRole("article");

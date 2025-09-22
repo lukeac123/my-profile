@@ -30,23 +30,32 @@ export default function AudioPage() {
       </Title>
       <List>
         <ListItem>
-          Developed re-usable and extendable React / Typescript components, used
-          across internal applications within JPM, including Execute (the lead
-          trading platform for FX and Commodity Traders across JPM).
+          Delivered production-grade React/TypeScript components, as part of a
+          Component Library used across 1200+ sites globally, including Execute
+          (the lead trading platform for FX and Commodity Traders across JPM).
         </ListItem>
         <ListItem>
-          Collaborated with designers to ensure components aligned with Web
-          Content Accessibility Guidelines (WCAG) including, keyboard
-          navigation, appropriate labelling for screen readers and using
-          semantic html where possible.
+          Collaborated with designers and product to ensure components aligned
+          with Web Content Accessibility Guidelines (WCAG), including keyboard
+          navigation, compatibility with screen readers and alignment with the
+          clients requirements.
         </ListItem>
         <ListItem>
-          Implemented Cypress End-to-End and Chromatic Visual Regression testing
-          to enhance bug detection and ensure design consistency across the
-          component library.
+          Implemented Cypress Component Testing and Chromatic Visual Regression
+          testing to enhance bug detection for each feature change, to ensure
+          design consistency across the component library.
         </ListItem>
         <ListItem>
-          Authored comprehensive documentation for the website explaining new
+          Developed and maintained the Next.js site, utilising dynamic routing
+          and the app router for server side rendering.
+        </ListItem>
+        <ListItem>
+          Implemented cross-device compatibility, using responsive styling (CSS
+          & Media Queries) to align with Figma specifications at given
+          breakpoints.
+        </ListItem>
+        <ListItem>
+          Authored comprehensive documentation on the website explaining new
           component functionality for effective application integration, user
           adoption and accessibility.
         </ListItem>
@@ -126,7 +135,9 @@ export default function AudioPage() {
       <Divider />
       <Title order={1}>Skills and Interests</Title>
       <List>
-        <ListItem>Certifications: AWS Practitioner, Harvard CS50</ListItem>
+        <ListItem>
+          Certifications: AWS Cloud Practitioner, Harvard CS50
+        </ListItem>
         <ListItem>
           English (Native), Spanish (Conversational), Portuguese (Basic)
         </ListItem>

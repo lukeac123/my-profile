@@ -15,7 +15,7 @@ test("displays child component", async () => {
   render(
     <CardContent>
       <h1>I am a card</h1>
-    </CardContent>
+    </CardContent>,
   );
 
   expect(screen.getAllByRole("heading", { name: "I am a card" }));

@@ -22,7 +22,7 @@ export default function BlogPage() {
       {Object.entries(homePageData).map((item) => {
         const { cards, caption, media } = item[1];
         return (
-          <Card className={withBaseName("outerCard")}>
+          <Card className={withBaseName("outerCard")} key={item[0]}>
             <div className={withBaseName("content")}>
               <Title>{item[0]}</Title>
               <Text>{caption}</Text>
