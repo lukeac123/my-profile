@@ -20,7 +20,7 @@ export default function BlogPage() {
     <div className={withBaseName()}>
       <LineChart data={lineChartData} className={withBaseName("lineGraph")} />
       {Object.entries(homePageData).map((item) => {
-        const { cards, caption, media } = item[1];
+        const { cards, caption } = item[1];
         return (
           <Card className={withBaseName("outerCard")} key={item[0]}>
             <div className={withBaseName("content")}>
@@ -52,7 +52,6 @@ export default function BlogPage() {
                     </Card>
                   );
                 })}
-              <div>{media && media}</div>
             </div>
           </Card>
         );

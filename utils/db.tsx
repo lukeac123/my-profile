@@ -9,9 +9,6 @@ export const homePageData = {
   "Developer. Engineer. Traveller": {
     caption:
       "I’m a self-taught software engineer specialising in UI for web apps, previously studying as a Mechanical Engineer. Having recently returned from a Career break travelling South America, I’m looking for a new challenge, to not only apply my existing skill set but learn new technologies and drive meaningful change.",
-    media: (
-      <Image src="me.jpeg" className="homePage-image" alt="profile picture" />
-    ),
     cards: [
       {
         title: "CV",
@@ -47,14 +44,7 @@ export const homePageData = {
   },
   Travel: {
     caption:
-      "Finishing University in the pandemic and being in full time education or work since the ripe old age of 5, my first day of primary school, I decided it was time to broaden my horizons and set sail for South America. This ia a documentation of some of my thoughts, feelings and experiences on my journey.",
-    media: (
-      <Image
-        src="/photography/anapoima/anapoima.jpeg"
-        className="homePage-image"
-        alt="travel image"
-      />
-    ),
+      "Finishing University in the pandemic and being in full time education or work since the ripe old age of 5, my first day of primary school, I decided it was time to broaden my horizons and set sail for South America. This is a documentation of some of my thoughts, feelings and experiences along the way.",
     cards: [
       {
         title: "Travel Blog",
