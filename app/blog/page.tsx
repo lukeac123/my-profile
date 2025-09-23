@@ -4,6 +4,9 @@ import styles from "./page.module.css";
 import { blogs } from "../../utils/db";
 import { IconClick } from "@tabler/icons-react";
 import { Badge } from "@mantine/core";
+import path from "path";
+import matter from "gray-matter";
+import { promises as fs } from "fs";
 
 const bageColors = {
   travel: ["green"],
@@ -11,7 +14,21 @@ const bageColors = {
   life: ["yellow"],
 };
 
-export default function PlacesPage() {
+async function getBlogs() {
+  const blogsDir = path.join(process.cwd(), "posts");
+  const blogs = await fs.readdir(blogsDir);
+
+  const blogsData = blogs.map((blog) => {
+    const blogPath = path.join(blogsDir, `${blog}`);
+    const { title, caption } = matter.read(blogPath).data;
+    return { title, caption };
+  });
+
+  return blogsData;
+}
+
+export default async function PlacesPage() {
+  const blogsArray = await getBlogs();
   return (
     <div className={styles.blogPage}>
       <Title ta="center" order={1}>
@@ -28,7 +45,7 @@ export default function PlacesPage() {
             adornment={
               <>
                 <IconClick />
-                <Badge color={`${bageColors[category][0]}`}>{category}</Badge>
+                {/* <Badge color={`${bageColors[category][0]}`}>{category}</Badge> */}
               </>
             }
             link={`/blog/${id}`}

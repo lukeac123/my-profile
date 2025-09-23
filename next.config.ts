@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const withMDX = require('@next/mdx')()
+
 const nextConfig = {
   reactStrictMode: true,
   typescript: {
@@ -7,6 +9,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
@@ -20,4 +23,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withMDX(nextConfig)
