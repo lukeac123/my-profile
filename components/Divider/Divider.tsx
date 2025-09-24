@@ -7,7 +7,7 @@ export const Divider = ({ className, ...rest }: DividerProps) => {
     <MantineDivider
       className={clsx(styles.divider, className)}
       {...rest}
-      size="lg"
+      // size="lg"
     />
   );
 };
