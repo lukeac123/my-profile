@@ -5,12 +5,12 @@ export interface StarRating extends HTMLAttributes<HTMLDivElement> {
   stars: number;
 }
 
-export const StarRating = ({ className, stars = 5 }: StarRating) => {
+export const StarRating = ({ stars = 5 }: StarRating) => {
   const noStars = Array.from(Array(stars).keys());
   return (
     <>
-      {noStars.map(() => {
-        return <IconStar />;
+      {noStars.map((star) => {
+        return <IconStar key={star} />;
       })}
     </>
   );

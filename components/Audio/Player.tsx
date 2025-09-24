@@ -63,12 +63,12 @@ export const Player = ({
     if (audioRef.current) {
       const currentTimeFormatted = timeFormat(audioRef.current.currentTime);
       setTimeNowString(currentTimeFormatted);
-      setTimeNowSeconds(audioRef.current.currentTime);
-      const durationFormatted = timeFormat(audioRef.current.duration);
+      setTimeNowSeconds(audioRef.current.currentTime ?? 0);
+      const durationFormatted = timeFormat(audioRef.current.duration ?? 0);
       setDurationString(durationFormatted);
-      setDurationSeconds(audioRef.current.duration);
+      setDurationSeconds(audioRef.current.duration ?? 0);
     }
-  }, [audioRef.current]);
+  }, []);
 
   const onLoad = useCallback(() => {
     if (audioRef.current) {
@@ -96,7 +96,7 @@ export const Player = ({
         audioRef.current.removeEventListener("loadeddata", onLoad);
       }
     };
-  }, [audioRef.current, timeUpdate]);
+  }, [timeUpdate]);
 
   const handleFastforward = () => {
     if (audioRef.current) {
@@ -191,15 +191,22 @@ export const Player = ({
         gap={"md"}
       >
         <Text>{timeNowString}</Text>
-        <Slider
-          className={"audioPlayer-slider"}
-          min={0}
-          max={durationSeconds}
-          value={timeNowSeconds}
-          onChange={handleSliderInput}
-          step={1}
-          labelAlwaysOn
-        />
+
+        {/* { added to guard against error, this component needs work } */}
+        {!isNaN(timeNowSeconds) &&
+        !isNaN(durationSeconds) &&
+        durationSeconds > 0 ? (
+          <Slider
+            className={"audioPlayer-slider"}
+            min={0}
+            max={durationSeconds}
+            value={timeNowSeconds}
+            onChange={handleSliderInput}
+            step={1}
+            labelAlwaysOn
+          />
+        ) : null}
+
         <Text>{durationString}</Text>
       </Flex>
     </Stack>
