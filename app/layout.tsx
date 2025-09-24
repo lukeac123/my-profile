@@ -1,7 +1,8 @@
 import React from "react";
 import { Providers } from "./Providers";
 import { AppFooter, AppHeader, Card } from "../components";
-import "@mantine/core/styles.css";
+// import "@mantine/core/styles.css";
+import "@mantine/core/styles.layer.css";
 import "@mantine/carousel/styles.css";
 import "./layout.css";
 import "./global.css";
