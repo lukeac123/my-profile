@@ -1,8 +1,9 @@
 import React from "react";
 import { Providers } from "./Providers";
-import { AppFooter, AppHeader, Card } from "../components";
+import { AppFooter, AppHeader } from "../components";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
+import "./global.css";
 import "./layout.css";
 
 export const metadata = {
@@ -38,10 +39,8 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <Providers>
-          <div style={{ paddingBottom: "60px" }}>
-            <AppHeader />
-          </div>
-          <Card>{children}</Card>
+          <AppHeader />
+          <div className="layoutContent">{children}</div>
           <AppFooter />
         </Providers>
       </body>

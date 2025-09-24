@@ -19,21 +19,13 @@ const links = [
 
 const withBaseName = makePrefixer("appHeader");
 
-type AppHeaderProps = {
-  fadedHeader?: boolean;
-};
-
-export const AppHeader = ({ fadedHeader }: AppHeaderProps) => {
+export const AppHeader = () => {
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = () => (open ? setOpen(false) : setOpen(true));
 
   return (
-    <header
-      className={clsx(withBaseName(), {
-        [withBaseName("fadedHeader")]: fadedHeader,
-      })}
-    >
+    <header className={clsx(withBaseName())}>
       <div className={withBaseName("burger")}>
         <Burger
           opened={open}

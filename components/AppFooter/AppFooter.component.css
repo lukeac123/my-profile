@@ -2,12 +2,17 @@
   display: flex;
   position: absolute;
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   color: var(--colorMode-color);
   border-top: solid var(--colorMode-color);
   border-width: var(--my-border-width);
-  z-index: 999;
-  align-items: end;
-  justify-content: right;
+  justify-content: center;
   background-color: var(--mantine-color-body);
+  gap: 30px
+}
+
+.appFooter-link {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
