@@ -1,7 +1,10 @@
 import React from "react";
 import { Providers } from "./Providers";
 import { AppFooter, AppHeader, Card } from "../components";
-import "./styles.css";
+import "@mantine/core/styles.css";
+import "@mantine/carousel/styles.css";
+import "./layout.css";
+import "./global.css";
 
 export const metadata = {
   title: "Luke Atkinson-Coyle",
