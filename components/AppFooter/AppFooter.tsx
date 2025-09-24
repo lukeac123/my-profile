@@ -1,4 +1,3 @@
-import { makePrefixer } from "../../utils/makePrefixer";
 import { Text } from "../Text";
 import { links } from "../../utils/db";
 import styles from "./AppFooter.module.css";

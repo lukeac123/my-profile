@@ -5,12 +5,14 @@
   gap: 20px;
   padding: 10px;
   flex-wrap: wrap;
+
 }
 
 .audioPage-card {
   gap: 10px;
   width: 450px;
   height: 800px;
+  padding: 10px;
 }
 
 .audioPage-image {
@@ -23,4 +25,9 @@
   overflow-wrap: break-word;
   overflow: scroll;
   height: 200px;
+}
+
+.audioPage-audioPlayer {
+  height: 200px;
+
 }

@@ -17,16 +17,18 @@ export default function AudioPage() {
           const { title, description, audioSrc, indexImgSrc } = audio;
           return (
             <Card key={title} className={withBaseName("card")}>
-              <CardContent>
-                <Title order={2} ta="center">
-                  {title}
-                </Title>
-                <Stack gap={"md"}>
-                  <Audio title={title} src={audioSrc} />
-                </Stack>
-              </CardContent>
+              <Title order={2} ta="center">
+                {title}
+              </Title>
+              <Stack gap={"md"}>
+                <Audio
+                  title={title}
+                  src={audioSrc}
+                  className={withBaseName("audioPlayer")}
+                />
+              </Stack>
               <Image src={indexImgSrc} className={withBaseName("image")} />
-              <Text className={withBaseName("description")} size="lg" ta="left">
+              <Text className={withBaseName("description")} ta="left">
                 {description}
               </Text>
             </Card>

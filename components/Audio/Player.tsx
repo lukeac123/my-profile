@@ -56,7 +56,6 @@ export const Player = ({
   const [timeNowString, setTimeNowString] = useState("00:00:00");
   const [durationSeconds, setDurationSeconds] = useState(0);
   const [timeNowSeconds, setTimeNowSeconds] = useState(0);
-  const withBaseName = makePrefixer("audioPlayer");
   const { width } = useViewportSize();
 
   const timeUpdate = useCallback(() => {
@@ -138,7 +137,7 @@ export const Player = ({
       <Flex direction={"row"} gap={width > 576 ? "xs" : "0"}>
         <a href={src} download target="_blank" rel="noreferrer">
           <Button variant="default" aria-label="download audio">
-            <IconDownload className={withBaseName("icon")} />
+            <IconDownload />
           </Button>
         </a>
         <Button
@@ -146,7 +145,7 @@ export const Player = ({
           aria-label="skip audio backwards"
           onClick={handleRewind}
         >
-          <IconPlayerSkipBack className={withBaseName("icon")} />
+          <IconPlayerSkipBack />
         </Button>
         <Button
           variant="default"
@@ -154,18 +153,14 @@ export const Player = ({
           disabled={playDisabled}
           aria-label={isPlaying ? "pause audio" : "play audio"}
         >
-          {isPlaying ? (
-            <IconPlayerPause className={withBaseName("icon")} />
-          ) : (
-            <IconPlayerPlay className={withBaseName("icon")} />
-          )}
+          {isPlaying ? <IconPlayerPause /> : <IconPlayerPlay />}
         </Button>
         <Button
           variant="default"
           aria-label="skip audio forward"
           onClick={handleFastforward}
         >
-          <IconPlayerSkipForward className={withBaseName("icon")} />
+          <IconPlayerSkipForward />
         </Button>
         <Button variant="default" onClick={handleMute}>
           {mute ? <IconVolumeOff /> : <IconVolume />}

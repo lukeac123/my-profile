@@ -1,11 +1,9 @@
+// TODO: Replace with own component
+
 "use client"; // Cannot dot into Carousel component on the server side
 import { Image } from "@mantine/core";
 import { HTMLAttributes } from "react";
-import { makePrefixer } from "../../utils/makePrefixer";
 import { Carousel as MantineCarousel } from "@mantine/carousel";
-import { clsx } from "clsx";
-
-const withBaseName = makePrefixer("carousel");
 
 export interface CarouselProps extends HTMLAttributes<HTMLDivElement> {
   images: string[];
@@ -14,7 +12,7 @@ export interface CarouselProps extends HTMLAttributes<HTMLDivElement> {
 export const Carousel = ({ className, images }: CarouselProps) => {
   return (
     <MantineCarousel
-      className={clsx(withBaseName(), className)}
+      className={className}
       align="center"
       slideGap="md"
       slideSize="100%"
@@ -24,7 +22,7 @@ export const Carousel = ({ className, images }: CarouselProps) => {
       {images.map((imageSrc) => {
         return (
           <MantineCarousel.Slide key={imageSrc}>
-            <Image src={imageSrc} className={withBaseName("image")} />
+            <Image src={imageSrc} />
           </MantineCarousel.Slide>
         );
       })}

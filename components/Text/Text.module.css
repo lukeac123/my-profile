@@ -1,7 +1,3 @@
-.text {
-  font-weight: var(--my-font-weight) !important;
-}
-
 .textColorMode {
   color: var(--mantine-color-text);
 }
