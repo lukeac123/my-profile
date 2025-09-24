@@ -1,3 +1,5 @@
+// TODO: Replace with own component
+
 "use client"; // Cannot dot into Carousel component on the server side
 import { Image } from "@mantine/core";
 import { HTMLAttributes } from "react";
@@ -20,7 +22,7 @@ export const Carousel = ({ className, images }: CarouselProps) => {
       {images.map((imageSrc) => {
         return (
           <MantineCarousel.Slide key={imageSrc}>
-            <Image />
+            <Image src={imageSrc} />
           </MantineCarousel.Slide>
         );
       })}
