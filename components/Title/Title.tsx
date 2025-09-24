@@ -25,7 +25,7 @@ export const Title = ({
       className={clsx(
         style.title,
         { [style.titleColorMode]: colorMode },
-        className,
+        className
       )}
       {...rest}
     >

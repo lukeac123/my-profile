@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactNode } from "react";
 import { Text as MantineText } from "@mantine/core";
 import type { TextProps as MantineTextProps } from "@mantine/core";
 import { clsx } from "clsx";
@@ -27,7 +27,7 @@ export const Text = ({
       className={clsx(
         { [styles.textColorMode]: colorMode },
         styles.text,
-        className,
+        className
       )}
       {...rest}
     >

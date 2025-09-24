@@ -3,4 +3,6 @@
 @import "@mantine/carousel/styles.css";
 @import "./global.css";
 @import "./layout.css";
-@import "../components/./Divider/./Divider.module.css";
+@import "../components/Divider/Divider.module.css";
+@import "../components/Audio/Player.module.css";
+@import "../components/Audio/AudioPlayer.module.css";
