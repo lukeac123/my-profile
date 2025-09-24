@@ -1,5 +1,5 @@
 .text {
-  font-weight: var(--my-font-weight) !important
+  font-weight: var(--my-font-weight) !important;
 }
 
 .textColorMode {

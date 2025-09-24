@@ -27,7 +27,7 @@ export const Text = ({
       className={clsx(
         { [styles.textColorMode]: colorMode },
         styles.text,
-        className
+        className,
       )}
       {...rest}
     >

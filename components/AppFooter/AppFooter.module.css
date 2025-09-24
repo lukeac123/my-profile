@@ -8,7 +8,7 @@
   border-width: var(--my-border-width);
   justify-content: center;
   background-color: var(--mantine-color-body);
-  gap: 30px
+  gap: 30px;
 }
 
 .appFooterLink {
