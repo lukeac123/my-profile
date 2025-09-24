@@ -1,4 +1,4 @@
-.travelPage-container {
+.travelPageContainer {
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -6,38 +6,42 @@
   padding: 10px;
 }
 
-.travelPage-card {
+.travelPageCard {
   width: 100%;
+  height: 700px
 }
 
-.travelPage-cardContent {
+.travelPageCardContent {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  overflow: hidden;
 }
 
 @media (width <= 992px) {
-  .travelPage-cardContent {
+  .travelPageCardContent {
     flex-direction: column;
   }
 }
 
-.travelPage-carousel {
+.travelPageCarousel {
   width: 50%;
+  height: 100%
 }
 
 @media (width <= 992px) {
-  .travelPage-carousel {
+  .travelPageCarousel {
     width: 100%;
   }
 }
 
-.travelPage-cardDescription {
+.travelPageCardDescription {
   width: 50%;
+  overflow: scroll;
 }
 
 @media (width <= 992px) {
-  .travelPage-cardDescription {
+  .travelPageCardDescription {
     width: 100%;
   }
 }

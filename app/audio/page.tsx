@@ -2,10 +2,7 @@ import { Stack, Image } from "@mantine/core";
 import { Audio, Card } from "../../components";
 import { Text, Title } from "@mantine/core";
 import { audioClips } from "../../utils";
-import { makePrefixer } from "../../utils";
-import "./page.css";
-
-const withBaseName = makePrefixer("audioPage");
+import styles from "./page.module.css";
 
 export default function AudioPage() {
   return (
@@ -13,11 +10,11 @@ export default function AudioPage() {
       <Title ta="center" order={1}>
         Audio Clips
       </Title>
-      <div className={withBaseName()}>
+      <div className={styles.audioPage}>
         {audioClips.map((audio) => {
           const { title, description, audioSrc, indexImgSrc } = audio;
           return (
-            <Card key={title} className={withBaseName("card")}>
+            <Card key={title} className={styles.audioPageCard}>
               <Title order={2} ta="center">
                 {title}
               </Title>
@@ -25,11 +22,11 @@ export default function AudioPage() {
                 <Audio
                   title={title}
                   src={audioSrc}
-                  className={withBaseName("audioPlayer")}
+                  className={styles.audioPagePlayer}
                 />
               </Stack>
-              <Image src={indexImgSrc} className={withBaseName("image")} />
-              <Text className={withBaseName("description")} ta="left">
+              <Image src={indexImgSrc} className={styles.audioPageImage} />
+              <Text className={styles.audioPageDescription} ta="left">
                 {description}
               </Text>
             </Card>

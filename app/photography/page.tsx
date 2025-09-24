@@ -1,11 +1,8 @@
 import { Stack, Image, Text, Title } from "@mantine/core";
 import { Card } from "../../components";
-import { makePrefixer } from "../../utils";
 import { promises as fs } from "fs";
 import path from "path";
-import "./page.css";
-
-const withBaseName = makePrefixer("photographyPage");
+import styles from "./page.module.css";
 
 export default async function GalleryPage() {
   const imageGalleryDirectory = path.join(process.cwd(), "/public/photography");
@@ -19,19 +16,19 @@ export default async function GalleryPage() {
       <Title ta="center" order={1}>
         Photography
       </Title>
-      <div className={withBaseName()}>
+      <div className={styles.photographyPage}>
         {travelItem.map((item) => {
           return (
             <Card
-              className={withBaseName("card")}
+              className={styles.photographyPageCard}
               link={`photography/${item.folder}`}
               key={item.indexImageSrc}
             >
-              <Text className={withBaseName("overlay")}>
+              <Text className={styles.photographyPageOverlay}>
                 {item.folder.charAt(0).toUpperCase() + item.folder.slice(1)}
               </Text>
               <Image
-                className={withBaseName("image")}
+                className={styles.photographyPageImage}
                 src={item.indexImageSrc}
               />
             </Card>

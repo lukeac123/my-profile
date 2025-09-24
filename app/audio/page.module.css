@@ -8,26 +8,27 @@
 
 }
 
-.audioPage-card {
+.audioPageCard {
   gap: 10px;
   width: 450px;
   height: 800px;
   padding: 10px;
 }
 
-.audioPage-image {
+.audioPagePlayer {
+  height: 200px;
+}
+
+
+.audioPageImage {
   width: 100%;
   height: 300px;
 }
 
-.audioPage-description {
+.audioPageDescription {
   padding: var(--mantine-spacing-md);
   overflow-wrap: break-word;
   overflow: scroll;
   height: 200px;
 }
 
-.audioPage-audioPlayer {
-  height: 200px;
-
-}

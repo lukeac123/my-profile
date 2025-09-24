@@ -1,13 +1,9 @@
 import { List, ListItem, Title, Divider } from "@mantine/core";
-
-import { makePrefixer } from "../../utils";
-import "./page.css";
-
-const withBaseName = makePrefixer("careerPage");
+import styles from "./page.module.css";
 
 export default function AudioPage() {
   return (
-    <div className={withBaseName()}>
+    <div className={styles.cvPage}>
       <Title order={1}>Education</Title>
       <Title order={2}>University of Warwick</Title>
       <List>

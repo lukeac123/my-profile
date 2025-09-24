@@ -6,6 +6,7 @@ import "@mantine/carousel/styles.css";
 import { Image } from "@mantine/core";
 import { HTMLAttributes } from "react";
 import { Carousel as MantineCarousel } from "@mantine/carousel";
+import styles from "./Carousel.module.css";
 
 export interface CarouselProps extends HTMLAttributes<HTMLDivElement> {
   images: string[];
@@ -24,7 +25,7 @@ export const Carousel = ({ className, images }: CarouselProps) => {
       {images.map((imageSrc) => {
         return (
           <MantineCarousel.Slide key={imageSrc}>
-            <Image src={imageSrc} />
+            <Image src={imageSrc} className={styles.carouselImage} />
           </MantineCarousel.Slide>
         );
       })}
