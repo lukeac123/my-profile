@@ -11,7 +11,7 @@ async function getImageSrc(imgDir: string) {
   const imagePlaceDirectory = path.join(
     process.cwd(),
     "/public/travel",
-    imgDir,
+    imgDir
   );
   const imgSrcDir = await fs.readdir(imagePlaceDirectory).then((response) => {
     const imageArray = response.map((response) => {
@@ -71,7 +71,7 @@ export default function PlacesPage() {
                 <div className={withBaseName("cardDescription")}>
                   {Object.entries(updatedContent).map((content) => {
                     return (
-                      <div>
+                      <div key={content[0]}>
                         <Text size="lg" fw={700}>
                           {insertSpaces(content[0])}:
                         </Text>

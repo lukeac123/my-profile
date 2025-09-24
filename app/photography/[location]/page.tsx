@@ -7,20 +7,21 @@ import { makePrefixer } from "../../../utils";
 
 const withBaseName = makePrefixer("photosPage");
 
-async function getImages(params) {
+async function getImages(location: string) {
   const imageGalleryDirectory = path.join(
     process.cwd(),
-    `/public/photography/${params.location}`,
+    `/public/photography/${location}`
   );
   const imageLocationFolders = await fs.readdir(imageGalleryDirectory);
 
   return imageLocationFolders.map((image) => {
     return (
       <Image
+        key={image}
         component={NextImage}
         alt={image}
         className={withBaseName("image")}
-        src={`/photography/${params.location}/${image}`}
+        src={`/photography/${location}/${image}`}
         width={600}
         height={500}
       />
@@ -28,13 +29,21 @@ async function getImages(params) {
   });
 }
 
-export default async function PhotoPage({ params }) {
+export default async function PhotoPage({
+  params,
+}: {
+  params: Promise<{ location: string }>;
+}) {
+  const { location } = await params;
+
   return (
     <Stack className={withBaseName()}>
       <Title order={1} ta="center">
-        {params.location.charAt(0).toUpperCase() + params.location.slice(1)}
+        {location.charAt(0).toUpperCase() + location.slice(1)}
       </Title>
-      <div className={withBaseName("photoContainer")}>{getImages(params)}</div>
+      <div className={withBaseName("photoContainer")}>
+        {getImages(location)}
+      </div>
     </Stack>
   );
 }

@@ -21,7 +21,7 @@
     "@types/jest-axe": "^3.5.9",
     "d3": "^7.9.0",
     "embla-carousel-react": "^7.1.0",
-    "next": "13.4.4",
+    "next": "15.5.4",
     "prettier": "^3.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"

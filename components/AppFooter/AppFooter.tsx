@@ -10,12 +10,12 @@ export const AppFooter = () => {
     <footer className={withBaseName()}>
       <Group className={withBaseName("title")}>
         {links.map((link) => (
-          <>
+          <div key={link.label}>
             {link.icon}
             <Text className={withBaseName("link")} key={link.label}>
               {link.label}
             </Text>
-          </>
+          </div>
         ))}
       </Group>
     </footer>
