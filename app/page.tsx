@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Card, Title, LineChart } from "../components";
-import { Text } from "@mantine/core";
+import { Card, LineChart } from "../components";
+import { Text, Title } from "@mantine/core";
 import { makePrefixer } from "../utils";
 import { homePageData, lineChartData } from "../utils/db";
 import "./page.css";

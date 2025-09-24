@@ -1,5 +1,5 @@
-import { Card, Carousel, Title, CardContent } from "../../components";
-import { Text } from "@mantine/core";
+import { Card, Carousel, CardContent } from "../../components";
+import { Text, Title } from "@mantine/core";
 import { insertSpaces, makePrefixer } from "../../utils";
 import path from "path";
 import { promises as fs } from "fs";
@@ -64,19 +64,15 @@ export default function PlacesPage() {
         return (
           <Card key={title} className={withBaseName("card")}>
             <CardContent>
-              <Title underlined order={2} padding>
-                {title}
-              </Title>
+              <Title order={2}>{title}</Title>
               <div className={withBaseName("cardContent")}>
                 {getImageSrc(imgDir)}
                 <div className={withBaseName("cardDescription")}>
                   {Object.entries(updatedContent).map((content) => {
                     return (
                       <div key={content[0]}>
-                        <Text size="lg" fw={700}>
-                          {insertSpaces(content[0])}:
-                        </Text>
-                        <Text size="lg">{content[1]}</Text>
+                        <Text>{insertSpaces(content[0])}:</Text>
+                        <Text>{content[1]}</Text>
                       </div>
                     );
                   })}
