@@ -1,4 +1,4 @@
-import { Text } from "../Text";
+import { Text } from "@mantine/core";
 import { links } from "../../utils/db";
 import styles from "./AppFooter.module.css";
 

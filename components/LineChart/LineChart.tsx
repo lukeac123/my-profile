@@ -1,7 +1,6 @@
 "use client";
 import React, { HTMLAttributes, useEffect, useRef, useState } from "react";
-import { Radio, Group, CheckIcon } from "@mantine/core";
-import { Text } from "../Text";
+import { Radio, Group, CheckIcon, Text } from "@mantine/core";
 import * as d3 from "d3";
 import styles from "./LineChart.module.css";
 
@@ -143,7 +142,7 @@ export const LineChart = ({ data }: LineChart) => {
             );
           })}
         </Group>
-        <Text fw={700} ta="center">
+        <Text ta="center">
           Figure 1: D3 line graph showing my experience so far.....
         </Text>
       </div>

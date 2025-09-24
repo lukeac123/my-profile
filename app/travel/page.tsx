@@ -1,17 +1,16 @@
-import { Card, Text, Carousel, Title, CardContent } from "../../components";
-import { insertSpaces, makePrefixer } from "../../utils";
+import { Card, Carousel, CardContent } from "../../components";
+import { Text, Title } from "@mantine/core";
+import { insertSpaces } from "../../utils";
 import path from "path";
 import { promises as fs } from "fs";
 import { travel, type Place, dateToUKFormat } from "../../utils";
-import "./page.css";
-
-const withBaseName = makePrefixer("travelPage");
+import styles from "./page.module.css";
 
 async function getImageSrc(imgDir: string) {
   const imagePlaceDirectory = path.join(
     process.cwd(),
     "/public/travel",
-    imgDir,
+    imgDir
   );
   const imgSrcDir = await fs.readdir(imagePlaceDirectory).then((response) => {
     const imageArray = response.map((response) => {
@@ -19,7 +18,7 @@ async function getImageSrc(imgDir: string) {
     });
     return imageArray;
   });
-  return <Carousel images={imgSrcDir} className={withBaseName("carousel")} />;
+  return <Carousel images={imgSrcDir} className={styles.travelPageCarousel} />;
 }
 
 function sortPlacesByDate(places: Place[]) {
@@ -53,7 +52,7 @@ const updateContent = (content: {
 export default function PlacesPage() {
   const placesByDate: Place[] = sortPlacesByDate(travel);
   return (
-    <div className={withBaseName("container")}>
+    <div className={styles.travelPageContainer}>
       <Title ta="center" order={1}>
         Travel
       </Title>
@@ -61,21 +60,17 @@ export default function PlacesPage() {
         const { title, content, imgDir } = place;
         const updatedContent = updateContent(content);
         return (
-          <Card key={title} className={withBaseName("card")}>
+          <Card key={title} className={styles.travelPageCard}>
             <CardContent>
-              <Title underlined order={2} padding>
-                {title}
-              </Title>
-              <div className={withBaseName("cardContent")}>
+              <Title order={2}>{title}</Title>
+              <div className={styles.travelPageCardContent}>
                 {getImageSrc(imgDir)}
-                <div className={withBaseName("cardDescription")}>
+                <div className={styles.travelPageCardDescription}>
                   {Object.entries(updatedContent).map((content) => {
                     return (
                       <div key={content[0]}>
-                        <Text size="lg" fw={700}>
-                          {insertSpaces(content[0])}:
-                        </Text>
-                        <Text size="lg">{content[1]}</Text>
+                        <Text>{insertSpaces(content[0])}:</Text>
+                        <Text>{content[1]}</Text>
                       </div>
                     );
                   })}

@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Group, Burger, Drawer, Stack } from "@mantine/core";
-import { Text } from "../Text";
-import { Divider } from "../Divider";
+import { Group, Burger, Drawer, Stack, Text, Divider } from "@mantine/core";
 import { ColorSchemeToggle } from "./ColorSchemeToggle";
 import { ColorModeToggle } from "./ColorModeToggle";
 import { makePrefixer } from "../../utils/makePrefixer";
@@ -50,6 +48,7 @@ export const AppHeader = () => {
               href={link.link}
               component={Link}
               onClick={() => setOpen(false)}
+              size="xl"
             >
               {link.label}
             </Text>

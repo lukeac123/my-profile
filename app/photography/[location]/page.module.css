@@ -3,14 +3,14 @@
   align-items: center;
 }
 
-.photosPage-photoContainer {
+.photosPageImage {
   gap: 20px;
   display: flex;
   flex-direction: column;
 }
 
 @media (width <= 768px) {
-  .photosPage-photoContainer {
+  .photosPageImage {
     width: 100%;
   }
 }

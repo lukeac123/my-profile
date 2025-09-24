@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Card, Title, Text, LineChart } from "../components";
+import { Card, LineChart } from "../components";
+import { Text, Title } from "@mantine/core";
 import { makePrefixer } from "../utils";
 import { homePageData, lineChartData } from "../utils/db";
 import "./page.css";
@@ -39,7 +40,7 @@ export default function BlogPage() {
                       href={link}
                       disabled={disabled}
                     >
-                      <Text colorMode>{title}</Text>
+                      <Text>{title}</Text>
                       <Text>{description}</Text>
                       {!disabled && (
                         <IconClick className={withBaseName("clickIcon")} />
