@@ -1,9 +1,7 @@
 import React from "react";
 import { Providers } from "./Providers";
 import { AppFooter, AppHeader, Card } from "../components";
-import "@mantine/core/styles.css";
-import "@mantine/carousel/styles.css";
-import "./layout.css";
+import "./styles.css";
 
 export const metadata = {
   title: "Luke Atkinson-Coyle",
@@ -38,10 +36,8 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <Providers>
-          <div style={{ paddingBottom: "60px" }}>
-            <AppHeader />
-          </div>
-          <Card>{children}</Card>
+          <AppHeader />
+          <Card className="layoutContent">{children}</Card>
           <AppFooter />
         </Providers>
       </body>

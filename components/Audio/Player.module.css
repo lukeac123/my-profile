@@ -1,0 +1,9 @@
+.audioPlayerSliderContainer {
+  width: 100%;
+}
+
+.audioPlayerSlider {
+  margin: auto;
+  flex-grow: 1;
+  --slider-color: var(--colorMode-color);
+}

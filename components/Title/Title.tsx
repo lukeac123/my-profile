@@ -1,9 +1,8 @@
 import { ReactNode } from "react";
-import { makePrefixer } from "../../utils/makePrefixer";
 import { Title as MantineTitle } from "@mantine/core";
 import type { TitleProps as MantineTitleProps } from "@mantine/core";
 import { clsx } from "clsx";
-import "./Title.component.css";
+import style from "./Title.module.css";
 
 export interface TitleProps extends MantineTitleProps {
   children: ReactNode;
@@ -12,8 +11,6 @@ export interface TitleProps extends MantineTitleProps {
   colorMode?: boolean;
   padding?: boolean;
 }
-
-const withBaseName = makePrefixer("title");
 
 export const Title = ({
   underlined,
@@ -26,9 +23,8 @@ export const Title = ({
   return (
     <MantineTitle
       className={clsx(
-        withBaseName(),
-        { [withBaseName("colorMode")]: colorMode },
-        { [withBaseName("padding")]: padding },
+        style.title,
+        { [style.titleColorMode]: colorMode },
         className,
       )}
       {...rest}

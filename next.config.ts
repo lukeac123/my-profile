@@ -7,6 +7,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  cssChunking: "strict",
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [

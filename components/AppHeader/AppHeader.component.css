@@ -1,14 +1,11 @@
 .appHeader {
   display: flex;
-  position: absolute;
   width: 100%;
   height: 60px;
   padding: 10px;
   color: var(--colorMode-color);
   border-bottom: solid var(--colorMode-color);
   border-width: var(--my-border-width);
-  z-index: 999;
-  background-color: var(--mantine-color-body);
 }
 
 .appHeader-drawer {
@@ -17,7 +14,6 @@
 
 .appHeader-title {
   flex-grow: 2;
-  align-items: left;
 }
 
 .appHeader-link:hover {
