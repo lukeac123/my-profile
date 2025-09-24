@@ -3,7 +3,7 @@ import React, { HTMLAttributes, useEffect, useRef, useState } from "react";
 import { Radio, Group, CheckIcon } from "@mantine/core";
 import { Text } from "../Text";
 import * as d3 from "d3";
-import "./LineChart.component.css";
+import styles from "./LineChart.module.css";
 
 interface LineChartData {
   id: string;
@@ -19,7 +19,7 @@ interface LineChart extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const LineChart = ({ data }: LineChart) => {
-  const svgRef = useRef();
+  const svgRef = useRef(null);
   const [checked, setChecked] = useState(data[0].id ?? "");
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 1000, height: 500 });
@@ -115,19 +115,19 @@ export const LineChart = ({ data }: LineChart) => {
       .attr("d", (d) => line(d.values));
   }, [data, dimensions, checked]);
 
+  console.log(dimensions.height);
   return (
-    <div className={"line-chart"}>
-      <div ref={containerRef} className={"line-chart-container"}>
+    <div className={styles.lineChart}>
+      <div ref={containerRef} className={styles.lineChartContainer}>
         <svg
           ref={svgRef}
-          className="line-chart-svg"
           width="100%"
           height="100%"
           viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
           preserveAspectRatio="xMidYMidmeet"
         />
       </div>
-      <div className="textContent">
+      <div className={styles.textContent}>
         <Group className="legend">
           {data.map((dataPoint) => {
             return (

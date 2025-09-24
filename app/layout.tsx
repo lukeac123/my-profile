@@ -1,6 +1,6 @@
 import React from "react";
 import { Providers } from "./Providers";
-import { AppFooter, AppHeader } from "../components";
+import { AppFooter, AppHeader, Card } from "../components";
 import "./styles.css";
 
 export const metadata = {
@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: any }) {
       <body>
         <Providers>
           <AppHeader />
-          <div className="layoutContent">{children}</div>
+          <Card className="layoutContent">{children}</Card>
           <AppFooter />
         </Providers>
       </body>

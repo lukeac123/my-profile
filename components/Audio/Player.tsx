@@ -16,9 +16,9 @@ import {
   IconVolume,
   IconVolumeOff,
 } from "@tabler/icons-react";
-import "./AudioPlayer.component.css";
 import { makePrefixer } from "../../utils/makePrefixer";
 import { useViewportSize } from "@mantine/hooks";
+import styles from "./Player.module.css";
 export interface PlayerProps extends HTMLAttributes<HTMLDivElement> {
   skipDuration?: 5 | 10 | 15;
   title?: string;
@@ -134,18 +134,14 @@ export const Player = ({
   return (
     <Stack aria-label={title} align="center" gap={4} {...rest}>
       {children}
+      {/* Add all styles to css, these loading in after render  */}
       <Flex direction={"row"} gap={width > 576 ? "xs" : "0"}>
         <a href={src} download target="_blank" rel="noreferrer">
-          <Button
-            className={withBaseName("button")}
-            variant="default"
-            aria-label="download audio"
-          >
+          <Button variant="default" aria-label="download audio">
             <IconDownload className={withBaseName("icon")} />
           </Button>
         </a>
         <Button
-          className={withBaseName("button")}
           variant="default"
           aria-label="skip audio backwards"
           onClick={handleRewind}
@@ -153,7 +149,6 @@ export const Player = ({
           <IconPlayerSkipBack className={withBaseName("icon")} />
         </Button>
         <Button
-          className={withBaseName("button")}
           variant="default"
           onClick={togglePlay}
           disabled={playDisabled}
@@ -166,27 +161,18 @@ export const Player = ({
           )}
         </Button>
         <Button
-          className={withBaseName("button")}
           variant="default"
           aria-label="skip audio forward"
           onClick={handleFastforward}
         >
           <IconPlayerSkipForward className={withBaseName("icon")} />
         </Button>
-        <Button
-          className={withBaseName("button")}
-          variant="default"
-          onClick={handleMute}
-        >
-          {mute ? (
-            <IconVolumeOff className={withBaseName("icon")} />
-          ) : (
-            <IconVolume className={withBaseName("icon")} />
-          )}
+        <Button variant="default" onClick={handleMute}>
+          {mute ? <IconVolumeOff /> : <IconVolume />}
         </Button>
       </Flex>
       <Flex
-        className={"audioPlayer-sliderContainer"}
+        className={styles.audioPlayerSliderContainer}
         direction={"row"}
         gap={"md"}
       >
@@ -197,7 +183,7 @@ export const Player = ({
         !isNaN(durationSeconds) &&
         durationSeconds > 0 ? (
           <Slider
-            className={"audioPlayer-slider"}
+            className={styles.audioPlayerSlider}
             min={0}
             max={durationSeconds}
             value={timeNowSeconds}
