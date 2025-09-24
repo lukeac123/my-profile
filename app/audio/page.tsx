@@ -26,7 +26,7 @@ export default function AudioPage() {
                 </Stack>
               </CardContent>
               <Image src={indexImgSrc} className={withBaseName("image")} />
-              <Text className={withBaseName("description")} size="lg" ta="left">
+              <Text className={withBaseName("description")} ta="left">
                 {description}
               </Text>
             </Card>
