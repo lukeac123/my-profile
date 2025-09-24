@@ -1,5 +1,5 @@
-import { Stack, Image } from "@mantine/core";
-import { Card, Text, Title } from "../../components";
+import { Stack, Image, Text } from "@mantine/core";
+import { Card, Title } from "../../components";
 import { makePrefixer } from "../../utils";
 import { promises as fs } from "fs";
 import path from "path";
@@ -27,7 +27,7 @@ export default async function GalleryPage() {
               link={`photography/${item.folder}`}
               key={item.indexImageSrc}
             >
-              <Text title className={withBaseName("overlay")} size="xl">
+              <Text className={withBaseName("overlay")}>
                 {item.folder.charAt(0).toUpperCase() + item.folder.slice(1)}
               </Text>
               <Image

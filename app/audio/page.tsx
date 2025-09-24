@@ -1,5 +1,6 @@
 import { Stack, Image } from "@mantine/core";
-import { Audio, Card, CardContent, Title, Text } from "../../components";
+import { Audio, Card, Title } from "../../components";
+import { Text } from "@mantine/core";
 import { audioClips } from "../../utils";
 import { makePrefixer } from "../../utils";
 import "./page.css";

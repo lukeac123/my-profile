@@ -1,9 +1,6 @@
 :root {
   --my-border-width: 5px;
-}
-
-.mantine-Slider-thumb {
-  display: none;
+  --my-font-weight: 800
 }
 
 /* Dark Mode Vars */

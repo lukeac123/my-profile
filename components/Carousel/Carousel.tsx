@@ -1,6 +1,8 @@
 // TODO: Replace with own component
+"use client";
+import "@mantine/carousel/styles.css";
 
-"use client"; // Cannot dot into Carousel component on the server side
+// Cannot dot into Carousel component on the server side
 import { Image } from "@mantine/core";
 import { HTMLAttributes } from "react";
 import { Carousel as MantineCarousel } from "@mantine/carousel";

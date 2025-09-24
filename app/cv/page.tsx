@@ -1,5 +1,5 @@
-import { List, ListItem } from "@mantine/core";
-import { Title, Text, Divider } from "../../components";
+import { List, ListItem, Text } from "@mantine/core";
+import { Title, Divider } from "../../components";
 
 import { makePrefixer } from "../../utils";
 import "./page.css";

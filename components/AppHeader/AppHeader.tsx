@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Group, Burger, Drawer, Stack } from "@mantine/core";
-import { Text } from "../Text";
+import { Group, Burger, Drawer, Stack, Text } from "@mantine/core";
 import { Divider } from "../Divider";
 import { ColorSchemeToggle } from "./ColorSchemeToggle";
 import { ColorModeToggle } from "./ColorModeToggle";

@@ -1,11 +1,9 @@
 import React from "react";
 import { Providers } from "./Providers";
 import { AppFooter, AppHeader, Card } from "../components";
-// import "@mantine/core/styles.css";
 import "@mantine/core/styles.layer.css";
-import "@mantine/carousel/styles.css";
-import "./layout.css";
 import "./global.css";
+import "./layout.css";
 
 export const metadata = {
   title: "Luke Atkinson-Coyle",
@@ -32,7 +30,6 @@ export default function RootLayout({ children }: { children: any }) {
           sizes="16x16"
           href="favicon/favicon-16x16.png"
         />
-        <link rel="manifest" href="favicon/site.webmanifest" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=10px"

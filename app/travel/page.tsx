@@ -1,4 +1,5 @@
-import { Card, Text, Carousel, Title, CardContent } from "../../components";
+import { Card, Carousel, Title, CardContent } from "../../components";
+import { Text } from "@mantine/core";
 import { insertSpaces, makePrefixer } from "../../utils";
 import path from "path";
 import { promises as fs } from "fs";
@@ -11,7 +12,7 @@ async function getImageSrc(imgDir: string) {
   const imagePlaceDirectory = path.join(
     process.cwd(),
     "/public/travel",
-    imgDir,
+    imgDir
   );
   const imgSrcDir = await fs.readdir(imagePlaceDirectory).then((response) => {
     const imageArray = response.map((response) => {
