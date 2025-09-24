@@ -4,6 +4,10 @@ import styles from "./Divider.module.css";
 
 export const Divider = ({ className, ...rest }: DividerProps) => {
   return (
-    <MantineDivider className={clsx(styles.divider, className)} {...rest} />
+    <MantineDivider
+      className={clsx(styles.divider, className)}
+      size="xl"
+      {...rest}
+    />
   );
 };

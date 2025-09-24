@@ -29,6 +29,7 @@ export const Text = ({
         styles.text,
         className
       )}
+      fw={800}
       {...rest}
     >
       {children}
