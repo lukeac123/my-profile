@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactElement, ReactNode } from "react";
 import { Text as MantineText } from "@mantine/core";
 import type { TextProps as MantineTextProps } from "@mantine/core";
 import { clsx } from "clsx";
