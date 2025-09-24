@@ -2,6 +2,6 @@
   font-weight: var(--my-font-weight);
 }
 
-.text-colorMode {
+.textColorMode {
   color: var(--mantine-color-text);
 }

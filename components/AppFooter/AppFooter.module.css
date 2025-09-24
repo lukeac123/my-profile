@@ -11,7 +11,7 @@
   gap: 30px
 }
 
-.appFooter-link {
+.appFooterLink {
   display: flex;
   flex-direction: row;
   gap: 10px;
