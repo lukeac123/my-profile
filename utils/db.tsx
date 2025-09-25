@@ -157,10 +157,11 @@ export interface Place {
   };
 }
 
-export const travel = [
+export const blogs = [
   {
     id: 1,
     title: "Barranca",
+    imgDir: "barranca",
     caption: "I am the caption",
     location: "Barranca",
     date: "2024-10-17",
@@ -176,10 +177,9 @@ export const travel = [
     },
   },
   {
+    id: 2,
     title: "Lima",
     location: "Lima",
-    link: "/travel",
-    imgDir: "/lima",
     indexImgSrc: "travel/lima/index.jpeg",
     content: {
       Country: "Peru",
@@ -193,6 +193,7 @@ export const travel = [
     },
   },
   {
+    id: 3,
     title: "Salento",
     location: "Salento",
     link: "/travel",

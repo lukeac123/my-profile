@@ -11,18 +11,18 @@ export default function PlacesPage() {
         Blog
       </Title>
       {travel.map((blog) => {
-        const { title, caption, category, date, id } = blog;
+        const { title, caption, date, imgDir, id } = blog;
         return (
           <Card
             className={styles.blogPageCard}
             withBorder
             key={title}
             adornment={<IconClick />}
+            link={id}
           >
             <Text>{title}</Text>
             <Text>{caption}</Text>
             <Text>{date}</Text>
-            <Text>{category}</Text>
           </Card>
         );
       })}

@@ -1,0 +1,13 @@
+.gallery {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+  max-height: 100vh;
+}
+
+.img {
+  width: 45%;
+  border-radius: 12px;
+}
