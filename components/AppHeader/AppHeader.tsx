@@ -10,7 +10,7 @@ import "./AppHeader.component.css";
 
 const links = [
   { label: "CV", link: "/cv" },
-  { label: "Travel Blog", link: "/travel" },
+  { label: "Blog", link: "/blog" },
   { label: "Photos", link: "/photography" },
   { label: "Audio Clips", link: "/audio" },
 ];
