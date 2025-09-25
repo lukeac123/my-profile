@@ -159,11 +159,11 @@ export interface Place {
 
 export const travel = [
   {
+    id: 1,
     title: "Barranca",
+    caption: "I am the caption",
     location: "Barranca",
-    link: "/travel",
-    imgDir: "/barranca",
-    indexImgSrc: "travel/barranca/index.jpeg",
+    date: "2024-10-17",
     content: {
       Country: "Peru",
       City: "Lima",

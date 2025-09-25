@@ -5,7 +5,6 @@ import { makePrefixer } from "../utils";
 import { homePageData, lineChartData } from "../utils/db";
 import styles from "./page.module.css";
 import { IconClick } from "@tabler/icons-react";
-import clsx from "clsx";
 
 const withBaseName = makePrefixer("homePage");
 
