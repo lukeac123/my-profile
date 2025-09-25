@@ -1,6 +1,4 @@
 import { StarRating } from "../components/StarRating";
-import { Audio } from "../components/Audio";
-import { Image } from "@mantine/core";
 import { IconMail, IconBrandGithub } from "@tabler/icons-react";
 
 export type HeroImage = { caption: String; imgSrc: string };
@@ -438,10 +436,12 @@ export const links = [
   {
     icon: <IconMail />,
     label: "luke.atkinson-coyle@outlook.com",
+    link: "",
   },
   {
     icon: <IconBrandGithub />,
     label: "https://github.com/lukeac123",
+    link: "https://github.com/lukeac123",
   },
 ];
 
