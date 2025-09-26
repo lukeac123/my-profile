@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactElement } from "react";
+import { ReactElement } from "react";
 import {
   Card as MantineCard,
   CardProps as MantineCardProps,
@@ -31,7 +31,7 @@ export const Card = ({
           [`${styles.cardDisabled}`]: disabled,
           [`${styles.cardHover}`]: hover && !disabled,
         },
-        className
+        className,
       )}
       component={link && !disabled && Link}
       href={link && !disabled ? link : undefined}

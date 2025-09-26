@@ -8,13 +8,11 @@
 }
 
 .blogPageCard {
-  width: 60%
+  width: 60%;
 }
 
 @media (width <= 992px) {
-.blogPageCard {
-  width: 100%
+  .blogPageCard {
+    width: 100%;
+  }
 }
-}
-
-

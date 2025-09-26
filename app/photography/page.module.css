@@ -18,6 +18,7 @@
 .photographyPageCard {
   width: 400px;
   height: 600px;
+  padding: 0px;
 }
 
 @media (width <= 768px) {
@@ -48,5 +49,5 @@
 
 .photographyPageImage {
   width: 100%;
-  min-height: 640px;
+  height: 100%;
 }
