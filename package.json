@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@mantine/carousel": "^7.12.1",
-    "@mantine/core": "7.4.2",
-    "@mantine/hooks": "7.4.1",
+    "@mantine/core": "8.3.2",
+    "@mantine/hooks": "8.3.2 ",
     "@p5-wrapper/react": "^4.3.2",
     "@tabler/icons-react": "^2.38.0",
     "@types/d3": "^7.4.3",
