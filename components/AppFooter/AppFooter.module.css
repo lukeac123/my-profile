@@ -1,5 +1,6 @@
 .appFooter {
   display: flex;
+  flex-direction: row;
   position: absolute;
   width: 100%;
   padding: 20px;
@@ -7,8 +8,8 @@
   border-top: solid var(--colorMode-color);
   border-width: var(--my-border-width);
   justify-content: center;
-  background-color: var(--mantine-color-body);
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .appFooterLink {
