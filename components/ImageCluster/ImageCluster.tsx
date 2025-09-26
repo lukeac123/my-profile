@@ -19,6 +19,7 @@ export const ImageCluster = ({ imgSrcArray, className }: ImageClusterProps) => {
             src={img}
             width="500"
             height="500"
+            priority
           />
         );
       })}

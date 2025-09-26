@@ -33,8 +33,8 @@ export const Card = ({
         },
         className
       )}
-      component={link && Link}
-      href={link}
+      component={link && !disabled && Link}
+      href={link && !disabled ? link : undefined}
       {...rest}
     >
       {children}

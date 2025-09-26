@@ -5,6 +5,12 @@
   flex-direction: row;
 }
 
+.blogPageCardSolo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 @media (width <= 992px) {
   .blogPageCard {
     height: auto;

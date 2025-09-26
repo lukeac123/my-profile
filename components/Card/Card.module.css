@@ -21,8 +21,12 @@
   position: absolute;
   right: 0px;
   top: 0px;
-  margin-top: var(--my-card-padding);
-  margin-right: var(--my-card-padding)
+  margin: var(--my-card-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--my-card-padding) / 2)
+
 }
 
 

@@ -1,8 +1,15 @@
 import { Card } from "../../components";
 import { Text, Title } from "@mantine/core";
 import styles from "./page.module.css";
-import { travel } from "../../utils/db";
+import { blogs } from "../../utils/db";
 import { IconClick } from "@tabler/icons-react";
+import { Badge } from "@mantine/core";
+
+const bageColors = {
+  travel: ["green"],
+  coding: ["blue"],
+  life: ["yellow"],
+};
 
 export default function PlacesPage() {
   return (
@@ -10,19 +17,25 @@ export default function PlacesPage() {
       <Title ta="center" order={1}>
         Blog
       </Title>
-      {travel.map((blog) => {
-        const { title, caption, date, imgDir, id } = blog;
+      {blogs.map((blog) => {
+        const { title, caption, id, category, disabled } = blog;
         return (
           <Card
             className={styles.blogPageCard}
             withBorder
             key={title}
-            adornment={<IconClick />}
-            link={id}
+            disabled={disabled}
+            adornment={
+              <>
+                <IconClick />
+                <Badge color={`${bageColors[category][0]}`}>{category}</Badge>
+              </>
+            }
+            link={`/blog/${id}`}
+            hover
           >
             <Text>{title}</Text>
             <Text>{caption}</Text>
-            <Text>{date}</Text>
           </Card>
         );
       })}

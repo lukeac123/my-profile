@@ -4,10 +4,15 @@
   display: flex;
   flex-wrap: wrap;
   overflow: scroll;
-  max-height: 100vh;
 }
 
 .img {
-  width: 45%;
+  width: 48%;
   border-radius: 12px;
+}
+
+@media (width <= 1200px) {
+  .img {
+    width: 100%;
+  }
 }
