@@ -6,11 +6,11 @@ import styles from "./page.module.css";
 
 export default function AudioPage() {
   return (
-    <div>
+    <div className={styles.audioPage}>
       <Title ta="center" order={1}>
         Audio Clips
       </Title>
-      <div className={styles.audioPage}>
+      <div className={styles.audioPageCards}>
         {audioClips.map((audio) => {
           const { title, description, audioSrc, indexImgSrc } = audio;
           return (
