@@ -1,3 +1,11 @@
 .layoutContent {
   padding: 20px;
 }
+
+@media (width <= 992px) {
+  .layoutContent {
+    padding: 10px;
+  }
+  
+}
+

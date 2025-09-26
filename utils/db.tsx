@@ -47,7 +47,7 @@ export const homePageData = {
       {
         title: "Travel Blog",
         description: "",
-        link: "/travel",
+        link: "/blog",
       },
       {
         title: "Audio",
