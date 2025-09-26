@@ -1,8 +1,7 @@
 .card {
   border-color: var(--colorMode-color);
   border-width: var(--my-border-width);
-  --my-card-padding: 30px;
-  padding: var(--my-card-padding)
+  --card-padding: 30px
 }
 
 .card:focus {
@@ -21,11 +20,11 @@
   position: absolute;
   right: 0px;
   top: 0px;
-  margin: var(--my-card-padding);
+  margin: var(--card-padding);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: calc(var(--my-card-padding) / 2)
+  gap: calc(var(--card-padding) / 2)
 
 }
 

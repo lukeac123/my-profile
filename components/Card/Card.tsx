@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactElement } from "react";
+import { ReactElement } from "react";
 import {
   Card as MantineCard,
   CardProps as MantineCardProps,
