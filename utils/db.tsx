@@ -157,13 +157,26 @@ export interface Place {
   };
 }
 
-export const travel = [
+export const blogs = [
   {
+    id: 491,
+    disabled: true,
+    title: "Introduction to WebGL",
+    category: "coding",
+    caption: "I am the caption",
+    date: "2024-10-17",
+    content: {
+      Country: "Markdown Content to Go here",
+      Description: "WebGL is Fun",
+    },
+  },
+  {
+    id: 1,
     title: "Barranca",
+    category: "travel",
+    caption: "I am the caption",
     location: "Barranca",
-    link: "/travel",
-    imgDir: "/barranca",
-    indexImgSrc: "travel/barranca/index.jpeg",
+    date: "2024-10-17",
     content: {
       Country: "Peru",
       City: "Lima",
@@ -176,11 +189,11 @@ export const travel = [
     },
   },
   {
+    id: 10,
     title: "Lima",
     location: "Lima",
-    link: "/travel",
-    imgDir: "/lima",
-    indexImgSrc: "travel/lima/index.jpeg",
+    category: "travel",
+    caption: "I am a caption",
     content: {
       Country: "Peru",
       City: "Lima",
@@ -193,11 +206,11 @@ export const travel = [
     },
   },
   {
+    id: 14,
     title: "Salento",
     location: "Salento",
-    link: "/travel",
-    imgDir: "/salento",
-    indexImgSrc: "travel/salento/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "Salento",
@@ -210,11 +223,11 @@ export const travel = [
     },
   },
   {
+    id: 7,
     title: "Cultivare",
     location: "Anapoima",
-    link: "/travel",
-    imgDir: "/cultivare",
-    indexImgSrc: "travel/cultivare/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "Anapoima",
@@ -227,11 +240,11 @@ export const travel = [
     },
   },
   {
+    id: 2,
     title: "Bogota",
     location: "Bogota",
-    link: "/travel",
-    imgDir: "/bogota",
-    indexImgSrc: "travel/bogota/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "Bogota",
@@ -244,11 +257,11 @@ export const travel = [
     },
   },
   {
+    id: 13,
     title: "Palomino",
     location: "Palomino",
-    link: "/tarvel",
-    imgDir: "/palomino",
-    indexImgSrc: "travel/palomino/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "Palomino",
@@ -261,11 +274,11 @@ export const travel = [
     },
   },
   {
+    id: 4,
     title: "Cali",
     location: "Cali",
-    link: "/travel",
-    imgDir: "/cali",
-    indexImgSrc: "travel/cali/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "Cali",
@@ -278,11 +291,11 @@ export const travel = [
     },
   },
   {
+    id: 9,
     title: "Journey Hostel",
     location: "Tatrona National Park",
-    link: "/travel",
-    imgDir: "/journey_hostel",
-    indexImgSrc: "travel/journey_hostel/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "Tayrona National Park",
@@ -295,11 +308,11 @@ export const travel = [
     },
   },
   {
+    id: 3,
     title: "Rio Hostal",
     location: "Buritaca",
-    link: "/travel",
-    imgDir: "/buritaca",
-    indexImgSrc: "travel/buritaca/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "buritaca",
@@ -312,11 +325,11 @@ export const travel = [
     },
   },
   {
+    id: 6,
     title: "Cerro Kennedy",
     location: "Minca",
-    link: "/travel",
-    imgDir: "/cerro_kennedy",
-    indexImgSrc: "tarvel/cerro_kennedy/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "Minca",
@@ -329,11 +342,11 @@ export const travel = [
     },
   },
   {
+    id: 12,
     title: "Minca",
     location: "Minca",
-    link: "/travel",
-    imgDir: "/minca",
-    indexImgSrc: "travel/minca/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "Minca",
@@ -346,11 +359,11 @@ export const travel = [
     },
   },
   {
+    id: 8,
     title: "Isla Grande",
     location: "Cartagena",
-    link: "/travel",
-    imgDir: "/isla_grande",
-    indexImgSrc: "travel/isla_grande/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "Cartagena",
@@ -363,11 +376,11 @@ export const travel = [
     },
   },
   {
+    id: 5,
     title: "Cartagena",
     location: "Cartagena",
-    link: "/travel",
-    imgDir: "/cartagena",
-    indexImgSrc: "travel/cartagena/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "Cartagena",
@@ -380,11 +393,11 @@ export const travel = [
     },
   },
   {
+    id: 15,
     title: "Ritmo Del Rio",
     location: "San Rafael",
-    link: "/travel",
-    imgDir: "/san_rafael",
-    indexImgSrc: "travel/san_rafael/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "San Rafael",
@@ -397,11 +410,11 @@ export const travel = [
     },
   },
   {
+    id: 16,
     title: "Spanish Adventure",
     location: "San Carlos",
-    link: "/travel",
-    imgDir: "/spanish_adventure",
-    indexImgSrc: "travel/spanish_adventure/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "San Carlos",
@@ -414,11 +427,11 @@ export const travel = [
     },
   },
   {
+    id: 11,
     title: "Los Patios Hostel",
     location: "Medellin",
-    link: "/travel",
-    imgDir: "/medellin_los_patios",
-    indexImgSrc: "travel/medellin_los_patios/index.jpeg",
+    category: "travel",
+    caption: "I am the caption",
     content: {
       Country: "Colombia",
       City: "Medellin",

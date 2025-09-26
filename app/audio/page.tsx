@@ -14,7 +14,7 @@ export default function AudioPage() {
         {audioClips.map((audio) => {
           const { title, description, audioSrc, indexImgSrc } = audio;
           return (
-            <Card key={title} className={styles.audioPageCard}>
+            <Card withBorder key={title} className={styles.audioPageCard}>
               <Title order={2} ta="center">
                 {title}
               </Title>
