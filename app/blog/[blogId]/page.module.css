@@ -18,57 +18,26 @@
   }
 }
 
-.blogPageImageCluster{
+.blogPageImageCluster {
   width: 60%;
   height: 100vh;
 }
 
 @media (width <= 1200px) {
-  .blogPageImageCluster{
+  .blogPageImageCluster {
     width: 100%;
   }
 }
 
-.blogPageContent{
+.blogPageContent {
   width: 40%;
 }
 
 @media (width <= 992px) {
-  .blogPageContent{
+  .blogPageContent {
     width: 100%;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .travelPageCardContent {
   display: flex;

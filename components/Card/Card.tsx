@@ -31,7 +31,7 @@ export const Card = ({
           [`${styles.cardDisabled}`]: disabled,
           [`${styles.cardHover}`]: hover && !disabled,
         },
-        className
+        className,
       )}
       component={link && !disabled && Link}
       href={link && !disabled ? link : undefined}

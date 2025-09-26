@@ -1,4 +1,3 @@
 .colorModeToggle {
- background: "var(--colorMode-color)"
-
+  background: "var(--colorMode-color)";
 }
