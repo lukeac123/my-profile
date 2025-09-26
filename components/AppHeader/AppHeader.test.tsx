@@ -18,9 +18,9 @@ test("test render", async () => {
 test("Link click", async () => {
   render(<AppHeader />);
 
-  expect(screen.getByRole("link", { name: "Travel Blog" })).toHaveAttribute(
+  expect(screen.getByRole("link", { name: "Blog" })).toHaveAttribute(
     "href",
-    "/travel",
+    "/blog"
   );
 });
 
@@ -30,6 +30,6 @@ test("Burger Menu Shown on Resize", async () => {
   resizeWindow(500, window.innerHeight);
 
   expect(
-    screen.getByRole("button", { name: "Toggle Navigation" }),
+    screen.getByRole("button", { name: "Toggle Navigation" })
   ).toBeVisible();
 });
