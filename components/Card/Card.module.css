@@ -1,7 +1,6 @@
 .card {
   border-color: var(--colorMode-color);
   border-width: var(--my-border-width);
-  --card-padding: 30px
 }
 
 .card:focus {

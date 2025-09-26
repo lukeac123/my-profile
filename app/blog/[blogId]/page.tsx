@@ -7,7 +7,11 @@ import { blogs } from "../../../utils/db";
 
 interface BlogType {
   id: number;
-  title: "string";
+  disabled?: boolean;
+  title: string;
+  caption: string;
+  location?: string;
+  date?: string;
   content: {};
 }
 

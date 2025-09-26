@@ -34,11 +34,6 @@ export const theme = createTheme({
         root: { fontWeight: "var(--my-font-weight)" },
       },
     },
-    Card: {
-      styles: {
-        root: { padding: "30px" },
-      },
-    },
   },
   defaultRadius: 4,
   focusRing: "auto",
