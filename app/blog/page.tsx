@@ -34,21 +34,21 @@ export default async function PlacesPage() {
       <Title ta="center" order={1}>
         Blog
       </Title>
-      {blogs.map((blog) => {
-        const { title, caption, id, category, disabled } = blog;
+      {blogsArray.map((blog) => {
+        const { title, caption } = blog;
         return (
           <Card
             className={styles.blogPageCard}
             withBorder
             key={title}
-            disabled={disabled}
+            // disabled={disabled}
             adornment={
               <>
                 <IconClick />
                 {/* <Badge color={`${bageColors[category][0]}`}>{category}</Badge> */}
               </>
             }
-            link={`/blog/${id}`}
+            // link={`/blog/${id}`}
             hover
           >
             <Text>{title}</Text>
