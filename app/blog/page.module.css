@@ -23,3 +23,11 @@
 
 }
 
+.cardAdornment {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  align-items: center;
+  gap: 5px
+}
+

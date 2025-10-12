@@ -31,7 +31,7 @@
   cursor: pointer;
 }
 
-.photographyPageCard:hover > .photographyPageOverlay {
+.photographyPageCard:hover .photographyPageOverlay {
   opacity: 0.5;
 }
 

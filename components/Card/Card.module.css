@@ -24,8 +24,8 @@
 .cardAdornment {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: calc(var(--card-padding) / 2);
-  width: 100px;
+  height: 100%
 }

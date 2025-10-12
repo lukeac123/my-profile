@@ -50,10 +50,10 @@ export default async function PlacesPage() {
               key={id}
               disabled={disabled}
               adornment={
-                <>
-                  <IconClick />
+                <div className={styles.cardAdornment}>
+                  {disabled ? <Text>WIP</Text> : <IconClick />}
                   <Badge color={`${bageColors[category]}`}>{category}</Badge>
-                </>
+                </div>
               }
               link={`/blog/${id}`}
               hover
