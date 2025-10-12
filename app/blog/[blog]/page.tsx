@@ -30,18 +30,10 @@ const BlogPage = async ({ params }: { params: Promise<{ blog: any }> }) => {
   const { blog }: { blog: string } = await params;
   const blogPath = path.join(process.cwd(), `posts/${blog}.mdx`);
 
-  const {
-    frontmatter,
-    content,
-  }: { frontmatter: FrontMatterType; content: ReactElement } =
+  const { content }: { frontmatter: FrontMatterType; content: ReactElement } =
     await parseMDX(blogPath);
 
-  return (
-    <div className={styles.blogPage}>
-      <Title>{frontmatter.title}</Title>
-      <div>{content}</div>
-    </div>
-  );
+  return <div className={styles.blogPage}>{content}</div>;
 };
 
 export default BlogPage;

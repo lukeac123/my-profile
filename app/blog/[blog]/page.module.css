@@ -1,76 +1,21 @@
-.blogPageCard {
-  width: 100%;
-  height: 80vh;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-.blogPageCardSolo {
-  width: 100%;
+.blogPage {
+  width: 50%;
+  margin: auto;
   display: flex;
   flex-direction: column;
 }
 
 @media (width <= 992px) {
-  .blogPageCard {
-    height: auto;
-    flex-direction: column;
-  }
+  .blogPage {
+    padding: 10px;
+      width: 100%;
+    }
 }
 
-.blogPageImageCluster {
-  width: 60%;
-  height: 100vh;
-}
 
-@media (width <= 1200px) {
-  .blogPageImageCluster {
-    width: 100%;
-  }
-}
 
-.blogPageContent {
-  width: 40%;
-}
-
-@media (width <= 992px) {
-  .blogPageContent {
-    width: 100%;
-  }
-}
-
-.travelPageCardContent {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  overflow: hidden;
-}
-
-@media (width <= 992px) {
-  .travelPageCardContent {
-    flex-direction: column;
-  }
-}
-
-.travelPageCarousel {
-  width: 50%;
-  height: 100%;
-}
-
-@media (width <= 992px) {
-  .travelPageCarousel {
-    width: 100%;
-  }
-}
-
-.travelPageCardDescription {
-  width: 50%;
-  overflow: scroll;
-}
-
-@media (width <= 992px) {
-  .travelPageCardDescription {
-    width: 100%;
-  }
+.blogPage img {
+  width: 100%;
+  margin: auto;
+  max-height: 100vh;
 }
