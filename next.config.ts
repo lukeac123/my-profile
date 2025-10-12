@@ -1,15 +1,16 @@
 /** @type {import('next').NextConfig} */
-const withMDX = require('@next/mdx')()
+const withMDX = require("@next/mdx")();
 
 const nextConfig = {
   reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: true,
   },
+  transpilePackages: ["next-mdx-remote"],
   eslint: {
     ignoreDuringBuilds: true,
   },
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
@@ -23,4 +24,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withMDX(nextConfig)
+module.exports = withMDX(nextConfig);
