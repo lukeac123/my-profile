@@ -19,9 +19,11 @@ interface BlogType {
 // Static pages generated at build time
 export async function generateStaticParams() {
   const blogs = await fs.readdir(path.join(process.cwd(), "posts"));
-  return blogs.map((blog) => ({
-    blog: blog,
-  }));
+
+  return blogs.map((blog) => {
+    const blogWithoutFileSuffix = blog.replace(".mdx", ""); //Don't want file type to be in url
+    return { blog: blogWithoutFileSuffix };
+  });
 }
 
 // export const revalidate = 3600; // Regenerate pages every hour, could put this in the fetch when content moved to CMS

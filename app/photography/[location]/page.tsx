@@ -4,6 +4,8 @@ import path from "path";
 import { promises as fs } from "fs";
 import styles from "./page.module.css";
 
+//TODO: page can be statically loaded
+
 async function getImages(location: string) {
   const imageGalleryDirectory = path.join(
     process.cwd(),
