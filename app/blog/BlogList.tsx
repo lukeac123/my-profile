@@ -15,9 +15,11 @@ export default async function BlogList({ category }: { category: string }) {
   let blogs = [];
   blogs = await getBlogs();
 
-  if (category !== "") {
-    blogs = blogs.filter(
-      (element) => element.frontmatter.category === category
+  const categories = category.split(",");
+
+  if (category.length > 0) {
+    blogs = blogs.filter((element) =>
+      categories.some((category) => category === element.frontmatter.category)
     );
   }
 

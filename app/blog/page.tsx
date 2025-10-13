@@ -16,7 +16,7 @@ export default async function Page({
         Blog
       </Title>
       <BlogsFilter />
-      {/* Lazy Load in Blogs List */}
+      {/* Fallback for Blogs List Fetch */}
       <Suspense fallback={<>.....Loading</>}>
         <BlogList category={filterParams.category ?? ""} />
       </Suspense>
