@@ -1,10 +1,8 @@
 import { Title } from "@mantine/core";
 import styles from "./page.module.css";
 import { Suspense } from "react";
-import dynamic from "next/dynamic";
 import { BlogsFilter } from "./BlogsFilter";
-
-const BlogList = dynamic(() => import("./BlogList"));
+import BlogList from "./BlogList";
 
 export default async function Page({
   searchParams,

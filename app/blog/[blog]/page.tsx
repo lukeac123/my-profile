@@ -18,7 +18,7 @@ interface BlogType {
 
 // Static pages generated at build time
 export async function generateStaticParams() {
-  const blogs = await fs.readdir(path.join(process.cwd(), "posts"));
+  const blogs = await fs.readdir(path.join(process.cwd(), "/public/posts"));
 
   return blogs.map((blog) => {
     const blogWithoutFileSuffix = blog.replace(".mdx", ""); //Don't want file type to be in url
@@ -30,7 +30,7 @@ export async function generateStaticParams() {
 
 const BlogPage = async ({ params }: { params: Promise<{ blog: any }> }) => {
   const { blog }: { blog: string } = await params;
-  const blogPath = path.join(process.cwd(), `posts/${blog}.mdx`);
+  const blogPath = path.join(process.cwd(), `public/posts/${blog}.mdx`);
 
   const { content }: { frontmatter: FrontMatterType; content: ReactElement } =
     await parseMDX(blogPath);
