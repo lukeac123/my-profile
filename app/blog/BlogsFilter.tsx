@@ -7,13 +7,23 @@ import { clsx } from "clsx";
 import styles from "./BlogsFilter.module.css";
 
 export const BlogsFilter = () => {
-  const [blogFilter, setBlogFilter] = useState("");
+  const [blogFilter, setBlogFilter] = useState<string[]>([]);
   const router = useRouter();
   const pathname = usePathname();
 
   const handleFilterChange = (category: string) => {
-    setBlogFilter(category);
-    router.push(`${pathname}?category=${category.toString()}`, {
+    setBlogFilter((prev) => [...prev, category]);
+    router.push(
+      `${pathname}?category=${[...blogFilter, category].toString()}`,
+      {
+        scroll: false,
+      }
+    );
+  };
+
+  const handleFilterReset = () => {
+    setBlogFilter([]);
+    router.push(`${pathname}`, {
       scroll: false,
     });
   };
@@ -24,9 +34,9 @@ export const BlogsFilter = () => {
         return (
           <Button
             className={clsx({
-              [styles.filterButtonSelected]: blogFilter === category[0],
+              [styles.filterButtonSelected]: blogFilter.includes(category[0]),
             })}
-            disabled={blogFilter === category[0]}
+            disabled={blogFilter.includes(category[0])}
             key={category[0]}
             onClick={() => handleFilterChange(category[0])}
             color={`${category[1]}`}
@@ -35,7 +45,7 @@ export const BlogsFilter = () => {
           </Button>
         );
       })}
-      <Button color="black" onClick={() => handleFilterChange("")}>
+      <Button color="black" onClick={handleFilterReset}>
         Reset
       </Button>
     </div>
