@@ -31,14 +31,14 @@ export const Card = ({
           [`${styles.cardDisabled}`]: disabled,
           [`${styles.cardHover}`]: hover && !disabled,
         },
-        className,
+        className
       )}
       component={link && !disabled && Link}
       href={link && !disabled ? link : undefined}
       {...rest}
     >
-      {children}
-      <div className={styles.cardAdornment}>{adornment}</div>
+      <div className={styles.cardContent}>{children}</div>
+      {adornment && <div className={styles.cardAdornment}>{adornment}</div>}
     </MantineCard>
   );
 };

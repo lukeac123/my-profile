@@ -6,8 +6,6 @@ import { homePageData, lineChartData } from "../utils/db";
 import styles from "./page.module.css";
 import { IconClick } from "@tabler/icons-react";
 
-const withBaseName = makePrefixer("homePage");
-
 export interface HomePageCardType {
   title: string;
   description: string;
@@ -15,7 +13,7 @@ export interface HomePageCardType {
   disabled?: boolean;
 }
 
-export default function BlogPage() {
+export default function Page() {
   return (
     <div className={styles.homePage}>
       <LineChart data={lineChartData} />
@@ -38,9 +36,7 @@ export default function BlogPage() {
                       disabled={disabled}
                       withBorder
                       hover
-                      adornment={
-                        disabled ? <Text>.....Coming Soon</Text> : <IconClick />
-                      }
+                      adornment={disabled ? <Text>WIP</Text> : <IconClick />}
                     >
                       <Text>{title}</Text>
                       <Text>{description}</Text>

@@ -20,9 +20,9 @@ export const Audio = ({
   skipDuration,
   ...rest
 }: AudioProps) => {
-  const audioRef = useRef();
-  const source = useRef();
-  const analyser = useRef();
+  const audioRef = useRef(null);
+  const source = useRef(null);
+  const analyser = useRef(null);
 
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -38,7 +38,7 @@ export const Audio = ({
       if (audioRef.current && !source.current) {
         audioContext = new AudioContext();
         source.current = audioContext.createMediaElementSource(
-          audioRef.current,
+          audioRef.current
         );
         analyser.current = audioContext.createAnalyser();
         source.current.connect(analyser.current);

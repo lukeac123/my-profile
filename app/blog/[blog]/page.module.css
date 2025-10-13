@@ -1,0 +1,19 @@
+.blogPage {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (width <= 992px) {
+  .blogPage {
+    padding: 10px;
+      width: 100%;
+    }
+}
+
+.blogPage img {
+  width: 100%;
+  margin: auto;
+  max-height: 100vh;
+}
