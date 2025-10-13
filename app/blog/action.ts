@@ -29,12 +29,12 @@ export async function parseMDX(blogPath: string): Promise<{
 }
 
 export async function getBlogs() {
-  const blogsDir = path.join(process.cwd(), "posts");
+  const blogsDir = path.join(process.cwd(), "public/posts");
   const blogs = await fs.readdir(blogsDir);
 
   const blogsData = Promise.all(
     blogs.map(async (blog) => {
-      const blogPath = path.join(process.cwd(), `posts/${blog}`);
+      const blogPath = path.join(process.cwd(), `public/posts/${blog}`);
       return await parseMDX(blogPath);
     })
   );
