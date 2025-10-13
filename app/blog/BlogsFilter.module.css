@@ -1,0 +1,15 @@
+.filterContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px
+  }
+
+@media (width <= 992px) {
+    .filterContainer {
+        gap: 5px
+    }
+}
+
+.filterButtonSelected {
+    border: solid 1px
+}

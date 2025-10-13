@@ -16,13 +16,6 @@
   }
 }
 
-.blogLandingPage{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
 .cardAdornment {
   display: flex;
   flex-direction: column;
@@ -30,4 +23,3 @@
   align-items: center;
   gap: 5px
 }
-
